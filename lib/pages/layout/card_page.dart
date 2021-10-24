@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// Card的使用
+/// Card页面
 class CardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Card", MyCard());
+    return LayoutUtils.getApp("Card的使用", MyCard());
   }
 }
 
-// Card组件
+// Card: 卡片组件
 class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,9 @@ class MyCard extends StatelessWidget {
           elevation: 10.0,
           margin: EdgeInsets.all(10.0),
           child: Center(
-            child: Text("哈哈哈哈哈"),
+            child: Text(
+              "哈哈哈哈哈",
+            ),
           )),
     );
   }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// Wrap的使用
+/// Wrap页面
 class WrapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Wrap", MyWrap());
+    return LayoutUtils.getApp("Wrap的使用", MyWrap());
   }
 }
 
@@ -23,7 +23,13 @@ class MyWrap extends StatelessWidget {
         spacing: 10.0,
         // 垂直间距
         runSpacing: 20.0,
-        children: <Widget>[MyButton("斗罗大陆"), MyButton("武动乾坤"), MyButton("我师兄也太稳健了吧"), MyButton("万古神帝"), MyButton("圣墟")],
+        children: <Widget>[
+          MyButton("斗罗大陆"),
+          MyButton("武动乾坤"),
+          MyButton("我师兄也太稳健了吧"),
+          MyButton("万古神帝"),
+          MyButton("圣墟"),
+        ],
       ),
     );
   }
@@ -37,7 +43,9 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      child: Text(this.text),
+      child: Text(
+        this.text,
+      ),
       onPressed: () {},
     );
   }

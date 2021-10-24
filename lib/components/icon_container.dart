@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// 自定义组件
 class IconContainer extends StatelessWidget {
   final IconData icon;
   final color;
@@ -13,7 +14,13 @@ class IconContainer extends StatelessWidget {
       height: 100.0,
       width: 100.0,
       color: this.color,
-      child: Center(child: Icon(this.icon, size: this.size, color: Colors.white)),
+      child: Center(
+        child: Icon(
+          this.icon,
+          size: this.size,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

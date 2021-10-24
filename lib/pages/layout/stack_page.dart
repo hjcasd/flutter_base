@@ -31,7 +31,9 @@ class MyStack extends StatelessWidget {
           width: 160.0,
           color: Colors.blue,
         ),
-        Text("哈哈哈哈")
+        Text(
+          "哈哈哈哈",
+        )
       ],
     );
   }
@@ -49,23 +51,33 @@ class MyStackAlign extends StatelessWidget {
         children: <Widget>[
           Align(
             alignment: Alignment.topLeft,
-            child: Text("左上"),
+            child: Text(
+              "左上",
+            ),
           ),
           Align(
             alignment: Alignment.topRight,
-            child: Text("右上"),
+            child: Text(
+              "右上",
+            ),
           ),
           Align(
             alignment: Alignment.center,
-            child: Text("中间"),
+            child: Text(
+              "中间",
+            ),
           ),
           Align(
             alignment: Alignment.bottomLeft,
-            child: Text("左下"),
+            child: Text(
+              "左下",
+            ),
           ),
           Align(
             alignment: Alignment.bottomRight,
-            child: Text("右下"),
+            child: Text(
+              "右下",
+            ),
           ),
         ],
       ),
@@ -86,22 +98,30 @@ class MyStackPositioned extends StatelessWidget {
           Positioned(
             left: 10,
             top: 10,
-            child: Text("左上"),
+            child: Text(
+              "左上",
+            ),
           ),
           Positioned(
             right: 0,
             top: 30,
-            child: Text("右上"),
+            child: Text(
+              "右上",
+            ),
           ),
           Positioned(
             bottom: 10,
             left: 10,
-            child: Text("左下"),
+            child: Text(
+              "左下",
+            ),
           ),
           Positioned(
             bottom: 30,
             right: 0,
-            child: Text("右下"),
+            child: Text(
+              "右下",
+            ),
           ),
         ],
       ),

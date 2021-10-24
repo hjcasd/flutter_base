@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
-
-import 'components/icon_container.dart';
+import 'package:flutter_base/components/icon_container.dart';
 
 /// Column的使用
 class ColumnPage extends StatelessWidget {

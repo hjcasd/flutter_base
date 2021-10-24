@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// GridView的使用
+/// GridView页面
 class GridViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("GridView", MyGridView2());
+    return LayoutUtils.getApp("GridView的使用", MyGridView());
   }
 }
 
-// 动态网格组件(GridView.count实现)
+/// 动态网格组件(GridView.count实现)
 class MyGridView extends StatelessWidget {
   List<Widget> _getData() {
-    List<Widget> list = new List();
+    List<Widget> list = [];
     for (var i = 0; i < 30; i++) {
       list.add(Container(
         alignment: Alignment.center,
@@ -42,9 +42,9 @@ class MyGridView extends StatelessWidget {
   }
 }
 
-// 动态网格组件(GridView.builder实现)
+/// 动态网格组件(GridView.builder实现)
 class MyGridView2 extends StatelessWidget {
-  final List<String> _listData = new List();
+  final List<String> _listData = [];
 
   MyGridView2() {
     for (var i = 0; i < 30; i++) {
@@ -57,7 +57,13 @@ class MyGridView2 extends StatelessWidget {
     return GridView.builder(
       itemCount: this._listData.length,
       itemBuilder: (context, index) {
-        return Container(alignment: Alignment.center, color: Colors.green, child: Text(this._listData[index]));
+        return Container(
+          alignment: Alignment.center,
+          color: Colors.green,
+          child: Text(
+            this._listData[index],
+          ),
+        );
       },
       padding: EdgeInsets.all(10.0),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

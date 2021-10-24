@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// Padding的使用
+/// Padding页面
 class PaddingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Padding", MyPadding());
+    return LayoutUtils.getApp("Padding的使用", MyPadding());
   }
 }
 
-// Padding组件
+/// Padding组件
 class MyPadding extends StatelessWidget {
   List<Widget> _getData() {
     List<Widget> list = [];

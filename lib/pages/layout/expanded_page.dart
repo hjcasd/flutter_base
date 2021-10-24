@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// Expanded的使用
+/// Expanded页面
 class ExpandedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Expanded", MyExpanded());
+    return LayoutUtils.getApp("Expanded的使用", MyExpandedWidget());
   }
 }
 
-// Expanded组件(类似于weight效果)
-class MyExpanded extends StatelessWidget {
+/// Expanded组件(类似于weight效果)
+class MyExpandedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -37,7 +37,7 @@ class MyExpanded extends StatelessWidget {
             Icons.settings,
             color: Colors.cyan,
           ),
-        )
+        ),
       ],
     );
   }
@@ -56,12 +56,14 @@ class IconContainer extends StatelessWidget {
       height: 100.0,
       width: 100.0,
       color: this.color,
-      child: Center(child: Icon(this.icon, size: this.size, color: Colors.white)),
+      child: Center(
+        child: Icon(this.icon, size: this.size, color: Colors.white),
+      ),
     );
   }
 }
 
-// 多行多列布局演示
+/// 多行多列布局演示
 class MyExpanded2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -70,12 +72,21 @@ class MyExpanded2 extends StatelessWidget {
         Row(
           children: <Widget>[
             Expanded(
-                child: Container(height: 180.0, color: Colors.yellow, alignment: Alignment.center, child: Text("哈哈哈")))
+              child: Container(
+                height: 180.0,
+                color: Colors.yellow,
+                alignment: Alignment.center,
+                child: Text("哈哈哈"),
+              ),
+            )
           ],
         ),
-        SizedBox(height: 10),
-        Row(children: <Widget>[
-          Expanded(
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: <Widget>[
+            Expanded(
               flex: 2,
               child: Container(
                 height: 180.0,
@@ -83,28 +94,34 @@ class MyExpanded2 extends StatelessWidget {
                   "https://t8.baidu.com/it/u=1484500186,1503043093&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1603869096&t=155e177e33789449415d5f099db22412",
                   fit: BoxFit.cover,
                 ),
-              )),
-          SizedBox(width: 10.0),
-          Expanded(
+              ),
+            ),
+            SizedBox(
+              width: 10.0,
+            ),
+            Expanded(
               flex: 1,
               child: Container(
-                  height: 180.0,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Image.network(
-                        "https://t9.baidu.com/it/u=1307125826,3433407105&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1603869096&t=816eddceba44f40d7c61a2289b13c329",
-                        height: 85.0,
-                        fit: BoxFit.cover,
-                      ),
-                      Image.network(
-                        "https://t9.baidu.com/it/u=1307125826,3433407105&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1603869096&t=816eddceba44f40d7c61a2289b13c329",
-                        height: 85.0,
-                        fit: BoxFit.cover,
-                      )
-                    ],
-                  )))
-        ])
+                height: 180.0,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.network(
+                      "https://t9.baidu.com/it/u=1307125826,3433407105&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1603869096&t=816eddceba44f40d7c61a2289b13c329",
+                      height: 85.0,
+                      fit: BoxFit.cover,
+                    ),
+                    Image.network(
+                      "https://t9.baidu.com/it/u=1307125826,3433407105&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1603869096&t=816eddceba44f40d7c61a2289b13c329",
+                      height: 85.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
