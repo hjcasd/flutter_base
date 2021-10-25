@@ -1,17 +1,16 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
-// 自定义Dialog
+/// 自定义Dialog
 class CustomDialog extends StatelessWidget {
-  String title = "";
-  String content = "";
+  final String title;
+  final String content;
 
   CustomDialog({this.title, this.content});
 
   // 定时器
-  _showTimer(context){
-    Timer.periodic(Duration(milliseconds: 3000), (t){
+  _showTimer(context) {
+    Timer.periodic(Duration(milliseconds: 3000), (t) {
       Navigator.pop(context);
       // 取消定时器
       t.cancel();
@@ -29,7 +28,7 @@ class CustomDialog extends StatelessWidget {
           height: 160.0,
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(10.0)
+            borderRadius: BorderRadius.circular(10.0),
           ),
           child: Column(
             children: <Widget>[
@@ -43,13 +42,15 @@ class CustomDialog extends StatelessWidget {
                     ),
                     Align(
                       child: InkWell(
-                        child: Icon(Icons.close),
+                        child: Icon(
+                          Icons.close,
+                        ),
                         onTap: () {
                           Navigator.pop(context);
                         },
                       ),
                       alignment: Alignment.centerRight,
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -62,7 +63,9 @@ class CustomDialog extends StatelessWidget {
               Container(
                 child: Text(
                   "${this.content}",
-                  style: TextStyle(fontSize: 20.0),
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
                 ),
               ),
             ],

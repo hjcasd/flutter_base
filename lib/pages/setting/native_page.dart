@@ -13,32 +13,34 @@ class NativePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter Page'),
         leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              _methodChannel
-                  .invokeMethod("back")
-                  .then((result) {
-                Fluttertoast.showToast(msg: "result: $result");
-              });
-            }),
+          icon: Icon(
+            Icons.arrow_back,
+          ),
+          onPressed: () {
+            _methodChannel.invokeMethod("back").then((result) {
+              Fluttertoast.showToast(msg: "result: $result");
+            });
+          },
+        ),
       ),
       body: Container(
-          alignment: Alignment.center,
-          child: Column(
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  // flutter端调用native端的方法并传参
-                  _methodChannel
-                      .invokeMethod("jumpToNative", "/module_frame/loadSir")
-                      .then((result) {
-                    Fluttertoast.showToast(msg: "result: $result");
-                  });
-                },
-                child: Text('Flutter使用MethodChannel调用原生方法'),
+        alignment: Alignment.center,
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                // flutter端调用native端的方法并传参
+                _methodChannel.invokeMethod("jumpToNative", "/module_frame/loadSir").then((result) {
+                  Fluttertoast.showToast(msg: "result: $result");
+                });
+              },
+              child: Text(
+                'Flutter使用MethodChannel调用原生方法',
               ),
-            ],
-          )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

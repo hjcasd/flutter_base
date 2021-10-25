@@ -10,7 +10,7 @@ class ContainerPage extends StatelessWidget {
   }
 }
 
-/// Container: 容器组件
+/// Container: 容器组件(类似于Div)
 class MyContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,9 @@ class MyContainerWidget extends StatelessWidget {
             width: 2.0,
           ),
           // 渐变
-          gradient: LinearGradient(colors: [Colors.greenAccent, Colors.green]),
+          gradient: LinearGradient(
+            colors: [Colors.greenAccent, Colors.green],
+          ),
           // 边框圆角
           borderRadius: BorderRadius.all(Radius.circular(15.0)),
         ),

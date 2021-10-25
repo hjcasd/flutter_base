@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// Dio
+/// Dio页面
 class DioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Dio", MyDio());
+    return LayoutUtils.getApp("Dio的使用", MyDio());
   }
 }
 
@@ -16,7 +15,7 @@ class MyDio extends StatefulWidget {
   _MyDioState createState() => _MyDioState();
 }
 
-// Dio库使用演示
+/// Dio: 网络请求库
 class _MyDioState extends State<MyDio> {
   // get请求
   _getData() async {
@@ -40,14 +39,18 @@ class _MyDioState extends State<MyDio> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           ElevatedButton(
-            child: Text("Get请求获取数据"),
+            child: Text(
+              "Get请求获取数据",
+            ),
             onPressed: _getData,
           ),
           SizedBox(
             height: 10.0,
           ),
           ElevatedButton(
-            child: Text("Post请求获取数据"),
+            child: Text(
+              "Post请求获取数据",
+            ),
             onPressed: _postData,
           ),
         ],

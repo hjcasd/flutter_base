@@ -9,7 +9,7 @@ class WrapPage extends StatelessWidget {
   }
 }
 
-// Wrap组件
+/// Wrap: 流式布局组件
 class MyWrap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,26 +19,27 @@ class MyWrap extends StatelessWidget {
       child: Wrap(
         // 布局方向
         direction: Axis.horizontal,
-        // 水平间距
+        // X轴对齐方式
+        alignment: WrapAlignment.spaceBetween,
+        // X轴子组件之间距离
         spacing: 10.0,
-        // 垂直间距
-        runSpacing: 20.0,
         children: <Widget>[
-          MyButton("斗罗大陆"),
-          MyButton("武动乾坤"),
-          MyButton("我师兄也太稳健了吧"),
-          MyButton("万古神帝"),
-          MyButton("圣墟"),
+          MyButtonWidget("斗罗大陆"),
+          MyButtonWidget("武动乾坤"),
+          MyButtonWidget("我师兄也太稳健了吧"),
+          MyButtonWidget("万古神帝"),
+          MyButtonWidget("圣墟"),
         ],
       ),
     );
   }
 }
 
-class MyButton extends StatelessWidget {
+/// 自定义Button
+class MyButtonWidget extends StatelessWidget {
   final String text;
 
-  MyButton(this.text, {Key key}) : super(key: key);
+  MyButtonWidget(this.text, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

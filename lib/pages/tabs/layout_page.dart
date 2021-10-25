@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-class CategoryPage extends StatefulWidget {
+/// 布局Tab页面
+class LayoutPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _CategoryPageState();
+    return _LayoutPageState();
   }
 }
 
-/// 分类页
-class _CategoryPageState extends State<CategoryPage> {
+class _LayoutPageState extends State<LayoutPage> {
   List<Widget> _row1Widgets = [
     LayoutUtils.generateButton(Routes.Container, "Container"),
     LayoutUtils.generateButton(Routes.Padding, "Padding"),
@@ -32,7 +32,11 @@ class _CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: [_getRowView(_row1Widgets), _getRowView(_row2Widgets), _getRowView(_row3Widgets)],
+        children: [
+          _getRowView(_row1Widgets),
+          _getRowView(_row2Widgets),
+          _getRowView(_row3Widgets),
+        ],
       ),
     );
   }

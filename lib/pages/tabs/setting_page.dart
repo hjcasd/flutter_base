@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
+/// 设置Tab页面
 class SettingPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -9,7 +10,6 @@ class SettingPage extends StatefulWidget {
   }
 }
 
-/// 设置页
 class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {

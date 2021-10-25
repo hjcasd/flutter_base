@@ -1,51 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// Stack的使用
+/// Stack页面
 class StackPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Stack,Align,Positioned", MyStackPositioned());
+    return LayoutUtils.getApp(
+      "Stack的使用",
+      Column(
+        children: [
+          MyStackWidget(),
+          SizedBox(
+            height: 10.0,
+          ),
+          MyStackAlignWidget(),
+          SizedBox(
+            height: 10.0,
+          ),
+          MyStackPositionedWidget(),
+        ],
+      ),
+    );
   }
 }
 
-// Stack组件(堆叠,类似于FrameLayout)
-class MyStack extends StatelessWidget {
+/// Stack: 堆叠组件(类似于FrameLayout)
+class MyStackWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
       // alignment: Alignment(0, 0),
       children: <Widget>[
         Container(
-          height: 200.0,
-          width: 200.0,
+          height: 160.0,
+          width: 160.0,
           color: Colors.cyan,
         ),
         Container(
-          height: 180.0,
-          width: 180.0,
+          height: 140.0,
+          width: 140.0,
           color: Colors.amber,
         ),
         Container(
-          height: 160.0,
-          width: 160.0,
+          height: 120.0,
+          width: 120.0,
           color: Colors.blue,
         ),
         Text(
           "哈哈哈哈",
-        )
+        ),
       ],
     );
   }
 }
 
-// Stack + Align 实现定位布局
-class MyStackAlign extends StatelessWidget {
+/// Stack + Align 实现定位布局
+class MyStackAlignWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300.0,
-      width: 300.0,
+      height: 160.0,
+      width: 160.0,
       color: Colors.green,
       child: Stack(
         children: <Widget>[
@@ -85,14 +100,14 @@ class MyStackAlign extends StatelessWidget {
   }
 }
 
-// Stack + Positioned 实现定位布局
-class MyStackPositioned extends StatelessWidget {
+/// Stack + Positioned 实现定位布局
+class MyStackPositionedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300.0,
-      width: 300.0,
-      color: Colors.green,
+      height: 160.0,
+      width: 160.0,
+      color: Colors.cyan,
       child: Stack(
         children: <Widget>[
           Positioned(

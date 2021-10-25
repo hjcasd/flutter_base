@@ -12,16 +12,13 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final String initParams;
   final EventChannel _eventChannel = EventChannel("com.flutter/event");
 
-  MyApp({Key key, this.initParams}) : super(key: key);
+  MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    _eventChannel
-        .receiveBroadcastStream("event")
-        .listen(_onData, onError: _onError, onDone: _onDone);
+    _eventChannel.receiveBroadcastStream("event").listen(_onData, onError: _onError, onDone: _onDone);
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -30,7 +27,9 @@ class MyApp extends StatelessWidget {
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
       unknownRoute: AppPages.pages[1],
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
     );
   }
 

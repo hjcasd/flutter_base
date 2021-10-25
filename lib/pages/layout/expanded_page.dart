@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/components/icon_container.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
 /// Expanded页面
 class ExpandedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Expanded的使用", MyExpandedWidget());
+    return LayoutUtils.getApp(
+      "Expanded的使用",
+      Column(
+        children: [
+          MyExpandedWidget(),
+          SizedBox(
+            height: 10.0,
+          ),
+          MyMultiExpandedWidget(),
+        ],
+      ),
+    );
   }
 }
 
-/// Expanded组件(类似于weight效果)
+/// Expanded: 类似于Linearlayout中weight效果的组件
 class MyExpandedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,28 +55,8 @@ class MyExpandedWidget extends StatelessWidget {
   }
 }
 
-class IconContainer extends StatelessWidget {
-  double size = 32.0;
-  Color color = Colors.green;
-  IconData icon;
-
-  IconContainer(this.icon, {this.color, this.size});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 100.0,
-      width: 100.0,
-      color: this.color,
-      child: Center(
-        child: Icon(this.icon, size: this.size, color: Colors.white),
-      ),
-    );
-  }
-}
-
 /// 多行多列布局演示
-class MyExpanded2 extends StatelessWidget {
+class MyMultiExpandedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -76,9 +68,11 @@ class MyExpanded2 extends StatelessWidget {
                 height: 180.0,
                 color: Colors.yellow,
                 alignment: Alignment.center,
-                child: Text("哈哈哈"),
+                child: Text(
+                  "哈哈哈",
+                ),
               ),
-            )
+            ),
           ],
         ),
         SizedBox(

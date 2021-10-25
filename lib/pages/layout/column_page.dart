@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 import 'package:flutter_base/components/icon_container.dart';
 
-/// Column的使用
+/// Column页面
 class ColumnPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Column", MyColumn());
+    return LayoutUtils.getApp("Column的使用", MyColumnWidget());
   }
 }
 
-// Column组件
-class MyColumn extends StatelessWidget {
+/// Column: 列组件,垂直方向上排列子组件(类似于Linearlayout vertical)
+class MyColumnWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // 主轴的排序方式
+      // 垂直方向上(主轴)的排列方式
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         IconContainer(
@@ -29,7 +29,7 @@ class MyColumn extends StatelessWidget {
         IconContainer(
           Icons.settings,
           color: Colors.cyan,
-        )
+        ),
       ],
     );
   }

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 import 'package:http/http.dart' as http;
 
-/// http
+/// Http页面
 class HttpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Http", MyHttp());
+    return LayoutUtils.getApp("Http的使用", MyHttp());
   }
 }
 
@@ -16,7 +16,7 @@ class MyHttp extends StatefulWidget {
   _MyHttpState createState() => _MyHttpState();
 }
 
-// 网络请求演示
+/// 网络请求演示
 class _MyHttpState extends State<MyHttp> {
   Map _userMap = {"name": "张三", "age": 24};
   String _userStr = '{"name":"张三","age":24}';
@@ -26,7 +26,6 @@ class _MyHttpState extends State<MyHttp> {
   // get请求
   _getData() async {
     var url = 'http://a.itying.com/api/productlist';
-
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var data = convert.jsonDecode(response.body);
@@ -40,7 +39,6 @@ class _MyHttpState extends State<MyHttp> {
   // post请求
   _postData() async {
     var url = 'https://example.com/whatsit/create';
-
     var response = await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
     print('Response status: ${response.statusCode}');
   }
@@ -52,7 +50,9 @@ class _MyHttpState extends State<MyHttp> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           ElevatedButton(
-            child: Text("Map转换为Json字符串"),
+            child: Text(
+              "Map转换为Json字符串",
+            ),
             onPressed: () {
               var jsonStr = convert.jsonEncode(_userMap);
               print(jsonStr);
@@ -62,7 +62,9 @@ class _MyHttpState extends State<MyHttp> {
             height: 10.0,
           ),
           ElevatedButton(
-            child: Text("Json字符串转换为Map"),
+            child: Text(
+              "Json字符串转换为Map",
+            ),
             onPressed: () {
               var map = convert.jsonDecode(_userStr);
               print(map["name"]);
@@ -72,14 +74,18 @@ class _MyHttpState extends State<MyHttp> {
             height: 10.0,
           ),
           ElevatedButton(
-            child: Text("Get请求获取数据"),
+            child: Text(
+              "Get请求获取数据",
+            ),
             onPressed: _getData,
           ),
           SizedBox(
             height: 10.0,
           ),
           ElevatedButton(
-            child: Text("Post请求获取数据"),
+            child: Text(
+              "Post请求获取数据",
+            ),
             onPressed: _postData,
           ),
         ],

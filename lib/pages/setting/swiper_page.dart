@@ -15,7 +15,7 @@ class MySwiper extends StatefulWidget {
   _MySwiperState createState() => _MySwiperState();
 }
 
-// 轮播图组件Swiper演示
+/// 轮播图组件Swiper演示
 class _MySwiperState extends State<MySwiper> {
   List<Map> _imgList = [
     {
@@ -41,8 +41,9 @@ class _MySwiperState extends State<MySwiper> {
         child: Swiper(
           itemCount: _imgList.length,
           itemBuilder: (BuildContext context, int index) {
-            return Image.network(
-              _imgList[index]["url"],
+            return FadeInImage.assetNetwork(
+              image: _imgList[index]["url"],
+              placeholder: "images/test.png",
               fit: BoxFit.fill,
             );
           },

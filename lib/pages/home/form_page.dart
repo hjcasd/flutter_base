@@ -10,18 +10,18 @@ class FormPage extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyForm(),
+      home: MyFormWidget(),
     );
   }
 }
 
-class MyForm extends StatefulWidget {
+class MyFormWidget extends StatefulWidget {
   @override
   _FormPageState createState() => _FormPageState();
 }
 
 // TextField, Switch, Radio, Checkbox
-class _FormPageState extends State<MyForm> {
+class _FormPageState extends State<MyFormWidget> {
   var _username = TextEditingController();
   var _flag = true;
   var _sex = 1;
@@ -123,7 +123,7 @@ class _FormPageState extends State<MyForm> {
   }
 }
 
-class _FormPageState2 extends State<MyForm> {
+class _FormPageState2 extends State<MyFormWidget> {
   var _username = "";
   var _sex = 1;
   var _desc = "";

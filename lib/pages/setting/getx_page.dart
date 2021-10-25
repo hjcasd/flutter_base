@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// GetX的使用
+/// GetX页面
 class GetXPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("GetX", MyGetX());
+    return LayoutUtils.getApp("GetX的使用", MyGetXWidget());
   }
 }
 
-class MyGetX extends StatelessWidget {
+class MyGetXWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [LayoutUtils.generateButton(Routes.GetX, "打开新页面")],
+      children: [
+        LayoutUtils.generateButton(Routes.Http, "打开新页面"),
+      ],
     );
   }
 }

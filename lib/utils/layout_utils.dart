@@ -10,17 +10,24 @@ class LayoutUtils {
       title: "Flutter Demo",
       home: Scaffold(
         appBar: AppBar(
-          title: Text(text),
+          title: Text(
+            text,
+          ),
           leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                Get.back();
-              }),
+            icon: Icon(
+              Icons.arrow_back,
+            ),
+            onPressed: () {
+              Get.back();
+            },
+          ),
         ),
         body: body,
       ),
       // debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
     );
   }
 
@@ -29,7 +36,9 @@ class LayoutUtils {
       onPressed: () {
         Get.toNamed(url);
       },
-      child: Text(text),
+      child: Text(
+        text,
+      ),
     );
   }
 }

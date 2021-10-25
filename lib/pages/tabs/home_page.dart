@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
+/// 首页Tab页面
 class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -9,7 +10,6 @@ class HomePage extends StatefulWidget {
   }
 }
 
-/// 首页
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class _HomePageState extends State<HomePage> {
       child: Wrap(
         // 布局方向
         direction: Axis.horizontal,
+        // 对齐方式
+        alignment: WrapAlignment.spaceEvenly,
         // 水平间距
         spacing: 10,
-        // 垂直间距
-        runSpacing: 5,
         children: [
           LayoutUtils.generateButton(Routes.Text, "Text"),
           LayoutUtils.generateButton(Routes.Button, "Button"),
