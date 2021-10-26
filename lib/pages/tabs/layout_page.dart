@@ -26,6 +26,7 @@ class _LayoutPageState extends State<LayoutPage> {
   List<Widget> _row3Widgets = [
     LayoutUtils.generateButton(Routes.Card, "Card"),
     LayoutUtils.generateButton(Routes.Wrap, "Wrap"),
+    LayoutUtils.generateButton(Routes.Scaffold, "Scaffold"),
   ];
 
   @override

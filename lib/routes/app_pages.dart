@@ -1,3 +1,5 @@
+import 'package:flutter_base/pages/home/rich_text_page.dart';
+import 'package:flutter_base/pages/layout/scaffold_page.dart';
 import 'package:flutter_base/pages/main_page.dart';
 import 'package:flutter_base/pages/home/button_page.dart';
 import 'package:flutter_base/pages/layout/container_page.dart';
@@ -76,9 +78,13 @@ abstract class AppPages {
       name: Routes.Drawer,
       page: () => DrawerPage(),
     ),
+    GetPage(
+      name: Routes.RichText,
+      page: () => RichTextPage(),
+    ),
 
 
-    // =========================分类=============================
+    // =========================布局=============================
     GetPage(
       name: Routes.Container,
       page: () => ContainerPage(),
@@ -110,6 +116,10 @@ abstract class AppPages {
     GetPage(
       name: Routes.Wrap,
       page: () => WrapPage(),
+    ),
+    GetPage(
+      name: Routes.Scaffold,
+      page: () => ScaffoldPage(),
     ),
 
 

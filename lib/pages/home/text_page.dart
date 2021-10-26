@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 
-/// Tex页面
+/// Text页面
 class TextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

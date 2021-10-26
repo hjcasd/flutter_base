@@ -14,9 +14,9 @@ abstract class Routes {
   static const AppBar = '/app_bar';
   static const TabController = '/tab_controller';
   static const Drawer = '/drawer';
+  static const RichText = '/rich_text';
 
-
-  // 分类
+  // 布局
   static const Container = '/container';
   static const Padding = '/padding';
   static const Row = '/row';
@@ -25,6 +25,7 @@ abstract class Routes {
   static const Stack = '/stack';
   static const Card = '/card';
   static const Wrap = '/wrap';
+  static const Scaffold = '/scaffold';
 
   // 设置
   static const Swiper = '/swiper';

@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
           LayoutUtils.generateButton(Routes.AppBar, "AppBar"),
           LayoutUtils.generateButton(Routes.TabController, "TabController"),
           LayoutUtils.generateButton(Routes.Drawer, "Drawer"),
+          LayoutUtils.generateButton(Routes.RichText, "RichText"),
         ],
       ),
     );
