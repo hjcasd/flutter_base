@@ -16,58 +16,44 @@ class MyButtonWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        ElevatedButton(
+          onPressed: () {
+            print("ElevatedButton");
+          },
+          child: Text(
+            "ElevatedButton",
+          ),
+        ),
+        IconButton(
+          onPressed: () {
+            print("IconButton");
+          },
+          icon: Icon(
+            Icons.settings,
+          ),
+          color: Colors.blue,
+        ),
+        ButtonBar(
+          alignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                print("ElevatedButton");
+                print("登录");
               },
               child: Text(
-                "ElevatedButton",
+                "登录",
               ),
             ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            IconButton(
+            ElevatedButton(
               onPressed: () {
-                print("IconButton");
+                print("注册");
               },
-              icon: Icon(
-                Icons.settings,
+              child: Text(
+                "注册",
               ),
-              color: Colors.blue,
             ),
           ],
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ButtonBar(
-              children: <Widget>[
-                ElevatedButton(
-                  onPressed: () {
-                    print("登录");
-                  },
-                  child: Text(
-                    "登录",
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    print("注册");
-                  },
-                  child: Text(
-                    "注册",
-                  ),
-                ),
-              ],
-            )
-          ],
-        )
       ],
     );
   }
