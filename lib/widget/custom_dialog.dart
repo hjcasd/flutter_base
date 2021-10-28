@@ -37,7 +37,9 @@ class CustomDialog extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     Align(
-                      child: Text("${this.title}"),
+                      child: Text(
+                        title,
+                      ),
                       alignment: Alignment.center,
                     ),
                     Align(
@@ -62,7 +64,7 @@ class CustomDialog extends StatelessWidget {
               ),
               Container(
                 child: Text(
-                  "${this.content}",
+                  content,
                   style: TextStyle(
                     fontSize: 20.0,
                   ),

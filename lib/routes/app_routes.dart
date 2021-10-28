@@ -1,5 +1,4 @@
-
-/// 配置路由
+/// 配置路由(每个页面对应路由的路径)
 abstract class Routes {
   static const Initial = '/';
   static const UnKnown = '/unKnown';
@@ -12,7 +11,7 @@ abstract class Routes {
   static const Grid = '/grid';
   static const Form = '/form';
   static const AppBar = '/app_bar';
-  static const TabController = '/tab_controller';
+  static const TabBar = '/tab_bar';
   static const Drawer = '/drawer';
   static const RichText = '/rich_text';
 
@@ -35,4 +34,3 @@ abstract class Routes {
   static const Dialog = '/dialog';
   static const Native = '/native';
 }
-

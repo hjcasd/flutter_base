@@ -29,7 +29,7 @@ class MyStackWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      // alignment: Alignment(0, 0),
+      alignment: Alignment(0, 0),
       children: <Widget>[
         Container(
           height: 160.0,

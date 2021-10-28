@@ -14,17 +14,17 @@ class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: [
-            LayoutUtils.generateButton(Routes.Dialog, "Dialog"),
-            LayoutUtils.generateButton(Routes.Swiper, "Swiper"),
-            LayoutUtils.generateButton(Routes.Http, "Http"),
-            LayoutUtils.generateButton(Routes.Dio, "Dio"),
-            LayoutUtils.generateButton(Routes.GetX, "GetX"),
-            LayoutUtils.generateButton(Routes.Native, "Native"),
-          ],
-        )
+      width: double.infinity,
+      child: Column(
+        children: [
+          LayoutUtils.generateButton(Routes.Dialog, "Dialog"),
+          LayoutUtils.generateButton(Routes.Swiper, "Swiper"),
+          LayoutUtils.generateButton(Routes.Http, "Http"),
+          LayoutUtils.generateButton(Routes.Dio, "Dio"),
+          LayoutUtils.generateButton(Routes.GetX, "GetX"),
+          LayoutUtils.generateButton(Routes.Native, "Native"),
+        ],
+      ),
     );
   }
 }

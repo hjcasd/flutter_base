@@ -16,7 +16,7 @@ import 'package:flutter_base/pages/layout/expanded_page.dart';
 import 'package:flutter_base/pages/layout/padding_page.dart';
 import 'package:flutter_base/pages/layout/row_page.dart';
 import 'package:flutter_base/pages/layout/stack_page.dart';
-import 'package:flutter_base/pages/home/tab_controller_page.dart';
+import 'package:flutter_base/pages/home/tab_bar_page.dart';
 import 'package:flutter_base/pages/layout/wrap_page.dart';
 import 'package:flutter_base/pages/setting/dialog_page.dart';
 import 'package:flutter_base/pages/setting/dio_page.dart';
@@ -28,7 +28,7 @@ import 'package:flutter_base/pages/unknown_page.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:get/get.dart';
 
-/// 注册路由表
+/// 注册路由表(每个新建的页面都要在这进行注册对应路由)
 abstract class AppPages {
   static final pages = [
     GetPage(
@@ -39,7 +39,6 @@ abstract class AppPages {
       name: Routes.UnKnown,
       page: () => UnknownPage(),
     ),
-
 
     // =========================首页=============================
     GetPage(
@@ -71,8 +70,8 @@ abstract class AppPages {
       page: () => AppBarPage(),
     ),
     GetPage(
-      name: Routes.TabController,
-      page: () => TabControllerPage(),
+      name: Routes.TabBar,
+      page: () => TabBarPage(),
     ),
     GetPage(
       name: Routes.Drawer,
@@ -82,7 +81,6 @@ abstract class AppPages {
       name: Routes.RichText,
       page: () => RichTextPage(),
     ),
-
 
     // =========================布局=============================
     GetPage(
@@ -121,7 +119,6 @@ abstract class AppPages {
       name: Routes.Scaffold,
       page: () => ScaffoldPage(),
     ),
-
 
     // =========================设置=============================
     GetPage(

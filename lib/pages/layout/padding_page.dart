@@ -42,7 +42,7 @@ class MyPaddingWidget extends StatelessWidget {
         mainAxisSpacing: 10.0,
         // 宽高比
         childAspectRatio: 1,
-        children: this._getData(),
+        children: _getData(),
       ),
     );
   }

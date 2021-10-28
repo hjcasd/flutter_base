@@ -5,7 +5,7 @@ import 'package:flutter_base/utils/layout_utils.dart';
 class ListViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("ListView的使用", MyListView());
+    return LayoutUtils.getApp("ListView的使用", MyDynamicListView());
   }
 }
 
@@ -84,113 +84,11 @@ class MyListView extends StatelessWidget {
   }
 }
 
-/// 图片列表演示
-class MyImageListView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.all(10.0),
-      children: <Widget>[
-        ImageItemWidget(),
-        ImageItemWidget(),
-        ImageItemWidget(),
-        ImageItemWidget(),
-        ImageItemWidget(),
-      ],
-    );
-  }
-}
-
-/// 图片列表Item
-class ImageItemWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Image.network(
-          "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-        ),
-        Container(
-          child: Text(
-            "我是标题",
-            textAlign: TextAlign.center,
-          ),
-          padding: EdgeInsets.fromLTRB(0, 10.0, 0, 10.0),
-        ),
-      ],
-    );
-  }
-}
-
-/// 水平列表演示(高度自适应)
-class MyHorizontalListView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 120.0,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          Container(
-            width: 180.0,
-            color: Colors.yellow,
-            padding: EdgeInsets.all(10.0),
-          ),
-          Container(
-            width: 180.0,
-            color: Colors.blue,
-            padding: EdgeInsets.all(10.0),
-          ),
-          Container(
-            width: 180.0,
-            color: Colors.yellow,
-            padding: EdgeInsets.all(10.0),
-          ),
-          Container(
-            width: 180.0,
-            color: Colors.blue,
-            padding: EdgeInsets.all(10.0),
-          ),
-          Container(
-            width: 180.0,
-            color: Colors.yellow,
-            padding: EdgeInsets.all(10.0),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// 动态列表(for循环实现)
-class MyDynamicListView1 extends StatelessWidget {
-  List<Widget> _getData() {
-    List<Widget> list = [];
-    for (var i = 0; i < 20; i++) {
-      list.add(ListTile(
-        title: Text(
-          "我是标题${i + 1}",
-          textAlign: TextAlign.center,
-        ),
-      ));
-    }
-    return list;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.all(10.0),
-      children: this._getData(),
-    );
-  }
-}
-
 /// 动态列表(ListView.builder实现)
-class MyDynamicListView2 extends StatelessWidget {
+class MyDynamicListView extends StatelessWidget {
   final List<String> list = [];
 
-  MyDynamicListView2() {
+  MyDynamicListView() {
     for (var i = 0; i < 20; i++) {
       list.add("我是标题${i + 1}");
     }
@@ -199,14 +97,41 @@ class MyDynamicListView2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: this.list.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(
-              this.list[index],
-              textAlign: TextAlign.center,
-            ),
-          );
-        });
+      // 列表方向
+      scrollDirection: Axis.vertical,
+      // 列表个数
+      itemCount: list.length,
+      // 子Item
+      itemBuilder: (context, index) {
+        return ImageItemWidget(list[index]);
+      },
+    );
+  }
+}
+
+/// 列表Item
+class ImageItemWidget extends StatelessWidget {
+  final String _title;
+
+  ImageItemWidget(this._title);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        FadeInImage.assetNetwork(
+          placeholder: "images/test.png",
+          image: "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
+          fit: BoxFit.cover,
+        ),
+        Container(
+          child: Text(
+            _title,
+            textAlign: TextAlign.center,
+          ),
+          padding: EdgeInsets.fromLTRB(0, 10.0, 0, 10.0),
+        ),
+      ],
+    );
   }
 }

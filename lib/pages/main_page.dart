@@ -12,48 +12,52 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  /// 当前位置索引
   int _currentIndex = 0;
 
+  /// 页面集合
   List _pageList = [
     HomePage(),
     LayoutPage(),
     SettingPage(),
   ];
 
+  /// 底部Bar数据
+  final Map _bottomMap = {
+    "首页": Icon(Icons.home),
+    "布局": Icon(Icons.category),
+    "设置": Icon(Icons.settings),
+  };
+
+  /// 生成底部NavigationBarItem
+  List<BottomNavigationBarItem> _generateBarItems() {
+    var items = <BottomNavigationBarItem>[];
+    _bottomMap.forEach((key, value) {
+      items.add(
+        BottomNavigationBarItem(
+          icon: value,
+          label: key,
+        ),
+      );
+    });
+    return items;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Flutter Demo",
+          _bottomMap.keys.toList()[_currentIndex],
         ),
       ),
-      body: this._pageList[this._currentIndex],
+      body: _pageList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: this._currentIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
-            label: "首页",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.category,
-            ),
-            label: "布局",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings,
-            ),
-            label: "设置",
-          )
-        ],
+        currentIndex: _currentIndex,
+        items: _generateBarItems(),
         onTap: (int index) {
           setState(() {
-            this._currentIndex = index;
+            _currentIndex = index;
           });
         },
       ),

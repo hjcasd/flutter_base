@@ -14,7 +14,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
       padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
       child: Wrap(
         // 布局方向
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
           LayoutUtils.generateButton(Routes.List, "ListView"),
           LayoutUtils.generateButton(Routes.Grid, "GridView"),
           LayoutUtils.generateButton(Routes.AppBar, "AppBar"),
-          LayoutUtils.generateButton(Routes.TabController, "TabController"),
+          LayoutUtils.generateButton(Routes.TabBar, "TabBar"),
           LayoutUtils.generateButton(Routes.Drawer, "Drawer"),
         ],
       ),

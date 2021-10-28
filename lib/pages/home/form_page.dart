@@ -15,6 +15,7 @@ class FormPage extends StatelessWidget {
   }
 }
 
+/// 表单组件
 class MyFormWidget extends StatefulWidget {
   @override
   _FormPageState createState() => _FormPageState();
@@ -54,7 +55,7 @@ class _FormPageState extends State<MyFormWidget> {
                   Icons.account_box,
                 ),
               ),
-              onChanged: this._usernameChanged,
+              onChanged: _usernameChanged,
             ),
             TextField(
               controller: TextEditingController.fromValue(
@@ -79,7 +80,7 @@ class _FormPageState extends State<MyFormWidget> {
               onChanged: (value) {
                 print("$value");
                 setState(() {
-                  this._phoneController.text = value;
+                  _phoneController.text = value;
                 });
               },
             ),
@@ -90,21 +91,21 @@ class _FormPageState extends State<MyFormWidget> {
                 ),
                 Radio(
                   value: 1,
-                  groupValue: this._sex,
-                  onChanged: this._sexChanged,
+                  groupValue: _sex,
+                  onChanged: _sexChanged,
                 ),
                 Text(
                   "女: ",
                 ),
                 Radio(
                   value: 2,
-                  groupValue: this._sex,
-                  onChanged: this._sexChanged,
+                  groupValue: _sex,
+                  onChanged: _sexChanged,
                 ),
               ],
             ),
             Row(
-              children: this._getHobby(),
+              children: _getHobby(),
             ),
             TextField(
               maxLines: 4,
@@ -112,7 +113,7 @@ class _FormPageState extends State<MyFormWidget> {
                 hintText: "请输入描述",
                 border: OutlineInputBorder(),
               ),
-              onChanged: this._descChanged,
+              onChanged: _descChanged,
             ),
             SizedBox(
               height: 10.0,
@@ -122,10 +123,10 @@ class _FormPageState extends State<MyFormWidget> {
               height: 40.0,
               child: ElevatedButton(
                 onPressed: () {
-                  print("用户名: ${this._username}");
-                  print("性别: ${this._sex}");
-                  print("爱好: ${this._hobby}");
-                  print("描述: ${this._desc}");
+                  print("用户名: ${_username}");
+                  print("性别: ${_sex}");
+                  print("爱好: ${_hobby}");
+                  print("描述: ${_desc}");
                 },
                 child: Text(
                   "提交",
@@ -141,18 +142,18 @@ class _FormPageState extends State<MyFormWidget> {
   /// 获取Hobby
   List<Widget> _getHobby() {
     List<Widget> tmpList = [];
-    for (var i = 0; i < this._hobby.length; i++) {
+    for (var i = 0; i < _hobby.length; i++) {
       tmpList.add(
         Row(
           children: <Widget>[
             Text(
-              this._hobby[i]["title"],
+              _hobby[i]["title"],
             ),
             Checkbox(
-              value: this._hobby[i]["checked"],
+              value: _hobby[i]["checked"],
               onChanged: (value) {
                 setState(() {
-                  this._hobby[i]["checked"] = value;
+                  _hobby[i]["checked"] = value;
                 });
               },
             ),
@@ -165,19 +166,19 @@ class _FormPageState extends State<MyFormWidget> {
 
   void _usernameChanged(value) {
     setState(() {
-      this._username = value;
+      _username = value;
     });
   }
 
   void _sexChanged(value) {
     setState(() {
-      this._sex = value;
+      _sex = value;
     });
   }
 
   void _descChanged(value) {
     setState(() {
-      this._desc = value;
+      _desc = value;
     });
   }
 }
