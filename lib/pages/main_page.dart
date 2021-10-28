@@ -16,7 +16,7 @@ class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
 
   /// 页面集合
-  List _pageList = [
+  List<Widget> _pageList = [
     HomePage(),
     LayoutPage(),
     SettingPage(),
@@ -28,6 +28,31 @@ class _MainPageState extends State<MainPage> {
     "布局": Icon(Icons.category),
     "设置": Icon(Icons.settings),
   };
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          _bottomMap.keys.toList()[_currentIndex],
+        ),
+      ),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _pageList,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        items: _generateBarItems(),
+        type: BottomNavigationBarType.fixed,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+      ),
+    );
+  }
 
   /// 生成底部NavigationBarItem
   List<BottomNavigationBarItem> _generateBarItems() {
@@ -41,26 +66,5 @@ class _MainPageState extends State<MainPage> {
       );
     });
     return items;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          _bottomMap.keys.toList()[_currentIndex],
-        ),
-      ),
-      body: _pageList[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        items: _generateBarItems(),
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
-    );
   }
 }

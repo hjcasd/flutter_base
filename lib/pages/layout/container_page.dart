@@ -10,7 +10,11 @@ class ContainerPage extends StatelessWidget {
   }
 }
 
-/// Container: 容器组件(类似于Div)
+/// Container: 容器组件(类似于Div),以下是封装后的Box,便于开发
+/// SizedBox：指定尺寸的容器。
+/// ConstrainedBox：带约束条件的容器，如限制最小最大宽度和高度。
+/// DecoratedBox：带装饰的容器，比如渐变色。
+/// RotatedBox：旋转一定角度的容器。
 class MyContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
