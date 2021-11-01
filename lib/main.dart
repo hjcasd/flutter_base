@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _eventChannel.receiveBroadcastStream("event").listen(_onData, onError: _onError, onDone: _onDone);
+    _eventChannel
+        .receiveBroadcastStream("event")
+        .listen(_onData, onError: _onError, onDone: _onDone);
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
       unknownRoute: AppPages.pages[1],
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        brightness: Brightness.light,
       ),
     );
   }

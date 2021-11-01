@@ -26,7 +26,7 @@ class _MyHttpState extends State<MyHttp> {
   // get请求
   _getData() async {
     var url = 'http://a.itying.com/api/productlist';
-    var response = await http.get(url);
+    var response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       var data = convert.jsonDecode(response.body);
       _productList = data["result"];
@@ -39,7 +39,7 @@ class _MyHttpState extends State<MyHttp> {
   // post请求
   _postData() async {
     var url = 'https://example.com/whatsit/create';
-    var response = await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
+    var response = await http.post(Uri.parse(url), body: {'name': 'doodle', 'color': 'blue'});
     print('Response status: ${response.statusCode}');
   }
 

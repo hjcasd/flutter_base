@@ -1,12 +1,17 @@
+import 'package:flutter_base/pages/home/grid/grid_builder_page.dart';
+import 'package:flutter_base/pages/home/grid/grid_count_page.dart';
+import 'package:flutter_base/pages/home/list/list_dynamic_page.dart';
+import 'package:flutter_base/pages/home/list/list_example_page.dart';
+import 'package:flutter_base/pages/home/list/list_page.dart';
+import 'package:flutter_base/pages/home/list/list_static_page.dart';
 import 'package:flutter_base/pages/home/rich_text_page.dart';
 import 'package:flutter_base/pages/layout/scaffold_page.dart';
 import 'package:flutter_base/pages/main_page.dart';
 import 'package:flutter_base/pages/home/button_page.dart';
 import 'package:flutter_base/pages/layout/container_page.dart';
 import 'package:flutter_base/pages/home/form_page.dart';
-import 'package:flutter_base/pages/home/grid_page.dart';
+import 'package:flutter_base/pages/home/grid/grid_page.dart';
 import 'package:flutter_base/pages/home/image_page.dart';
-import 'package:flutter_base/pages/home/list_page.dart';
 import 'package:flutter_base/pages/home/text_page.dart';
 import 'package:flutter_base/pages/home/app_bar_page.dart';
 import 'package:flutter_base/pages/layout/card_page.dart';
@@ -53,14 +58,37 @@ abstract class AppPages {
       name: Routes.Image,
       page: () => ImagePage(),
     ),
+
     GetPage(
       name: Routes.List,
-      page: () => ListViewPage(),
+      page: () => ListPage(),
     ),
     GetPage(
-      name: Routes.Grid,
-      page: () => GridViewPage(),
+      name: Routes.ListStatic,
+      page: () => ListStaticPage(),
     ),
+    GetPage(
+      name: Routes.ListDynamic,
+      page: () => ListDynamicPage(),
+    ),
+    GetPage(
+      name: Routes.ListExample,
+      page: () => ListExamplePage(),
+    ),
+
+    GetPage(
+      name: Routes.Grid,
+      page: () => GridPage(),
+    ),
+    GetPage(
+      name: Routes.GridCount,
+      page: () => GridCountPage(),
+    ),
+    GetPage(
+      name: Routes.GridBuilder,
+      page: () => GridBuilderPage(),
+    ),
+
     GetPage(
       name: Routes.Form,
       page: () => FormPage(),

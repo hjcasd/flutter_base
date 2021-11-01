@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
       child: Wrap(
         // 布局方向

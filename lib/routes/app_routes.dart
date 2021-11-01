@@ -8,7 +8,12 @@ abstract class Routes {
   static const Button = '/button';
   static const Image = '/image';
   static const List = '/list';
+  static const ListStatic = '/list/static';
+  static const ListDynamic = '/list/dynamic';
+  static const ListExample = '/list/example';
   static const Grid = '/grid';
+  static const GridCount = '/grid/count';
+  static const GridBuilder = '/grid/builder';
   static const Form = '/form';
   static const AppBar = '/app_bar';
   static const TabBar = '/tab_bar';
