@@ -5,17 +5,26 @@ import 'package:flutter_base/utils/layout_utils.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 /// 图文列表页面
-class ListExamplePage extends StatefulWidget {
-  ListExamplePage({Key key}) : super(key: key);
-
+class ListExamplePage extends StatelessWidget {
   @override
-  _ListExampleState createState() {
-    return _ListExampleState();
+  Widget build(BuildContext context) {
+    return LayoutUtils.getApp(
+      "图文列表",
+      MyListExampleWidget(),
+    );
   }
 }
 
-/// 状态
-class _ListExampleState extends State<ListExamplePage> {
+/// Page
+class MyListExampleWidget extends StatefulWidget {
+  @override
+  _MyListExampleState createState() {
+    return _MyListExampleState();
+  }
+}
+
+/// State
+class _MyListExampleState extends State<MyListExampleWidget> {
   List<Map<String, Object>> _listItems = [];
   int _currentPage = 1;
   static const PAGE_SIZE = 20;
@@ -45,26 +54,23 @@ class _ListExampleState extends State<ListExamplePage> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp(
-      "图文列表",
-      EasyRefresh(
-        firstRefresh: true,
-        onRefresh: () async {
-          _refresh();
+    return EasyRefresh(
+      firstRefresh: true,
+      onRefresh: () async {
+        _refresh();
+      },
+      onLoad: () async {
+        _load();
+      },
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return ImageTitleItem(
+            _listItems[index]["title"],
+            _listItems[index]["imageUrl"],
+            _listItems[index]["viewCount"],
+          );
         },
-        onLoad: () async {
-          _load();
-        },
-        child: ListView.builder(
-          itemBuilder: (context, index) {
-            return ImageTitleItem(
-              _listItems[index]["title"],
-              _listItems[index]["imageUrl"],
-              _listItems[index]["viewCount"],
-            );
-          },
-          itemCount: _listItems.length,
-        ),
+        itemCount: _listItems.length,
       ),
     );
   }

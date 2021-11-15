@@ -10,7 +10,6 @@ abstract class Routes {
   static const List = '/list';
   static const ListStatic = '/list/static';
   static const ListDynamic = '/list/dynamic';
-  static const ListExample = '/list/example';
   static const Grid = '/grid';
   static const GridCount = '/grid/count';
   static const GridBuilder = '/grid/builder';
@@ -36,6 +35,11 @@ abstract class Routes {
   static const Http = '/http';
   static const Dio = '/dio';
   static const GetX = '/getx';
-  static const Dialog = '/dialog';
   static const Native = '/native';
+
+  // 其他
+  static const DialogExample = '/dialog/example';
+  static const ListExample = '/list/example';
+  static const LoginExample = '/login/example';
+
 }

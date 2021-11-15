@@ -1,7 +1,7 @@
 import 'package:flutter_base/pages/home/grid/grid_builder_page.dart';
 import 'package:flutter_base/pages/home/grid/grid_count_page.dart';
 import 'package:flutter_base/pages/home/list/list_dynamic_page.dart';
-import 'package:flutter_base/pages/home/list/list_example_page.dart';
+import 'package:flutter_base/pages/other/list_example_page.dart';
 import 'package:flutter_base/pages/home/list/list_page.dart';
 import 'package:flutter_base/pages/home/list/list_static_page.dart';
 import 'package:flutter_base/pages/home/rich_text_page.dart';
@@ -23,7 +23,8 @@ import 'package:flutter_base/pages/layout/row_page.dart';
 import 'package:flutter_base/pages/layout/stack_page.dart';
 import 'package:flutter_base/pages/home/tab_bar_page.dart';
 import 'package:flutter_base/pages/layout/wrap_page.dart';
-import 'package:flutter_base/pages/setting/dialog_page.dart';
+import 'package:flutter_base/pages/other/dialog_example_page.dart';
+import 'package:flutter_base/pages/other/login_example_page.dart';
 import 'package:flutter_base/pages/setting/dio_page.dart';
 import 'package:flutter_base/pages/setting/getx_page.dart';
 import 'package:flutter_base/pages/setting/http_page.dart';
@@ -71,10 +72,7 @@ abstract class AppPages {
       name: Routes.ListDynamic,
       page: () => ListDynamicPage(),
     ),
-    GetPage(
-      name: Routes.ListExample,
-      page: () => ListExamplePage(),
-    ),
+
 
     GetPage(
       name: Routes.Grid,
@@ -150,10 +148,6 @@ abstract class AppPages {
 
     // =========================设置=============================
     GetPage(
-      name: Routes.Dialog,
-      page: () => DialogPage(),
-    ),
-    GetPage(
       name: Routes.Swiper,
       page: () => SwiperPage(),
     ),
@@ -172,6 +166,20 @@ abstract class AppPages {
     GetPage(
       name: Routes.Native,
       page: () => NativePage(),
+    ),
+
+    // =========================设置=============================
+    GetPage(
+      name: Routes.DialogExample,
+      page: () => DialogExamplePage(),
+    ),
+    GetPage(
+      name: Routes.ListExample,
+      page: () => ListExamplePage(),
+    ),
+    GetPage(
+      name: Routes.LoginExample,
+      page: () => LoginExamplePage(),
     ),
   ];
 }

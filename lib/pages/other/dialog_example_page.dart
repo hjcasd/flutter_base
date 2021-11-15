@@ -4,20 +4,24 @@ import 'package:flutter_base/widget/custom_dialog.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 /// Dialog页面
-class DialogPage extends StatelessWidget {
+class DialogExamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("Dialog的使用", MyDialog());
+    return LayoutUtils.getApp(
+      "Dialog的使用",
+      MyDialogWidget(),
+    );
   }
 }
 
-class MyDialog extends StatefulWidget {
+/// Page
+class MyDialogWidget extends StatefulWidget {
   @override
   _MyDialogState createState() => _MyDialogState();
 }
 
-/// Dialog演示
-class _MyDialogState extends State<MyDialog> {
+/// State
+class _MyDialogState extends State<MyDialogWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -197,5 +201,4 @@ class _MyDialogState extends State<MyDialog> {
       fontSize: 16.0,
     );
   }
-
 }

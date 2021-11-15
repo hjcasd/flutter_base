@@ -17,7 +17,6 @@ class _SettingPageState extends State<SettingPage> {
       width: double.infinity,
       child: Column(
         children: [
-          LayoutUtils.generateButton(Routes.Dialog, "Dialog"),
           LayoutUtils.generateButton(Routes.Swiper, "Swiper"),
           LayoutUtils.generateButton(Routes.Http, "Http"),
           LayoutUtils.generateButton(Routes.Dio, "Dio"),

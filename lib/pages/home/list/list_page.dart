@@ -21,7 +21,6 @@ class MyListWidget extends StatelessWidget {
         children: [
           LayoutUtils.generateButton(Routes.ListStatic, "静态列表"),
           LayoutUtils.generateButton(Routes.ListDynamic, "动态列表"),
-          LayoutUtils.generateButton(Routes.ListExample, "图文列表"),
         ],
       ),
     );

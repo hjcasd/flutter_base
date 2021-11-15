@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/pages/tabs/home_page.dart';
 import 'package:flutter_base/pages/tabs/layout_page.dart';
+import 'package:flutter_base/pages/tabs/other_page.dart';
 import 'package:flutter_base/pages/tabs/setting_page.dart';
 
 /// 主界面
@@ -20,6 +21,7 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     LayoutPage(),
     SettingPage(),
+    OtherPage()
   ];
 
   /// 底部Bar数据
@@ -27,6 +29,7 @@ class _MainPageState extends State<MainPage> {
     "首页": Icon(Icons.home),
     "布局": Icon(Icons.category),
     "设置": Icon(Icons.settings),
+    "其他": Icon(Icons.account_box),
   };
 
   @override
