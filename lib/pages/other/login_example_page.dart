@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/divider_text_field.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 /// 登录页面
 class LoginExamplePage extends StatelessWidget {
@@ -25,9 +26,10 @@ class MyLoginWidget extends StatefulWidget {
 
 /// State
 class _MyLoginState extends State<MyLoginWidget> {
+  var _phone = "";
+  var _password = "";
   var _phoneController = TextEditingController();
   var _passwordController = TextEditingController();
-  var _phone = "", _password = "";
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class _MyLoginState extends State<MyLoginWidget> {
     );
   }
 
-  // 圆形图片
+  // 圆形头像
   Widget _getRoundImage(String imageUrl, double size) {
     return ClipOval(
       child: Image.network(
@@ -66,33 +68,21 @@ class _MyLoginState extends State<MyLoginWidget> {
   /// 用户名输入框
   Widget _getPhoneInput() {
     return DividerTextField(
-      TextInputType.number,
-      inputDecoration: InputDecoration(
-        hintText: "请输入手机号",
-        icon: Icon(
-          Icons.phone,
-          size: 20.0,
-        ),
-        border: InputBorder.none,
-        suffixIcon: GestureDetector(
-          child: Offstage(
-            child: Icon(
-              Icons.clear,
-            ),
-            offstage: _phone == "",
-          ),
-          onTap: () {
-            setState(() {
-              _phone = "";
-              _phoneController.clear();
-            });
-          },
-        ),
-      ),
+      _phone,
+      keyboardType: TextInputType.number,
+      maxLength: 11,
+      hintText: "请输入手机号",
+      prefixIcon: Icons.phone,
       controller: _phoneController,
       onChanged: (value) {
         setState(() {
           _phone = value;
+        });
+      },
+      onClear: () {
+        setState(() {
+          _phone = "";
+          _phoneController.clear();
         });
       },
     );
@@ -101,34 +91,21 @@ class _MyLoginState extends State<MyLoginWidget> {
   /// 密码输入框
   Widget _getPasswordInput() {
     return DividerTextField(
-      TextInputType.text,
+      _password,
+      keyboardType: TextInputType.text,
       obscureText: true,
-      inputDecoration: InputDecoration(
-        hintText: "请输入密码",
-        icon: Icon(
-          Icons.lock_open,
-          size: 20.0,
-        ),
-        border: InputBorder.none,
-        suffixIcon: GestureDetector(
-          child: Offstage(
-            child: Icon(
-              Icons.clear,
-            ),
-            offstage: _password == "",
-          ),
-          onTap: () {
-            setState(() {
-              _password = "";
-              _passwordController.clear();
-            });
-          },
-        ),
-      ),
+      hintText: "请输入密码",
+      prefixIcon: Icons.lock_open,
       controller: _passwordController,
       onChanged: (value) {
         setState(() {
           _password = value;
+        });
+      },
+      onClear: () {
+        setState(() {
+          _password = "";
+          _passwordController.clear();
         });
       },
     );
@@ -140,22 +117,34 @@ class _MyLoginState extends State<MyLoginWidget> {
       height: 50.0,
       width: double.infinity,
       margin: EdgeInsets.all(10.0),
-      child: TextButton(
+      child: ElevatedButton(
         child: Text(
           "登录",
         ),
-        style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-        ),
         onPressed: () {
+          if (_phone.isEmpty) {
+            _showToast("请输入手机号");
+            return;
+          }
+          if (_password.isEmpty) {
+            _showToast("请输入密码");
+            return;
+          }
           print("phone: $_phone, password: $_password");
         },
       ),
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(4.0),
-      ),
+    );
+  }
+
+  /// Toast
+  _showToast(String msg) {
+    Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: Colors.green,
+      textColor: Colors.white,
+      fontSize: 16.0,
     );
   }
 }

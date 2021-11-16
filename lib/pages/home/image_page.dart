@@ -75,12 +75,13 @@ class CircleImageWidget1 extends StatelessWidget {
     return Container(
       width: 100.0,
       height: 100.0,
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green,
           width: 2.0,
         ),
-        borderRadius: BorderRadius.all(Radius.circular(150.0)),
+        borderRadius: BorderRadius.all(Radius.circular(50.0)),
         image: DecorationImage(
           image: NetworkImage(
             "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
