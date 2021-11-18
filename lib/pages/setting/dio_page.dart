@@ -1,3 +1,4 @@
+import 'package:common_utils/common_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
@@ -20,16 +21,14 @@ class _MyDioState extends State<MyDio> {
   // get请求
   _getData() async {
     Response<Map> response = await Dio().get("http://a.itying.com/api/productlist");
-    var list = response.data["result"];
-    print(list.length);
-    print(list[0]["title"]);
+    LogUtil.e(response, tag: "get");
   }
 
   // post请求
   _postData() async {
     Dio dio = Dio();
     var response = await dio.post("https://www.xx.com/api/test", data: {"id": 12, "name": "wendu"});
-    print(response.statusCode);
+    LogUtil.e(response, tag: "post");
   }
 
   @override

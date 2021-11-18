@@ -21,7 +21,7 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     LayoutPage(),
     SettingPage(),
-    OtherPage()
+    OtherPage(),
   ];
 
   /// 底部Bar数据
