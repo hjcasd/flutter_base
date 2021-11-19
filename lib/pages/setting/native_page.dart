@@ -6,9 +6,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 class NativePage extends StatelessWidget {
   // 注册对应的MethodChannel 注：要保证channel name、codec与原生层一致
   final MethodChannel _methodChannel = MethodChannel("com.flutter/method");
+  final EventChannel _eventChannel = EventChannel("com.flutter/event");
 
   @override
   Widget build(BuildContext context) {
+    _eventChannel.receiveBroadcastStream("event").listen(_onData, onError: _onError, onDone: _onDone);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Page'),
@@ -42,5 +45,17 @@ class NativePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _onDone() {
+    print("onDone()....");
+  }
+
+  void _onError(error) {
+    print("onDone()....===$error");
+  }
+
+  void _onData(message) {
+    print("onDone()....===$message");
   }
 }

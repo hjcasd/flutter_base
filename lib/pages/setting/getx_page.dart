@@ -15,7 +15,7 @@ class MyGetXWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        LayoutUtils.generateButton(Routes.Http, "打开新页面"),
+        LayoutUtils.generateButton(Routes.Text, "打开新页面"),
       ],
     );
   }

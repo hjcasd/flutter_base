@@ -22,7 +22,7 @@ class MyTabBarWidget extends StatefulWidget {
 }
 
 class _MyTabBarState extends State<MyTabBarWidget> with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
 
   final List<Tab> _tabList = <Tab>[
     new Tab(
@@ -58,7 +58,7 @@ class _MyTabBarState extends State<MyTabBarWidget> with SingleTickerProviderStat
     // tab切换监听
     _tabController.addListener(() {
       // 滑动监听调用一次,点击切换调用2次
-      if (_tabController.index == _tabController.animation.value) {
+      if (_tabController.index == _tabController.animation?.value) {
         print("当前索引: ${_tabController.index}");
       }
     });
@@ -97,8 +97,8 @@ class _MyTabBarState extends State<MyTabBarWidget> with SingleTickerProviderStat
         controller: _tabController,
         children: _tabList.map((Tab tab) {
           return Center(
-            child: new Text(
-              tab.text,
+            child: Text(
+              tab.text!,
             ),
           );
         }).toList(),

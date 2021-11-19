@@ -6,16 +6,16 @@ class DividerTextField extends StatelessWidget {
   final String value;
   final double height;
   final double margin;
-  final TextInputType keyboardType;
+  final TextInputType? keyboardType;
   final bool obscureText;
-  final int maxLength;
-  final FocusNode focusNode;
-  final String hintText;
-  final IconData prefixIcon;
+  final int? maxLength;
+  final FocusNode? focusNode;
+  final String? hintText;
+  final IconData? prefixIcon;
   final double prefixIconSize;
-  final Function onClear;
-  final TextEditingController controller;
-  final Function onChanged;
+  final Function? onClear;
+  final TextEditingController? controller;
+  final ValueChanged<String>? onChanged;
 
   DividerTextField(
     this.value, {
@@ -31,7 +31,8 @@ class DividerTextField extends StatelessWidget {
     this.onClear,
     this.controller,
     this.onChanged,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +62,7 @@ class DividerTextField extends StatelessWidget {
                   offstage: value == null || value == "",
                 ),
                 onTap: () {
-                  onClear();
+                  onClear!();
                 },
               ),
             ),

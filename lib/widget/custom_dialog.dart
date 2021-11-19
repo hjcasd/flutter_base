@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 
 /// 自定义Dialog
@@ -6,20 +5,14 @@ class CustomDialog extends StatelessWidget {
   final String title;
   final String content;
 
-  CustomDialog({this.title, this.content});
-
-  // 定时器
-  _showTimer(context) {
-    Timer.periodic(Duration(milliseconds: 3000), (t) {
-      Navigator.pop(context);
-      // 取消定时器
-      t.cancel();
-    });
-  }
+  CustomDialog({
+    this.title = "",
+    this.content = "",
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    _showTimer(context);
     return Material(
       type: MaterialType.transparency,
       child: Center(

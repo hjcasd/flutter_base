@@ -1,7 +1,10 @@
 import 'package:common_utils/common_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/data/login_entity.dart';
+import 'package:flutter_base/network/api_service.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
+import 'dart:convert' as convert;
 
 /// Dio页面
 class DioPage extends StatelessWidget {
@@ -18,6 +21,9 @@ class MyDio extends StatefulWidget {
 
 /// Dio: 网络请求库
 class _MyDioState extends State<MyDio> {
+  Map _userMap = {"name": "张三", "age": 24};
+  String _userStr = '{"name":"张三","age":24}';
+
   // get请求
   _getData() async {
     Response<Map> response = await Dio().get("http://a.itying.com/api/productlist");
@@ -26,9 +32,9 @@ class _MyDioState extends State<MyDio> {
 
   // post请求
   _postData() async {
-    Dio dio = Dio();
-    var response = await dio.post("https://www.xx.com/api/test", data: {"id": 12, "name": "wendu"});
-    LogUtil.e(response, tag: "post");
+    var response = await ApiService.login("hjcasd", "asd123456789");
+    var entity = LoginEntity.fromJson(response.data);
+    LogUtil.e(entity.data?.username, tag: "post");
   }
 
   @override
@@ -39,7 +45,7 @@ class _MyDioState extends State<MyDio> {
         children: <Widget>[
           ElevatedButton(
             child: Text(
-              "Get请求获取数据",
+              "Get请求",
             ),
             onPressed: _getData,
           ),
@@ -48,9 +54,33 @@ class _MyDioState extends State<MyDio> {
           ),
           ElevatedButton(
             child: Text(
-              "Post请求获取数据",
+              "Post请求",
             ),
             onPressed: _postData,
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          ElevatedButton(
+            child: Text(
+              "Map转换为Json字符串",
+            ),
+            onPressed: () {
+              var jsonStr = convert.jsonEncode(_userMap);
+              print(jsonStr);
+            },
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          ElevatedButton(
+            child: Text(
+              "Json字符串转换为Map",
+            ),
+            onPressed: () {
+              var map = convert.jsonDecode(_userStr);
+              print(map["name"]);
+            },
           ),
         ],
       ),

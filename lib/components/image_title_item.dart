@@ -11,7 +11,12 @@ class ImageTitleItem extends StatelessWidget {
   static const double IMAGE_WIDTH = 150;
   static const double TITLE_HEIGHT = 80;
 
-  ImageTitleItem(this.title, this.imageUrl, this.viewCount, {Key key}) : super(key: key);
+  ImageTitleItem(
+    this.title,
+    this.imageUrl,
+    this.viewCount, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

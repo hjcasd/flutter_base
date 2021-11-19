@@ -5,7 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 /// 登录页面
 class LoginExamplePage extends StatelessWidget {
-  LoginExamplePage({Key key}) : super(key: key);
+  LoginExamplePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

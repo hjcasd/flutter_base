@@ -12,16 +12,10 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final EventChannel _eventChannel = EventChannel("com.flutter/event");
-
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    _eventChannel
-        .receiveBroadcastStream("event")
-        .listen(_onData, onError: _onError, onDone: _onDone);
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Base",
@@ -34,17 +28,5 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
       ),
     );
-  }
-
-  void _onDone() {
-    print("onDone()....");
-  }
-
-  void _onError(error) {
-    print("onDone()....===$error");
-  }
-
-  void _onData(message) {
-    print("onDone()....===$message");
   }
 }

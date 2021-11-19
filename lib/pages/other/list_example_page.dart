@@ -65,9 +65,9 @@ class _MyListExampleState extends State<MyListExampleWidget> {
       child: ListView.builder(
         itemBuilder: (context, index) {
           return ImageTitleItem(
-            _listItems[index]["title"],
-            _listItems[index]["imageUrl"],
-            _listItems[index]["viewCount"],
+            _listItems[index]["title"] as String,
+            _listItems[index]["imageUrl"] as String,
+            _listItems[index]["viewCount"] as int,
           );
         },
         itemCount: _listItems.length,

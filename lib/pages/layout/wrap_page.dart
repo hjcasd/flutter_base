@@ -39,7 +39,7 @@ class MyWrap extends StatelessWidget {
 class MyButtonWidget extends StatelessWidget {
   final String text;
 
-  MyButtonWidget(this.text, {Key key}) : super(key: key);
+  MyButtonWidget(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

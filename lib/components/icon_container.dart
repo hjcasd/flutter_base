@@ -6,7 +6,12 @@ class IconContainer extends StatelessWidget {
   final color;
   final size;
 
-  IconContainer(this.icon, {this.size = 32.0, this.color = Colors.blue});
+  IconContainer(
+    this.icon, {
+    this.size = 32.0,
+    this.color = Colors.blue,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

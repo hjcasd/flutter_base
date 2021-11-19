@@ -27,7 +27,6 @@ import 'package:flutter_base/pages/other/dialog_example_page.dart';
 import 'package:flutter_base/pages/other/login_example_page.dart';
 import 'package:flutter_base/pages/setting/dio_page.dart';
 import 'package:flutter_base/pages/setting/getx_page.dart';
-import 'package:flutter_base/pages/setting/http_page.dart';
 import 'package:flutter_base/pages/setting/native_page.dart';
 import 'package:flutter_base/pages/setting/swiper_page.dart';
 import 'package:flutter_base/pages/unknown_page.dart';
@@ -150,10 +149,6 @@ abstract class AppPages {
     GetPage(
       name: Routes.Swiper,
       page: () => SwiperPage(),
-    ),
-    GetPage(
-      name: Routes.Http,
-      page: () => HttpPage(),
     ),
     GetPage(
       name: Routes.Dio,
