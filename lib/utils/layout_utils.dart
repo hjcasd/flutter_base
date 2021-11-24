@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 /// 布局生成工具类
 class LayoutUtils {
-  LayoutUtils._();
+  LayoutUtils._internal();
 
   static Widget getApp(String text, Widget body) {
     return MaterialApp(

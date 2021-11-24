@@ -1,5 +1,5 @@
 /// 数据管理
-class DynamicMockData {
+class MockData {
   /// 生成列表数据
   static Future<List<Map<String, Object>>> getList(int page, int size) async {
     return List<Map<String, Object>>.generate(size, (index) {

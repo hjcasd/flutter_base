@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/image_title_item.dart';
-import 'package:flutter_base/data/dynamic_mock_data.dart';
+import 'package:flutter_base/data/mock_data.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
@@ -42,7 +42,7 @@ class _MyListExampleState extends State<MyListExampleWidget> {
   }
 
   void _requestNewItems() async {
-    List<Map<String, Object>> newItems = await DynamicMockData.getList(_currentPage, PAGE_SIZE);
+    List<Map<String, Object>> newItems = await MockData.getList(_currentPage, PAGE_SIZE);
     setState(() {
       if (_currentPage > 1) {
         _listItems += newItems;

@@ -49,10 +49,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - images/test.png
-    - images/2.0x/test.png
-    - images/3.0x/test.png
-    - images/4.0x/test.png
+    - images/
 
   # To add Flutter specific assets to your application, add an assets section,
   # like this:
