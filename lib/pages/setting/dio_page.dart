@@ -2,7 +2,7 @@ import 'package:common_utils/common_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/data/login_entity.dart';
-import 'package:flutter_base/network/api_service.dart';
+import 'package:flutter_base/network/service/api_service.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 import 'dart:convert' as convert;
 
@@ -32,8 +32,8 @@ class _MyDioState extends State<MyDio> {
 
   // post请求
   _postData() async {
-    var response = await ApiService.login("hjcasd", "asd123456789");
-    var entity = LoginEntity.fromJson(response.data);
+    var data = await ApiService.login("hjcasd", "asd123456789");
+    var entity = LoginEntity.fromJson(data);
     LogUtil.e(entity.data?.username, tag: "post");
   }
 
