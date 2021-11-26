@@ -6,8 +6,8 @@ class ApiService {
   /// 登录
   static Future login(String username, String password) async {
     var response = HttpManager.getInstance().post(UrlPath.LOGIN_PATH, params: {
-      username,
-      password,
+      username: username,
+      password: password,
     });
     return response;
   }
