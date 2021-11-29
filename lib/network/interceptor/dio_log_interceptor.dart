@@ -1,37 +1,32 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_base/extension/map_list_to_string.dart';
-import 'package:logger/logger.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 
 /// 日志拦截器
 class DioLogInterceptor extends Interceptor {
-  var _logger = Logger(
-    printer: PrettyPrinter(),
-  );
-
   /// 请求
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     String requestStr = "request url: ${options.baseUrl + options.path}\n";
     requestStr += "request method: ${options.method}\n";
-    requestStr += "request header:\n${options.headers.mapToStructureString()}\n";
-    requestStr += "request params:\n${options.queryParameters.mapToStructureString()}\n";
+    requestStr += "request header:\n${options.headers.mapToJsonString()}\n";
+    requestStr += "request params:\n${options.queryParameters.mapToJsonString()}\n";
 
     final data = options.data;
     if (data != null) {
       if (data is Map) {
-        requestStr += "request body:\n${data.mapToStructureString()}\n";
+        requestStr += "request body:\n${data.mapToJsonString()}\n";
       } else if (data is FormData) {
         final formDataMap = Map()
           ..addEntries(data.fields)
           ..addEntries(data.files);
-        requestStr += "request body:\n${formDataMap.mapToStructureString()}\n";
+        requestStr += "request body:\n${formDataMap.mapToJsonString()}\n";
       } else
         requestStr += "request body:\n${data.toString()}\n";
     }
 
-    _logger.e(requestStr, "onRequest");
-
-    handler.next(options);
+    LogHelper.e("DioLogInterceptor onRequest", requestStr);
+    super.onRequest(options, handler);
   }
 
   /// 出错
@@ -39,14 +34,15 @@ class DioLogInterceptor extends Interceptor {
   void onError(DioError err, ErrorInterceptorHandler handler) {
     String errorStr = "error url: ${err.requestOptions.baseUrl + err.requestOptions.path}\n";
     errorStr += "error method: ${err.requestOptions.method}\n";
-    errorStr += "error header:\n${err.response?.headers.map.mapToStructureString()}\n";
+    errorStr += "error header:\n${err.response?.headers.map.mapToJsonString()}\n";
 
     if (err.response != null && err.response?.data != null) {
       errorStr += "error body:\n${_parseResponse(err.response!)}\n";
     }
-    _logger.e(errorStr, "onError");
 
-    handler.next(err);
+    LogHelper.e("DioLogInterceptor onError", errorStr);
+
+    super.onError(err, handler);
   }
 
   /// 响应
@@ -62,9 +58,10 @@ class DioLogInterceptor extends Interceptor {
     if (response.data != null) {
       responseStr += "response body:\n ${_parseResponse(response)}";
     }
-    _logger.e(responseStr, "onResponse");
 
-    handler.next(response);
+    LogHelper.e("DioLogInterceptor onResponse", responseStr);
+
+    super.onResponse(response, handler);
   }
 
   /// 解析响应
@@ -72,9 +69,9 @@ class DioLogInterceptor extends Interceptor {
     String responseStr = "";
     var data = response.data;
     if (data is Map) {
-      responseStr += data.mapToStructureString();
+      responseStr += data.mapToJsonString();
     } else if (data is List) {
-      responseStr += data.listToStructureString();
+      responseStr += data.listToJsonString();
     } else {
       responseStr += response.data.toString();
     }

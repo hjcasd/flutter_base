@@ -1,10 +1,11 @@
-import 'package:common_utils/common_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/data/login_entity.dart';
 import 'package:flutter_base/network/service/api_service.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 import 'dart:convert' as convert;
+
+import 'package:flutter_base/utils/log_helper.dart';
 
 /// Dio页面
 class DioPage extends StatelessWidget {
@@ -27,14 +28,14 @@ class _MyDioState extends State<MyDio> {
   // get请求
   _getData() async {
     Response<Map> response = await Dio().get("http://a.itying.com/api/productlist");
-    LogUtil.e(response, tag: "get");
+    LogHelper.map("Get", response.data!);
   }
 
   // post请求
   _postData() async {
     var data = await ApiService.login("hjcasd", "asd123456789");
     var entity = LoginEntity.fromJson(data);
-    LogUtil.e(entity.data?.username, tag: "post");
+    LogHelper.e("Post", entity.data?.username);
   }
 
   @override

@@ -10,8 +10,8 @@ class LoadingUtils {
   }
 
   /// 隐藏Loading
-  static dismiss(bool isShowLoading) {
-    if (isShowLoading) {
+  static dismiss() {
+    if (EasyLoading.isShow) {
       EasyLoading.dismiss();
     }
   }
