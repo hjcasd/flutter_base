@@ -33,7 +33,7 @@ abstract class Routes {
   // 设置
   static const Swiper = '/swiper';
   static const Dio = '/dio';
-  static const GetX = '/getx';
+  static const GetX = '/getX';
   static const Native = '/native';
 
   // 其他

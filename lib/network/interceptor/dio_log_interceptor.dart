@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_base/extension/map_list_to_string.dart';
+import 'package:flutter_base/utils/extension/map_list_to_string.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 
 /// 日志拦截器

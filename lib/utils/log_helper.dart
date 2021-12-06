@@ -1,4 +1,4 @@
-import 'package:flutter_base/extension/map_list_to_string.dart';
+import 'package:flutter_base/utils/extension/map_list_to_string.dart';
 import 'package:logger/logger.dart';
 
 /// 日志管理
