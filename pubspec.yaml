@@ -30,12 +30,12 @@ dependencies:
   dio: ^4.0.1
   get: ^4.3.8
   common_utils: ^2.0.2
+  logger: ^1.1.0
   fluttertoast: ^8.0.8
   flutter_swiper_null_safety: ^1.0.2
   flutter_easyrefresh: ^2.2.1
   cached_network_image: ^3.1.0
   flutter_easyloading: ^3.0.3
-  logger: ^1.1.0
 
 dev_dependencies:
   flutter_test:

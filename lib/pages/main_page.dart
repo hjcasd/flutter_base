@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/pages/tabs/home_page.dart';
-import 'package:flutter_base/pages/tabs/layout_page.dart';
-import 'package:flutter_base/pages/tabs/other_page.dart';
-import 'package:flutter_base/pages/tabs/setting_page.dart';
+import 'package:flutter_base/ui/home_page.dart';
+import 'package:flutter_base/ui/layout_page.dart';
+import 'package:flutter_base/ui/other_page.dart';
+import 'package:flutter_base/ui/setting_page.dart';
 
 /// 主界面
 class MainPage extends StatefulWidget {
