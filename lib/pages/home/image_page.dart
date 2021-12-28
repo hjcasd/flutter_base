@@ -32,7 +32,7 @@ class MyLocalImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      "images/test.png",
+      "assets/images/test.png",
       fit: BoxFit.cover,
     );
   }

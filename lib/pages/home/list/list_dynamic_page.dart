@@ -44,7 +44,7 @@ class ImageItemWidget extends StatelessWidget {
     return Column(
       children: <Widget>[
         FadeInImage.assetNetwork(
-          placeholder: "images/test.png",
+          placeholder: "assets/images/test.png",
           image: "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
           fit: BoxFit.cover,
         ),

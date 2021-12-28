@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_base/data/login_entity.dart';
+import 'package:flutter_base/data/entity/login_entity.dart';
 import 'package:flutter_base/network/service/api_service.dart';
 import 'package:flutter_base/utils/layout_utils.dart';
 import 'dart:convert' as convert;
-
 import 'package:flutter_base/utils/log_helper.dart';
 
 /// Dio页面

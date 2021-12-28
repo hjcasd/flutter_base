@@ -45,8 +45,8 @@ class ImageTitleItem extends StatelessWidget {
       width: IMAGE_WIDTH,
       child: CachedNetworkImage(
         imageUrl: imageUrl,
-        placeholder: (context, url) => Image.asset('images/test.png'),
-        errorWidget: (context, url, error) => Image.asset('images/test.png'),
+        placeholder: (context, url) => Image.asset('assets/images/test.png'),
+        errorWidget: (context, url, error) => Image.asset('assets/images/test.png'),
       ),
       height: ITEM_HEIGHT,
     );
