@@ -13,7 +13,7 @@ abstract class Routes {
   static const Grid = '/grid';
   static const GridCount = '/grid/count';
   static const GridBuilder = '/grid/builder';
-  static const Form = '/form';
+  static const Form = '/identity_example';
   static const AppBar = '/app_bar';
   static const TabBar = '/tab_bar';
   static const Drawer = '/drawer';
@@ -37,8 +37,9 @@ abstract class Routes {
   static const Native = '/native';
 
   // 其他
-  static const DialogExample = '/dialog/example';
+  static const DialogExample = '/dialog_example/example';
   static const ListExample = '/list/example';
   static const LoginExample = '/login/example';
+  static const IdentityExample = '/identity_example/example';
 
 }

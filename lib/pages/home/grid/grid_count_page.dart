@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/utils/layout_utils.dart';
+import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 
 /// GridView.count实现网格页面
 class GridCountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp(" GridView.count实现网格", MyCountGridWidget());
+    return MaterialApp(
+      home: Scaffold(
+        appBar: SmartAppBar("GridView.count实现网格"),
+        body: MyCountGridWidget(),
+      ),
+    );
   }
 }
 

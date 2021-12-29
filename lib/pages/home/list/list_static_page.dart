@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/utils/layout_utils.dart';
+import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 
 /// 静态列表页面
 class ListStaticPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("静态列表", MyStaticListWidget());
+    return MaterialApp(
+      home: Scaffold(
+        appBar: SmartAppBar("静态列表"),
+        body: MyStaticListWidget(),
+      ),
+    );
   }
 }
 
@@ -50,7 +55,7 @@ class MyStaticListWidget extends StatelessWidget {
         ),
         ListTile(
           leading: Image.network(
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
+            "http://pic1.win4000.com/wallpaper/b/58ca58d35d719.jpg",
           ),
           title: Text(
             "我是标题111111",
@@ -65,7 +70,7 @@ class MyStaticListWidget extends StatelessWidget {
         ),
         ListTile(
           trailing: Image.network(
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
+            "http://pic1.win4000.com/wallpaper/5/58d1e4522374c.jpg",
           ),
           title: Text(
             "我是标题111111",

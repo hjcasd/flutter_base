@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/ui/home_page.dart';
-import 'package:flutter_base/ui/layout_page.dart';
-import 'package:flutter_base/ui/other_page.dart';
-import 'package:flutter_base/ui/setting_page.dart';
+import 'package:flutter_base/pages/home/home_page.dart';
+import 'package:flutter_base/pages/layout/layout_page.dart';
+import 'package:flutter_base/pages/other/other_page.dart';
+import 'package:flutter_base/pages/setting/setting_page.dart';
 
 /// 主界面
 class MainPage extends StatefulWidget {
@@ -17,7 +17,7 @@ class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
 
   /// 页面集合
-  List<Widget> _pageList = [
+  final List<Widget> _pageList = [
     HomePage(),
     LayoutPage(),
     SettingPage(),
@@ -32,6 +32,14 @@ class _MainPageState extends State<MainPage> {
     "其他": Icon(Icons.account_box),
   };
 
+  /// 标题栏颜色集合
+  final List<Color> _colorList = [
+    Colors.blue,
+    Colors.green,
+    Colors.cyan,
+    Colors.amber,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +47,7 @@ class _MainPageState extends State<MainPage> {
         title: Text(
           _bottomMap.keys.toList()[_currentIndex],
         ),
+        backgroundColor: _colorList[_currentIndex],
       ),
       body: IndexedStack(
         index: _currentIndex,

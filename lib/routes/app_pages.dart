@@ -1,34 +1,35 @@
 import 'package:flutter_base/pages/home/grid/grid_builder_page.dart';
 import 'package:flutter_base/pages/home/grid/grid_count_page.dart';
 import 'package:flutter_base/pages/home/list/list_dynamic_page.dart';
-import 'package:flutter_base/pages/other/list_example_page.dart';
+import 'package:flutter_base/pages/other/identity_example/identity_page.dart';
+import 'package:flutter_base/pages/other/list_example/list_example_page.dart';
 import 'package:flutter_base/pages/home/list/list_page.dart';
 import 'package:flutter_base/pages/home/list/list_static_page.dart';
-import 'package:flutter_base/pages/home/rich_text_page.dart';
-import 'package:flutter_base/pages/layout/scaffold_page.dart';
+import 'package:flutter_base/pages/home/rich_text/rich_text_page.dart';
+import 'package:flutter_base/pages/layout/scaffold/scaffold_page.dart';
 import 'package:flutter_base/pages/main_page.dart';
-import 'package:flutter_base/pages/home/button_page.dart';
-import 'package:flutter_base/pages/layout/container_page.dart';
-import 'package:flutter_base/pages/home/form_page.dart';
+import 'package:flutter_base/pages/home/button/button_page.dart';
+import 'package:flutter_base/pages/layout/container/container_page.dart';
+import 'package:flutter_base/pages/home/form/form_page.dart';
 import 'package:flutter_base/pages/home/grid/grid_page.dart';
-import 'package:flutter_base/pages/home/image_page.dart';
-import 'package:flutter_base/pages/home/text_page.dart';
-import 'package:flutter_base/pages/home/app_bar_page.dart';
-import 'package:flutter_base/pages/layout/card_page.dart';
-import 'package:flutter_base/pages/layout/column_page.dart';
-import 'package:flutter_base/pages/home/drawer_page.dart';
-import 'package:flutter_base/pages/layout/expanded_page.dart';
-import 'package:flutter_base/pages/layout/padding_page.dart';
-import 'package:flutter_base/pages/layout/row_page.dart';
-import 'package:flutter_base/pages/layout/stack_page.dart';
-import 'package:flutter_base/pages/home/tab_bar_page.dart';
-import 'package:flutter_base/pages/layout/wrap_page.dart';
-import 'package:flutter_base/pages/other/dialog_example_page.dart';
-import 'package:flutter_base/pages/other/login_example_page.dart';
-import 'package:flutter_base/pages/setting/counter/counter_page.dart';
-import 'package:flutter_base/pages/setting/dio_page.dart';
-import 'package:flutter_base/pages/setting/native_page.dart';
-import 'package:flutter_base/pages/setting/swiper_page.dart';
+import 'package:flutter_base/pages/home/image/image_page.dart';
+import 'package:flutter_base/pages/home/text/text_page.dart';
+import 'package:flutter_base/pages/home/app_bar/app_bar_page.dart';
+import 'package:flutter_base/pages/layout/card/card_page.dart';
+import 'package:flutter_base/pages/layout/column/column_page.dart';
+import 'package:flutter_base/pages/home/drawer/drawer_page.dart';
+import 'package:flutter_base/pages/layout/expanded/expanded_page.dart';
+import 'package:flutter_base/pages/layout/padding/padding_page.dart';
+import 'package:flutter_base/pages/layout/row/row_page.dart';
+import 'package:flutter_base/pages/layout/stack/stack_page.dart';
+import 'package:flutter_base/pages/home/tab_bar/tab_bar_page.dart';
+import 'package:flutter_base/pages/layout/wrap/wrap_page.dart';
+import 'package:flutter_base/pages/other/dialog_example/dialog_example_page.dart';
+import 'package:flutter_base/pages/other/login_example/login_example_page.dart';
+import 'package:flutter_base/pages/setting/dio/dio_page.dart';
+import 'package:flutter_base/pages/setting/get_x/get_x_page.dart';
+import 'package:flutter_base/pages/setting/native/native_page.dart';
+import 'package:flutter_base/pages/setting/swiper/swiper_page.dart';
 import 'package:flutter_base/pages/unknown_page.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:get/get.dart';
@@ -156,7 +157,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: Routes.GetX,
-      page: () => CounterPage(),
+      page: () => GetXPage(),
     ),
     GetPage(
       name: Routes.Native,
@@ -175,6 +176,10 @@ abstract class AppPages {
     GetPage(
       name: Routes.LoginExample,
       page: () => LoginExamplePage(),
+    ),
+    GetPage(
+      name: Routes.IdentityExample,
+      page: () => IdentityPage(),
     ),
   ];
 }

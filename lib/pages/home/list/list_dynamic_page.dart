@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/utils/layout_utils.dart';
+import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 
 /// 动态列表页面
 class ListDynamicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("动态列表", MyDynamicListWidget());
+    return MaterialApp(
+      home: Scaffold(
+        appBar: SmartAppBar("动态列表"),
+        body: MyDynamicListWidget(),
+      ),
+    );
   }
 }
 

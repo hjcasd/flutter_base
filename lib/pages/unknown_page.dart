@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/utils/layout_utils.dart';
+import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 
 /// 找不到路由后的默认页面
 class UnknownPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutUtils.getApp("UnknownPage", MyUnknown());
+    return MaterialApp(
+      home: Scaffold(
+        appBar: SmartAppBar("未知页面"),
+        body: MyUnknown(),
+      ),
+    );
   }
 }
 
