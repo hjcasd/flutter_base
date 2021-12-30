@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       // 初始路由
       initialRoute: Routes.Initial,
       // 跳转动画
-      defaultTransition: Transition.leftToRightWithFade,
+      defaultTransition: Transition.fadeIn,
       // 路由表
       getPages: AppPages.pages,
       // 未知路由

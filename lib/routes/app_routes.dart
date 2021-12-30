@@ -30,16 +30,16 @@ abstract class Routes {
   static const Wrap = '/wrap';
   static const Scaffold = '/scaffold';
 
-  // 设置
-  static const Swiper = '/swiper';
-  static const Dio = '/dio';
-  static const GetX = '/getX';
-  static const Native = '/native';
-
   // 其他
   static const Dialog = '/dialog';
   static const PictureList = '/picture_list';
   static const Login = '/login';
   static const Identity = '/identity';
+
+  // 设置
+  static const Swiper = '/swiper';
+  static const Dio = '/dio';
+  static const GetX = '/getX';
+  static const Native = '/native';
 
 }

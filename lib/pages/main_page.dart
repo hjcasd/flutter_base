@@ -20,24 +20,24 @@ class _MainPageState extends State<MainPage> {
   final List<Widget> _pageList = [
     HomePage(),
     LayoutPage(),
-    SettingPage(),
     OtherPage(),
+    SettingPage(),
   ];
 
   /// 底部Bar数据
   final Map _bottomMap = {
     "首页": Icon(Icons.home),
     "布局": Icon(Icons.category),
-    "设置": Icon(Icons.settings),
     "其他": Icon(Icons.account_box),
+    "设置": Icon(Icons.settings),
   };
 
   /// 标题栏颜色集合
   final List<Color> _colorList = [
     Colors.blue,
     Colors.green,
-    Colors.cyan,
     Colors.amber,
+    Colors.cyan,
   ];
 
   @override

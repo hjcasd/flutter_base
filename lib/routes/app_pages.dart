@@ -146,24 +146,6 @@ abstract class AppPages {
       page: () => ScaffoldPage(),
     ),
 
-    // =========================设置=============================
-    GetPage(
-      name: Routes.Swiper,
-      page: () => SwiperPage(),
-    ),
-    GetPage(
-      name: Routes.Dio,
-      page: () => DioPage(),
-    ),
-    GetPage(
-      name: Routes.GetX,
-      page: () => GetXPage(),
-    ),
-    GetPage(
-      name: Routes.Native,
-      page: () => NativePage(),
-    ),
-
     // =========================其他=============================
     GetPage(
       name: Routes.Dialog,
@@ -180,6 +162,24 @@ abstract class AppPages {
     GetPage(
       name: Routes.Identity,
       page: () => IdentityPage(),
+    ),
+
+    // =========================设置=============================
+    GetPage(
+      name: Routes.Swiper,
+      page: () => SwiperPage(),
+    ),
+    GetPage(
+      name: Routes.Dio,
+      page: () => DioPage(),
+    ),
+    GetPage(
+      name: Routes.GetX,
+      page: () => GetXPage(),
+    ),
+    GetPage(
+      name: Routes.Native,
+      page: () => NativePage(),
     ),
   ];
 }
