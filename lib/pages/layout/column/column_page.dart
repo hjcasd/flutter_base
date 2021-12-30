@@ -8,15 +8,17 @@ class ColumnPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Column的使用"),
-        body: MyColumnWidget(),
+        appBar: SmartAppBar(
+          "Column的使用",
+        ),
+        body: MyColumn(),
       ),
     );
   }
 }
 
 /// Column: 列组件,垂直方向上排列子组件(类似于Linearlayout vertical)
-class MyColumnWidget extends StatelessWidget {
+class MyColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,15 +27,15 @@ class MyColumnWidget extends StatelessWidget {
       children: <Widget>[
         IconContainer(
           Icons.add,
-          color: Colors.yellow,
+          backgroundColor: Colors.yellow,
         ),
         IconContainer(
           Icons.ac_unit,
-          color: Colors.blue,
+          backgroundColor: Colors.blue,
         ),
         IconContainer(
           Icons.settings,
-          color: Colors.cyan,
+          backgroundColor: Colors.cyan,
         ),
       ],
     );

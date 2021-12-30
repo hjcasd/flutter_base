@@ -7,15 +7,17 @@ class CardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Card的使用"),
-        body: MyCardWidget(),
+        appBar: SmartAppBar(
+          "Card的使用",
+        ),
+        body: MyCard(),
       ),
     );
   }
 }
 
 // Card: 卡片组件
-class MyCardWidget extends StatelessWidget {
+class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

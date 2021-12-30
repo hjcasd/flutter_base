@@ -7,14 +7,16 @@ class GridCountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("GridView.count实现网格"),
-        body: MyCountGridWidget(),
+        appBar: SmartAppBar(
+          "GridView.count实现网格列表",
+        ),
+        body: MyCountGridView(),
       ),
     );
   }
 }
 
-class MyCountGridWidget extends StatelessWidget {
+class MyCountGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -36,6 +38,7 @@ class MyCountGridWidget extends StatelessWidget {
     for (var i = 0; i < 30; i++) {
       list.add(
         Card(
+          color: Colors.blue,
           child: Center(
             child: Text(
               "这是第${i + 1}条数据",

@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
-/// 自定义组件
+/// 带图标的Container
 class IconContainer extends StatelessWidget {
-  final IconData icon;
-  final color;
-  final size;
+  /// 图标
+  final IconData iconData;
+
+  /// 背景颜色
+  final backgroundColor;
+
+  /// 图标大小
+  final iconSize;
 
   IconContainer(
-    this.icon, {
-    this.size = 32.0,
-    this.color = Colors.blue,
+    this.iconData, {
+    this.backgroundColor = Colors.blue,
+    this.iconSize = 32.0,
     Key? key,
   }) : super(key: key);
 
@@ -18,11 +23,11 @@ class IconContainer extends StatelessWidget {
     return Container(
       height: 100.0,
       width: 100.0,
-      color: this.color,
+      color: backgroundColor,
       child: Center(
         child: Icon(
-          this.icon,
-          size: this.size,
+          iconData,
+          size: iconSize,
           color: Colors.white,
         ),
       ),

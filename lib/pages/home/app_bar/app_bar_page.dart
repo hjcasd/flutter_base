@@ -6,13 +6,8 @@ class AppBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: MyAppBar(),
-      // 去掉debug图标
-      debugShowCheckedModeBanner: false,
+      // home: MyAppTabBar(),
     );
   }
 }
@@ -70,7 +65,7 @@ class MyAppBar extends StatelessWidget {
 }
 
 // 顶部tab切换演示
-class MyAppBar2 extends StatelessWidget {
+class MyAppTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

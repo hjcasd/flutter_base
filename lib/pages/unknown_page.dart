@@ -7,27 +7,22 @@ class UnknownPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("未知页面"),
-        body: MyUnknown(),
-      ),
-    );
-  }
-}
-
-class MyUnknown extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          'Unknown',
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.black,
+        appBar: SmartAppBar(
+          "未知页面",
+        ),
+        body: Container(
+          child: Center(
+            child: Text(
+              'Unknown',
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.black,
+              ),
+            ),
           ),
+          color: Colors.blue,
         ),
       ),
-      color: Colors.blue,
     );
   }
 }

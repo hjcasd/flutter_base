@@ -3,12 +3,25 @@ import 'package:get/get.dart';
 
 /// RouteButton组件: 便捷带url跳转
 class RouteButton extends StatefulWidget {
+  /// 文本
   final String text;
+
+  /// 路由地址
   final String url;
+
+  /// 按钮最小宽度
   final double minWidth;
+
+  /// 按钮最小高度
   final double minHeight;
+
+  /// 按钮颜色
   final Color backgroundColor;
+
+  /// 文本字体大小
   final double fontSize;
+
+  /// 文本字体颜色
   final Color fontColor;
 
   RouteButton(

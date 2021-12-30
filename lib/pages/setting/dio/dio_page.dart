@@ -12,7 +12,9 @@ class DioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Dio的使用"),
+        appBar: SmartAppBar(
+          "Dio的使用",
+        ),
         body: MyDio(),
       ),
     );
@@ -26,17 +28,17 @@ class MyDio extends StatefulWidget {
 
 /// Dio: 网络请求库
 class _MyDioState extends State<MyDio> {
-  Map _userMap = {"name": "张三", "age": 24};
-  String _userStr = '{"name":"张三","age":24}';
+  final Map _userMap = {"name": "张三", "age": 24};
+  final String _userStr = '{"name":"张三","age":24}';
 
   // get请求
-  _getData() async {
+  void _getData() async {
     Response<Map> response = await Dio().get("http://a.itying.com/api/productlist");
     LogHelper.map("Get", response.data!);
   }
 
   // post请求
-  _postData() async {
+  void _postData() async {
     var data = await ApiService.login("hjcasd", "asd123456789");
     var entity = LoginEntity.fromJson(data);
     LogHelper.e("Post", entity.data?.username);

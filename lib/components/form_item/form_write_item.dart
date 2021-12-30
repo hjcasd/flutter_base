@@ -1,17 +1,38 @@
 import 'package:flutter/material.dart';
 
-/// 表单条目编辑组件
-class FormWriteItem extends StatelessWidget {
+/// 表单编辑Item
+class FormWriteItem extends StatefulWidget {
+  /// 左侧标题
   final String title;
+
+  /// 输入框内容
   final String value;
+
+  /// 输入框占位文本
   final String placeholder;
+
+  /// 键盘输入类型
   final TextInputType? keyboardType;
+
+  /// 底部提示文本
   final String tip;
+
+  /// 右侧文本
   final String operate;
+
+  /// 是否隐藏底部下划线
   final bool isHideDivider;
+
+  /// 输入框控制器
   final TextEditingController? controller;
+
+  /// 输入框文本变化监听回调
   final ValueChanged<String>? onChanged;
+
+  /// 输入框清除回调
   final VoidCallback? onClear;
+
+  /// 右侧文本点击事件回调
   final VoidCallback? onOperatePressed;
 
   FormWriteItem(
@@ -30,96 +51,99 @@ class FormWriteItem extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<StatefulWidget> createState() {
+    return _FormWriteItemState();
+  }
+}
+
+class _FormWriteItemState extends State<FormWriteItem> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       child: Stack(
         children: [
-          _getContentWidget(),
-          _getDividerWidget(),
+          _getItem(),
+          _getDivider(),
         ],
       ),
     );
   }
 
-  /// 内容
-  Widget _getContentWidget() {
+  /// Item
+  Widget _getItem() {
     return Positioned(
       child: Container(
         padding: EdgeInsets.fromLTRB(18, 18, 16, 4),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 50,
-              child: Text(
-                title,
-              ),
-            ),
+            _getTitle(),
             SizedBox(
               width: 40,
             ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      child: TextField(
-                        keyboardType: keyboardType,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          border: InputBorder.none,
-                          hintText: placeholder,
-                          hintStyle: TextStyle(
-                            fontSize: 14,
-                            color: Color(0xFF999999),
-                          ),
-                          suffixIconConstraints: BoxConstraints(maxHeight: 20),
-                          suffixIcon: GestureDetector(
-                            child: Offstage(
-                              child: Icon(
-                                Icons.clear,
-                                size: 20,
-                              ),
-                              offstage: value == "",
-                            ),
-                            onTap: onClear,
-                          ),
-                        ),
-                        controller: controller,
-                        onChanged: onChanged,
+            _getContent(),
+            _getOperate(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// 左侧标题
+  Widget _getTitle() {
+    return Container(
+      width: 50,
+      child: Text(
+        widget.title,
+      ),
+    );
+  }
+
+  /// 中间内容和底部提示
+  Widget _getContent() {
+    return Expanded(
+      flex: 1,
+      child: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              child: TextField(
+                keyboardType: widget.keyboardType,
+                decoration: InputDecoration(
+                  isDense: true,
+                  contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  border: InputBorder.none,
+                  hintText: widget.placeholder,
+                  hintStyle: TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFF999999),
+                  ),
+                  suffixIconConstraints: BoxConstraints(maxHeight: 20),
+                  suffixIcon: GestureDetector(
+                    child: Offstage(
+                      child: Icon(
+                        Icons.clear,
+                        size: 20,
                       ),
+                      offstage: widget.value == "",
                     ),
-                    Opacity(
-                      opacity: tip == "" ? 0 : 1,
-                      child: Text(
-                        tip,
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Color(0xFFFE5500),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Offstage(
-              offstage: operate == "",
-              child: GestureDetector(
-                child: Container(
-                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                  child: Text(
-                    operate,
-                    style: TextStyle(
-                      color: Colors.amber,
-                    ),
+                    onTap: widget.onClear,
                   ),
                 ),
-                onTap: onOperatePressed,
+                controller: widget.controller,
+                onChanged: widget.onChanged,
+              ),
+            ),
+            Opacity(
+              opacity: widget.tip == "" ? 0 : 1,
+              child: Text(
+                widget.tip,
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Color(0xFFFE5500),
+                ),
               ),
             ),
           ],
@@ -128,10 +152,29 @@ class FormWriteItem extends StatelessWidget {
     );
   }
 
+  /// 右侧操作文本
+  Widget _getOperate() {
+    return Offstage(
+      offstage: widget.operate == "",
+      child: GestureDetector(
+        child: Container(
+          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+          child: Text(
+            widget.operate,
+            style: TextStyle(
+              color: Colors.amber,
+            ),
+          ),
+        ),
+        onTap: widget.onOperatePressed,
+      ),
+    );
+  }
+
   /// 下划线
-  Widget _getDividerWidget() {
+  Widget _getDivider() {
     return Visibility(
-      visible: !isHideDivider,
+      visible: !widget.isHideDivider,
       child: Positioned(
         bottom: 0,
         left: 0,

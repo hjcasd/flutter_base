@@ -8,7 +8,9 @@ class SwiperPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Swiper的使用"),
+        appBar: SmartAppBar(
+          "Swiper的使用",
+        ),
         body: MySwiper(),
       ),
     );
@@ -17,12 +19,12 @@ class SwiperPage extends StatelessWidget {
 
 class MySwiper extends StatefulWidget {
   @override
-  _MySwiperState createState() => _MySwiperState();
+  State<StatefulWidget> createState() => _MySwiperState();
 }
 
 /// 轮播图组件Swiper演示
 class _MySwiperState extends State<MySwiper> {
-  List<Map> _imgList = [
+  final List<Map> _imgList = [
     {
       "url": "http://pic1.win4000.com/wallpaper/b/58ca58d35d719.jpg",
     },

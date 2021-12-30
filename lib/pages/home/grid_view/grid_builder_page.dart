@@ -7,17 +7,19 @@ class GridBuilderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("GridView.builder实现网格"),
-        body: MyBuilderGridWidget(),
+        appBar: SmartAppBar(
+          "GridView.builder实现网格列表",
+        ),
+        body: MyBuilderGridView(),
       ),
     );
   }
 }
 
-class MyBuilderGridWidget extends StatelessWidget {
+class MyBuilderGridView extends StatelessWidget {
   final List<String> _listData = [];
 
-  MyBuilderGridWidget() {
+  MyBuilderGridView() {
     for (var i = 0; i < 30; i++) {
       _listData.add("这是第${i + 1}条数据");
     }

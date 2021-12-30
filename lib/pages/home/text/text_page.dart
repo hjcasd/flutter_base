@@ -8,15 +8,17 @@ class TextPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Text的使用"),
-        body: MyTextWidget(),
+        appBar: SmartAppBar(
+          "Text的使用",
+        ),
+        body: MyText(),
       ),
     );
   }
 }
 
 /// Text: 文本组件
-class MyTextWidget extends StatelessWidget {
+class MyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -30,22 +32,23 @@ class MyTextWidget extends StatelessWidget {
           // 对齐方式
           textAlign: TextAlign.left,
           style: TextStyle(
-              // 字体大小
-              fontSize: 20.0,
-              // 字体颜色
-              color: Colors.blue,
-              // 字体加粗
-              fontWeight: FontWeight.w700,
-              // 字体样式
-              fontStyle: FontStyle.italic,
-              // 下划线
-              decoration: TextDecoration.underline,
-              // 下划线颜色
-              decorationColor: Colors.green,
-              // 下划线样式
-              decorationStyle: TextDecorationStyle.dashed,
-              // 文本字体间距
-              letterSpacing: 2.0),
+            // 字体大小
+            fontSize: 20.0,
+            // 字体颜色
+            color: Colors.blue,
+            // 字体加粗
+            fontWeight: FontWeight.w700,
+            // 字体样式
+            fontStyle: FontStyle.italic,
+            // 下划线
+            decoration: TextDecoration.underline,
+            // 下划线颜色
+            decorationColor: Colors.green,
+            // 下划线样式
+            decorationStyle: TextDecorationStyle.dashed,
+            // 文本字体间距
+            letterSpacing: 2.0,
+          ),
           // 文本溢出的处理方式
           // overflow: TextOverflow.ellipsis,
           // 最大显示几行

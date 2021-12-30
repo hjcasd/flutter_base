@@ -5,23 +5,20 @@ class DrawerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyDrawerWidget(),
+      home: MyDrawerHeader(),
+      // home: MyDrawerAccount(),
     );
   }
 }
 
 /// DrawerHeader演示
-class MyDrawerWidget extends StatelessWidget {
+class MyDrawerHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "DrawerHeader的使用",
+          "DrawerHeader",
         ),
       ),
       body: Center(
@@ -100,13 +97,13 @@ class MyDrawerWidget extends StatelessWidget {
 }
 
 /// UserAccountsDrawerHeader演示
-class MyDrawerAccountWidget extends StatelessWidget {
+class MyDrawerAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "UserAccountsDrawerHeader的使用",
+          "UserAccountsDrawerHeader",
         ),
       ),
       body: Center(

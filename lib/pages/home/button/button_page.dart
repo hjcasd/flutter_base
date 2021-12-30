@@ -7,15 +7,18 @@ class ButtonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Button的使用"),
-        body: MyButtonWidget(),
+        appBar: SmartAppBar(
+          "Button的使用",
+        ),
+        body: MyButton(),
       ),
+      // home: MyFloatingButton(),
     );
   }
 }
 
 /// ElevatedButton, ButtonBar
-class MyButtonWidget extends StatelessWidget {
+class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -65,14 +68,12 @@ class MyButtonWidget extends StatelessWidget {
 }
 
 /// FloatingActionButton
-class MyFloatingButtonWidget extends StatelessWidget {
+class MyFloatingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Button",
-        ),
+      appBar: SmartAppBar(
+        "FloatingActionButton的使用",
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

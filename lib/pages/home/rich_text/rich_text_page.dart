@@ -7,15 +7,17 @@ class RichTextPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("RichText的使用"),
-        body: MyRichTextWidget(),
+        appBar: SmartAppBar(
+          "RichText的使用",
+        ),
+        body: MyRichText(),
       ),
     );
   }
 }
 
 /// RichText: 富文本组件
-class MyRichTextWidget extends StatelessWidget {
+class MyRichText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

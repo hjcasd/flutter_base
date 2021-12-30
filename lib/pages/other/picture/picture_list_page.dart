@@ -5,31 +5,33 @@ import 'package:flutter_base/data/mock_data.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 /// 图文列表页面
-class ListExamplePage extends StatelessWidget {
+class PictureListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("图文列表"),
-        body: MyListExampleWidget(),
+        appBar: SmartAppBar(
+          "图文列表",
+        ),
+        body: MyPictureList(),
       ),
     );
   }
 }
 
 /// Page
-class MyListExampleWidget extends StatefulWidget {
+class MyPictureList extends StatefulWidget {
   @override
-  _MyListExampleState createState() {
+  State<StatefulWidget> createState() {
     return _MyListExampleState();
   }
 }
 
 /// State
-class _MyListExampleState extends State<MyListExampleWidget> {
+class _MyListExampleState extends State<MyPictureList> {
+  static const PAGE_SIZE = 20;
   List<Map<String, Object>> _listItems = [];
   int _currentPage = 1;
-  static const PAGE_SIZE = 20;
 
   /// 刷新数据
   void _refresh() async {

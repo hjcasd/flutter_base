@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/widget/custom_dialog.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 /// Dialog页面
-class DialogExamplePage extends StatelessWidget {
+class DialogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Dialog的使用"),
-        body: MyDialogWidget(),
+        appBar: SmartAppBar(
+          "Dialog的使用",
+        ),
+        body: MyDialog(),
       ),
     );
   }
 }
 
 /// Page
-class MyDialogWidget extends StatefulWidget {
+class MyDialog extends StatefulWidget {
   @override
-  _MyDialogState createState() => _MyDialogState();
+  State<StatefulWidget> createState() => _MyDialogState();
 }
 
 /// State
-class _MyDialogState extends State<MyDialogWidget> {
+class _MyDialogState extends State<MyDialog> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -194,13 +196,6 @@ class _MyDialogState extends State<MyDialogWidget> {
 
   // Toast
   _showToast(String msg) async {
-    Fluttertoast.showToast(
-      msg: msg,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.green,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
+    Get.snackbar('msg', msg);
   }
 }

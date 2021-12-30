@@ -40,11 +40,11 @@ class _HomePageState extends State<HomePage> {
           ),
           RouteButton(
             "ListView",
-            Routes.List,
+            Routes.ListView,
           ),
           RouteButton(
             "GridView",
-            Routes.Grid,
+            Routes.GridView,
           ),
           RouteButton(
             "AppBar",

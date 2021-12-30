@@ -8,32 +8,27 @@ class ImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Image的使用"),
-        body: ImageContainer(),
+        appBar: SmartAppBar(
+          "Image的使用",
+        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              MyLocalImage(),
+              MyNetImage(),
+              MyCircleBoxImage(),
+              MyCircleClipImage(),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
 
 /// Image: 图片组件
-class ImageContainer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: <Widget>[
-          MyLocalImageWidget(),
-          MyNetImageWidget(),
-          CircleImageWidget1(),
-          CircleImageWidget2(),
-        ],
-      ),
-    );
-  }
-}
-
 /// 加载本地图片(需要在yaml文件中引入地址后才能使用)
-class MyLocalImageWidget extends StatelessWidget {
+class MyLocalImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
@@ -44,7 +39,7 @@ class MyLocalImageWidget extends StatelessWidget {
 }
 
 /// 加载网络图片
-class MyNetImageWidget extends StatelessWidget {
+class MyNetImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -74,7 +69,7 @@ class MyNetImageWidget extends StatelessWidget {
 }
 
 /// 圆形图片实现方式1
-class CircleImageWidget1 extends StatelessWidget {
+class MyCircleBoxImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -99,7 +94,7 @@ class CircleImageWidget1 extends StatelessWidget {
 }
 
 /// 圆形图片实现方式2
-class CircleImageWidget2 extends StatelessWidget {
+class MyCircleClipImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

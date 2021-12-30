@@ -7,18 +7,21 @@ class WrapPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Wrap的使用"),
-        body: MyWrapWidget(),
+        appBar: SmartAppBar(
+          "Wrap的使用",
+        ),
+        body: MyWrap(),
       ),
     );
   }
 }
 
 /// Wrap: 流式布局组件
-class MyWrapWidget extends StatelessWidget {
+class MyWrap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: EdgeInsets.all(10.0),
       color: Colors.green,
       child: Wrap(
@@ -29,11 +32,11 @@ class MyWrapWidget extends StatelessWidget {
         // X轴子组件之间距离
         spacing: 10.0,
         children: <Widget>[
-          MyButtonWidget("斗罗大陆"),
-          MyButtonWidget("武动乾坤"),
-          MyButtonWidget("我师兄也太稳健了吧"),
-          MyButtonWidget("万古神帝"),
-          MyButtonWidget("圣墟"),
+          MyButton("斗罗大陆"),
+          MyButton("武动乾坤"),
+          MyButton("我师兄也太稳健了吧"),
+          MyButton("万古神帝"),
+          MyButton("圣墟"),
         ],
       ),
     );
@@ -41,10 +44,10 @@ class MyWrapWidget extends StatelessWidget {
 }
 
 /// 自定义Button
-class MyButtonWidget extends StatelessWidget {
+class MyButton extends StatelessWidget {
   final String text;
 
-  MyButtonWidget(this.text, {Key? key}) : super(key: key);
+  MyButton(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -7,17 +7,19 @@ class ListDynamicPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("动态列表"),
-        body: MyDynamicListWidget(),
+        appBar: SmartAppBar(
+          "动态列表",
+        ),
+        body: MyDynamicListView(),
       ),
     );
   }
 }
 
-class MyDynamicListWidget extends StatelessWidget {
+class MyDynamicListView extends StatelessWidget {
   final List<String> list = [];
 
-  MyDynamicListWidget() {
+  MyDynamicListView() {
     for (var i = 0; i < 20; i++) {
       list.add("我是标题${i + 1}");
     }
@@ -32,17 +34,17 @@ class MyDynamicListWidget extends StatelessWidget {
       itemCount: list.length,
       // 子Item
       itemBuilder: (context, index) {
-        return ImageItemWidget(list[index]);
+        return ImageItem(list[index]);
       },
     );
   }
 }
 
 /// 列表Item
-class ImageItemWidget extends StatelessWidget {
+class ImageItem extends StatelessWidget {
   final String _title;
 
-  ImageItemWidget(this._title);
+  ImageItem(this._title);
 
   @override
   Widget build(BuildContext context) {

@@ -8,14 +8,16 @@ class ExpandedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Expanded的使用"),
+        appBar: SmartAppBar(
+          "Expanded的使用",
+        ),
         body: Column(
           children: [
-            MyExpandedWidget(),
+            MyExpanded(),
             SizedBox(
               height: 10.0,
             ),
-            MyMultiExpandedWidget(),
+            MyMultiExpanded(),
           ],
         ),
       ),
@@ -24,7 +26,7 @@ class ExpandedPage extends StatelessWidget {
 }
 
 /// Expanded: 类似于Linearlayout中weight效果的组件
-class MyExpandedWidget extends StatelessWidget {
+class MyExpanded extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -35,21 +37,21 @@ class MyExpandedWidget extends StatelessWidget {
           flex: 1,
           child: IconContainer(
             Icons.add,
-            color: Colors.yellow,
+            backgroundColor: Colors.yellow,
           ),
         ),
         Expanded(
           flex: 2,
           child: IconContainer(
             Icons.ac_unit,
-            color: Colors.blue,
+            backgroundColor: Colors.blue,
           ),
         ),
         Expanded(
           flex: 1,
           child: IconContainer(
             Icons.settings,
-            color: Colors.cyan,
+            backgroundColor: Colors.cyan,
           ),
         ),
       ],
@@ -58,7 +60,7 @@ class MyExpandedWidget extends StatelessWidget {
 }
 
 /// 多行多列布局演示
-class MyMultiExpandedWidget extends StatelessWidget {
+class MyMultiExpanded extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

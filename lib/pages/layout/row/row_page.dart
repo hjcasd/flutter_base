@@ -8,15 +8,17 @@ class RowPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Row的使用"),
-        body: MyRowWidget(),
+        appBar: SmartAppBar(
+          "Row的使用",
+        ),
+        body: MyRow(),
       ),
     );
   }
 }
 
 /// Row: 行组件,水平方向上排列子组件(类似于Linearlayout horizontal)
-class MyRowWidget extends StatelessWidget {
+class MyRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,15 +29,15 @@ class MyRowWidget extends StatelessWidget {
         children: <Widget>[
           IconContainer(
             Icons.add,
-            color: Colors.yellow,
+            backgroundColor: Colors.yellow,
           ),
           IconContainer(
             Icons.ac_unit,
-            color: Colors.blueGrey,
+            backgroundColor: Colors.blueGrey,
           ),
           IconContainer(
             Icons.settings,
-            color: Colors.cyan,
+            backgroundColor: Colors.cyan,
           ),
         ],
       ),

@@ -7,22 +7,24 @@ class PaddingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Padding的使用"),
-        body: MyPaddingWidget(),
+        appBar: SmartAppBar(
+          "Padding的使用",
+        ),
+        body: MyPadding(),
       ),
     );
   }
 }
 
 /// Padding: 内边距组件
-class MyPaddingWidget extends StatelessWidget {
+class MyPadding extends StatelessWidget {
   List<Widget> _getData() {
     List<Widget> list = [];
     for (var i = 0; i < 30; i++) {
       list.add(
         Container(
           alignment: Alignment.center,
-          color: Colors.green,
+          color: Colors.cyan,
           child: Text(
             "这是第${i + 1}条数据",
           ),

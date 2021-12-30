@@ -7,21 +7,23 @@ class FormPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Form的使用"),
-        body: MyFormWidget(),
+        appBar: SmartAppBar(
+          "Form的使用",
+        ),
+        body: MyForm(),
       ),
     );
   }
 }
 
 /// 表单组件
-class MyFormWidget extends StatefulWidget {
+class MyForm extends StatefulWidget {
   @override
-  _MyFormState createState() => _MyFormState();
+  State<StatefulWidget> createState() => _MyFormState();
 }
 
 /// TextField, Switch, Radio, Checkbox
-class _MyFormState extends State<MyFormWidget> {
+class _MyFormState extends State<MyForm> {
   var _username = "";
   var _phoneController = TextEditingController();
   var _sex = 1;

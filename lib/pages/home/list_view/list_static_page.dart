@@ -7,14 +7,16 @@ class ListStaticPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("静态列表"),
-        body: MyStaticListWidget(),
+        appBar: SmartAppBar(
+          "静态列表",
+        ),
+        body: MyStaticListView(),
       ),
     );
   }
 }
 
-class MyStaticListWidget extends StatelessWidget {
+class MyStaticListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(

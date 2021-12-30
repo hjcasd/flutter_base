@@ -6,17 +6,13 @@ class ScaffoldPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MaterialApp的使用',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyScaffoldWidget(),
+      home: MyScaffold(),
     );
   }
 }
 
 /// Scaffold: 页面titleBar和body组件
-class MyScaffoldWidget extends StatelessWidget {
+class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

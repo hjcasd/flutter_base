@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 
-/// Stack页面
+/// Stack + Align + Positioned页面
 class StackPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("Stack的使用"),
+        appBar: SmartAppBar(
+          "Stack的使用",
+        ),
         body: Column(
           children: [
-            MyStackWidget(),
+            MyStack(),
             SizedBox(
               height: 10.0,
             ),
-            MyStackAlignWidget(),
+            MyStackAlign(),
             SizedBox(
               height: 10.0,
             ),
-            MyStackPositionedWidget(),
+            MyStackPositioned(),
           ],
         ),
       ),
@@ -27,7 +29,7 @@ class StackPage extends StatelessWidget {
 }
 
 /// Stack: 堆叠组件(类似于FrameLayout)
-class MyStackWidget extends StatelessWidget {
+class MyStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -57,7 +59,7 @@ class MyStackWidget extends StatelessWidget {
 }
 
 /// Stack + Align 实现定位布局
-class MyStackAlignWidget extends StatelessWidget {
+class MyStackAlign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -103,7 +105,7 @@ class MyStackAlignWidget extends StatelessWidget {
 }
 
 /// Stack + Positioned 实现定位布局
-class MyStackPositionedWidget extends StatelessWidget {
+class MyStackPositioned extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

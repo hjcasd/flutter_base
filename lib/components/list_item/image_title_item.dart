@@ -2,14 +2,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 /// 图文列表Item
-class ImageTitleItem extends StatelessWidget {
+class ImageTitleItem extends StatefulWidget {
+  /// 标题
   final String title;
-  final String imageUrl;
-  final int viewCount;
 
-  static const double ITEM_HEIGHT = 100;
-  static const double IMAGE_WIDTH = 150;
-  static const double TITLE_HEIGHT = 80;
+  /// 图片地址
+  final String imageUrl;
+
+  /// 评论数
+  final int viewCount;
 
   ImageTitleItem(
     this.title,
@@ -19,18 +20,25 @@ class ImageTitleItem extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<StatefulWidget> createState() {
+    return _ImageTitleItem();
+  }
+}
+
+class _ImageTitleItem extends State<ImageTitleItem> {
+  @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10.0),
+      margin: EdgeInsets.all(10),
       child: Row(
         children: [
-          _imageWrapper(imageUrl),
+          _imageWrapper(),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _titleWrapper(title),
-                _viewCountWrapper(viewCount),
+                _titleWrapper(),
+                _viewCountWrapper(),
               ],
             ),
           ),
@@ -40,49 +48,50 @@ class ImageTitleItem extends StatelessWidget {
   }
 
   /// 左边图片
-  Widget _imageWrapper(String imageUrl) {
+  Widget _imageWrapper() {
     return SizedBox(
-      width: IMAGE_WIDTH,
+      width: 150,
       child: CachedNetworkImage(
-        imageUrl: imageUrl,
+        imageUrl: widget.imageUrl,
         placeholder: (context, url) => Image.asset('assets/images/test.png'),
         errorWidget: (context, url, error) => Image.asset('assets/images/test.png'),
       ),
-      height: ITEM_HEIGHT,
+      height: 100,
     );
   }
 
   /// 右边标题
-  Widget _titleWrapper(String title) {
+  Widget _titleWrapper() {
     return Container(
-      height: TITLE_HEIGHT,
-      margin: EdgeInsets.fromLTRB(10.0, 0, 0, 0),
+      height: 80,
+      margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
       child: Text(
-        title,
+        widget.title,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
       ),
     );
   }
 
-  Widget _viewCountWrapper(int viewCount) {
+  /// 评论数
+  Widget _viewCountWrapper() {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 0, 0, 0),
+      margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
       child: Row(
         children: [
           Icon(
             Icons.remove_red_eye_outlined,
-            size: 14.0,
+            size: 14,
             color: Colors.grey,
           ),
           SizedBox(
             width: 5,
           ),
           Text(
-            viewCount.toString(),
+            widget.viewCount.toString(),
             style: TextStyle(
               color: Colors.grey,
-              fontSize: 14.0,
+              fontSize: 14,
             ),
           ),
         ],

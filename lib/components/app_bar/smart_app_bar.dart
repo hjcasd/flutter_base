@@ -3,14 +3,23 @@ import 'package:get/get.dart';
 
 /// SmartAppBar组件: 基础AppBar封装
 class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
-  final String text;
+  /// 标题
+  final String title;
+
+  /// 背景颜色
   final Color backgroundColor;
+
+  /// 字体大小
   final double fontSize;
+
+  /// 字体颜色
   final Color fontColor;
+
+  /// 左侧图标
   final IconData icon;
 
   SmartAppBar(
-    this.text, {
+    this.title, {
     this.backgroundColor = Colors.red,
     this.fontSize = 18.0,
     this.fontColor = Colors.white,
@@ -32,7 +41,7 @@ class _SmartAppBarState extends State<SmartAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        widget.text,
+        widget.title,
         style: TextStyle(
           fontSize: widget.fontSize,
           color: widget.fontColor,

@@ -6,22 +6,18 @@ class TabBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyTabBarWidget(),
+      home: MyTabBar(),
     );
   }
 }
 
 /// TabBar: Tab切换组件
-class MyTabBarWidget extends StatefulWidget {
+class MyTabBar extends StatefulWidget {
   @override
-  _MyTabBarState createState() => _MyTabBarState();
+  State<StatefulWidget> createState() => _MyTabBarState();
 }
 
-class _MyTabBarState extends State<MyTabBarWidget> with SingleTickerProviderStateMixin {
+class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   final List<Tab> _tabList = <Tab>[

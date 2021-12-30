@@ -7,13 +7,13 @@ abstract class Routes {
   static const Text = '/text';
   static const Button = '/button';
   static const Image = '/image';
-  static const List = '/list';
-  static const ListStatic = '/list/static';
-  static const ListDynamic = '/list/dynamic';
-  static const Grid = '/grid';
-  static const GridCount = '/grid/count';
-  static const GridBuilder = '/grid/builder';
-  static const Form = '/identity_example';
+  static const ListView = '/list_view';
+  static const ListStatic = '/list_view/static';
+  static const ListDynamic = '/list_view/dynamic';
+  static const GridView = '/grid_view';
+  static const GridCount = '/grid_view/count';
+  static const GridBuilder = '/grid_view/builder';
+  static const Form = '/form';
   static const AppBar = '/app_bar';
   static const TabBar = '/tab_bar';
   static const Drawer = '/drawer';
@@ -37,9 +37,9 @@ abstract class Routes {
   static const Native = '/native';
 
   // 其他
-  static const DialogExample = '/dialog_example/example';
-  static const ListExample = '/list/example';
-  static const LoginExample = '/login/example';
-  static const IdentityExample = '/identity_example/example';
+  static const Dialog = '/dialog';
+  static const PictureList = '/picture_list';
+  static const Login = '/login';
+  static const Identity = '/identity';
 
 }

@@ -1,17 +1,16 @@
-import 'package:flutter_base/pages/home/grid/grid_builder_page.dart';
-import 'package:flutter_base/pages/home/grid/grid_count_page.dart';
-import 'package:flutter_base/pages/home/list/list_dynamic_page.dart';
-import 'package:flutter_base/pages/other/identity_example/identity_page.dart';
-import 'package:flutter_base/pages/other/list_example/list_example_page.dart';
-import 'package:flutter_base/pages/home/list/list_page.dart';
-import 'package:flutter_base/pages/home/list/list_static_page.dart';
+import 'package:flutter_base/pages/home/grid_view/grid_builder_page.dart';
+import 'package:flutter_base/pages/home/grid_view/grid_count_page.dart';
+import 'package:flutter_base/pages/home/grid_view/grid_view_page.dart';
+import 'package:flutter_base/pages/home/list_view/list_dynamic_page.dart';
+import 'package:flutter_base/pages/home/list_view/list_static_page.dart';
+import 'package:flutter_base/pages/home/list_view/list_view_page.dart';
+import 'package:flutter_base/pages/other/dialog/dialog_page.dart';
 import 'package:flutter_base/pages/home/rich_text/rich_text_page.dart';
 import 'package:flutter_base/pages/layout/scaffold/scaffold_page.dart';
 import 'package:flutter_base/pages/main_page.dart';
 import 'package:flutter_base/pages/home/button/button_page.dart';
 import 'package:flutter_base/pages/layout/container/container_page.dart';
 import 'package:flutter_base/pages/home/form/form_page.dart';
-import 'package:flutter_base/pages/home/grid/grid_page.dart';
 import 'package:flutter_base/pages/home/image/image_page.dart';
 import 'package:flutter_base/pages/home/text/text_page.dart';
 import 'package:flutter_base/pages/home/app_bar/app_bar_page.dart';
@@ -24,8 +23,9 @@ import 'package:flutter_base/pages/layout/row/row_page.dart';
 import 'package:flutter_base/pages/layout/stack/stack_page.dart';
 import 'package:flutter_base/pages/home/tab_bar/tab_bar_page.dart';
 import 'package:flutter_base/pages/layout/wrap/wrap_page.dart';
-import 'package:flutter_base/pages/other/dialog_example/dialog_example_page.dart';
-import 'package:flutter_base/pages/other/login_example/login_example_page.dart';
+import 'package:flutter_base/pages/other/identity/identity_page.dart';
+import 'package:flutter_base/pages/other/login/login_page.dart';
+import 'package:flutter_base/pages/other/picture/picture_list_page.dart';
 import 'package:flutter_base/pages/setting/dio/dio_page.dart';
 import 'package:flutter_base/pages/setting/get_x/get_x_page.dart';
 import 'package:flutter_base/pages/setting/native/native_page.dart';
@@ -61,8 +61,8 @@ abstract class AppPages {
     ),
 
     GetPage(
-      name: Routes.List,
-      page: () => ListPage(),
+      name: Routes.ListView,
+      page: () => ListViewPage(),
     ),
     GetPage(
       name: Routes.ListStatic,
@@ -75,8 +75,8 @@ abstract class AppPages {
 
 
     GetPage(
-      name: Routes.Grid,
-      page: () => GridPage(),
+      name: Routes.GridView,
+      page: () => GridViewPage(),
     ),
     GetPage(
       name: Routes.GridCount,
@@ -164,21 +164,21 @@ abstract class AppPages {
       page: () => NativePage(),
     ),
 
-    // =========================设置=============================
+    // =========================其他=============================
     GetPage(
-      name: Routes.DialogExample,
-      page: () => DialogExamplePage(),
+      name: Routes.Dialog,
+      page: () => DialogPage(),
     ),
     GetPage(
-      name: Routes.ListExample,
-      page: () => ListExamplePage(),
+      name: Routes.PictureList,
+      page: () => PictureListPage(),
     ),
     GetPage(
-      name: Routes.LoginExample,
-      page: () => LoginExamplePage(),
+      name: Routes.Login,
+      page: () => LoginPage(),
     ),
     GetPage(
-      name: Routes.IdentityExample,
+      name: Routes.Identity,
       page: () => IdentityPage(),
     ),
   ];
