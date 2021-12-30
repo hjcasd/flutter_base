@@ -6,6 +6,9 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
   /// 标题
   final String title;
 
+  /// 标题是否居中
+  final bool isCenterTitle;
+
   /// 背景颜色
   final Color backgroundColor;
 
@@ -20,6 +23,7 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   SmartAppBar(
     this.title, {
+    this.isCenterTitle = false,
     this.backgroundColor = Colors.red,
     this.fontSize = 18.0,
     this.fontColor = Colors.white,
@@ -40,6 +44,7 @@ class _SmartAppBarState extends State<SmartAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: widget.isCenterTitle,
       title: Text(
         widget.title,
         style: TextStyle(
