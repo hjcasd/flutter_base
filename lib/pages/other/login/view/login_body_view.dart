@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/divider_text_field.dart';
 import 'package:flutter_base/pages/other/login/controller/login_controller.dart';
+import 'package:flutter_base/utils/get_helper.dart';
 import 'package:get/get.dart';
 
 /// 登录View
@@ -97,21 +98,16 @@ class LoginBodyView extends GetView<LoginController> {
         ),
         onPressed: () {
           if (controller.name.isEmpty) {
-            _showToast("请输入用户名");
+            GetHelper.showSnackBar("请输入用户名");
             return;
           }
           if (controller.password.isEmpty) {
-            _showToast("请输入密码");
+            GetHelper.showSnackBar("请输入密码");
             return;
           }
           controller.login();
         },
       ),
     );
-  }
-
-  /// Toast
-  _showToast(String msg) {
-    Get.snackbar('提示', msg);
   }
 }

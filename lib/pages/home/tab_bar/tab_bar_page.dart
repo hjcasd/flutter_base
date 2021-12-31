@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_base/routes/route_manager.dart';
 
 /// TabBar页面
 class TabBarPage extends StatelessWidget {
@@ -78,7 +78,7 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
             Icons.arrow_back,
           ),
           onPressed: () {
-            Get.back();
+            RouteManager.goBack();
           },
         ),
         bottom: TabBar(

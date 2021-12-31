@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_base/routes/route_manager.dart';
 
 /// Scaffold页面
 class ScaffoldPage extends StatelessWidget {
@@ -25,7 +25,7 @@ class MyScaffold extends StatelessWidget {
             Icons.arrow_back,
           ),
           onPressed: () {
-            Get.back();
+            RouteManager.goBack();
           },
         ),
       ),

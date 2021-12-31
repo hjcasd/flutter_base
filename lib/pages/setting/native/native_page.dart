@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
+import 'package:flutter_base/utils/get_helper.dart';
 
 /// flutter与原生交互
 class NativePage extends StatelessWidget {
@@ -21,7 +21,7 @@ class NativePage extends StatelessWidget {
           ),
           onPressed: () {
             _methodChannel.invokeMethod("back").then((result) {
-              Get.snackbar('back', 'result: $result');
+              GetHelper.showSnackBar("result: $result");
             });
           },
         ),
@@ -34,7 +34,7 @@ class NativePage extends StatelessWidget {
               onPressed: () {
                 // flutter端调用native端的方法并传参
                 _methodChannel.invokeMethod("jumpToNative", "/module_frame/loadSir").then((result) {
-                  Get.snackbar('jumpToNative', 'result: $result');
+                  GetHelper.showSnackBar("result: $result");
                 });
               },
               child: Text(

@@ -9,6 +9,7 @@ class RichTextPage extends StatelessWidget {
       home: Scaffold(
         appBar: SmartAppBar(
           "RichText的使用",
+          isCenterTitle: true,
         ),
         body: MyRichText(),
       ),

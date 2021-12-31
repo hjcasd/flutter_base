@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/adapter/image_title_item.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/components/list_item/image_title_item.dart';
 import 'package:flutter_base/data/mock_data.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 

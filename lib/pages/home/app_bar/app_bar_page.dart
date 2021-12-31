@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_base/routes/route_manager.dart';
 
 /// AppBar的使用
 class AppBarPage extends StatelessWidget {
@@ -28,7 +28,7 @@ class MyAppBar extends StatelessWidget {
             Icons.arrow_back,
           ),
           onPressed: () {
-            Get.back();
+            RouteManager.goBack();
           },
         ),
         // 右侧图标

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_base/routes/route_manager.dart';
 
 /// RouteButton组件: 便捷带url跳转
 class RouteButton extends StatefulWidget {
@@ -62,7 +62,7 @@ class _RouteButtonState extends State<RouteButton> {
         backgroundColor: MaterialStateProperty.all(widget.backgroundColor),
       ),
       onPressed: () {
-        Get.toNamed(widget.url);
+        RouteManager.jumpToNamedPage(widget.url);
       },
     );
   }

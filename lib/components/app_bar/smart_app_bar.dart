@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_base/routes/route_manager.dart';
 
 /// SmartAppBar组件: 基础AppBar封装
 class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -58,7 +58,7 @@ class _SmartAppBarState extends State<SmartAppBar> {
           widget.icon,
         ),
         onPressed: () {
-          Get.back();
+          RouteManager.goBack();
         },
       ),
     );

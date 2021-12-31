@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/form_item/form_read_item.dart';
-import 'package:flutter_base/components/form_item/form_write_item.dart';
+import 'package:flutter_base/components/form/form_read_item.dart';
+import 'package:flutter_base/components/form/form_write_item.dart';
 import 'package:flutter_base/pages/other/identity/controller/identity_controller.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';

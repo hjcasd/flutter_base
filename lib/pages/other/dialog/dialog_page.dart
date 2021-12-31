@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/utils/get_helper.dart';
 import 'package:flutter_base/widget/custom_dialog.dart';
-import 'package:get/get.dart';
 
 /// Dialog页面
 class DialogPage extends StatelessWidget {
@@ -95,7 +95,7 @@ class _MyDialogState extends State<MyDialog> {
         );
       },
     );
-    _showToast(result);
+    GetHelper.showSnackBar("result: $result");
   }
 
   // SimpleDialog
@@ -138,7 +138,7 @@ class _MyDialogState extends State<MyDialog> {
         );
       },
     );
-    _showToast(result);
+    GetHelper.showSnackBar("result: $result");
   }
 
   // ModalBottomSheet
@@ -181,7 +181,7 @@ class _MyDialogState extends State<MyDialog> {
         );
       },
     );
-    _showToast(result);
+    GetHelper.showSnackBar("result: $result");
   }
 
   // 显示自定义dialog
@@ -189,13 +189,11 @@ class _MyDialogState extends State<MyDialog> {
     showDialog(
       context: context,
       builder: (context) {
-        return CustomDialog(title: "我是标题111", content: "我是内容111");
+        return CustomDialog(
+          title: "我是标题111",
+          content: "我是内容111",
+        );
       },
     );
-  }
-
-  // Toast
-  _showToast(String msg) async {
-    Get.snackbar('msg', msg);
   }
 }

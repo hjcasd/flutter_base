@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/components/text/smart_text.dart';
 
 /// Container页面
 class ContainerPage extends StatelessWidget {
@@ -32,7 +32,14 @@ class MyContainer extends StatelessWidget {
         // 高度
         // height: 300.0,
         // 子组件
-        child: Text("文本"),
+        child: SmartText(
+          "文本",
+          fontSize: 20,
+          fontColor: Colors.red,
+          onPressed: (){
+
+          },
+        ),
         // 内边距
         padding: EdgeInsets.all(10.0),
         // 外边距
