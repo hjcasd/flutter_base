@@ -6,12 +6,8 @@ import 'package:get/get.dart';
 
 /// 登录页面Controller
 class LoginController extends GetxController {
-  var _name = "";
-  var _password = "";
-
-  String get name => _name;
-
-  String get password => _password;
+  var name = "".obs;
+  var password = "".obs;
 
   @override
   void onInit() {
@@ -33,22 +29,11 @@ class LoginController extends GetxController {
 
   /// 登录
   void login() async {
-    var data = await ApiService.login(_name, _password);
+    var data = await ApiService.login(name.value, password.value);
     var entity = LoginEntity.fromJson(data);
+    name.value = "";
+    password.value = "";
     LogHelper.e("login info", "name: ${entity.data?.username}");
     FocusScope.of(Get.context!).requestFocus(FocusNode());
-  }
-
-  /// 改变名字
-  void changeName(String name) {
-    _name = name;
-    // 局部更新
-    update(["name"]);
-  }
-
-  /// 改变密码
-  void changePassword(String password) {
-    _password = password;
-    update(["password"]);
   }
 }

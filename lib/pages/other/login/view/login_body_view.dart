@@ -15,7 +15,10 @@ class LoginBodyView extends GetView<LoginController> {
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [
-          _getRoundImage("https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg", 100.0),
+          _getRoundImage(
+            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
+            100.0,
+          ),
           SizedBox(
             height: 40.0,
           ),
@@ -44,46 +47,44 @@ class LoginBodyView extends GetView<LoginController> {
 
   /// 用户名输入框
   Widget _getNameInput() {
-    return GetBuilder<LoginController>(
-      id: "name",
-      builder: (controller) => DividerTextField(
-        controller.name,
+    return Obx(() {
+      return DividerTextField(
+        controller.name.value,
         keyboardType: TextInputType.text,
         maxLength: 11,
         hintText: "请输入用户名",
         prefixIcon: Icons.account_box,
         controller: _nameController,
         onChanged: (value) {
-          controller.changeName(value);
+          controller.name.value = value;
         },
         onClear: () {
-          controller.changeName("");
+          controller.name.value = "";
           _nameController.clear();
         },
-      ),
-    );
+      );
+    });
   }
 
   /// 密码输入框
   Widget _getPasswordInput() {
-    return GetBuilder<LoginController>(
-      id: "password",
-      builder: (controller) => DividerTextField(
-        controller.password,
+    return Obx(() {
+      return DividerTextField(
+        controller.password.value,
         keyboardType: TextInputType.visiblePassword,
         obscureText: true,
         hintText: "请输入密码",
         prefixIcon: Icons.lock_open,
         controller: _passwordController,
         onChanged: (value) {
-          controller.changePassword(value);
+          controller.password.value = value;
         },
         onClear: () {
-          controller.changePassword("");
+          controller.password.value = "";
           _passwordController.clear();
         },
-      ),
-    );
+      );
+    });
   }
 
   /// 登录按钮
