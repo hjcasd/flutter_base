@@ -31,39 +31,37 @@ class IdentityBodyView extends GetView<IdentityController> {
             LogHelper.e("tag", "1111111111");
           },
         ),
-        GetBuilder<IdentityController>(
-          id: 'name',
-          builder: (controller) => FormWriteItem(
+        Obx(() {
+          return FormWriteItem(
             "姓名",
-            controller.name,
+            controller.name.value,
             "请输入姓名",
             controller: _nameController,
             onChanged: (value) {
-              controller.changeName(value);
+              controller.name.value = value;
             },
             onClear: () {
-              controller.changeName("");
+              controller.name.value = "";
               _nameController.clear();
             },
             operate: "添加",
             onOperatePressed: () {
               LogHelper.e("name", _nameController.value.text);
             },
-          ),
-        ),
-        GetBuilder<IdentityController>(
-          id: "phone",
-          builder: (controller) => FormWriteItem(
+          );
+        }),
+        Obx(() {
+          return FormWriteItem(
             "手机号",
-            controller.phone,
+            controller.phone.value,
             "请输入手机号",
             keyboardType: TextInputType.number,
             controller: _phoneController,
             onChanged: (value) {
-              controller.changePhone(value);
+              controller.phone.value = value;
             },
             onClear: () {
-              controller.changePhone("");
+              controller.phone.value = "";
               _phoneController.clear();
             },
             tip: "手机号不正确",
@@ -71,8 +69,8 @@ class IdentityBodyView extends GetView<IdentityController> {
             onOperatePressed: () {
               LogHelper.e("phone", _phoneController.value.text);
             },
-          ),
-        ),
+          );
+        }),
       ],
     );
   }

@@ -53,8 +53,8 @@ class _ImageTitleItem extends State<ImageTitleItem> {
       width: 150,
       child: CachedNetworkImage(
         imageUrl: widget.imageUrl,
-        placeholder: (context, url) => Image.asset('assets/images/test.png'),
-        errorWidget: (context, url, error) => Image.asset('assets/images/test.png'),
+        placeholder: (context, url) => Image.asset('assets/images/img_default.png'),
+        errorWidget: (context, url, error) => Image.asset('assets/images/img_default.png'),
       ),
       height: 100,
     );
