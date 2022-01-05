@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/utils/get_helper.dart';
 
 /// RichText页面
 class RichTextPage extends StatelessWidget {
@@ -38,6 +40,10 @@ class MyRichText extends StatelessWidget {
                 fontStyle: FontStyle.italic,
                 fontSize: 20.0,
               ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  GetHelper.showSnackBar("哈哈哈");
+                },
             ),
             TextSpan(
               text: "呵呵呵",
@@ -46,6 +52,10 @@ class MyRichText extends StatelessWidget {
                 fontWeight: FontWeight.w700,
                 fontSize: 16.0,
               ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  GetHelper.showSnackBar("呵呵呵");
+                },
             ),
           ],
         ),

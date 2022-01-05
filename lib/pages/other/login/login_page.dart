@@ -12,7 +12,9 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: SmartAppBar("登录页面"),
+        appBar: SmartAppBar(
+          "登录页面",
+        ),
         body: GetBuilder<LoginController>(
           init: LoginController(),
           builder: (controller) {

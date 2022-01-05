@@ -32,7 +32,7 @@ abstract class Routes {
 
   // 其他
   static const Dialog = '/dialog';
-  static const PictureList = '/picture_list';
+  static const Picture = '/picture';
   static const Login = '/login';
   static const Identity = '/identity';
 

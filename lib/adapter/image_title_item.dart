@@ -1,5 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/components/image/smart_image.dart';
 
 /// 图文列表Item
 class ImageTitleItem extends StatefulWidget {
@@ -51,12 +51,11 @@ class _ImageTitleItem extends State<ImageTitleItem> {
   Widget _imageWrapper() {
     return SizedBox(
       width: 150,
-      child: CachedNetworkImage(
-        imageUrl: widget.imageUrl,
-        placeholder: (context, url) => Image.asset('assets/images/img_default.png'),
-        errorWidget: (context, url, error) => Image.asset('assets/images/img_default.png'),
-      ),
       height: 100,
+      child: SmartImage(
+        widget.imageUrl,
+        fit: BoxFit.fill,
+      ),
     );
   }
 

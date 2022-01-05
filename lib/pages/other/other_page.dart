@@ -24,7 +24,7 @@ class _OtherPageState extends State<OtherPage> {
           ),
           RouteButton(
             "图文列表演示",
-            Routes.PictureList,
+            Routes.Picture,
             backgroundColor: Colors.amber,
           ),
           RouteButton(

@@ -5,12 +5,15 @@ class GetHelper {
   GetHelper._internal();
 
   /// 返回上一个路由页面
-  static void showSnackBar(String msg) {
+  static void showSnackBar(String msg, {String title = "提示"}) {
     Get.snackbar(
-      '提示',
+      title,
       msg,
       animationDuration: Duration(
         milliseconds: 500,
+      ),
+      duration: Duration(
+        milliseconds: 1000,
       ),
     );
   }
