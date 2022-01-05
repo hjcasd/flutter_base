@@ -1,15 +1,16 @@
 /// tip : "<font style='font-size:30'>请绑定持卡人为<a href='https://github.com' style='text-decoration:none;color:#BFA253'>会员本人</a>的<strong>储蓄卡</strong></font>"
 /// forms : [{"getID":"name","type":"intro","title":"姓名","value":"吴*","showQuestion":false},{"getID":"id","type":"intro","title":"身份证","value":"3101********111X","showQuestion":false},{"getID":"phone","type":"intro","title":"手机号","value":"185******29","showQuestion":false}]
 
-class Identity_entity {
-  Identity_entity({
-      String? tip, 
-      List<Forms>? forms,}){
+class IdentityEntity {
+  IdentityEntity({
+    String? tip,
+    List<Forms>? forms,
+  }) {
     _tip = tip;
     _forms = forms;
-}
+  }
 
-  Identity_entity.fromJson(dynamic json) {
+  IdentityEntity.fromJson(dynamic json) {
     _tip = json['tip'];
     if (json['forms'] != null) {
       _forms = [];
@@ -18,10 +19,12 @@ class Identity_entity {
       });
     }
   }
+
   String? _tip;
   List<Forms>? _forms;
 
   String? get tip => _tip;
+
   List<Forms>? get forms => _forms;
 
   Map<String, dynamic> toJson() {
@@ -32,7 +35,6 @@ class Identity_entity {
     }
     return map;
   }
-
 }
 
 /// getID : "name"
@@ -43,17 +45,18 @@ class Identity_entity {
 
 class Forms {
   Forms({
-      String? getID, 
-      String? type, 
-      String? title, 
-      String? value, 
-      bool? showQuestion,}){
+    String? getID,
+    String? type,
+    String? title,
+    String? value,
+    bool? showQuestion,
+  }) {
     _getID = getID;
     _type = type;
     _title = title;
     _value = value;
     _showQuestion = showQuestion;
-}
+  }
 
   Forms.fromJson(dynamic json) {
     _getID = json['getID'];
@@ -62,6 +65,7 @@ class Forms {
     _value = json['value'];
     _showQuestion = json['showQuestion'];
   }
+
   String? _getID;
   String? _type;
   String? _title;
@@ -69,9 +73,13 @@ class Forms {
   bool? _showQuestion;
 
   String? get getID => _getID;
+
   String? get type => _type;
+
   String? get title => _title;
+
   String? get value => _value;
+
   bool? get showQuestion => _showQuestion;
 
   Map<String, dynamic> toJson() {
@@ -83,5 +91,4 @@ class Forms {
     map['showQuestion'] = _showQuestion;
     return map;
   }
-
 }

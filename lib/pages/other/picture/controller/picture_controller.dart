@@ -1,5 +1,4 @@
 import 'package:flutter_base/data/mock_data.dart';
-import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
 /// 图文列表页面Controller
@@ -12,18 +11,6 @@ class PictureController extends GetxController {
 
   /// 当前页码
   var _currentPage = 1;
-
-  @override
-  void onInit() {
-    super.onInit();
-    LogHelper.e("PictureController", "onInit()...");
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-    LogHelper.e("PictureController", "onReady()...");
-  }
 
   /// 刷新
   void refresh() async {

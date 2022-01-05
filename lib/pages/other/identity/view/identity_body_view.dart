@@ -31,8 +31,8 @@ class IdentityBodyView extends GetView<IdentityController> {
             LogHelper.e("tag", "1111111111");
           },
         ),
-        Obx(() {
-          return FormWriteItem(
+        Obx(
+          () => FormWriteItem(
             "姓名",
             controller.name.value,
             "请输入姓名",
@@ -48,8 +48,8 @@ class IdentityBodyView extends GetView<IdentityController> {
             onOperatePressed: () {
               LogHelper.e("name", _nameController.value.text);
             },
-          );
-        }),
+          ),
+        ),
         Obx(() {
           return FormWriteItem(
             "手机号",
