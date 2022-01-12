@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
+import 'package:flutter_base/components/text/icon_text.dart';
 import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 
 /// 首页Tab页面
 class HomePage extends StatefulWidget {
@@ -58,6 +60,17 @@ class _HomePageState extends State<HomePage> {
             "Drawer",
             Routes.Drawer,
           ),
+          IconText(
+            "哈哈哈",
+            padding: EdgeInsets.all(5),
+            leftIcon: Icon(
+              Icons.settings,
+              size: 15,
+            ),
+            onPressed: () {
+              LogHelper.e("tag", "1111111");
+            },
+          )
         ],
       ),
     );
