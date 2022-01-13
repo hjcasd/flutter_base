@@ -6,10 +6,10 @@ class IconText extends StatefulWidget {
   final String text;
 
   /// 文本大小
-  final double textSize;
+  final double fontSize;
 
   /// 文本颜色
-  final Color textColor;
+  final Color fontColor;
 
   /// 左侧图标
   final Widget? leftIcon;
@@ -18,7 +18,7 @@ class IconText extends StatefulWidget {
   final Widget? rightIcon;
 
   /// 文本和图标间距大小
-  final double margin;
+  final double drawableMargin;
 
   /// 内边距
   final EdgeInsetsGeometry? padding;
@@ -28,18 +28,18 @@ class IconText extends StatefulWidget {
 
   const IconText(
     this.text, {
-    this.textSize = 14,
-    this.textColor = Colors.black,
+    this.fontSize = 14,
+    this.fontColor = Colors.black,
     this.leftIcon,
     this.rightIcon,
-    this.margin = 2,
+    this.drawableMargin = 2,
     this.padding,
     this.onPressed,
     Key? key,
   }) : super(key: key);
 
   @override
-  _IconTextState createState() => _IconTextState();
+  State<StatefulWidget> createState() => _IconTextState();
 }
 
 class _IconTextState extends State<IconText> {
@@ -51,14 +51,14 @@ class _IconTextState extends State<IconText> {
     var textWidget = Text(
       widget.text,
       style: TextStyle(
-        fontSize: widget.textSize,
-        color: widget.textColor,
+        fontSize: widget.fontSize,
+        color: widget.fontColor,
       ),
     );
 
     // 间距
     var marginWidget = SizedBox(
-      width: widget.margin,
+      width: widget.drawableMargin,
     );
 
     // 左侧图标布局

@@ -9,29 +9,29 @@ class RouteButton extends StatefulWidget {
   /// 路由地址
   final String url;
 
-  /// 按钮最小宽度
-  final double minWidth;
-
-  /// 按钮最小高度
-  final double minHeight;
-
-  /// 按钮颜色
-  final Color backgroundColor;
-
   /// 文本字体大小
   final double fontSize;
 
   /// 文本字体颜色
   final Color fontColor;
 
+  /// 按钮颜色
+  final Color backgroundColor;
+
+  /// 按钮最小宽度
+  final double minWidth;
+
+  /// 按钮最小高度
+  final double minHeight;
+
   RouteButton(
     this.text,
     this.url, {
-    this.minWidth = 200,
-    this.minHeight = 36,
-    this.backgroundColor = Colors.blue,
     this.fontSize = 14,
     this.fontColor = Colors.white,
+    this.backgroundColor = Colors.blue,
+    this.minWidth = 200,
+    this.minHeight = 36,
     Key? key,
   }) : super(key: key);
 

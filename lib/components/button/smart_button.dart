@@ -5,23 +5,23 @@ class SmartButton extends StatefulWidget {
   /// 文本
   final String text;
 
-  /// 按钮颜色
-  final Color backgroundColor;
-
   /// 文本字体大小
   final double fontSize;
 
   /// 文本字体颜色
   final Color fontColor;
 
+  /// 按钮颜色
+  final Color backgroundColor;
+
   /// 点击事件回调
   final VoidCallback? onPressed;
 
   SmartButton(
     this.text, {
-    this.backgroundColor = Colors.red,
     this.fontSize = 14.0,
     this.fontColor = Colors.white,
+    this.backgroundColor = Colors.red,
     this.onPressed,
     Key? key,
   }) : super(key: key);
