@@ -4,6 +4,8 @@ import 'package:flutter_base/pages/home/grid_view/grid_view_page.dart';
 import 'package:flutter_base/pages/home/list_view/list_dynamic_page.dart';
 import 'package:flutter_base/pages/home/list_view/list_static_page.dart';
 import 'package:flutter_base/pages/home/list_view/list_view_page.dart';
+import 'package:flutter_base/pages/layout/stack/stack_align_page.dart';
+import 'package:flutter_base/pages/layout/stack/stack_position_page.dart';
 import 'package:flutter_base/pages/other/dialog/dialog_page.dart';
 import 'package:flutter_base/pages/home/rich_text/rich_text_page.dart';
 import 'package:flutter_base/pages/layout/scaffold/scaffold_page.dart';
@@ -132,6 +134,14 @@ abstract class AppPages {
     GetPage(
       name: Routes.Stack,
       page: () => StackPage(),
+    ),
+    GetPage(
+      name: Routes.StackPositioned,
+      page: () => StackPositionedPage(),
+    ),
+    GetPage(
+      name: Routes.StackAlign,
+      page: () => StackAlignPage(),
     ),
     GetPage(
       name: Routes.Card,

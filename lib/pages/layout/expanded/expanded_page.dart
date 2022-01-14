@@ -26,6 +26,7 @@ class ExpandedPage extends StatelessWidget {
 }
 
 /// Expanded: 类似于Linearlayout中weight效果的组件
+/// Expanded必须是Row、Column、Flex的children
 class MyExpanded extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

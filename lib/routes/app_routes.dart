@@ -26,6 +26,8 @@ abstract class Routes {
   static const Column = '/column';
   static const Expanded = '/expanded';
   static const Stack = '/stack';
+  static const StackPositioned = '/stack/positioned';
+  static const StackAlign = '/stack/align';
   static const Card = '/card';
   static const Wrap = '/wrap';
   static const Scaffold = '/scaffold';
