@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/utils/dialog_manager.dart';
 import 'package:flutter_base/utils/get_helper.dart';
-import 'package:flutter_base/widget/custom_dialog.dart';
+import 'package:flutter_base/widget/smart_dialog.dart';
 
 /// Dialog页面
 class DialogPage extends StatelessWidget {
@@ -186,14 +187,16 @@ class _MyDialogState extends State<MyDialog> {
 
   // 显示自定义dialog
   _showCustomDialog() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return CustomDialog(
-          title: "我是标题111",
-          content: "我是内容111",
-        );
-      },
+    DialogManager.show(
+      context,
+      SmartDialog(
+        title: "温馨提示",
+        content: "对非中国大陆籍会员暂不支持开通钱包，如您需进行积分消费，可开通消费密码。",
+        confirmText: "开通消费免密",
+        confirmCallback: () {
+          GetHelper.showSnackBar("开通消费免密");
+        },
+      ),
     );
   }
 }
