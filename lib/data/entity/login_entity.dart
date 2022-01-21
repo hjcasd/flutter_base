@@ -3,7 +3,7 @@
 /// errorMsg : ""
 
 class LoginEntity {
-  LoginInfo({
+  LoginEntity({
     Data? data,
     int? errorCode,
     String? errorMsg,
