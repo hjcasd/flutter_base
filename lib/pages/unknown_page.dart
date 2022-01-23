@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 找不到路由后的默认页面
 class UnknownPage extends StatelessWidget {
@@ -16,11 +17,11 @@ class UnknownPage extends StatelessWidget {
               'Unknown',
               style: TextStyle(
                 fontSize: 20.0,
-                color: Colors.black,
+                color: AppColors.black,
               ),
             ),
           ),
-          color: Colors.blue,
+          color: AppColors.blue,
         ),
       ),
     );

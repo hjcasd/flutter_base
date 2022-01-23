@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
 /// TabBar页面
@@ -83,7 +84,7 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
         ),
         bottom: TabBar(
           /// 指示器颜色
-          indicatorColor: Colors.amberAccent,
+          indicatorColor: AppColors.amber,
           isScrollable: true,
           controller: _tabController,
           tabs: _tabList,

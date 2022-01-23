@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 表单编辑Item
 class FormWriteItem extends StatefulWidget {
@@ -60,7 +61,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: AppColors.white,
       child: Stack(
         children: [
           _getItem(),
@@ -118,7 +119,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
                   hintText: widget.placeholder,
                   hintStyle: TextStyle(
                     fontSize: 14,
-                    color: Color(0xFF999999),
+                    color: AppColors.black_999999,
                   ),
                   suffixIconConstraints: BoxConstraints(maxHeight: 20),
                   suffixIcon: GestureDetector(
@@ -142,7 +143,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
                 widget.tip,
                 style: TextStyle(
                   fontSize: 10,
-                  color: Color(0xFFFE5500),
+                  color: AppColors.red,
                 ),
               ),
             ),
@@ -162,7 +163,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
           child: Text(
             widget.operate,
             style: TextStyle(
-              color: Colors.amber,
+              color: AppColors.amber,
             ),
           ),
         ),
@@ -181,7 +182,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
         right: 0,
         child: Divider(
           height: 0.5,
-          color: Color(0xFFE5E5E5),
+          color: AppColors.grey_E5E5E5,
         ),
       ),
     );

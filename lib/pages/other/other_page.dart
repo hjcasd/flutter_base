@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 
 /// 其他Tab页面
@@ -20,22 +21,22 @@ class _OtherPageState extends State<OtherPage> {
           RouteButton(
             "Dialog演示",
             Routes.Dialog,
-            backgroundColor: Colors.amber,
+            backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "图文列表演示",
             Routes.Picture,
-            backgroundColor: Colors.amber,
+            backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "登录案例演示",
             Routes.Login,
-            backgroundColor: Colors.amber,
+            backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "身份信息演示",
             Routes.Identity,
-            backgroundColor: Colors.amber,
+            backgroundColor: AppColors.amber,
           ),
         ],
       ),

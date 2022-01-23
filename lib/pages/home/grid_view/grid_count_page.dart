@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// GridView.count实现网格页面
 class GridCountPage extends StatelessWidget {
@@ -38,7 +39,7 @@ class MyCountGridView extends StatelessWidget {
     for (var i = 0; i < 30; i++) {
       list.add(
         Card(
-          color: Colors.blue,
+          color: AppColors.blue,
           child: Center(
             child: Text(
               "这是第${i + 1}条数据",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 带图标的Text组件
 class IconText extends StatefulWidget {
@@ -29,7 +30,7 @@ class IconText extends StatefulWidget {
   const IconText(
     this.text, {
     this.fontSize = 14,
-    this.fontColor = Colors.black,
+    this.fontColor = AppColors.black,
     this.leftIcon,
     this.rightIcon,
     this.drawableMargin = 2,

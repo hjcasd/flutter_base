@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 静态列表页面
 class ListStaticPage extends StatelessWidget {
@@ -24,7 +25,7 @@ class MyStaticListView extends StatelessWidget {
         ListTile(
           leading: Icon(
             Icons.settings,
-            color: Colors.green,
+            color: AppColors.green,
             size: 40,
           ),
           title: Text(
@@ -41,7 +42,7 @@ class MyStaticListView extends StatelessWidget {
         ListTile(
           trailing: Icon(
             Icons.settings,
-            color: Colors.blue,
+            color: AppColors.blue,
             size: 40,
           ),
           title: Text(

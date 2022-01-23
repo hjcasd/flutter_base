@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
 /// SmartAppBar组件: 基础AppBar封装
@@ -23,9 +24,9 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   SmartAppBar(
     this.text, {
-    this.fontSize = 18.0,
-    this.fontColor = Colors.white,
-    this.backgroundColor = Colors.red,
+    this.fontSize = 18,
+    this.fontColor = AppColors.white,
+    this.backgroundColor = AppColors.red,
     this.isCenterTitle = false,
     this.icon = Icons.arrow_back,
     Key? key,

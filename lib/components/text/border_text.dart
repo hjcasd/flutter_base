@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 带边框的Text组件
 class BorderText extends StatefulWidget {
@@ -35,15 +36,16 @@ class BorderText extends StatefulWidget {
   /// 点击事件回调
   final VoidCallback? onPressed;
 
-  BorderText(this.text, {
+  BorderText(
+    this.text, {
     this.fontSize = 14,
-    this.fontColor = Colors.white,
+    this.fontColor = AppColors.white,
     this.backgroundColor,
     this.padding,
     this.opacity = 1,
     this.radius = 0,
     this.borderWidth = 0,
-    this.borderColor = Colors.white,
+    this.borderColor = AppColors.white,
     this.borderStyle = BorderStyle.solid,
     this.onPressed,
     Key? key,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// SmartButton组件: 基础Button封装
 class SmartButton extends StatefulWidget {
@@ -19,9 +20,9 @@ class SmartButton extends StatefulWidget {
 
   SmartButton(
     this.text, {
-    this.fontSize = 14.0,
-    this.fontColor = Colors.white,
-    this.backgroundColor = Colors.red,
+    this.fontSize = 14,
+    this.fontColor = AppColors.white,
+    this.backgroundColor = AppColors.red,
     this.onPressed,
     Key? key,
   }) : super(key: key);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Button页面
 class ButtonPage extends StatelessWidget {
@@ -39,7 +40,7 @@ class MyButton extends StatelessWidget {
           icon: Icon(
             Icons.settings,
           ),
-          color: Colors.blue,
+          color: AppColors.blue,
         ),
         ButtonBar(
           alignment: MainAxisAlignment.center,
@@ -82,7 +83,7 @@ class MyFloatingButton extends StatelessWidget {
         child: Icon(
           Icons.add,
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: AppColors.green,
         elevation: 10.0,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

@@ -38,7 +38,6 @@ class MyDrawerHeader extends StatelessWidget {
                       "呵呵呵",
                     ),
                     decoration: BoxDecoration(
-                      // color: Colors.green,
                       image: DecorationImage(
                         image: NetworkImage(
                           "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",

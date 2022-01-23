@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// GridView.builder实现网格页面
 class GridBuilderPage extends StatelessWidget {
@@ -32,7 +33,7 @@ class MyBuilderGridView extends StatelessWidget {
       itemBuilder: (context, index) {
         return Container(
           alignment: Alignment.center,
-          color: Colors.green,
+          color: AppColors.green,
           child: Text(
             _listData[index],
           ),

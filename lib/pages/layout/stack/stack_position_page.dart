@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Stack + Positioned页面
 class StackPositionedPage extends StatelessWidget {
@@ -21,7 +23,7 @@ class MyStackPositioned extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.cyan,
+      color: AppColors.blue,
       child: Stack(
         children: <Widget>[
           Positioned(
@@ -29,7 +31,7 @@ class MyStackPositioned extends StatelessWidget {
             right: 0,
             child: Container(
               height: 200,
-              color: Colors.green,
+              color: AppColors.green,
             ),
           ),
           Positioned(
@@ -38,7 +40,7 @@ class MyStackPositioned extends StatelessWidget {
             top: 100,
             bottom: 0,
             child: Container(
-              color: Colors.amber,
+              color: AppColors.amber,
             ),
           ),
         ],

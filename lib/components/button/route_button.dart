@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
 /// RouteButton组件: 便捷带url跳转
@@ -28,8 +29,8 @@ class RouteButton extends StatefulWidget {
     this.text,
     this.url, {
     this.fontSize = 14,
-    this.fontColor = Colors.white,
-    this.backgroundColor = Colors.blue,
+    this.fontColor = AppColors.white,
+    this.backgroundColor = AppColors.blue,
     this.minWidth = 200,
     this.minHeight = 36,
     Key? key,
@@ -53,12 +54,7 @@ class _RouteButtonState extends State<RouteButton> {
         ),
       ),
       style: ButtonStyle(
-        minimumSize: MaterialStateProperty.all(
-          Size(
-            widget.minWidth,
-            widget.minHeight,
-          ),
-        ),
+        minimumSize: MaterialStateProperty.all(Size(widget.minWidth, widget.minHeight)),
         backgroundColor: MaterialStateProperty.all(widget.backgroundColor),
       ),
       onPressed: () {

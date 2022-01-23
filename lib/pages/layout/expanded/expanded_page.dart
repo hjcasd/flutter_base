@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/components/icon_container.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Expanded页面
 class ExpandedPage extends StatelessWidget {
@@ -38,21 +39,21 @@ class MyExpanded extends StatelessWidget {
           flex: 1,
           child: IconContainer(
             Icons.add,
-            backgroundColor: Colors.yellow,
+            backgroundColor: AppColors.amber,
           ),
         ),
         Expanded(
           flex: 2,
           child: IconContainer(
             Icons.ac_unit,
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue,
           ),
         ),
         Expanded(
           flex: 1,
           child: IconContainer(
             Icons.settings,
-            backgroundColor: Colors.cyan,
+            backgroundColor: AppColors.green,
           ),
         ),
       ],
@@ -71,7 +72,7 @@ class MyMultiExpanded extends StatelessWidget {
             Expanded(
               child: Container(
                 height: 180.0,
-                color: Colors.yellow,
+                color: AppColors.amber,
                 alignment: Alignment.center,
                 child: Text(
                   "哈哈哈",

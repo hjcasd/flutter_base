@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
 /// AppBar的使用
@@ -21,7 +22,7 @@ class MyAppBar extends StatelessWidget {
           "AppBar",
         ),
         // 背景
-        backgroundColor: Colors.green,
+        backgroundColor: AppColors.green,
         // 左侧图标
         leading: IconButton(
           icon: Icon(
@@ -72,17 +73,17 @@ class MyAppTabBar extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: AppColors.green,
           title: Row(
             children: <Widget>[
               Expanded(
                 child: TabBar(
                   // 指示器颜色
-                  indicatorColor: Colors.black,
+                  indicatorColor: AppColors.black,
                   // 选中的字体颜色
-                  labelColor: Colors.black,
+                  labelColor: AppColors.black,
                   // 未选中的字体颜色
-                  unselectedLabelColor: Colors.white,
+                  unselectedLabelColor: AppColors.white,
                   // 下划线宽度
                   indicatorSize: TabBarIndicatorSize.label,
                   tabs: <Widget>[

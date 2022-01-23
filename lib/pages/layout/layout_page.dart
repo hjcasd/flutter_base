@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 
 /// 布局Tab页面
@@ -20,47 +21,47 @@ class _LayoutPageState extends State<LayoutPage> {
           RouteButton(
             "Container",
             Routes.Container,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Padding",
             Routes.Padding,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Row",
             Routes.Row,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Column",
             Routes.Column,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Expanded",
             Routes.Expanded,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Stack",
             Routes.Stack,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Card",
             Routes.Card,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Wrap",
             Routes.Wrap,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Scaffold",
             Routes.Scaffold,
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.green,
           ),
         ],
       ),

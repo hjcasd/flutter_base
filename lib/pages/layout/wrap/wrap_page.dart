@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Wrap页面
 class WrapPage extends StatelessWidget {
@@ -23,7 +24,7 @@ class MyWrap extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(10.0),
-      color: Colors.green,
+      color: AppColors.green,
       child: Wrap(
         // 布局方向
         direction: Axis.horizontal,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 自定义Dialog
 class SmartDialog extends StatefulWidget {
@@ -53,7 +54,7 @@ class _SmartDialogState extends State<SmartDialog> {
           child: Container(
             width: dialogWidth,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               borderRadius: BorderRadius.circular(2.5),
             ),
             child: Column(
@@ -102,7 +103,7 @@ class _SmartDialogState extends State<SmartDialog> {
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w700,
-          color: Colors.black,
+          color: AppColors.black,
         ),
       ),
     );
@@ -131,7 +132,7 @@ class _SmartDialogState extends State<SmartDialog> {
     }
     return Container(
       width: double.infinity,
-      color: Color(0xFFF7F7F7),
+      color: AppColors.grey_F7F7F7,
       padding: EdgeInsets.fromLTRB(28, 15, 28, 15),
       child: Row(
         children: childrenList,
@@ -151,11 +152,11 @@ class _SmartDialogState extends State<SmartDialog> {
             widget.confirmText,
             style: TextStyle(
               fontSize: 15,
-              color: Colors.white,
+              color: AppColors.white,
             ),
           ),
           decoration: BoxDecoration(
-            color: Color(0xFF1A3B64),
+            color: AppColors.blue_1A3B64,
             borderRadius: BorderRadius.circular(2.5),
           ),
         ),
@@ -176,11 +177,11 @@ class _SmartDialogState extends State<SmartDialog> {
             widget.cancelText,
             style: TextStyle(
               fontSize: 15,
-              color: Colors.white,
+              color: AppColors.white,
             ),
           ),
           decoration: BoxDecoration(
-            color: Color(0xFF1A3B64),
+            color: AppColors.blue_1A3B64,
             borderRadius: BorderRadius.circular(2.5),
           ),
         ),

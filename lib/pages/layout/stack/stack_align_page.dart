@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Stack + Align页面
 class StackAlignPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class MyStackAlign extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 400,
-      color: Colors.green,
+      color: AppColors.green,
       child: Stack(
         children: <Widget>[
           Align(

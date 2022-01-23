@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Padding页面
 class PaddingPage extends StatelessWidget {
@@ -24,7 +25,7 @@ class MyPadding extends StatelessWidget {
       list.add(
         Container(
           alignment: Alignment.center,
-          color: Colors.cyan,
+          color: AppColors.green,
           child: Text(
             "这是第${i + 1}条数据",
           ),

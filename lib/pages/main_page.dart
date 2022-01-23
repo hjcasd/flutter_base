@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/pages/home/home_page.dart';
 import 'package:flutter_base/pages/layout/layout_page.dart';
 import 'package:flutter_base/pages/other/other_page.dart';
@@ -34,10 +35,10 @@ class _MainPageState extends State<MainPage> {
 
   /// 标题栏颜色集合
   final List<Color> _colorList = [
-    Colors.blue,
-    Colors.green,
-    Colors.amber,
-    Colors.cyan,
+    AppColors.blue,
+    AppColors.green,
+    AppColors.amber,
+    AppColors.cyan,
   ];
 
   @override

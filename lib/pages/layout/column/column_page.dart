@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/components/icon_container.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Column页面
 class ColumnPage extends StatelessWidget {
@@ -27,15 +28,15 @@ class MyColumn extends StatelessWidget {
       children: <Widget>[
         IconContainer(
           Icons.add,
-          backgroundColor: Colors.yellow,
+          backgroundColor: AppColors.amber,
         ),
         IconContainer(
           Icons.ac_unit,
-          backgroundColor: Colors.blue,
+          backgroundColor: AppColors.blue,
         ),
         IconContainer(
           Icons.settings,
-          backgroundColor: Colors.cyan,
+          backgroundColor: AppColors.green,
         ),
       ],
     );

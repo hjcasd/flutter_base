@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 表单展示Item
 class FormReadItem extends StatefulWidget {
@@ -44,7 +46,7 @@ class _FormReadItemState extends State<FormReadItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: AppColors.white,
       child: Stack(
         children: [
           _getItem(),
@@ -96,7 +98,7 @@ class _FormReadItemState extends State<FormReadItem> {
               widget.content,
               style: TextStyle(
                 fontWeight: FontWeight.w700,
-                color: Colors.black,
+                color: AppColors.black,
                 fontSize: widget.isLarge ? 18 : 14,
               ),
             ),
@@ -106,7 +108,7 @@ class _FormReadItemState extends State<FormReadItem> {
                 widget.tip,
                 style: TextStyle(
                   fontSize: 10,
-                  color: Color(0xFFFE5500),
+                  color: AppColors.red_CB1E36,
                 ),
               ),
             ),
@@ -124,7 +126,7 @@ class _FormReadItemState extends State<FormReadItem> {
         child: Text(
           widget.operate,
           style: TextStyle(
-            color: Colors.amber,
+            color: AppColors.amber,
           ),
         ),
         onTap: widget.onOperatePressed,
@@ -142,7 +144,7 @@ class _FormReadItemState extends State<FormReadItem> {
         right: 0,
         child: Divider(
           height: 0.5,
-          color: Color(0xFFE5E5E5),
+          color: AppColors.grey_E5E5E5,
         ),
       ),
     );

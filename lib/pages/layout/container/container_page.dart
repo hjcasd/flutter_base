@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/components/text/smart_text.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Container页面
 class ContainerPage extends StatelessWidget {
@@ -35,33 +36,31 @@ class MyContainer extends StatelessWidget {
         child: SmartText(
           "文本",
           fontSize: 20,
-          fontColor: Colors.red,
-          onPressed: (){
-
-          },
+          fontColor: AppColors.red,
+          onPressed: () {},
         ),
         // 内边距
         padding: EdgeInsets.all(10.0),
         // 外边距
         margin: EdgeInsets.all(10.0),
         // 背景颜色,,如果存在decoration,那么就不能设置该属性,否则会报错
-        // color: Colors.red,
+        // color: AppColors.red,
         // Container中子组件的对齐方式
         alignment: Alignment.center,
         // 修饰背景和边框
         decoration: BoxDecoration(
           // 背景颜色
-          // color: Colors.greenAccent,
+          // color: AppColors.green,
           // 边框
           border: Border.all(
             // 边框颜色
-            color: Colors.blue,
+            color: AppColors.blue,
             // 边框宽度
             width: 2.0,
           ),
           // 渐变
           gradient: LinearGradient(
-            colors: [Colors.greenAccent, Colors.green],
+            colors: [AppColors.greenAccent, AppColors.green],
           ),
           // 边框圆角
           borderRadius: BorderRadius.all(Radius.circular(15.0)),

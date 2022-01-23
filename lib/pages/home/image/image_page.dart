@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/components/image/smart_image.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// Image页面
 class ImagePage extends StatelessWidget {
@@ -42,13 +43,13 @@ class MyNetImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200.0,
-      height: 200.0,
+      width: 200,
+      height: 200,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: AppColors.blue,
         border: Border.all(
-          color: Colors.black,
-          width: 1.0,
+          color: AppColors.black,
+          width: 1,
         ),
       ),
       child: Image.network(
@@ -56,7 +57,7 @@ class MyNetImage extends StatelessWidget {
         // 图片在父容器中的对齐方式
         alignment: Alignment.topLeft,
         // color和colorBlendMode一起使用,对图片进行颜色处理
-        color: Colors.green,
+        color: AppColors.green,
         colorBlendMode: BlendMode.darken,
         // 图片显示方式
         fit: BoxFit.contain,
@@ -72,15 +73,15 @@ class MyCircleBoxImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100.0,
-      height: 100.0,
+      width: 100,
+      height: 100,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.green,
-          width: 2.0,
+          color: AppColors.green,
+          width: 2,
         ),
-        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+        borderRadius: BorderRadius.all(Radius.circular(50)),
         image: DecorationImage(
           image: NetworkImage(
             "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
@@ -100,8 +101,8 @@ class MyCircleClipImage extends StatelessWidget {
       child: ClipOval(
         child: Image.network(
           "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
           fit: BoxFit.fill,
         ),
       ),

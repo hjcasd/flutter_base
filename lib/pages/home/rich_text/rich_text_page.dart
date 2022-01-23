@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/utils/get_helper.dart';
 
 /// RichText页面
@@ -29,14 +30,14 @@ class MyRichText extends StatelessWidget {
         text: TextSpan(
           text: "我是富文本",
           style: TextStyle(
-            color: Colors.cyan,
+            color: AppColors.green,
             fontSize: 24.0,
           ),
           children: <TextSpan>[
             TextSpan(
               text: "哈哈哈",
               style: TextStyle(
-                color: Colors.blue,
+                color: AppColors.blue,
                 fontStyle: FontStyle.italic,
                 fontSize: 20.0,
               ),
@@ -48,7 +49,7 @@ class MyRichText extends StatelessWidget {
             TextSpan(
               text: "呵呵呵",
               style: TextStyle(
-                color: Colors.amberAccent,
+                color: AppColors.amber,
                 fontWeight: FontWeight.w700,
                 fontSize: 16.0,
               ),

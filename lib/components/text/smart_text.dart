@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// SmartText组件: 基础Text封装
 class SmartText extends StatefulWidget {
@@ -20,7 +21,7 @@ class SmartText extends StatefulWidget {
   SmartText(
     this.text, {
     this.fontSize = 14,
-    this.fontColor = Colors.white,
+    this.fontColor = AppColors.white,
     this.opacity = 1,
     this.onPressed,
     Key? key,

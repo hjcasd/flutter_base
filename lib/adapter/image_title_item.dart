@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/image/smart_image.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 图文列表Item
 class ImageTitleItem extends StatefulWidget {
@@ -81,7 +82,7 @@ class _ImageTitleItem extends State<ImageTitleItem> {
           Icon(
             Icons.remove_red_eye_outlined,
             size: 14,
-            color: Colors.grey,
+            color: AppColors.grey_BCBCBC,
           ),
           SizedBox(
             width: 5,
@@ -89,7 +90,7 @@ class _ImageTitleItem extends State<ImageTitleItem> {
           Text(
             widget.viewCount.toString(),
             style: TextStyle(
-              color: Colors.grey,
+              color: AppColors.grey_BCBCBC,
               fontSize: 14,
             ),
           ),

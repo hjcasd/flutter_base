@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 
 /// 设置Tab页面
@@ -20,22 +21,22 @@ class _SettingPageState extends State<SettingPage> {
           RouteButton(
             "Swiper",
             Routes.Swiper,
-            backgroundColor: Colors.cyan,
+            backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "Dio",
             Routes.Dio,
-            backgroundColor: Colors.cyan,
+            backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "GetX",
             Routes.GetX,
-            backgroundColor: Colors.cyan,
+            backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "Native",
             Routes.Native,
-            backgroundColor: Colors.cyan,
+            backgroundColor: AppColors.cyan,
           ),
         ],
       ),

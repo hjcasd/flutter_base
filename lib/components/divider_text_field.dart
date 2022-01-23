@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/AppColors.dart';
 
 /// 带下划线的输入框
 class DividerTextField extends StatefulWidget {
@@ -113,7 +114,7 @@ class _DividerTextField extends State<DividerTextField> {
   Widget _getDivider() {
     return Divider(
       height: 1,
-      color: Colors.grey,
+      color: AppColors.grey_E5E5E5,
     );
   }
 }
