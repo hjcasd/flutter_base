@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/components/icon_container.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// Row页面
 class RowPage extends StatelessWidget {
@@ -23,7 +23,7 @@ class MyRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(10),
       child: Row(
         // 水平方向上(主轴)的排列方式
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

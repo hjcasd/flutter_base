@@ -2,7 +2,7 @@
 class HttpConfig {
   /// 超时时间
   static const CONNECT_TIMEOUT = 30000;
-  static const RECEIVE_TIMEOUT  = 30000;
+  static const RECEIVE_TIMEOUT = 30000;
 
   /// 默认域名
   static const String BASE_URL = "https://www.wanandroid.com";

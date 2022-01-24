@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// Button页面
 class ButtonPage extends StatelessWidget {
@@ -84,7 +84,7 @@ class MyFloatingButton extends StatelessWidget {
           Icons.add,
         ),
         backgroundColor: AppColors.green,
-        elevation: 10.0,
+        elevation: 10,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Center(

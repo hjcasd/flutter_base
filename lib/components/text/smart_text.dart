@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// SmartText组件: 基础Text封装
 class SmartText extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 
 /// 布局Tab页面

@@ -20,7 +20,7 @@ class GetXPage extends StatelessWidget {
             return Text(
               '点击了 ${controller.count} 次',
               style: TextStyle(
-                fontSize: 30.0,
+                fontSize: 30,
               ),
             );
           },

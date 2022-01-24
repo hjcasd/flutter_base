@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// Wrap页面
 class WrapPage extends StatelessWidget {
@@ -23,7 +23,7 @@ class MyWrap extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(10),
       color: AppColors.green,
       child: Wrap(
         // 布局方向
@@ -31,7 +31,7 @@ class MyWrap extends StatelessWidget {
         // X轴对齐方式
         alignment: WrapAlignment.spaceBetween,
         // X轴子组件之间距离
-        spacing: 10.0,
+        spacing: 10,
         children: <Widget>[
           MyButton("斗罗大陆"),
           MyButton("武动乾坤"),

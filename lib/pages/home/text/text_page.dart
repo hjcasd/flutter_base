@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// Text页面
 class TextPage extends StatelessWidget {
@@ -24,9 +24,9 @@ class MyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 300.0,
-        height: 300.0,
-        padding: EdgeInsets.all(10.0),
+        width: 300,
+        height: 300,
+        padding: EdgeInsets.all(10),
         color: AppColors.amber,
         child: Text(
           "我是一个文本组件， 我是一个文本组件，我是一个文本组件",
@@ -34,7 +34,7 @@ class MyText extends StatelessWidget {
           textAlign: TextAlign.left,
           style: TextStyle(
             // 字体大小
-            fontSize: 20.0,
+            fontSize: 20,
             // 字体颜色
             color: AppColors.blue,
             // 字体加粗
@@ -48,7 +48,7 @@ class MyText extends StatelessWidget {
             // 下划线样式
             decorationStyle: TextDecorationStyle.dashed,
             // 文本字体间距
-            letterSpacing: 2.0,
+            letterSpacing: 2,
           ),
           // 文本溢出的处理方式
           // overflow: TextOverflow.ellipsis,

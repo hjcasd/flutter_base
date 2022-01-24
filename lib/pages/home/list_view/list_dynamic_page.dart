@@ -60,7 +60,7 @@ class ImageItem extends StatelessWidget {
             _title,
             textAlign: TextAlign.center,
           ),
-          padding: EdgeInsets.fromLTRB(0, 10.0, 0, 10.0),
+          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
         ),
       ],
     );

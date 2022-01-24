@@ -75,7 +75,6 @@ abstract class AppPages {
       page: () => ListDynamicPage(),
     ),
 
-
     GetPage(
       name: Routes.GridView,
       page: () => GridViewPage(),

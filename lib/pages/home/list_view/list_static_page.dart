@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// 静态列表页面
 class ListStaticPage extends StatelessWidget {
@@ -31,7 +31,7 @@ class MyStaticListView extends StatelessWidget {
           title: Text(
             "我是标题111111",
             style: TextStyle(
-              fontSize: 18.0,
+              fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -48,7 +48,7 @@ class MyStaticListView extends StatelessWidget {
           title: Text(
             "我是标题111111",
             style: TextStyle(
-              fontSize: 18.0,
+              fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -63,7 +63,7 @@ class MyStaticListView extends StatelessWidget {
           title: Text(
             "我是标题111111",
             style: TextStyle(
-              fontSize: 18.0,
+              fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -78,7 +78,7 @@ class MyStaticListView extends StatelessWidget {
           title: Text(
             "我是标题111111",
             style: TextStyle(
-              fontSize: 18.0,
+              fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
           ),

@@ -57,7 +57,7 @@ class _MyDioState extends State<MyDio> {
             onPressed: _getData,
           ),
           SizedBox(
-            height: 10.0,
+            height: 10,
           ),
           ElevatedButton(
             child: Text(
@@ -66,7 +66,7 @@ class _MyDioState extends State<MyDio> {
             onPressed: _postData,
           ),
           SizedBox(
-            height: 10.0,
+            height: 10,
           ),
           ElevatedButton(
             child: Text(
@@ -78,7 +78,7 @@ class _MyDioState extends State<MyDio> {
             },
           ),
           SizedBox(
-            height: 10.0,
+            height: 10,
           ),
           ElevatedButton(
             child: Text(

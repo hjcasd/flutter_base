@@ -29,14 +29,14 @@ class MyCard extends StatelessWidget {
       height: 100,
       child: Card(
         // 阴影
-        elevation: 15.0,
+        elevation: 15,
         // 圆角
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(15.0),
+            Radius.circular(15),
           ),
         ),
-        margin: EdgeInsets.all(10.0),
+        margin: EdgeInsets.all(10),
         child: Html(
           // HTML自带padding 左右为7 上下为5
           data: htmlData,

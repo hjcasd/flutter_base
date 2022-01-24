@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 import 'package:flutter_base/utils/get_helper.dart';
 
 /// RichText页面
@@ -25,13 +25,13 @@ class MyRichText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(10),
       child: RichText(
         text: TextSpan(
           text: "我是富文本",
           style: TextStyle(
             color: AppColors.green,
-            fontSize: 24.0,
+            fontSize: 24,
           ),
           children: <TextSpan>[
             TextSpan(
@@ -39,7 +39,7 @@ class MyRichText extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.blue,
                 fontStyle: FontStyle.italic,
-                fontSize: 20.0,
+                fontSize: 20,
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
@@ -51,7 +51,7 @@ class MyRichText extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.amber,
                 fontWeight: FontWeight.w700,
-                fontSize: 16.0,
+                fontSize: 16,
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {

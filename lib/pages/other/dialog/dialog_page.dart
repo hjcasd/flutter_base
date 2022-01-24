@@ -38,21 +38,21 @@ class _MyDialogState extends State<MyDialog> {
             onPressed: _showAlertDialog,
           ),
           SizedBox(
-            height: 10.0,
+            height: 10,
           ),
           ElevatedButton(
             child: Text("SimpleDialog"),
             onPressed: _showSimpleDialog,
           ),
           SizedBox(
-            height: 10.0,
+            height: 10,
           ),
           ElevatedButton(
             child: Text("BottomSheet"),
             onPressed: _showBottomSheet,
           ),
           SizedBox(
-            height: 10.0,
+            height: 10,
           ),
           ElevatedButton(
             child: Text("自定义Dialog"),

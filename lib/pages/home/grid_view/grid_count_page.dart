@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// GridView.count实现网格页面
 class GridCountPage extends StatelessWidget {
@@ -24,12 +24,12 @@ class MyCountGridView extends StatelessWidget {
       // 每行个数
       crossAxisCount: 3,
       // 水平间距
-      crossAxisSpacing: 5.0,
+      crossAxisSpacing: 5,
       // 垂直间距
-      mainAxisSpacing: 10.0,
+      mainAxisSpacing: 10,
       // 宽高比
       childAspectRatio: 1,
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(10),
       children: _getData(),
     );
   }

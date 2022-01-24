@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// 带图标的Container
 class IconContainer extends StatelessWidget {
@@ -15,15 +15,15 @@ class IconContainer extends StatelessWidget {
   IconContainer(
     this.iconData, {
     this.backgroundColor = AppColors.blue,
-    this.iconSize = 32.0,
+    this.iconSize = 32,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.0,
-      width: 100.0,
+      height: 100,
+      width: 100,
       color: backgroundColor,
       child: Center(
         child: Icon(

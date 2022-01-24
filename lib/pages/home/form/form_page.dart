@@ -62,7 +62,7 @@ class _MyFormState extends State<MyForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20.0),
+      padding: EdgeInsets.all(20),
       child: Column(
         children: <Widget>[
           TextField(
@@ -133,11 +133,11 @@ class _MyFormState extends State<MyForm> {
             onChanged: _descChanged,
           ),
           SizedBox(
-            height: 10.0,
+            height: 10,
           ),
           Container(
             width: double.infinity,
-            height: 40.0,
+            height: 40,
             child: ElevatedButton(
               onPressed: () {
                 print("用户名: $_username");

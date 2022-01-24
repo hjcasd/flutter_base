@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/components/button/route_button.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 
 /// Stack + Align + Positioned页面
@@ -42,18 +42,18 @@ class MyStack extends StatelessWidget {
       alignment: Alignment(0, 0),
       children: <Widget>[
         Container(
-          height: 160.0,
-          width: 160.0,
+          height: 160,
+          width: 160,
           color: AppColors.green,
         ),
         Container(
-          height: 140.0,
-          width: 140.0,
+          height: 140,
+          width: 140,
           color: AppColors.amber,
         ),
         Container(
-          height: 120.0,
-          width: 120.0,
+          height: 120,
+          width: 120,
           color: AppColors.blue,
         ),
         Text(

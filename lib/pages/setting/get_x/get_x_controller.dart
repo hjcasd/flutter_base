@@ -21,5 +21,4 @@ class GetXController extends GetxController {
     super.onReady();
     LogHelper.e("CounterController", "onReady()...");
   }
-
 }

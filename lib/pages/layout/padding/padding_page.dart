@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/constants/AppColors.dart';
+import 'package:flutter_base/theme/AppColors.dart';
 
 /// Padding页面
 class PaddingPage extends StatelessWidget {
@@ -45,9 +45,9 @@ class MyPadding extends StatelessWidget {
         // 每行个数
         crossAxisCount: 3,
         // 水平间距
-        crossAxisSpacing: 10.0,
+        crossAxisSpacing: 10,
         // 垂直间距
-        mainAxisSpacing: 10.0,
+        mainAxisSpacing: 10,
         // 宽高比
         childAspectRatio: 1,
         children: _getData(),

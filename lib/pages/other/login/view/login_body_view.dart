@@ -17,15 +17,15 @@ class LoginBodyView extends GetView<LoginController> {
         children: [
           _getRoundImage(
             "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-            100.0,
+            100,
           ),
           SizedBox(
-            height: 40.0,
+            height: 40,
           ),
           _getNameInput(),
           _getPasswordInput(),
           SizedBox(
-            height: 10.0,
+            height: 10,
           ),
           _getLoginButton(),
         ],
@@ -90,9 +90,9 @@ class LoginBodyView extends GetView<LoginController> {
   /// 登录按钮
   Widget _getLoginButton() {
     return Container(
-      height: 50.0,
+      height: 50,
       width: double.infinity,
-      margin: EdgeInsets.all(10.0),
+      margin: EdgeInsets.all(10),
       child: ElevatedButton(
         child: Text(
           "登录",

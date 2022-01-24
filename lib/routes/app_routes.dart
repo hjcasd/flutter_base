@@ -43,5 +43,4 @@ abstract class Routes {
   static const Dio = '/dio';
   static const GetX = '/getX';
   static const Native = '/native';
-
 }
