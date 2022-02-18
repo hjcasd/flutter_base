@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/theme/AppColors.dart';
+import 'package:flutter_base/theme/app_colors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
 /// TabBar页面

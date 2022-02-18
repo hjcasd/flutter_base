@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/theme/AppColors.dart';
+import 'package:flutter_base/theme/app_colors.dart';
 
 /// Padding页面
 class PaddingPage extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/components/text/smart_text.dart';
-import 'package:flutter_base/theme/AppColors.dart';
+import 'package:flutter_base/theme/app_colors.dart';
 
 /// Container页面
 class ContainerPage extends StatelessWidget {

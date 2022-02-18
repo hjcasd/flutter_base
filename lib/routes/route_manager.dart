@@ -1,5 +1,5 @@
-import 'package:flutter_base/native/ChannelHelper.dart';
-import 'package:flutter_base/native/NativeMethod.dart';
+import 'package:flutter_base/native/channel_helper.dart';
+import 'package:flutter_base/native/native_method.dart';
 import 'package:get/get.dart';
 
 /// 路由管理

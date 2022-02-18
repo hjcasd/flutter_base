@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/native/ChannelHelper.dart';
-import 'package:flutter_base/native/NativeMethod.dart';
-import 'package:flutter_base/native/NativePath.dart';
+import 'package:flutter_base/native/channel_helper.dart';
+import 'package:flutter_base/native/native_method.dart';
+import 'package:flutter_base/native/native_path.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 import 'package:flutter_base/utils/get_helper.dart';
 

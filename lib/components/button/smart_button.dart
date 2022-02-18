@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/theme/AppColors.dart';
+import 'package:flutter_base/theme/app_colors.dart';
 
 /// SmartButton组件: 基础Button封装
 class SmartButton extends StatefulWidget {
