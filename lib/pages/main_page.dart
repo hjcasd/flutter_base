@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/theme/app_colors.dart';
+import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/pages/home/home_page.dart';
 import 'package:flutter_base/pages/layout/layout_page.dart';
 import 'package:flutter_base/pages/other/other_page.dart';

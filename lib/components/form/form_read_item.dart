@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_base/theme/app_colors.dart';
+import 'package:flutter_base/constants/app_colors.dart';
 
 /// 表单展示Item
 class FormReadItem extends StatefulWidget {
