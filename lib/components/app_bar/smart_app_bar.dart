@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
-/// SmartAppBar组件: 基础AppBar封装
+/// SmartAppBar: 基础AppBar封装的组件
 class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
-  /// 标题
+  // 标题
   final String text;
 
-  /// 字体大小
+  // 字体大小
   final double fontSize;
 
-  /// 字体颜色
+  // 字体颜色
   final Color fontColor;
 
-  /// 背景颜色
+  // 背景颜色
   final Color backgroundColor;
 
-  /// 标题是否居中
+  // 标题是否居中
   final bool isCenterTitle;
 
-  /// 左侧图标
+  // 左侧图标
   final IconData icon;
 
   SmartAppBar(

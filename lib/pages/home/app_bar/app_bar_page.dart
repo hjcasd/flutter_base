@@ -65,7 +65,7 @@ class MyAppBar extends StatelessWidget {
   }
 }
 
-// 顶部tab切换演示
+/// 顶部tab切换演示
 class MyAppTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,5 @@
 /// App常量类
-class AppConstants {
-  AppConstants._();
-
+abstract class AppConstants {
+  // 测试
   static const String TEST = "111111";
 }

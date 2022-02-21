@@ -2,15 +2,11 @@ import 'package:flutter/services.dart';
 
 /// Flutter与原生交互方式
 class ChannelHelper {
-  /// EventChannel
+  // EventChannel
   static const EventChannel _eventChannel = const EventChannel('com.flutter/event');
 
-  /// MethodChannel
+  // MethodChannel
   static const MethodChannel _methodChannel = const MethodChannel('com.flutter/method');
-
-  // static EventChannel get eventChannel => _eventChannel;
-  //
-  // static MethodChannel get methodChannel => _methodChannel;
 
   ChannelHelper._();
 
@@ -28,7 +24,7 @@ class ChannelHelper {
 
   /// 使用MethodChannel与原生交互(带返回值)
   /// method: 调用原生的方法名
-  ///  params: 传递的参数
+  /// params: 传递的参数
   static Future<T?> invokeMethodWithFuture<T>(String method, [dynamic params]) {
     return _methodChannel.invokeMethod(method, params);
   }

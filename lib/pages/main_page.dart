@@ -14,10 +14,10 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  /// 当前位置索引
+  // 当前位置索引
   int _currentIndex = 0;
 
-  /// 页面集合
+  // 页面集合
   final List<Widget> _pageList = [
     HomePage(),
     LayoutPage(),
@@ -25,7 +25,7 @@ class _MainPageState extends State<MainPage> {
     SettingPage(),
   ];
 
-  /// 底部Bar数据
+  // 底部Bar数据
   final Map _bottomMap = {
     "首页": Icon(Icons.home),
     "布局": Icon(Icons.category),
@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
     "设置": Icon(Icons.settings),
   };
 
-  /// 标题栏颜色集合
+  // 标题栏颜色集合
   final List<Color> _colorList = [
     AppColors.blue,
     AppColors.green,

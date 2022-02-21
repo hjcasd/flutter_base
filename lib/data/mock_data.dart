@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-/// 数据管理
+/// 随机数据
 class MockData {
   /// 生成列表数据
   static Future<RxList<Map<String, Object>>> getList(int page, int size) async {

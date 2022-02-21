@@ -34,7 +34,7 @@ class _MyDioState extends State<MyDio> {
   // get请求
   void _getData() async {
     Response<Map> response = await Dio().get("http://a.itying.com/api/productlist");
-    LogHelper.map("Get", response.data!);
+    LogHelper.json("Get", response.data!);
   }
 
   // post请求

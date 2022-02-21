@@ -2,6 +2,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 /// Loading管理
 class LoadingUtils {
+  LoadingUtils._internal();
+
   /// 显示Loading
   static show(bool isShowLoading) {
     if (isShowLoading) {

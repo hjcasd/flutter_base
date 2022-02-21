@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// 表单编辑Item
+/// FormWriteItem: 表单Item编辑组件
 class FormWriteItem extends StatefulWidget {
-  /// 左侧标题
+  // 左侧标题
   final String title;
 
-  /// 输入框内容
+  // 输入框内容
   final String value;
 
-  /// 输入框占位文本
+  // 输入框占位文本
   final String placeholder;
 
-  /// 键盘输入类型
+  // 键盘输入类型
   final TextInputType? keyboardType;
 
-  /// 底部提示文本
+  // 底部提示文本
   final String tip;
 
-  /// 右侧文本
+  // 右侧文本
   final String operate;
 
-  /// 是否隐藏底部下划线
+  // 是否隐藏底部下划线
   final bool isHideDivider;
 
-  /// 输入框控制器
+  // 输入框控制器
   final TextEditingController? controller;
 
-  /// 输入框文本变化监听回调
+  // 输入框文本变化监听回调
   final ValueChanged<String>? onChanged;
 
-  /// 输入框清除回调
+  // 输入框清除回调
   final VoidCallback? onClear;
 
-  /// 右侧文本点击事件回调
+  // 右侧文本点击事件回调
   final VoidCallback? onOperatePressed;
 
   FormWriteItem(
@@ -64,27 +64,27 @@ class _FormWriteItemState extends State<FormWriteItem> {
       color: AppColors.white,
       child: Stack(
         children: [
-          _getItem(),
-          _getDivider(),
+          _getItemView(),
+          _getDividerView(),
         ],
       ),
     );
   }
 
   /// Item
-  Widget _getItem() {
+  Widget _getItemView() {
     return Positioned(
       child: Container(
         padding: EdgeInsets.fromLTRB(18, 18, 16, 4),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _getTitle(),
+            _getTitleView(),
             SizedBox(
               width: 40,
             ),
-            _getContent(),
-            _getOperate(),
+            _getContentView(),
+            _getOperateView(),
           ],
         ),
       ),
@@ -92,7 +92,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
   }
 
   /// 左侧标题
-  Widget _getTitle() {
+  Widget _getTitleView() {
     return Container(
       width: 50,
       child: Text(
@@ -102,7 +102,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
   }
 
   /// 中间内容和底部提示
-  Widget _getContent() {
+  Widget _getContentView() {
     return Expanded(
       flex: 1,
       child: Container(
@@ -154,7 +154,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
   }
 
   /// 右侧操作文本
-  Widget _getOperate() {
+  Widget _getOperateView() {
     return Offstage(
       offstage: widget.operate == "",
       child: GestureDetector(
@@ -173,7 +173,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
   }
 
   /// 下划线
-  Widget _getDivider() {
+  Widget _getDividerView() {
     return Visibility(
       visible: !widget.isHideDivider,
       child: Positioned(

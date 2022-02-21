@@ -1,4 +1,4 @@
-/// Map拓展，MAp转字符串输出
+/// Map拓展: Map转成字符串输出
 extension Map2StringEx on Map {
   String mapToJsonString({int indentation = 2}) {
     String result = "";
@@ -18,12 +18,11 @@ extension Map2StringEx on Map {
       result = result.substring(0, result.length - 1);
       result += indentation == 2 ? "\n}" : "\n${" " * (indentation - 1)}}";
     }
-
     return result;
   }
 }
 
-/// List拓展，List转字符串输出
+/// List拓展: List转成字符串输出
 extension List2StringEx on List {
   String listToJsonString({int indentation = 2}) {
     String result = "";
@@ -43,7 +42,6 @@ extension List2StringEx on List {
       result = result.substring(0, result.length - 1);
       result += "\n$indentationStr]";
     }
-
     return result;
   }
 }

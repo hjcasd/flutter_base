@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// 自定义Dialog
+/// SmartDialog: 自定义Dialog组件
 class SmartDialog extends StatefulWidget {
-  /// 标题
+  // 标题
   final String title;
 
-  /// 内容
+  // 内容
   final String content;
 
-  /// 确定按钮文本
+  // 确定按钮文本
   final String confirmText;
 
-  /// 取消按钮文本
+  // 取消按钮文本
   final String cancelText;
 
-  /// 是否可点击外部取消
+  // 是否可点击外部取消
   final bool cancelOutside;
 
-  /// 点击确定按钮回调
+  // 点击确定按钮回调
   final VoidCallback? confirmCallback;
 
-  /// 点击取消按钮
+  // 点击取消按钮回调
   final VoidCallback? cancelCallback;
 
   SmartDialog({

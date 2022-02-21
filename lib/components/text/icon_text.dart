@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// 带图标的Text组件
+/// IconText: 带图标的Text组件
 class IconText extends StatefulWidget {
-  /// 文本
+  // 文本
   final String text;
 
-  /// 文本大小
+  // 文本大小
   final double fontSize;
 
-  /// 文本颜色
+  // 文本颜色
   final Color fontColor;
 
-  /// 左侧图标
+  // 左侧图标
   final Widget? leftIcon;
 
-  /// 右侧图标
+  // 右侧图标
   final Widget? rightIcon;
 
-  /// 文本和图标间距大小
+  // 文本和图标间距大小
   final double drawableMargin;
 
-  /// 内边距
+  // 内边距
   final EdgeInsetsGeometry? padding;
 
-  /// 点击事件回调
+  // 点击事件回调
   final VoidCallback? onPressed;
 
   const IconText(
@@ -47,7 +47,6 @@ class _IconTextState extends State<IconText> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> children = [];
-
     // 文本
     var textWidget = Text(
       widget.text,

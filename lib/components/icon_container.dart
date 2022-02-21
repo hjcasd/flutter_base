@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// 带图标的Container
+/// IconContainer: 带图标的容器组件
 class IconContainer extends StatelessWidget {
-  /// 图标
+  // 图标
   final IconData iconData;
 
-  /// 背景颜色
+  // 背景颜色
   final backgroundColor;
 
-  /// 图标大小
+  // 图标大小
   final iconSize;
 
   IconContainer(

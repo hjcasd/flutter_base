@@ -1,13 +1,12 @@
 /// Flutter调用原生的方法
-class NativeMethod {
-  NativeMethod._();
+abstract class NativeMethod {
 
-  /// 返回上一个页面
+  // 返回上一个页面
   static const String BACK = 'back';
 
-  /// 跳转对应路由页面
+  // 跳转对应路由页面
   static const String ROUTE = 'route';
 
-  /// 吐司
+  // 吐司
   static const String TOAST = 'toast';
 }

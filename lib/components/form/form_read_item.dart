@@ -2,27 +2,27 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// 表单展示Item
+/// FormReadItem: 表单Item展示组件
 class FormReadItem extends StatefulWidget {
-  /// 左侧标题
+  // 左侧标题
   final String title;
 
-  /// 中间内容
+  // 中间内容
   final String content;
 
-  /// 底部提示文本
+  // 底部提示文本
   final String tip;
 
-  /// 右侧文本
+  // 右侧文本
   final String operate;
 
-  /// 字体是否大号
+  // 字体是否大号
   final bool isLarge;
 
-  /// 是否隐藏底部下划线
+  // 是否隐藏底部下划线
   final bool isHideDivider;
 
-  /// 右侧文本点击事件回调
+  // 右侧文本点击事件回调
   final VoidCallback? onOperatePressed;
 
   FormReadItem(
@@ -49,27 +49,27 @@ class _FormReadItemState extends State<FormReadItem> {
       color: AppColors.white,
       child: Stack(
         children: [
-          _getItem(),
-          _getDivider(),
+          _getItemView(),
+          _getDividerView(),
         ],
       ),
     );
   }
 
   /// Item
-  Widget _getItem() {
+  Widget _getItemView() {
     return Positioned(
       child: Container(
         padding: EdgeInsets.fromLTRB(18, 18, 16, 4),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _getTitle(),
+            _getTitleView(),
             SizedBox(
               width: 40,
             ),
-            _getContent(),
-            _getOperate(),
+            _getContentView(),
+            _getOperateView(),
           ],
         ),
       ),
@@ -77,7 +77,7 @@ class _FormReadItemState extends State<FormReadItem> {
   }
 
   /// 左侧标题
-  Widget _getTitle() {
+  Widget _getTitleView() {
     return Container(
       width: 50,
       child: Text(
@@ -87,7 +87,7 @@ class _FormReadItemState extends State<FormReadItem> {
   }
 
   /// 中间内容和底部提示
-  Widget _getContent() {
+  Widget _getContentView() {
     return Expanded(
       flex: 1,
       child: Container(
@@ -119,7 +119,7 @@ class _FormReadItemState extends State<FormReadItem> {
   }
 
   /// 右侧操作文本
-  Widget _getOperate() {
+  Widget _getOperateView() {
     return Offstage(
       offstage: widget.operate == "",
       child: GestureDetector(
@@ -135,7 +135,7 @@ class _FormReadItemState extends State<FormReadItem> {
   }
 
   /// 下划线
-  Widget _getDivider() {
+  Widget _getDividerView() {
     return Visibility(
       visible: !widget.isHideDivider,
       child: Positioned(

@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// 带边框的Text组件
+/// BorderText: 带边框的Text组件
 class BorderText extends StatefulWidget {
-  /// 文本
+  // 文本
   final String text;
 
-  /// 文本字体大小
+  // 文本字体大小
   final double fontSize;
 
-  /// 文本字体颜色
+  // 文本字体颜色
   final Color fontColor;
 
-  /// 背景颜色
+  // 背景颜色
   final Color? backgroundColor;
 
-  /// 内边距
+  // 内边距
   final EdgeInsetsGeometry? padding;
 
-  /// 透明度
+  // 透明度
   final double opacity;
 
-  /// 圆角大小
+  // 圆角大小
   final double radius;
 
-  /// 边框宽度
+  // 边框宽度
   final double borderWidth;
 
-  /// 边框颜色
+  // 边框颜色
   final Color borderColor;
 
-  /// 边框样式
+  // 边框样式
   final BorderStyle borderStyle;
 
-  /// 点击事件回调
+  // 点击事件回调
   final VoidCallback? onPressed;
 
   BorderText(

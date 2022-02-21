@@ -4,13 +4,13 @@ import 'package:flutter_base/constants/app_colors.dart';
 
 /// 图文列表Item
 class ImageTitleItem extends StatefulWidget {
-  /// 标题
+  // 标题
   final String title;
 
-  /// 图片地址
+  // 图片地址
   final String imageUrl;
 
-  /// 评论数
+  // 评论数
   final int viewCount;
 
   ImageTitleItem(

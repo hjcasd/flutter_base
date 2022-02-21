@@ -2,27 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
-/// RouteButton组件: 便捷带url跳转
+/// RouteButton: 便捷带路由地址跳转的按钮组件
 class RouteButton extends StatefulWidget {
-  /// 文本
+  // 文本
   final String text;
 
-  /// 路由地址
+  // 路由地址
   final String url;
 
-  /// 文本字体大小
+  // 文本字体大小
   final double fontSize;
 
-  /// 文本字体颜色
+  // 文本字体颜色
   final Color fontColor;
 
-  /// 按钮颜色
+  // 按钮颜色
   final Color backgroundColor;
 
-  /// 按钮最小宽度
+  // 按钮最小宽度
   final double minWidth;
 
-  /// 按钮最小高度
+  // 按钮最小高度
   final double minHeight;
 
   RouteButton(

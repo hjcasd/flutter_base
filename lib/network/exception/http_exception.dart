@@ -34,7 +34,7 @@ class HttpException implements Exception {
     }
   }
 
-  /// code转换成对应异常
+  /// 通过code转换成对应的异常
   static HttpException _convertHttpException(DioError error) {
     try {
       int errCode = error.response!.statusCode!;
