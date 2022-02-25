@@ -31,46 +31,51 @@ class IdentityBodyView extends GetView<IdentityController> {
             LogHelper.e("tag", "1111111111");
           },
         ),
-        Obx(
-          () => FormWriteItem(
-            "姓名",
-            controller.name.value,
-            "请输入姓名",
-            controller: _nameController,
-            onChanged: (value) {
-              controller.name.value = value;
-            },
-            onClear: () {
-              controller.name.value = "";
-              _nameController.clear();
-            },
-            operate: "添加",
-            onOperatePressed: () {
-              LogHelper.e("name", _nameController.value.text);
-            },
-          ),
+        GetBuilder<IdentityController>(
+          builder: (controller) {
+            return FormWriteItem(
+              "姓名",
+              controller.name,
+              "请输入姓名",
+              controller: _nameController,
+              onChanged: (value) {
+                controller.name = value;
+              },
+              onClear: () {
+                controller.name = "";
+                _nameController.clear();
+              },
+              operate: "添加",
+              onOperatePressed: () {
+                LogHelper.e("name", _nameController.value.text);
+              },
+            );
+          },
         ),
-        Obx(() {
-          return FormWriteItem(
-            "手机号",
-            controller.phone.value,
-            "请输入手机号",
-            keyboardType: TextInputType.number,
-            controller: _phoneController,
-            onChanged: (value) {
-              controller.phone.value = value;
-            },
-            onClear: () {
-              controller.phone.value = "";
-              _phoneController.clear();
-            },
-            tip: "手机号不正确",
-            operate: "添加",
-            onOperatePressed: () {
-              LogHelper.e("phone", _phoneController.value.text);
-            },
-          );
-        }),
+
+        GetBuilder<IdentityController>(
+          builder: (controller) {
+            return FormWriteItem(
+              "手机号",
+              controller.phone,
+              "请输入手机号",
+              keyboardType: TextInputType.number,
+              controller: _phoneController,
+              onChanged: (value) {
+                controller.phone = value;
+              },
+              onClear: () {
+                controller.phone = "";
+                _phoneController.clear();
+              },
+              tip: "手机号不正确",
+              operate: "添加",
+              onOperatePressed: () {
+                LogHelper.e("phone", _phoneController.value.text);
+              },
+            );
+          },
+        ),
       ],
     );
   }

@@ -13,8 +13,8 @@ class IdentityController extends GetxController {
   /// 是否已初始化
   var isInitialized = false.obs;
 
-  var name = "".obs;
-  var phone = "".obs;
+  var name = "";
+  var phone = "";
 
   @override
   void onInit() {
@@ -25,8 +25,8 @@ class IdentityController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    loadData();
     LogHelper.e("IdentityController", "onReady()...");
+    loadData();
   }
 
   void loadData() async {
