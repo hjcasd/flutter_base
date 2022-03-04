@@ -33,6 +33,33 @@ class MyButton extends StatelessWidget {
             "ElevatedButton",
           ),
         ),
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.send,
+          ),
+          label: Text(
+            "发送",
+          ),
+          onPressed: () {
+            print("发送");
+          },
+        ),
+        TextButton(
+          onPressed: () {
+            print("TextButton");
+          },
+          child: Text(
+            "TextButton",
+          ),
+        ),
+        OutlinedButton(
+          onPressed: () {
+            print("OutlinedButton");
+          },
+          child: Text(
+            "OutlinedButton",
+          ),
+        ),
         IconButton(
           onPressed: () {
             print("IconButton");

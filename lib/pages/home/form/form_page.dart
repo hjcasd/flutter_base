@@ -25,39 +25,16 @@ class MyForm extends StatefulWidget {
 /// TextField, Switch, Radio, Checkbox
 class _MyFormState extends State<MyForm> {
   var _username = "";
-  var _phoneController = TextEditingController();
+  var _phoneController = TextEditingController(text: "123456");
   var _sex = 1;
+  var _openState = false;
   var _desc = "";
 
-  List _hobby = [
+  final List _hobby = [
     {"title": "游泳", "checked": true},
     {"title": "下棋", "checked": false},
     {"title": "读书", "checked": false}
   ];
-
-  void _usernameChanged(value) {
-    setState(() {
-      _username = value;
-    });
-  }
-
-  void _sexChanged(value) {
-    setState(() {
-      _sex = value;
-    });
-  }
-
-  void _descChanged(value) {
-    setState(() {
-      _desc = value;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _phoneController.text = "123";
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +49,11 @@ class _MyFormState extends State<MyForm> {
                 Icons.account_box,
               ),
             ),
-            onChanged: _usernameChanged,
+            onChanged: (value) {
+              setState(() {
+                _username = value;
+              });
+            },
           ),
           TextField(
             controller: TextEditingController.fromValue(
@@ -88,6 +69,7 @@ class _MyFormState extends State<MyForm> {
                 ),
               ),
             ),
+            keyboardType: TextInputType.phone,
             decoration: InputDecoration(
               hintText: "请输入手机号",
               icon: Icon(
@@ -124,13 +106,25 @@ class _MyFormState extends State<MyForm> {
           Row(
             children: _getHobby(),
           ),
+          Switch(
+            value: _openState,
+            onChanged: (value) {
+              setState(() {
+                _openState = value;
+              });
+            },
+          ),
           TextField(
-            maxLines: 4,
+            maxLines: 3,
             decoration: InputDecoration(
               hintText: "请输入描述",
               border: OutlineInputBorder(),
             ),
-            onChanged: _descChanged,
+            onChanged: (value) {
+              setState(() {
+                _desc = value;
+              });
+            },
           ),
           SizedBox(
             height: 10,
@@ -153,6 +147,12 @@ class _MyFormState extends State<MyForm> {
         ],
       ),
     );
+  }
+
+  void _sexChanged(value) {
+    setState(() {
+      _sex = value;
+    });
   }
 
   /// 获取Hobby

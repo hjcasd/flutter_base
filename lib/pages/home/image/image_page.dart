@@ -34,6 +34,7 @@ class MyLocalImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SmartImage(
       "icon_test.png",
+      isLocal: true,
     );
   }
 }
@@ -58,6 +59,7 @@ class MyNetImage extends StatelessWidget {
         alignment: Alignment.topLeft,
         // color和colorBlendMode一起使用,对图片进行颜色处理
         color: AppColors.green,
+        // 混合模式
         colorBlendMode: BlendMode.darken,
         // 图片显示方式
         fit: BoxFit.contain,

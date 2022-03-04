@@ -15,6 +15,8 @@ class SmartImage extends StatefulWidget {
   // 网络图片加载错误图
   final String errorPath;
 
+  final bool isLocal;
+
   // 点击事件回调
   final VoidCallback? onPressed;
 
@@ -23,6 +25,7 @@ class SmartImage extends StatefulWidget {
     this.fit = BoxFit.cover,
     this.placeholderPath = "img_default.png",
     this.errorPath = "img_default.png",
+    this.isLocal = false,
     this.onPressed,
     Key? key,
   }) : super(key: key);
@@ -34,6 +37,9 @@ class SmartImage extends StatefulWidget {
 }
 
 class _SmartImageState extends State<SmartImage> {
+  // 图片目录
+  final String _imageDir = "assets/images/";
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -44,20 +50,19 @@ class _SmartImageState extends State<SmartImage> {
 
   /// 图片
   Widget _getImageView() {
-    var isNetImage = widget.imageUrl.contains("http") || widget.imageUrl.contains("https");
-    if (!isNetImage) {
+    if (widget.isLocal) {
       return Image.asset(
-        "assets/images/${widget.imageUrl}",
+        "${_imageDir + widget.imageUrl}",
         fit: widget.fit,
       );
     }
     return CachedNetworkImage(
       imageUrl: widget.imageUrl,
       placeholder: (context, url) => Image.asset(
-        'assets/images/${widget.placeholderPath}',
+        "${_imageDir + widget.placeholderPath}",
       ),
       errorWidget: (context, url, error) => Image.asset(
-        'assets/images/${widget.errorPath}',
+        "${_imageDir + widget.errorPath}",
       ),
       fit: widget.fit,
     );
