@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
+import 'package:flutter_base/components/checkbox/smart_checkbox.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 
 /// 首页Tab页面
@@ -11,6 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var isSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,6 +61,11 @@ class _HomePageState extends State<HomePage> {
             "Drawer",
             Routes.Drawer,
           ),
+          SmartCheckbox(isSelected, onChanged: (value) {
+            setState(() {
+              isSelected = value;
+            });
+          })
         ],
       ),
     );

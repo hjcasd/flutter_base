@@ -11,4 +11,12 @@ class DialogManager {
       builder: (_) => dialog,
     );
   }
+
+  static void showBottomSheet(BuildContext context, Widget dialog) {
+    showModalBottomSheet(
+      context: context,
+      builder: (_) => dialog,
+    );
+  }
+
 }

@@ -19,10 +19,10 @@ class SmartDialog extends StatefulWidget {
   final bool cancelOutside;
 
   // 点击确定按钮回调
-  final VoidCallback? confirmCallback;
+  final VoidCallback? onConfirmCallback;
 
   // 点击取消按钮回调
-  final VoidCallback? cancelCallback;
+  final VoidCallback? onCancelCallback;
 
   SmartDialog({
     this.title = "",
@@ -30,8 +30,8 @@ class SmartDialog extends StatefulWidget {
     this.confirmText = "确定",
     this.cancelText = "",
     this.cancelOutside = true,
-    this.confirmCallback,
-    this.cancelCallback,
+    this.onConfirmCallback,
+    this.onCancelCallback,
     Key? key,
   }) : super(key: key);
 
@@ -205,16 +205,16 @@ class _SmartDialogState extends State<SmartDialog> {
   /// 确定按钮点击事件
   void _onConfirmTap() {
     _dismissDialog();
-    if (widget.confirmCallback != null) {
-      widget.confirmCallback!();
+    if (widget.onConfirmCallback != null) {
+      widget.onConfirmCallback!();
     }
   }
 
   /// 取消按钮点击事件
   void _onCancelTap() {
     _dismissDialog();
-    if (widget.cancelCallback != null) {
-      widget.cancelCallback!();
+    if (widget.onCancelCallback != null) {
+      widget.onCancelCallback!();
     }
   }
 }

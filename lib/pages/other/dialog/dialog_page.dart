@@ -64,7 +64,7 @@ class _MyDialogState extends State<MyDialog> {
   }
 
   // AlertDialog
-  _showAlertDialog() async {
+  void _showAlertDialog() async {
     var result = await showDialog(
       context: context,
       builder: (context) {
@@ -100,7 +100,7 @@ class _MyDialogState extends State<MyDialog> {
   }
 
   // SimpleDialog
-  _showSimpleDialog() async {
+  void _showSimpleDialog() async {
     var result = await showDialog(
       context: context,
       builder: (context) {
@@ -143,7 +143,7 @@ class _MyDialogState extends State<MyDialog> {
   }
 
   // ModalBottomSheet
-  _showBottomSheet() async {
+  void _showBottomSheet() async {
     var result = await showModalBottomSheet(
       context: context,
       builder: (context) {
@@ -186,14 +186,14 @@ class _MyDialogState extends State<MyDialog> {
   }
 
   // 显示自定义dialog
-  _showCustomDialog() {
+  void _showCustomDialog() {
     DialogManager.show(
       context,
       SmartDialog(
         title: "温馨提示",
         content: "对非中国大陆籍会员暂不支持开通钱包，如您需进行积分消费，可开通消费密码。",
         confirmText: "开通消费免密",
-        confirmCallback: () {
+        onConfirmCallback: () {
           GetHelper.showSnackBar("开通消费免密");
         },
       ),
