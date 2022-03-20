@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/data/entity/login_entity.dart';
+import 'package:flutter_base/data/login_entity.dart';
 import 'package:flutter_base/network/service/api_service.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';

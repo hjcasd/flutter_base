@@ -1,14 +1,14 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_base/data/entity/identity_entity.dart';
+import 'package:flutter_base/data/user_entity.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
 /// 身份信息页面Controller
 class IdentityController extends GetxController {
   /// Model
-  var model = IdentityEntity();
+  var _model = UserEntity();
 
   /// 是否已初始化
   var isInitialized = false.obs;
@@ -30,10 +30,9 @@ class IdentityController extends GetxController {
   }
 
   void loadData() async {
-    String json = await rootBundle.loadString('assets/json/identity.json');
-    Map map = jsonDecode(json);
-    model = IdentityEntity.fromJson(map);
+    String json = await rootBundle.loadString('assets/json/identity_info.json');
+    _model = UserEntity.fromJson(jsonDecode(json));
+    LogHelper.e("IdentityController", _model.tip);
     isInitialized.value = true;
-    LogHelper.e("IdentityController", model.tip);
   }
 }

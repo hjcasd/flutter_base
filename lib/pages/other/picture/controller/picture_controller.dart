@@ -1,4 +1,4 @@
-import 'package:flutter_base/data/mock_data.dart';
+import 'package:flutter_base/model/mock_data.dart';
 import 'package:get/get.dart';
 
 /// 图文列表页面Controller
