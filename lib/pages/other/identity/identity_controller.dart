@@ -29,10 +29,16 @@ class IdentityController extends GetxController {
     loadData();
   }
 
+  @override
+  void onClose() {
+    super.onClose();
+    LogHelper.e("IdentityController", "onClose()...");
+  }
+
   void loadData() async {
-    String json = await rootBundle.loadString('assets/json/identity_info.json');
+    String json = await rootBundle.loadString('assets/json/user_info.json');
     _model = UserEntity.fromJson(jsonDecode(json));
-    LogHelper.e("IdentityController", _model.tip);
+    LogHelper.e("IdentityController", _model.count?.toDouble());
     isInitialized.value = true;
   }
 }

@@ -18,11 +18,11 @@ class ListViewPage extends StatelessWidget {
             children: [
               RouteButton(
                 "静态列表",
-                Routes.ListStatic,
+                AppRoutes.ListStatic,
               ),
               RouteButton(
                 "动态列表",
-                Routes.ListDynamic,
+                AppRoutes.ListDynamic,
               ),
             ],
           ),

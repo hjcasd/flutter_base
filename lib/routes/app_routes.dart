@@ -1,5 +1,7 @@
 /// 配置路由(每个页面对应路由的路径)
-abstract class Routes {
+abstract class AppRoutes {
+  AppRoutes._internal();
+
   static const Initial = '/';
   static const UnKnown = '/unKnown';
 

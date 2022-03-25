@@ -20,22 +20,22 @@ class _SettingPageState extends State<SettingPage> {
         children: [
           RouteButton(
             "Swiper",
-            Routes.Swiper,
+            AppRoutes.Swiper,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "Dio",
-            Routes.Dio,
+            AppRoutes.Dio,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "GetX",
-            Routes.GetX,
+            AppRoutes.GetX,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "Native",
-            Routes.Native,
+            AppRoutes.Native,
             backgroundColor: AppColors.cyan,
           ),
         ],

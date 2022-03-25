@@ -12,8 +12,8 @@ class RouteManager {
   }
 
   /// 跳转到对应路由页面
-  static void jumpToNamedPage(String url) {
-    Get.toNamed(url);
+  static void jumpToNamedPage(String page) {
+    Get.toNamed(page);
   }
 
   /// 跳转到对应原生路由页面

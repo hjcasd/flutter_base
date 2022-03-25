@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/divider_text_field.dart';
-import 'package:flutter_base/pages/other/login/controller/login_controller.dart';
+import 'package:flutter_base/pages/other/login/login_controller.dart';
 import 'package:flutter_base/utils/get_helper.dart';
 import 'package:get/get.dart';
 
@@ -98,14 +98,6 @@ class LoginBodyView extends GetView<LoginController> {
           "登录",
         ),
         onPressed: () {
-          if (controller.name.isEmpty) {
-            GetHelper.showSnackBar("请输入用户名");
-            return;
-          }
-          if (controller.password.isEmpty) {
-            GetHelper.showSnackBar("请输入密码");
-            return;
-          }
           controller.login();
         },
       ),

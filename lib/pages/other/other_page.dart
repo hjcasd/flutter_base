@@ -20,22 +20,22 @@ class _OtherPageState extends State<OtherPage> {
         children: [
           RouteButton(
             "Dialog演示",
-            Routes.Dialog,
+            AppRoutes.Dialog,
             backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "图文列表演示",
-            Routes.Picture,
+            AppRoutes.Picture,
             backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "登录案例演示",
-            Routes.Login,
+            AppRoutes.Login,
             backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "身份信息演示",
-            Routes.Identity,
+            AppRoutes.Identity,
             backgroundColor: AppColors.amber,
           ),
         ],

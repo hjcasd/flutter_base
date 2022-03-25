@@ -25,7 +25,9 @@ import 'package:flutter_base/pages/layout/row/row_page.dart';
 import 'package:flutter_base/pages/layout/stack/stack_page.dart';
 import 'package:flutter_base/pages/home/tab_bar/tab_bar_page.dart';
 import 'package:flutter_base/pages/layout/wrap/wrap_page.dart';
+import 'package:flutter_base/pages/other/identity/identity_binding.dart';
 import 'package:flutter_base/pages/other/identity/identity_page.dart';
+import 'package:flutter_base/pages/other/login/login_binding.dart';
 import 'package:flutter_base/pages/other/login/login_page.dart';
 import 'package:flutter_base/pages/other/picture/picture_page.dart';
 import 'package:flutter_base/pages/setting/dio/dio_page.dart';
@@ -38,156 +40,160 @@ import 'package:get/get.dart';
 
 /// 注册路由表(每个新建的页面都要在这进行注册对应路由)
 abstract class AppPages {
+  AppPages._internal();
+
   static final pages = [
     GetPage(
-      name: Routes.Initial,
+      name: AppRoutes.Initial,
       page: () => MainPage(),
     ),
     GetPage(
-      name: Routes.UnKnown,
+      name: AppRoutes.UnKnown,
       page: () => UnknownPage(),
     ),
 
     // =========================首页=============================
     GetPage(
-      name: Routes.Text,
+      name: AppRoutes.Text,
       page: () => TextPage(),
     ),
     GetPage(
-      name: Routes.Button,
+      name: AppRoutes.Button,
       page: () => ButtonPage(),
     ),
     GetPage(
-      name: Routes.Image,
+      name: AppRoutes.Image,
       page: () => ImagePage(),
     ),
 
     GetPage(
-      name: Routes.ListView,
+      name: AppRoutes.ListView,
       page: () => ListViewPage(),
     ),
     GetPage(
-      name: Routes.ListStatic,
+      name: AppRoutes.ListStatic,
       page: () => ListStaticPage(),
     ),
     GetPage(
-      name: Routes.ListDynamic,
+      name: AppRoutes.ListDynamic,
       page: () => ListDynamicPage(),
     ),
 
     GetPage(
-      name: Routes.GridView,
+      name: AppRoutes.GridView,
       page: () => GridViewPage(),
     ),
     GetPage(
-      name: Routes.GridCount,
+      name: AppRoutes.GridCount,
       page: () => GridCountPage(),
     ),
     GetPage(
-      name: Routes.GridBuilder,
+      name: AppRoutes.GridBuilder,
       page: () => GridBuilderPage(),
     ),
 
     GetPage(
-      name: Routes.Form,
+      name: AppRoutes.Form,
       page: () => FormPage(),
     ),
     GetPage(
-      name: Routes.AppBar,
+      name: AppRoutes.AppBar,
       page: () => AppBarPage(),
     ),
     GetPage(
-      name: Routes.TabBar,
+      name: AppRoutes.TabBar,
       page: () => TabBarPage(),
     ),
     GetPage(
-      name: Routes.Drawer,
+      name: AppRoutes.Drawer,
       page: () => DrawerPage(),
     ),
     GetPage(
-      name: Routes.RichText,
+      name: AppRoutes.RichText,
       page: () => RichTextPage(),
     ),
 
     // =========================布局=============================
     GetPage(
-      name: Routes.Container,
+      name: AppRoutes.Container,
       page: () => ContainerPage(),
     ),
     GetPage(
-      name: Routes.Padding,
+      name: AppRoutes.Padding,
       page: () => PaddingPage(),
     ),
     GetPage(
-      name: Routes.Row,
+      name: AppRoutes.Row,
       page: () => RowPage(),
     ),
     GetPage(
-      name: Routes.Column,
+      name: AppRoutes.Column,
       page: () => ColumnPage(),
     ),
     GetPage(
-      name: Routes.Expanded,
+      name: AppRoutes.Expanded,
       page: () => ExpandedPage(),
     ),
     GetPage(
-      name: Routes.Stack,
+      name: AppRoutes.Stack,
       page: () => StackPage(),
     ),
     GetPage(
-      name: Routes.StackPositioned,
+      name: AppRoutes.StackPositioned,
       page: () => StackPositionedPage(),
     ),
     GetPage(
-      name: Routes.StackAlign,
+      name: AppRoutes.StackAlign,
       page: () => StackAlignPage(),
     ),
     GetPage(
-      name: Routes.Card,
+      name: AppRoutes.Card,
       page: () => CardPage(),
     ),
     GetPage(
-      name: Routes.Wrap,
+      name: AppRoutes.Wrap,
       page: () => WrapPage(),
     ),
     GetPage(
-      name: Routes.Scaffold,
+      name: AppRoutes.Scaffold,
       page: () => ScaffoldPage(),
     ),
 
     // =========================其他=============================
     GetPage(
-      name: Routes.Dialog,
+      name: AppRoutes.Dialog,
       page: () => DialogPage(),
     ),
     GetPage(
-      name: Routes.Picture,
+      name: AppRoutes.Picture,
       page: () => PicturePage(),
     ),
     GetPage(
-      name: Routes.Login,
+      name: AppRoutes.Login,
       page: () => LoginPage(),
+      binding: LoginBinding(),
     ),
     GetPage(
-      name: Routes.Identity,
+      name: AppRoutes.Identity,
       page: () => IdentityPage(),
+      binding: IdentityBinding(),
     ),
 
     // =========================设置=============================
     GetPage(
-      name: Routes.Swiper,
+      name: AppRoutes.Swiper,
       page: () => SwiperPage(),
     ),
     GetPage(
-      name: Routes.Dio,
+      name: AppRoutes.Dio,
       page: () => DioPage(),
     ),
     GetPage(
-      name: Routes.GetX,
+      name: AppRoutes.GetX,
       page: () => GetXPage(),
     ),
     GetPage(
-      name: Routes.Native,
+      name: AppRoutes.Native,
       page: () => NativePage(),
     ),
   ];

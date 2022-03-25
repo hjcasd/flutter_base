@@ -23,43 +23,43 @@ class _HomePageState extends State<HomePage> {
         children: [
           RouteButton(
             "Text",
-            Routes.Text,
+            AppRoutes.Text,
           ),
           RouteButton(
             "RichText",
-            Routes.RichText,
+            AppRoutes.RichText,
           ),
           RouteButton(
             "Button",
-            Routes.Button,
+            AppRoutes.Button,
           ),
           RouteButton(
             "Image",
-            Routes.Image,
+            AppRoutes.Image,
           ),
           RouteButton(
             "Form",
-            Routes.Form,
+            AppRoutes.Form,
           ),
           RouteButton(
             "ListView",
-            Routes.ListView,
+            AppRoutes.ListView,
           ),
           RouteButton(
             "GridView",
-            Routes.GridView,
+            AppRoutes.GridView,
           ),
           RouteButton(
             "AppBar",
-            Routes.AppBar,
+            AppRoutes.AppBar,
           ),
           RouteButton(
             "TabBar",
-            Routes.TabBar,
+            AppRoutes.TabBar,
           ),
           RouteButton(
             "Drawer",
-            Routes.Drawer,
+            AppRoutes.Drawer,
           ),
           SmartCheckbox(isSelected, onChanged: (value) {
             setState(() {

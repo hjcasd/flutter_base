@@ -7,6 +7,7 @@ class UserEntity {
 
 	String? tip;
 	String? title;
+	int? count;
 	List<UserForm>? form;
 	UserProtocol? protocol;
 	String? button;

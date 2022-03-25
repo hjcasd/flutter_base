@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/pages/other/login/controller/login_controller.dart';
+import 'package:flutter_base/pages/other/login/login_controller.dart';
 import 'package:flutter_base/pages/other/login/view/login_body_view.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +10,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put<LoginController>(LoginController());
     return MaterialApp(
       home: Scaffold(
         appBar: SmartAppBar(

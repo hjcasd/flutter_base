@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: true,
       title: "Flutter Base",
       // 初始路由
-      initialRoute: Routes.Initial,
+      initialRoute: AppRoutes.Initial,
       // 跳转动画
       // defaultTransition: Transition.fadeIn,
       // 路由表

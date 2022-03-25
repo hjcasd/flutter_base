@@ -18,11 +18,11 @@ class GridViewPage extends StatelessWidget {
             children: [
               RouteButton(
                 "Count网格",
-                Routes.GridCount,
+                AppRoutes.GridCount,
               ),
               RouteButton(
                 "Builder网格",
-                Routes.GridBuilder,
+                AppRoutes.GridBuilder,
               ),
             ],
           ),

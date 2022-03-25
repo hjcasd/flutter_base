@@ -11,6 +11,10 @@ UserEntity $UserEntityFromJson(Map<String, dynamic> json) {
 	if (title != null) {
 		userEntity.title = title;
 	}
+	final int? count = jsonConvert.convert<int>(json['count']);
+	if (count != null) {
+		userEntity.count = count;
+	}
 	final List<UserForm>? form = jsonConvert.convertListNotNull<UserForm>(json['form']);
 	if (form != null) {
 		userEntity.form = form;
@@ -30,6 +34,7 @@ Map<String, dynamic> $UserEntityToJson(UserEntity entity) {
 	final Map<String, dynamic> data = <String, dynamic>{};
 	data['tip'] = entity.tip;
 	data['title'] = entity.title;
+	data['count'] = entity.count;
 	data['form'] =  entity.form?.map((v) => v.toJson()).toList();
 	data['protocol'] = entity.protocol?.toJson();
 	data['button'] = entity.button;

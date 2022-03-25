@@ -20,47 +20,47 @@ class _LayoutPageState extends State<LayoutPage> {
         children: [
           RouteButton(
             "Container",
-            Routes.Container,
+            AppRoutes.Container,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Padding",
-            Routes.Padding,
+            AppRoutes.Padding,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Row",
-            Routes.Row,
+            AppRoutes.Row,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Column",
-            Routes.Column,
+            AppRoutes.Column,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Expanded",
-            Routes.Expanded,
+            AppRoutes.Expanded,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Stack",
-            Routes.Stack,
+            AppRoutes.Stack,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Card",
-            Routes.Card,
+            AppRoutes.Card,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Wrap",
-            Routes.Wrap,
+            AppRoutes.Wrap,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Scaffold",
-            Routes.Scaffold,
+            AppRoutes.Scaffold,
             backgroundColor: AppColors.green,
           ),
         ],
