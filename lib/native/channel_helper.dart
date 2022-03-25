@@ -8,6 +8,8 @@ class ChannelHelper {
   // MethodChannel
   static const MethodChannel _methodChannel = const MethodChannel('com.flutter/method');
 
+  static const BasicMessageChannel<String> _basicMessageChannel = BasicMessageChannel<String>("com.flutter/basic", StringCodec());
+
   ChannelHelper._();
 
   /// 使用EventChannel与原生交互
@@ -28,4 +30,17 @@ class ChannelHelper {
   static Future<T?> invokeMethodWithFuture<T>(String method, [dynamic params]) {
     return _methodChannel.invokeMethod(method, params);
   }
+
+  /// 使用BasicMessageChannel与原生交互
+  /// 接受原生端传递过来的消息
+  static void handleMessage(Future<String> Function(String? message)? handler) {
+    _basicMessageChannel.setMessageHandler(handler);
+  }
+
+  /// 使用BasicMessageChannel与原生交互
+  /// 发送消息给原生端
+  static void sendMessage(String message) {
+    _basicMessageChannel.send(message);
+  }
+
 }

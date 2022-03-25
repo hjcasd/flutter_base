@@ -4,11 +4,14 @@ import 'package:flutter_base/native/native_method.dart';
 import 'package:flutter_base/native/native_path.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 import 'package:flutter_base/utils/get_helper.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 
 /// flutter与原生交互
 class NativePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ChannelHelper.handleMessage(_handleMessage);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Page'),
@@ -45,9 +48,22 @@ class NativePage extends StatelessWidget {
                 '原生吐司',
               ),
             ),
+            ElevatedButton(
+              onPressed: () {
+                ChannelHelper.sendMessage("啊哈哈哈哈哈哈哈啊哈");
+              },
+              child: Text(
+                '发送消息',
+              ),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  Future<String> _handleMessage(String? message) async {
+    LogHelper.e("NativePage", message);
+    return "2222222222222222";
   }
 }
