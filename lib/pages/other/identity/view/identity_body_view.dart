@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/button/route_button.dart';
+import 'package:flutter_base/components/button/smart_button.dart';
 import 'package:flutter_base/components/form/form_read_item.dart';
 import 'package:flutter_base/components/form/form_write_item.dart';
+import 'package:flutter_base/native/native_path.dart';
 import 'package:flutter_base/pages/other/identity/identity_controller.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_manager.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
@@ -30,7 +31,7 @@ class IdentityBodyView extends GetView<IdentityController> {
           tip: "手机号不正确",
           operate: "修改",
           onOperatePressed: () {
-            LogHelper.e("tag", "1111111111");
+            LogHelper.e("1111111111", tag: "phone");
           },
         ),
         GetBuilder<IdentityController>(
@@ -49,12 +50,11 @@ class IdentityBodyView extends GetView<IdentityController> {
               },
               operate: "添加",
               onOperatePressed: () {
-                LogHelper.e("name", _nameController.value.text);
+                LogHelper.e(_nameController.value.text, tag: "name");
               },
             );
           },
         ),
-
         GetBuilder<IdentityController>(
           builder: (controller) {
             return FormWriteItem(
@@ -73,9 +73,15 @@ class IdentityBodyView extends GetView<IdentityController> {
               tip: "手机号不正确",
               operate: "添加",
               onOperatePressed: () {
-                LogHelper.e("phone", _phoneController.value.text);
+                LogHelper.e(_phoneController.value.text, tag: "phone");
               },
             );
+          },
+        ),
+        SmartButton(
+          "跳转到原生",
+          onPressed: () {
+            RouteManager.jumpToNativePage(NativePath.MAIN);
           },
         ),
       ],

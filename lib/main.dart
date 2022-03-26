@@ -5,6 +5,7 @@ import 'package:flutter_base/network/interceptor/error_interceptor.dart';
 import 'package:flutter_base/network/utils/http_utils.dart';
 import 'package:flutter_base/routes/app_pages.dart';
 import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_stack.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
@@ -52,6 +53,16 @@ class MyApp extends StatelessWidget {
       ),
       // Loading
       builder: EasyLoading.init(),
+      routingCallback: (routing){
+        if (routing == null) {
+          return;
+        }
+        if (routing.isBack!) {
+          RouteStack.popStack(routing.previous);
+        } else {
+          RouteStack.pushStack(routing.current);
+        }
+      },
     );
   }
 }

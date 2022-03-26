@@ -25,7 +25,7 @@ class DioLogInterceptor extends Interceptor {
         requestStr += "request body:\n${data.toString()}\n";
     }
 
-    LogHelper.e("DioLogInterceptor onRequest", requestStr);
+    LogHelper.e(requestStr, tag: "DioLogInterceptor onRequest");
     super.onRequest(options, handler);
   }
 
@@ -40,7 +40,7 @@ class DioLogInterceptor extends Interceptor {
       errorStr += "error body:\n${_parseResponse(err.response!)}\n";
     }
 
-    LogHelper.e("DioLogInterceptor onError", errorStr);
+    LogHelper.e(errorStr, tag: "DioLogInterceptor onError");
 
     super.onError(err, handler);
   }
@@ -59,7 +59,7 @@ class DioLogInterceptor extends Interceptor {
       responseStr += "response body:\n ${_parseResponse(response)}";
     }
 
-    LogHelper.e("DioLogInterceptor onResponse", responseStr);
+    LogHelper.e(responseStr, tag: "DioLogInterceptor onResponse");
 
     super.onResponse(response, handler);
   }

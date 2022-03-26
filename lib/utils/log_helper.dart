@@ -11,22 +11,22 @@ class LogHelper {
   LogHelper._internal();
 
   /// error
-  static e(String tag, dynamic message) {
+  static e(dynamic message, {String tag = "tag"}) {
     _logger.e(message, tag);
   }
 
   /// verbose
-  static v(String tag, dynamic message) {
+  static v(dynamic message, {String tag = "tag"}) {
     _logger.v(message, tag);
   }
 
   /// debug
-  static d(String tag, dynamic message) {
+  static d(dynamic message, {String tag = "tag"}) {
     _logger.d(message, tag);
   }
 
   /// json
-  static json(String tag, Map<dynamic, dynamic> map) {
+  static json(Map<dynamic, dynamic> map, {String tag = "tag"}) {
     _logger.e(map.mapToJsonString(), tag);
   }
 }

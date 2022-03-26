@@ -13,19 +13,19 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    LogHelper.e("LoginController", "onInit()...");
+    LogHelper.e("onInit()...", tag: "LoginController");
   }
 
   @override
   void onReady() {
     super.onReady();
-    LogHelper.e("LoginController", "onReady()...");
+    LogHelper.e("onReady()...", tag: "LoginController");
   }
 
   @override
   void onClose() {
     super.onClose();
-    LogHelper.e("LoginController", "onClose()...");
+    LogHelper.e("onClose()...", tag: "LoginController");
   }
 
   /// 登录
@@ -43,7 +43,7 @@ class LoginController extends GetxController {
     var entity = LoginEntity.fromJson(data);
     name.value = "";
     password.value = "";
-    LogHelper.e("login info", "name: ${entity.data?.username}");
+    LogHelper.e("name: ${entity.data?.username}", tag: "LoginController");
     FocusScope.of(Get.context!).requestFocus(FocusNode());
   }
 }

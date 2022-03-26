@@ -1,5 +1,5 @@
-import 'package:flutter_base/native/channel_helper.dart';
-import 'package:flutter_base/native/native_method.dart';
+import 'package:flutter_base/native/native_helper.dart';
+import 'package:flutter_base/routes/route_stack.dart';
 import 'package:get/get.dart';
 
 /// 路由管理
@@ -8,7 +8,11 @@ class RouteManager {
 
   /// 返回上一个路由页面
   static void goBack() {
-    Get.back();
+    if (!RouteStack.canBack()) {
+      NativeHelper.back();
+    } else {
+      Get.back();
+    }
   }
 
   /// 跳转到对应路由页面
@@ -18,6 +22,6 @@ class RouteManager {
 
   /// 跳转到对应原生路由页面
   static void jumpToNativePage(String path) {
-    ChannelHelper.invokeMethod(NativeMethod.ROUTE, path);
+    NativeHelper.route(path);
   }
 }

@@ -15,6 +15,6 @@ class ErrorInterceptor extends Interceptor {
 
   /// 处理异常
   _handlerHttpException(HttpException httpException) {
-    LogHelper.e("ErrorInterceptor", httpException.toString());
+    LogHelper.e(httpException.toString(), tag: "ErrorInterceptor");
   }
 }

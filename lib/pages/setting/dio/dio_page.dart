@@ -34,14 +34,14 @@ class _MyDioState extends State<MyDio> {
   // get请求
   void _getData() async {
     Response<Map> response = await Dio().get("http://a.itying.com/api/productlist");
-    LogHelper.json("Get", response.data!);
+    LogHelper.json(response.data!, tag: "Get");
   }
 
   // post请求
   void _postData() async {
     var data = await ApiService.login("hjcasd", "asd123456789");
     var entity = LoginEntity.fromJson(data);
-    LogHelper.e("Post", entity.data?.username);
+    LogHelper.e(entity.data?.username, tag: "Post");
   }
 
   @override

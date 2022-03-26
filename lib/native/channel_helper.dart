@@ -8,6 +8,7 @@ class ChannelHelper {
   // MethodChannel
   static const MethodChannel _methodChannel = const MethodChannel('com.flutter/method');
 
+  // BasicMessageChannel
   static const BasicMessageChannel<String> _basicMessageChannel = BasicMessageChannel<String>("com.flutter/basic", StringCodec());
 
   ChannelHelper._();

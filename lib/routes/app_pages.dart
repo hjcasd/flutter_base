@@ -38,7 +38,7 @@ import 'package:flutter_base/pages/unknown_page.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:get/get.dart';
 
-/// 注册路由表(每个新建的页面都要在这进行注册对应路由)
+/// 注册路由表(每个新建的页面都要在这注册对应路由)
 abstract class AppPages {
   AppPages._internal();
 

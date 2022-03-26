@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/components/button/smart_button.dart';
 import 'package:flutter_base/components/divider_text_field.dart';
+import 'package:flutter_base/native/native_path.dart';
 import 'package:flutter_base/pages/other/login/login_controller.dart';
-import 'package:flutter_base/utils/get_helper.dart';
+import 'package:flutter_base/routes/route_manager.dart';
 import 'package:get/get.dart';
 
 /// 登录View
@@ -28,6 +30,12 @@ class LoginBodyView extends GetView<LoginController> {
             height: 10,
           ),
           _getLoginButton(),
+          SmartButton(
+            "跳转到原生",
+            onPressed: () {
+              RouteManager.jumpToNativePage(NativePath.DEMO2);
+            },
+          ),
         ],
       ),
     );

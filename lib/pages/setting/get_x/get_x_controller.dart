@@ -13,12 +13,12 @@ class GetXController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    LogHelper.e("CounterController", "onInit()...");
+    LogHelper.e("onInit()...", tag: "GetXController");
   }
 
   @override
   void onReady() {
     super.onReady();
-    LogHelper.e("CounterController", "onReady()...");
+    LogHelper.e("onReady()...", tag: "GetXController");
   }
 }
