@@ -13,7 +13,7 @@ class NativeHelper {
     ChannelHelper.invokeMethod(NativeMethod.ROUTE, path);
   }
 
-  static void toast() {
-    ChannelHelper.invokeMethod(NativeMethod.TOAST);
+  static void toast(String msg) {
+    ChannelHelper.invokeMethod(NativeMethod.TOAST, msg);
   }
 }
