@@ -6,11 +6,10 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 /// 身份信息页面
-class IdentityPage extends StatelessWidget {
-  IdentityPage({Key? key}) : super(key: key);
-
+class IdentityPage extends GetView<IdentityController> {
   @override
   Widget build(BuildContext context) {
+    Get.put(IdentityController());
     return MaterialApp(
       home: Scaffold(
         appBar: SmartAppBar("身份信息"),

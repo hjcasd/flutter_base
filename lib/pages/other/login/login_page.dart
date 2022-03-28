@@ -5,12 +5,10 @@ import 'package:flutter_base/pages/other/login/view/login_body_view.dart';
 import 'package:get/get.dart';
 
 /// 登录页面
-class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
-
+class LoginPage extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
-    Get.put<LoginController>(LoginController());
+    Get.put(LoginController());
     return MaterialApp(
       home: Scaffold(
         appBar: SmartAppBar(

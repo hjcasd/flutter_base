@@ -29,6 +29,7 @@ import 'package:flutter_base/pages/other/identity/identity_binding.dart';
 import 'package:flutter_base/pages/other/identity/identity_page.dart';
 import 'package:flutter_base/pages/other/login/login_binding.dart';
 import 'package:flutter_base/pages/other/login/login_page.dart';
+import 'package:flutter_base/pages/other/picture/picture_binding.dart';
 import 'package:flutter_base/pages/other/picture/picture_page.dart';
 import 'package:flutter_base/pages/setting/dio/dio_page.dart';
 import 'package:flutter_base/pages/setting/get_x/get_x_page.dart';
@@ -167,6 +168,7 @@ abstract class AppPages {
     GetPage(
       name: AppRoutes.Picture,
       page: () => PicturePage(),
+      binding: PictureBinding(),
     ),
     GetPage(
       name: AppRoutes.Login,
