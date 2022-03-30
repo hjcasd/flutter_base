@@ -25,12 +25,12 @@ import 'package:flutter_base/pages/layout/row/row_page.dart';
 import 'package:flutter_base/pages/layout/stack/stack_page.dart';
 import 'package:flutter_base/pages/home/tab_bar/tab_bar_page.dart';
 import 'package:flutter_base/pages/layout/wrap/wrap_page.dart';
-import 'package:flutter_base/pages/other/identity/identity_binding.dart';
-import 'package:flutter_base/pages/other/identity/identity_page.dart';
-import 'package:flutter_base/pages/other/login/login_binding.dart';
+import 'package:flutter_base/pages/other/login/logic/login_binding.dart';
 import 'package:flutter_base/pages/other/login/login_page.dart';
-import 'package:flutter_base/pages/other/picture/picture_binding.dart';
+import 'package:flutter_base/pages/other/picture/logic/picture_binding.dart';
 import 'package:flutter_base/pages/other/picture/picture_page.dart';
+import 'package:flutter_base/pages/other/user/logic/user_binding.dart';
+import 'package:flutter_base/pages/other/user/user_page.dart';
 import 'package:flutter_base/pages/setting/dio/dio_page.dart';
 import 'package:flutter_base/pages/setting/get_x/get_x_page.dart';
 import 'package:flutter_base/pages/setting/native/native_page.dart';
@@ -176,9 +176,9 @@ abstract class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: AppRoutes.Identity,
-      page: () => IdentityPage(),
-      binding: IdentityBinding(),
+      name: AppRoutes.User,
+      page: () => UserPage(),
+      binding: UserBinding(),
     ),
 
     // =========================设置=============================

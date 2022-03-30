@@ -1,14 +1,12 @@
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 /// Loading管理
-class LoadingUtils {
-  LoadingUtils._internal();
+class LoadingHelper {
+  LoadingHelper._internal();
 
   /// 显示Loading
-  static show(bool isShowLoading) {
-    if (isShowLoading) {
-      EasyLoading.show();
-    }
+  static show() {
+    EasyLoading.show();
   }
 
   /// 隐藏Loading

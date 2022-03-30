@@ -11,7 +11,7 @@ class ImageTitleItem extends StatefulWidget {
   final String imageUrl;
 
   // 评论数
-  final int viewCount;
+  final String viewCount;
 
   ImageTitleItem(
     this.title,
@@ -88,7 +88,7 @@ class _ImageTitleItem extends State<ImageTitleItem> {
             width: 5,
           ),
           Text(
-            widget.viewCount.toString(),
+            widget.viewCount,
             style: TextStyle(
               color: AppColors.grey_BCBCBC,
               fontSize: 14,

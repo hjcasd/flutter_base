@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_base/network/http.dart';
-import 'package:flutter_base/network/utils/loading_utils.dart';
+import 'package:flutter_base/utils/loading_helper.dart';
 
 /// Http工具类
 class HttpUtils {
@@ -28,13 +28,15 @@ class HttpUtils {
     Options? options,
     bool isShowLoading = true,
   }) async {
-    LoadingUtils.show(isShowLoading);
+    if (isShowLoading) {
+      LoadingHelper.show();
+    }
     var response = await Http().get(
       path,
       params: params,
       options: options,
     );
-    LoadingUtils.dismiss();
+    LoadingHelper.dismiss();
     return response;
   }
 
@@ -45,13 +47,15 @@ class HttpUtils {
     Options? options,
     bool isShowLoading = true,
   }) async {
-    LoadingUtils.show(isShowLoading);
+    if (isShowLoading) {
+      LoadingHelper.show();
+    }
     var response = await Http().post(
       path,
       params: params,
       options: options,
     );
-    LoadingUtils.dismiss();
+    LoadingHelper.dismiss();
     return response;
   }
 }

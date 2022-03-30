@@ -53,14 +53,19 @@ class MyApp extends StatelessWidget {
       ),
       // Loading
       builder: EasyLoading.init(),
-      routingCallback: (routing){
+      // 路由跳转监听
+      routingCallback: (routing) {
         if (routing == null) {
           return;
         }
-        if (routing.isBack!) {
-          RouteStack.popStack(routing.previous);
+        if (routing.route == null) {
+          RouteStack.pop();
+          return;
+        }
+        if (routing.isBack == true) {
+          RouteStack.pop();
         } else {
-          RouteStack.pushStack(routing.current);
+          RouteStack.push(routing.current);
         }
       },
     );

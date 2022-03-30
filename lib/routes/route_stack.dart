@@ -1,3 +1,5 @@
+import 'package:flutter_base/utils/log_helper.dart';
+
 /// 路由堆栈管理
 class RouteStack {
   static int _currentIndex = -1;
@@ -5,14 +7,14 @@ class RouteStack {
 
   RouteStack._internal();
 
-  /// 入栈
-  static void pushStack(String currentPage) {
+  /// 页面入栈
+  static void push(String currentPage) {
     _currentIndex++;
     _pageStack[_currentIndex] = currentPage;
   }
 
-  /// 出栈
-  static void popStack(String currentPage) {
+  /// 页面出栈
+  static void pop() {
     if (_currentIndex < 0) {
       return;
     }
@@ -20,8 +22,9 @@ class RouteStack {
     _currentIndex--;
   }
 
-  // 是否可返回上一个页面
-  static bool canBack() {
-    return _pageStack.length > 1 ? true : false;
+  // 是否为根页面
+  static bool isRootPage() {
+    LogHelper.e("页面个数: ${_pageStack.length}");
+    return _pageStack.length > 1 ? false : true;
   }
 }

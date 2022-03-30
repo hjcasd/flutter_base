@@ -22,6 +22,9 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
   // 左侧图标
   final IconData icon;
 
+  // 右侧图标
+  final List<Widget>? actions;
+
   SmartAppBar(
     this.text, {
     this.fontSize = 18,
@@ -29,6 +32,7 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.backgroundColor = AppColors.red,
     this.isCenterTitle = false,
     this.icon = Icons.arrow_back,
+    this.actions,
     Key? key,
   }) : super(key: key);
 
@@ -62,6 +66,7 @@ class _SmartAppBarState extends State<SmartAppBar> {
           RouteManager.goBack();
         },
       ),
+      actions: widget.actions,
     );
   }
 }

@@ -19,7 +19,7 @@ class _OtherPageState extends State<OtherPage> {
       child: Column(
         children: [
           RouteButton(
-            "Dialog演示",
+            "弹框演示",
             AppRoutes.Dialog,
             backgroundColor: AppColors.amber,
           ),
@@ -34,8 +34,8 @@ class _OtherPageState extends State<OtherPage> {
             backgroundColor: AppColors.amber,
           ),
           RouteButton(
-            "身份信息演示",
-            AppRoutes.Identity,
+            "用户信息演示",
+            AppRoutes.User,
             backgroundColor: AppColors.amber,
           ),
         ],

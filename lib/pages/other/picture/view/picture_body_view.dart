@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/adapter/image_title_item.dart';
-import 'package:flutter_base/pages/other/picture/picture_controller.dart';
+import 'package:flutter_base/pages/other/picture/logic/picture_controller.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 
@@ -8,26 +8,28 @@ import 'package:get/get.dart';
 class PictureBodyView extends GetView<PictureController> {
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => EasyRefresh(
-        firstRefresh: true,
-        onRefresh: () async {
-          controller.refresh();
-        },
-        onLoad: () async {
-          controller.loadMore();
-        },
-        child: ListView.builder(
-          itemBuilder: (context, index) {
-            return ImageTitleItem(
-              controller.listItems[index]["title"] as String,
-              controller.listItems[index]["imageUrl"] as String,
-              controller.listItems[index]["viewCount"] as int,
-            );
+    return GetBuilder<PictureController>(
+      id: "list",
+      builder: (controller) {
+        return EasyRefresh(
+          firstRefresh: true,
+          onRefresh: () async {
+            controller.refresh();
           },
-          itemCount: controller.listItems.length,
-        ),
-      ),
+          onLoad: () async {
+            controller.loadMore();
+          },
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              String title = controller.listItems[index]["title"] ?? "";
+              String imageUrl = controller.listItems[index]["imageUrl"] ?? "";
+              String viewCount = controller.listItems[index]["viewCount"] ?? "";
+              return ImageTitleItem(title, imageUrl, viewCount);
+            },
+            itemCount: controller.listItems.length,
+          ),
+        );
+      },
     );
   }
 }

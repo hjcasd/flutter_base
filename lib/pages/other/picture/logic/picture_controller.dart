@@ -7,7 +7,7 @@ class PictureController extends GetxController {
   static const PAGE_SIZE = 20;
 
   /// 数据源
-  var listItems = <Map<String, Object>>[].obs;
+  var listItems = <Map<String, String>>[];
 
   /// 当前页码
   var _currentPage = 1;
@@ -27,9 +27,10 @@ class PictureController extends GetxController {
   void _requestNewItems() async {
     var newItems = await MockData.getList(_currentPage, PAGE_SIZE);
     if (_currentPage > 1) {
-      listItems.value += newItems;
+      listItems += newItems;
     } else {
-      listItems.value = newItems;
+      listItems = newItems;
     }
+    update(["list"]);
   }
 }
