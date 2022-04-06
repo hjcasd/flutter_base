@@ -3,6 +3,7 @@ import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/utils/dialog_manager.dart';
 import 'package:flutter_base/utils/get_helper.dart';
 import 'package:flutter_base/widget/smart_dialog.dart';
+import 'package:get/get.dart';
 
 /// Dialog页面
 class DialogPage extends StatelessWidget {
@@ -48,8 +49,15 @@ class _MyDialogState extends State<MyDialog> {
             height: 10,
           ),
           ElevatedButton(
-            child: Text("BottomSheet"),
+            child: Text("ModalBottomSheet"),
             onPressed: _showBottomSheet,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+            child: Text("Get Dialog"),
+            onPressed: _showDefaultDialog,
           ),
           SizedBox(
             height: 10,
@@ -142,7 +150,7 @@ class _MyDialogState extends State<MyDialog> {
     GetHelper.showSnackBar("result: $result");
   }
 
-  // ModalBottomSheet
+  // 显示BottomSheet
   void _showBottomSheet() async {
     var result = await showModalBottomSheet(
       context: context,
@@ -186,9 +194,18 @@ class _MyDialogState extends State<MyDialog> {
   }
 
   // 显示自定义dialog
+  void _showDefaultDialog() {
+    Get.defaultDialog(
+      radius: 10.0,
+      onConfirm: () => print("Ok"),
+      onCancel: () => print("Cancel"),
+      middleText: "Dialog made in 3 lines of code",
+    );
+  }
+
+  // 显示自定义dialog
   void _showCustomDialog() {
     DialogManager.show(
-      context,
       SmartDialog(
         title: "温馨提示",
         content: "对非中国大陆籍会员暂不支持开通钱包，如您需进行积分消费，可开通消费密码。",

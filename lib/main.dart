@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/network/config/http_config.dart';
 import 'package:flutter_base/network/interceptor/error_interceptor.dart';
 import 'package:flutter_base/network/utils/http_utils.dart';
@@ -14,7 +15,10 @@ import 'package:get/get.dart';
 void main() async {
   initHttp();
   runApp(MyApp());
-  // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);//隐藏状态栏，保留底部按钮栏
+  // 隐藏状态栏，保留底部按钮栏
+  // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+  // 设置Android状态栏沉浸式
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: AppColors.transparent,));
 }
 
 /// Http初始化

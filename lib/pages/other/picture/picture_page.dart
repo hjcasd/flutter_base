@@ -28,7 +28,6 @@ class PicturePage extends GetView<PictureController> {
           ],
         ),
         body: GetBuilder<PictureController>(
-          init: PictureController(),
           builder: (controller) {
             return PictureBodyView();
           },

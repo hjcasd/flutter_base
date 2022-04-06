@@ -14,7 +14,6 @@ class UserPage extends GetView<UserController> {
       home: Scaffold(
         appBar: SmartAppBar("用户信息"),
         body: GetBuilder<UserController>(
-          init: UserController(),
           builder: (controller) {
             if (controller.isInitialized) {
               return UserBodyView();

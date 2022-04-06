@@ -15,7 +15,6 @@ class LoginPage extends GetView<LoginController> {
           "登录页面",
         ),
         body: GetBuilder<LoginController>(
-          init: LoginController(),
           builder: (controller) {
             return LoginBodyView();
           },

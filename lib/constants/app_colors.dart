@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 /// App颜色
 abstract class AppColors {
+
+  // 白色
+  static const Color transparent = Colors.transparent;
+
   // 白色
   static const Color white = Color(0xFFFFFFFF);
 
