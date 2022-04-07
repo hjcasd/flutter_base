@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// FormReadItem: 表单Item展示组件
+/// FormReadItem: 表单展示Item组件
 class FormReadItem extends StatefulWidget {
   // 左侧标题
   final String title;
@@ -10,30 +9,30 @@ class FormReadItem extends StatefulWidget {
   // 中间内容
   final String content;
 
+  // 左侧标题宽度
+  final double titleWidth;
+
+  // 字体粗细
+  final FontWeight fontWeight;
+
   // 底部提示文本
-  final String tip;
+  final String bottomTip;
 
-  // 右侧文本
-  final String operate;
-
-  // 字体是否大号
-  final bool isLarge;
+  // 是否显示底部提示文本
+  final bool isShowBottomTip;
 
   // 是否隐藏底部下划线
   final bool isHideDivider;
 
-  // 右侧文本点击事件回调
-  final VoidCallback? onOperatePressed;
-
-  FormReadItem(
-    this.title,
-    this.content, {
-    this.tip = "",
-    this.operate = "",
-    this.isLarge = false,
+  FormReadItem({
+    required this.title,
+    required this.content,
+    this.titleWidth = 60,
+    this.fontWeight = FontWeight.w400,
+    this.bottomTip = "",
+    this.isShowBottomTip = false,
     this.isHideDivider = false,
-    this.onOperatePressed,
-    Key? key,
+    key,
   }) : super(key: key);
 
   @override
@@ -42,6 +41,7 @@ class FormReadItem extends StatefulWidget {
   }
 }
 
+/// State
 class _FormReadItemState extends State<FormReadItem> {
   @override
   Widget build(BuildContext context) {
@@ -60,16 +60,12 @@ class _FormReadItemState extends State<FormReadItem> {
   Widget _getItemView() {
     return Positioned(
       child: Container(
-        padding: EdgeInsets.fromLTRB(18, 18, 16, 4),
+        padding: EdgeInsets.fromLTRB(20, 20, 20, widget.isShowBottomTip ? 5 : 20),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _getTitleView(),
-            SizedBox(
-              width: 40,
-            ),
             _getContentView(),
-            _getOperateView(),
           ],
         ),
       ),
@@ -79,7 +75,7 @@ class _FormReadItemState extends State<FormReadItem> {
   /// 左侧标题
   Widget _getTitleView() {
     return Container(
-      width: 50,
+      width: widget.titleWidth,
       child: Text(
         widget.title,
       ),
@@ -91,45 +87,29 @@ class _FormReadItemState extends State<FormReadItem> {
     return Expanded(
       flex: 1,
       child: Container(
+        margin: EdgeInsets.only(left: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               widget.content,
               style: TextStyle(
-                fontWeight: FontWeight.w700,
-                color: AppColors.black,
-                fontSize: widget.isLarge ? 18 : 14,
+                fontWeight: widget.fontWeight,
+                color: AppColors.black_333333,
               ),
             ),
-            Opacity(
-              opacity: widget.tip == "" ? 0 : 1,
+            Visibility(
+              visible: widget.isShowBottomTip,
               child: Text(
-                widget.tip,
+                widget.bottomTip,
                 style: TextStyle(
                   fontSize: 10,
-                  color: AppColors.red_CB1E36,
+                  color: AppColors.gold_A89769,
                 ),
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  /// 右侧操作文本
-  Widget _getOperateView() {
-    return Offstage(
-      offstage: widget.operate == "",
-      child: GestureDetector(
-        child: Text(
-          widget.operate,
-          style: TextStyle(
-            color: AppColors.amber,
-          ),
-        ),
-        onTap: widget.onOperatePressed,
       ),
     );
   }
