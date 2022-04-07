@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/components/form/form_read_item.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 
 /// Card页面
@@ -24,24 +25,34 @@ class MyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      child: Card(
-        // 阴影
-        elevation: 15,
-        // 圆角
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(15),
+    return Card(
+      // 阴影
+      elevation: 15,
+      // 裁剪模式,默认Clip.none
+      clipBehavior: Clip.antiAlias,
+      // 圆角
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+      ),
+      margin: EdgeInsets.all(10),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FormReadItem(
+            title: '身份证',
+            content: '3101*********244X',
           ),
-        ),
-        margin: EdgeInsets.all(10),
-        child: Padding(
-          padding: EdgeInsets.all(10),
-          child: HtmlWidget(
-            _htmlData,
+          FormReadItem(
+            title: '身份证',
+            content: '3101*********244X',
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: HtmlWidget(
+              _htmlData,
+            ),
+          ),
+        ],
       ),
     );
   }
