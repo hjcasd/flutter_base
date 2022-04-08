@@ -61,11 +61,14 @@ class _HomePageState extends State<HomePage> {
             "Drawer",
             AppRoutes.Drawer,
           ),
-          SmartCheckbox(isSelected, onChanged: (value) {
-            setState(() {
-              isSelected = value;
-            });
-          })
+          SmartCheckbox(
+            value: isSelected,
+            onChanged: (value) {
+              setState(() {
+                isSelected = value;
+              });
+            },
+          )
         ],
       ),
     );

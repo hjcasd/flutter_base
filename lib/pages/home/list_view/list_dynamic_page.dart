@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/app_constants.dart';
 
 /// 动态列表页面
 class ListDynamicPage extends StatelessWidget {
@@ -51,7 +52,7 @@ class ImageItem extends StatelessWidget {
     return Column(
       children: <Widget>[
         FadeInImage.assetNetwork(
-          placeholder: "assets/images/icon_test.png",
+          placeholder: "${AppConstants.ASSERT_IMAGE_PATH}icon_test.png",
           image: "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
           fit: BoxFit.cover,
         ),

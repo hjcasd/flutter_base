@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/app_constants.dart';
 
 /// SmartImage: 基础Image封装的组件
 class SmartImage extends StatefulWidget {
@@ -37,8 +38,6 @@ class SmartImage extends StatefulWidget {
 }
 
 class _SmartImageState extends State<SmartImage> {
-  // 图片目录
-  final String _imageDir = "assets/images/";
 
   @override
   Widget build(BuildContext context) {
@@ -52,17 +51,17 @@ class _SmartImageState extends State<SmartImage> {
   Widget _getImageView() {
     if (widget.isLocal) {
       return Image.asset(
-        "${_imageDir + widget.imageUrl}",
+        "${AppConstants.ASSERT_IMAGE_PATH + widget.imageUrl}",
         fit: widget.fit,
       );
     }
     return CachedNetworkImage(
       imageUrl: widget.imageUrl,
       placeholder: (context, url) => Image.asset(
-        "${_imageDir + widget.placeholderPath}",
+        "${AppConstants.ASSERT_IMAGE_PATH + widget.placeholderPath}",
       ),
       errorWidget: (context, url, error) => Image.asset(
-        "${_imageDir + widget.errorPath}",
+        "${AppConstants.ASSERT_IMAGE_PATH + widget.errorPath}",
       ),
       fit: widget.fit,
     );

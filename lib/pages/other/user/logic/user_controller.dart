@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:flutter_base/constants/app_constants.dart';
 import 'package:flutter_base/data/user_entity.dart';
 import 'package:flutter_base/utils/loading_helper.dart';
 import 'package:flutter_base/utils/log_helper.dart';
@@ -39,7 +40,7 @@ class UserController extends GetxController {
   /// 加载数据
   void _loadData() async {
     LoadingHelper.show();
-    String json = await rootBundle.loadString('assets/json/user_info.json');
+    String json = await rootBundle.loadString("${AppConstants.ASSERT_JSON_PATH}user_info.json");
     Future.delayed(Duration(seconds: 2), () {
       _model = UserEntity.fromJson(jsonDecode(json));
       LogHelper.e(_model.count?.toDouble(), tag: "IdentityController");
