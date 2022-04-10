@@ -3,7 +3,7 @@ abstract class AppRoutes {
   AppRoutes._internal();
 
   static const Initial = '/';
-  static const UnKnown = '/unKnown';
+  static const NotFound = '/not_found';
 
   // 首页
   static const Text = '/text';

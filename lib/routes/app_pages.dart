@@ -35,7 +35,7 @@ import 'package:flutter_base/pages/setting/dio/dio_page.dart';
 import 'package:flutter_base/pages/setting/get_x/get_x_page.dart';
 import 'package:flutter_base/pages/setting/native/native_page.dart';
 import 'package:flutter_base/pages/setting/swiper/swiper_page.dart';
-import 'package:flutter_base/pages/unknown_page.dart';
+import 'package:flutter_base/pages/not_found_page.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:get/get.dart';
 
@@ -49,8 +49,8 @@ abstract class AppPages {
       page: () => MainPage(),
     ),
     GetPage(
-      name: AppRoutes.UnKnown,
-      page: () => UnknownPage(),
+      name: AppRoutes.NotFound,
+      page: () => NotFoundPage(),
     ),
 
     // =========================首页=============================

@@ -5,6 +5,7 @@ import 'package:flutter_base/native/native_path.dart';
 import 'package:flutter_base/pages/other/login/logic/login_controller.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:flutter_base/routes/route_manager.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
 /// 登录View
@@ -14,36 +15,38 @@ class LoginBodyView extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      child: Column(
-        children: [
-          _getRoundImage(
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-            100,
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          _getNameInput(),
-          _getPasswordInput(),
-          SizedBox(
-            height: 10,
-          ),
-          _getLoginButton(),
-          SmartButton(
-            "跳转到原生",
-            onPressed: () {
-              RouteManager.jumpToNativePage(NativePath.DEMO2);
-            },
-          ),
-          SmartButton(
-            "跳转到身份页面",
-            onPressed: () {
-              RouteManager.offAllNamedPage(AppRoutes.User);
-            },
-          ),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10),
+        child: Column(
+          children: [
+            _getRoundImage(
+              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
+              100,
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            _getNameInput(),
+            _getPasswordInput(),
+            SizedBox(
+              height: 10,
+            ),
+            _getLoginButton(),
+            SmartButton(
+              "跳转到原生",
+              onPressed: () {
+                RouteManager.jumpToNativePage(NativePath.DEMO2);
+              },
+            ),
+            SmartButton(
+              "跳转到身份页面",
+              onPressed: () {
+                RouteManager.offAllNamedPage(AppRoutes.User);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -62,44 +65,36 @@ class LoginBodyView extends GetView<LoginController> {
 
   /// 用户名输入框
   Widget _getNameInput() {
-    return Obx(() {
-      return DividerTextField(
-        controller.name.value,
-        keyboardType: TextInputType.text,
-        maxLength: 11,
-        hintText: "请输入用户名",
-        prefixIcon: Icons.account_box,
-        controller: _nameController,
-        onChanged: (value) {
-          controller.name.value = value;
-        },
-        onClear: () {
-          controller.name.value = "";
-          _nameController.clear();
-        },
-      );
-    });
+    return DividerTextField(
+      keyboardType: TextInputType.text,
+      maxLength: 11,
+      hintText: "请输入用户名",
+      prefixIcon: Icon(
+        Icons.account_box,
+        size: 20,
+      ),
+      controller: _nameController,
+      onChanged: (value) {
+        LogHelper.e("name: $value");
+      },
+    );
   }
 
   /// 密码输入框
   Widget _getPasswordInput() {
-    return Obx(() {
-      return DividerTextField(
-        controller.password.value,
-        keyboardType: TextInputType.visiblePassword,
-        obscureText: true,
-        hintText: "请输入密码",
-        prefixIcon: Icons.lock_open,
-        controller: _passwordController,
-        onChanged: (value) {
-          controller.password.value = value;
-        },
-        onClear: () {
-          controller.password.value = "";
-          _passwordController.clear();
-        },
-      );
-    });
+    return DividerTextField(
+      keyboardType: TextInputType.visiblePassword,
+      obscureText: true,
+      hintText: "请输入密码",
+      prefixIcon: Icon(
+        Icons.lock_open,
+        size: 20,
+      ),
+      controller: _passwordController,
+      onChanged: (value) {
+        LogHelper.e("password: $value");
+      },
+    );
   }
 
   /// 登录按钮
@@ -113,7 +108,7 @@ class LoginBodyView extends GetView<LoginController> {
           "登录",
         ),
         onPressed: () {
-          controller.login();
+          controller.login(_nameController, _passwordController);
         },
       ),
     );

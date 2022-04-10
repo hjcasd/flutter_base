@@ -3,9 +3,6 @@ import 'package:flutter_base/constants/app_colors.dart';
 
 /// DividerTextField: 带下划线的输入框组件
 class DividerTextField extends StatefulWidget {
-  // 输入框内容
-  final String value;
-
   // 输入框高度
   final double height;
 
@@ -21,41 +18,28 @@ class DividerTextField extends StatefulWidget {
   // 输入框占位文本
   final String? hintText;
 
-  // 左侧图标
-  final IconData? prefixIcon;
-
-  // 左侧图标大小
-  final double prefixIconSize;
-
-  // 输入框焦点
-  final FocusNode? focusNode;
+  // 输入框左侧图标
+  final Widget? prefixIcon;
 
   // 键盘输入类型
   final TextInputType? keyboardType;
 
   // 输入框控制器
-  final TextEditingController? controller;
+  final TextEditingController controller;
 
   // 输入框文本变化监听回调
   final ValueChanged<String>? onChanged;
 
-  // 输入框清除回调
-  final VoidCallback? onClear;
-
-  DividerTextField(
-    this.value, {
+  DividerTextField({
+    required this.controller,
     this.height = 50,
     this.margin = 10,
     this.obscureText = false,
     this.maxLength,
     this.hintText,
     this.prefixIcon,
-    this.prefixIconSize = 20,
-    this.focusNode,
     this.keyboardType = TextInputType.text,
-    this.controller,
     this.onChanged,
-    this.onClear,
     Key? key,
   }) : super(key: key);
 
@@ -66,6 +50,8 @@ class DividerTextField extends StatefulWidget {
 }
 
 class _DividerTextField extends State<DividerTextField> {
+  bool _showDeleteIcon = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -88,25 +74,33 @@ class _DividerTextField extends State<DividerTextField> {
       decoration: InputDecoration(
         counterText: "",
         hintText: widget.hintText,
-        icon: Icon(
-          widget.prefixIcon,
-          size: widget.prefixIconSize,
-        ),
+        prefixIcon: widget.prefixIcon,
+        suffixIcon: _showDeleteIcon ? _getDeleteView() : null,
         border: InputBorder.none,
-        suffixIcon: GestureDetector(
-          child: Offstage(
-            child: Icon(
-              Icons.clear,
-            ),
-            offstage: widget.value == "",
-          ),
-          onTap: widget.onClear,
-        ),
       ),
-      focusNode: widget.focusNode,
       keyboardType: widget.keyboardType,
       controller: widget.controller,
-      onChanged: widget.onChanged,
+      onChanged: (value) {
+        setState(() {
+          _showDeleteIcon = value.isNotEmpty;
+        });
+        widget.onChanged!(value);
+      },
+    );
+  }
+
+  /// 删除图标
+  Widget _getDeleteView() {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          _showDeleteIcon = false;
+          widget.controller.clear();
+        });
+      },
+      child: Icon(
+        Icons.clear,
+      ),
     );
   }
 

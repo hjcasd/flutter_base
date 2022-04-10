@@ -7,9 +7,6 @@ import 'package:get/get.dart';
 
 /// 登录页面Controller
 class LoginController extends GetxController {
-  var name = "".obs;
-  var password = "".obs;
-
   @override
   void onInit() {
     super.onInit();
@@ -29,7 +26,10 @@ class LoginController extends GetxController {
   }
 
   /// 登录
-  void login() async {
+  void login(TextEditingController nameController, TextEditingController passwordController) async {
+    String name = nameController.value.text;
+    String password = passwordController.value.text;
+
     if (name.isEmpty) {
       GetHelper.showSnackBar("请输入用户名");
       return;
@@ -39,11 +39,12 @@ class LoginController extends GetxController {
       return;
     }
 
-    var data = await ApiService.login(name.value, password.value);
+    var data = await ApiService.login(name, password);
     var entity = LoginEntity.fromJson(data);
-    name.value = "";
-    password.value = "";
     LogHelper.e("name: ${entity.data?.username}", tag: "LoginController");
+
+    nameController.clear();
+    passwordController.clear();
     FocusScope.of(Get.context!).requestFocus(FocusNode());
   }
 }

@@ -4,6 +4,9 @@ import 'package:flutter_base/routes/route_manager.dart';
 
 /// SmartAppBar: 基础AppBar封装的组件
 class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
+  // 高度
+  final double height;
+
   // 标题
   final String text;
 
@@ -27,6 +30,7 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   SmartAppBar(
     this.text, {
+    this.height = 54,
     this.fontSize = 18,
     this.fontColor = AppColors.white,
     this.backgroundColor = AppColors.red,
@@ -42,7 +46,7 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(50);
+  Size get preferredSize => Size.fromHeight(height);
 }
 
 class _SmartAppBarState extends State<SmartAppBar> {

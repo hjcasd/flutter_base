@@ -19,6 +19,7 @@ class LoginPage extends GetView<LoginController> {
             return LoginBodyView();
           },
         ),
+        resizeToAvoidBottomInset: false,
       ),
     );
   }
