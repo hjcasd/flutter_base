@@ -7,13 +7,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class TextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Text的使用",
-        ),
-        body: MyText(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Text的使用",
       ),
+      body: MyText(),
     );
   }
 }

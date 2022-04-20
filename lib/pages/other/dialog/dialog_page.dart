@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/utils/dialog_manager.dart';
 import 'package:flutter_base/utils/get_helper.dart';
 import 'package:flutter_base/widget/smart_dialog.dart';
@@ -152,45 +153,44 @@ class _MyDialogState extends State<MyDialog> {
 
   // 显示BottomSheet
   void _showBottomSheet() async {
-    var result = await showModalBottomSheet(
-      context: context,
-      builder: (context) {
-        return Container(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ListTile(
-                title: Text(
-                  "条目1",
-                ),
-                onTap: () {
-                  Navigator.pop(context, "条目1...");
-                },
-              ),
-              Divider(),
-              ListTile(
-                title: Text(
-                  "条目2",
-                ),
-                onTap: () {
-                  Navigator.pop(context, "条目3...");
-                },
-              ),
-              Divider(),
-              ListTile(
-                title: Text(
-                  "条目3",
-                ),
-                onTap: () {
-                  Navigator.pop(context, "条目3...");
-                },
-              ),
-            ],
+    DialogManager.showBottomSheet(_getDialogView());
+  }
+
+  Widget _getDialogView() {
+    return Container(
+      color: AppColors.white,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            title: Text(
+              "条目1",
+            ),
+            onTap: () {
+              DialogManager.dismiss();
+            },
           ),
-        );
-      },
+          Divider(),
+          ListTile(
+            title: Text(
+              "条目2",
+            ),
+            onTap: () {
+              DialogManager.dismiss();
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text(
+              "条目3",
+            ),
+            onTap: () {
+              DialogManager.dismiss();
+            },
+          ),
+        ],
+      ),
     );
-    GetHelper.showSnackBar("result: $result");
   }
 
   // 显示自定义dialog

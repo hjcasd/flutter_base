@@ -3,7 +3,6 @@ import 'package:flutter_base/native/channel_helper.dart';
 import 'package:flutter_base/native/native_method.dart';
 import 'package:flutter_base/native/native_path.dart';
 import 'package:flutter_base/routes/route_manager.dart';
-import 'package:flutter_base/utils/get_helper.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 
 /// flutter与原生交互
@@ -11,6 +10,10 @@ class NativePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ChannelHelper.handleMessage(_handleMessage);
+
+    // ChannelHelper.receiveStream((object) {
+    //   LogHelper.e("result: $object");
+    // });
 
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +23,7 @@ class NativePage extends StatelessWidget {
             Icons.arrow_back,
           ),
           onPressed: () {
-           RouteManager.goBack();
+            RouteManager.goBack();
           },
         ),
       ),
@@ -38,11 +41,18 @@ class NativePage extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 // flutter端调用native端的方法并传参
-                ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "flutter传递过来的消息").then((result) {
-                  GetHelper.showSnackBar("result: $result");
+                // ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "flutter传递过来的消息").then((result) {
+                //   GetHelper.showSnackBar("result: $result");
+                // });
+
+                ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "1111111").then((result) {
+                  LogHelper.e("result: $result");
                 });
+
+                var result = await ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "222222222");
+                LogHelper.e("result: $result");
               },
               child: Text(
                 '原生吐司',

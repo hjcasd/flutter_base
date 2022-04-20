@@ -10,7 +10,13 @@ class DialogManager {
     Get.dialog(dialogWidget);
   }
 
-  // static Future showBottomSheet(Widget dialogWidget) {
-  //   return Get.bottomSheet(dialogWidget);
-  // }
+  /// 显示BottomSheet
+  static void showBottomSheet(Widget dialogWidget) {
+    Get.bottomSheet(dialogWidget);
+  }
+
+  /// 关闭Dialog
+  static void dismiss() {
+    Get.back();
+  }
 }

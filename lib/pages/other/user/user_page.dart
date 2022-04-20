@@ -15,33 +15,31 @@ class UserPage extends GetView<UserController> {
   @override
   Widget build(BuildContext context) {
     Get.put(UserController());
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SearchAppBar(
-          backgroundColor: AppColors.grey_F7F7F7,
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-            ),
-            onPressed: () {
-              RouteManager.goBack();
-            },
+    return Scaffold(
+      appBar: SearchAppBar(
+        backgroundColor: AppColors.grey_F7F7F7,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
           ),
-          hintText: "请输入关键字",
-          controller: _searchController,
-          onComplete: () {
-            LogHelper.e("value: " + _searchController.value.text);
+          onPressed: () {
+            RouteManager.goBack();
           },
         ),
-        body: GetBuilder<UserController>(
-          builder: (controller) {
-            if (controller.isInitialized) {
-              return UserBodyView();
-            } else {
-              return DefaultBody();
-            }
-          },
-        ),
+        hintText: "请输入关键字",
+        controller: _searchController,
+        onComplete: () {
+          LogHelper.e("value: " + _searchController.value.text);
+        },
+      ),
+      body: GetBuilder<UserController>(
+        builder: (controller) {
+          if (controller.isInitialized) {
+            return UserBodyView();
+          } else {
+            return DefaultBody();
+          }
+        },
       ),
     );
   }
