@@ -5,13 +5,11 @@ import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 class FormPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Form的使用",
-        ),
-        body: MyForm(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Form的使用",
       ),
+      body: MyForm(),
     );
   }
 }

@@ -7,13 +7,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class StackPositionedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Stack + Positioned",
-        ),
-        body: MyStackPositioned(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Stack + Positioned",
       ),
+      body: MyStackPositioned(),
     );
   }
 }

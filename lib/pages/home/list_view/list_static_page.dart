@@ -6,13 +6,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class ListStaticPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "静态列表",
-        ),
-        body: MyStaticListView(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "静态列表",
       ),
+      body: MyStaticListView(),
     );
   }
 }

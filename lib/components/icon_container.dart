@@ -7,10 +7,10 @@ class IconContainer extends StatelessWidget {
   final IconData iconData;
 
   // 背景颜色
-  final backgroundColor;
+  final Color backgroundColor;
 
   // 图标大小
-  final iconSize;
+  final double iconSize;
 
   IconContainer(
     this.iconData, {

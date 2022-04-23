@@ -6,13 +6,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class WrapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Wrap的使用",
-        ),
-        body: MyWrap(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Wrap的使用",
       ),
+      body: MyWrap(),
     );
   }
 }

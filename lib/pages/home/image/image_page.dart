@@ -7,20 +7,18 @@ import 'package:flutter_base/constants/app_colors.dart';
 class ImagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Image的使用",
-        ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              MyLocalImage(),
-              MyNetImage(),
-              MyCircleBoxImage(),
-              MyCircleClipImage(),
-            ],
-          ),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Image的使用",
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            MyLocalImage(),
+            MyNetImage(),
+            MyCircleBoxImage(),
+            MyCircleClipImage(),
+          ],
         ),
       ),
     );

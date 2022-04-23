@@ -6,23 +6,21 @@ import 'package:flutter_base/constants/app_colors.dart';
 class NotFoundPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "未知页面",
-        ),
-        body: Container(
-          child: Center(
-            child: Text(
-              'NotFound Page',
-              style: TextStyle(
-                fontSize: 20,
-                color: AppColors.black,
-              ),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "未知页面",
+      ),
+      body: Container(
+        child: Center(
+          child: Text(
+            'NotFound Page',
+            style: TextStyle(
+              fontSize: 20,
+              color: AppColors.black,
             ),
           ),
-          color: AppColors.blue,
         ),
+        color: AppColors.blue,
       ),
     );
   }

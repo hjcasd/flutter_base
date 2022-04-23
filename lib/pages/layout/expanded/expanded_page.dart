@@ -7,20 +7,18 @@ import 'package:flutter_base/constants/app_colors.dart';
 class ExpandedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Expanded的使用",
-        ),
-        body: Column(
-          children: [
-            MyExpanded(),
-            SizedBox(
-              height: 10,
-            ),
-            MyMultiExpanded(),
-          ],
-        ),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Expanded的使用",
+      ),
+      body: Column(
+        children: [
+          MyExpanded(),
+          SizedBox(
+            height: 10,
+          ),
+          MyMultiExpanded(),
+        ],
       ),
     );
   }

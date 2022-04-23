@@ -7,13 +7,11 @@ import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 class SwiperPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Swiper的使用",
-        ),
-        body: MySwiper(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Swiper的使用",
       ),
+      body: MySwiper(),
     );
   }
 }

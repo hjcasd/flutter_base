@@ -7,13 +7,11 @@ import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart
 class CardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Card的使用",
-        ),
-        body: MyCard(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Card的使用",
       ),
+      body: MyCard(),
     );
   }
 }

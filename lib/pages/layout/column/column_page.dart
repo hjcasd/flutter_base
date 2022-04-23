@@ -7,13 +7,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class ColumnPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Column的使用",
-        ),
-        body: MyColumn(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Column的使用",
       ),
+      body: MyColumn(),
     );
   }
 }

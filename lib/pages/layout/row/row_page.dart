@@ -7,13 +7,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class RowPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Row的使用",
-        ),
-        body: MyRow(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Row的使用",
       ),
+      body: MyRow(),
     );
   }
 }

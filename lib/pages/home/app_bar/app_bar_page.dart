@@ -6,10 +6,8 @@ import 'package:flutter_base/routes/route_manager.dart';
 class AppBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyAppBar(),
-      // home: MyAppTabBar(),
-    );
+    return MyAppBar();
+    // return MyAppTabBar();
   }
 }
 

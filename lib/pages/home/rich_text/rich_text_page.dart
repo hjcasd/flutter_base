@@ -8,14 +8,12 @@ import 'package:flutter_base/utils/get_helper.dart';
 class RichTextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "RichText的使用",
-          isCenterTitle: true,
-        ),
-        body: MyRichText(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "RichText的使用",
+        isCenterTitle: true,
       ),
+      body: MyRichText(),
     );
   }
 }

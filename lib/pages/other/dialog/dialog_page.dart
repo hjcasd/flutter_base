@@ -10,13 +10,11 @@ import 'package:get/get.dart';
 class DialogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Dialog的使用",
-        ),
-        body: MyDialog(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Dialog的使用",
       ),
+      body: MyDialog(),
     );
   }
 }

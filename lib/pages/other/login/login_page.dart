@@ -9,18 +9,16 @@ class LoginPage extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     Get.put(LoginController());
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "登录页面",
-        ),
-        body: GetBuilder<LoginController>(
-          builder: (controller) {
-            return LoginBodyView();
-          },
-        ),
-        resizeToAvoidBottomInset: false,
+    return Scaffold(
+      appBar: SmartAppBar(
+        "登录页面",
       ),
+      body: GetBuilder<LoginController>(
+        builder: (controller) {
+          return LoginBodyView();
+        },
+      ),
+      resizeToAvoidBottomInset: false,
     );
   }
 }

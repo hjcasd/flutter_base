@@ -6,13 +6,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class PaddingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Padding的使用",
-        ),
-        body: MyPadding(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Padding的使用",
       ),
+      body: MyPadding(),
     );
   }
 }

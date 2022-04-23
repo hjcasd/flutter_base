@@ -6,13 +6,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class GridBuilderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "GridView.builder实现网格列表",
-        ),
-        body: MyBuilderGridView(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "GridView.builder实现网格列表",
       ),
+      body: MyBuilderGridView(),
     );
   }
 }

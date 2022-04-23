@@ -6,13 +6,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class GridCountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "GridView.count实现网格列表",
-        ),
-        body: MyCountGridView(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "GridView.count实现网格列表",
       ),
+      body: MyCountGridView(),
     );
   }
 }

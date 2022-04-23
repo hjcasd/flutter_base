@@ -6,13 +6,11 @@ import 'package:flutter_base/constants/app_constants.dart';
 class ListDynamicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "动态列表",
-        ),
-        body: MyDynamicListView(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "动态列表",
       ),
+      body: MyDynamicListView(),
     );
   }
 }

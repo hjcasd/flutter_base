@@ -6,15 +6,13 @@ import 'package:flutter_base/constants/app_colors.dart';
 class ButtonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Button的使用",
-        ),
-        body: MyButton(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Button的使用",
       ),
-      // home: MyFloatingButton(),
+      body: MyButton(),
     );
+    // return MyFloatingButton(),
   }
 }
 

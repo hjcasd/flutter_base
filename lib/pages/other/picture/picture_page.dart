@@ -12,26 +12,24 @@ class PicturePage extends GetView<PictureController> {
   @override
   Widget build(BuildContext context) {
     Get.put(PictureController());
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "图文列表",
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.settings,
-              ),
-              onPressed: () {
-                RouteManager.jumpToNamedPage(AppRoutes.User);
-              },
-            )
-          ],
-        ),
-        body: GetBuilder<PictureController>(
-          builder: (controller) {
-            return PictureBodyView();
-          },
-        ),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "图文列表",
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.settings,
+            ),
+            onPressed: () {
+              RouteManager.jumpToNamedPage(AppRoutes.User);
+            },
+          )
+        ],
+      ),
+      body: GetBuilder<PictureController>(
+        builder: (controller) {
+          return PictureBodyView();
+        },
       ),
     );
   }

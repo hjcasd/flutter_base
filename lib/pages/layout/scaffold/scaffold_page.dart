@@ -5,9 +5,7 @@ import 'package:flutter_base/routes/route_manager.dart';
 class ScaffoldPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyScaffold(),
-    );
+    return MyScaffold();
   }
 }
 

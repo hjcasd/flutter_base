@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 class DrawerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyDrawerHeader(),
-      // home: MyDrawerAccount(),
-    );
+    return MyDrawerHeader();
+    // return MyDrawerAccount(),
   }
 }
 

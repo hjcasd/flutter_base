@@ -6,9 +6,7 @@ import 'package:flutter_base/routes/route_manager.dart';
 class TabBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyTabBar(),
-    );
+    return MyTabBar();
   }
 }
 

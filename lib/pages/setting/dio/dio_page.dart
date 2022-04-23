@@ -10,13 +10,11 @@ import 'package:flutter_base/utils/log_helper.dart';
 class DioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Dio的使用",
-        ),
-        body: MyDio(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Dio的使用",
       ),
+      body: MyDio(),
     );
   }
 }

@@ -7,25 +7,23 @@ import 'package:flutter_base/routes/app_routes.dart';
 class ListViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "ListView的使用",
-        ),
-        body: Container(
-          width: double.infinity,
-          child: Column(
-            children: [
-              RouteButton(
-                "静态列表",
-                AppRoutes.ListStatic,
-              ),
-              RouteButton(
-                "动态列表",
-                AppRoutes.ListDynamic,
-              ),
-            ],
-          ),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "ListView的使用",
+      ),
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          children: [
+            RouteButton(
+              "静态列表",
+              AppRoutes.ListStatic,
+            ),
+            RouteButton(
+              "动态列表",
+              AppRoutes.ListDynamic,
+            ),
+          ],
         ),
       ),
     );

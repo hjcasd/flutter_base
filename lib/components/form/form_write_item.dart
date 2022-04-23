@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
 /// FormWriteItem: 表单Item编辑组件
@@ -17,6 +18,9 @@ class FormWriteItem extends StatefulWidget {
 
   // 键盘输入类型
   final TextInputType keyboardType;
+
+  // 输入格式
+  final List<TextInputFormatter>? inputFormatters;
 
   // 输入框控制器
   final TextEditingController? controller;
@@ -48,6 +52,7 @@ class FormWriteItem extends StatefulWidget {
     required this.placeholder,
     this.titleWidth = 60,
     this.keyboardType = TextInputType.text,
+    this.inputFormatters,
     this.controller,
     this.onChanged,
     this.onClear,
@@ -129,6 +134,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
     return Container(
       child: TextField(
         keyboardType: widget.keyboardType,
+        inputFormatters: widget.inputFormatters,
         decoration: InputDecoration(
           isDense: true,
           contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),

@@ -8,26 +8,24 @@ import 'package:flutter_base/routes/app_routes.dart';
 class StackPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Stack的使用",
-        ),
-        body: Container(
-          width: double.infinity,
-          child: Column(
-            children: [
-              RouteButton(
-                "Stack + Positioned",
-                AppRoutes.StackPositioned,
-              ),
-              RouteButton(
-                "Stack + Align",
-                AppRoutes.StackAlign,
-              ),
-              MyStack(),
-            ],
-          ),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Stack的使用",
+      ),
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          children: [
+            RouteButton(
+              "Stack + Positioned",
+              AppRoutes.StackPositioned,
+            ),
+            RouteButton(
+              "Stack + Align",
+              AppRoutes.StackAlign,
+            ),
+            MyStack(),
+          ],
         ),
       ),
     );

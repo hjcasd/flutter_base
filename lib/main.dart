@@ -18,7 +18,11 @@ void main() async {
   // 隐藏状态栏，保留底部按钮栏
   // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
   // 设置Android状态栏沉浸式
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: AppColors.transparent,));
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: AppColors.transparent,
+    ),
+  );
 }
 
 /// Http初始化

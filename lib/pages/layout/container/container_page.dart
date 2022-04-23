@@ -7,13 +7,11 @@ import 'package:flutter_base/constants/app_colors.dart';
 class ContainerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: SmartAppBar(
-          "Container的使用",
-        ),
-        body: MyContainer(),
+    return Scaffold(
+      appBar: SmartAppBar(
+        "Container的使用",
       ),
+      body: MyContainer(),
     );
   }
 }
