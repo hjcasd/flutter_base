@@ -10,6 +10,7 @@ class FormPage extends StatelessWidget {
         "Form的使用",
       ),
       body: MyForm(),
+      resizeToAvoidBottomInset: false,
     );
   }
 }
