@@ -1,4 +1,4 @@
-/// 配置管理
+/// 网络配置管理
 abstract class HttpConfig {
   // 连接超时时间
   static const CONNECT_TIMEOUT = 30000;

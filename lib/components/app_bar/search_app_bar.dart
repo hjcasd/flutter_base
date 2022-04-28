@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
 /// SearchAppBar: 自定义带搜索框的AppBar
@@ -27,6 +26,9 @@ class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
   // 输入完成回调
   final VoidCallback? onComplete;
 
+  // 清除回调
+  final VoidCallback? onClear;
+
   const SearchAppBar({
     required this.leading,
     required this.controller,
@@ -44,6 +46,7 @@ class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
       color: Colors.black,
     ),
     this.onComplete,
+    this.onClear,
     Key? key,
   }) : super(key: key);
 
@@ -132,6 +135,9 @@ class _SearchAppBarState extends State<SearchAppBar> {
           widget.controller.text = '';
           _showDeleteIcon = false;
         });
+        if (widget.onClear != null) {
+          widget.onClear!();
+        }
       },
       child: widget.suffixIcon,
     );

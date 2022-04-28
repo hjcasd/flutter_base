@@ -12,8 +12,6 @@ import 'package:get/get.dart';
 
 /// 用户信息页面View
 class UserBodyView extends GetView<UserController> {
-  final TextEditingController _nameController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,39 +20,26 @@ class UserBodyView extends GetView<UserController> {
           title: '身份证',
           content: '3101*********244X',
         ),
-        GetBuilder<UserController>(
-          id: "name",
-          builder: (controller) {
-            return FormWriteItem(
-              title: "姓名",
-              value: controller.name,
-              placeholder: "请输入姓名",
-              controller: _nameController,
-              inputFormatters: [
-                TextInputFormatter.withFunction(
-                  (oldValue, newValue) => TextEditingValue(
-                    text: newValue.text.stringSeparate(
-                      separator: " ",
-                      count: 4,
-                      fromRightToLeft: false,
-                    ),
-                  ),
-                )
-              ],
-              onChanged: (value) {
-                _nameController.selection = TextSelection.fromPosition(
-                  TextPosition(
-                    offset: value.length,
-                    affinity: TextAffinity.upstream,
-                  ),
-                );
-                controller.changeName(value);
-              },
-              onClear: () {
-                controller.changeName("");
-                _nameController.clear();
-              },
-            );
+        FormWriteItem(
+          title: "姓名",
+          value: controller.name,
+          placeholder: "请输入姓名",
+          inputFormatters: [
+            TextInputFormatter.withFunction(
+              (oldValue, newValue) => TextEditingValue(
+                text: newValue.text.stringSeparate(
+                  separator: " ",
+                  count: 4,
+                  fromRightToLeft: false,
+                ),
+              ),
+            )
+          ],
+          onChanged: (value) {
+            controller.changeName(value);
+          },
+          onClear: () {
+            controller.changeName("");
           },
         ),
         SmartButton(

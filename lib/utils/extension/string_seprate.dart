@@ -14,7 +14,6 @@ extension StringSeprate on String {
     }
 
     var str = this.replaceAll(separator, "");
-
     var chars = str.runes.toList();
     var namOfSeparation = (chars.length.toDouble() / count.toDouble()).ceil() - 1;
     var separatedChars = List.filled(chars.length + namOfSeparation.round(), "", growable: false);

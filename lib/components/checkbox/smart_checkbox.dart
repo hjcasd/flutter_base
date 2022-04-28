@@ -39,6 +39,12 @@ class _SmartCheckboxState extends State<SmartCheckbox> {
   bool _isSelected = false;
 
   @override
+  void initState() {
+    super.initState();
+    _isSelected = widget.value;
+  }
+
+  @override
   void didUpdateWidget(covariant SmartCheckbox oldWidget) {
     super.didUpdateWidget(oldWidget);
     _isSelected = widget.value;

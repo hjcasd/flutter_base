@@ -26,6 +26,7 @@ class DioLogInterceptor extends Interceptor {
     }
 
     LogHelper.e(requestStr, tag: "DioLogInterceptor onRequest");
+
     super.onRequest(options, handler);
   }
 

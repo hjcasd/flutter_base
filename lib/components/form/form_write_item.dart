@@ -22,11 +22,8 @@ class FormWriteItem extends StatefulWidget {
   // 输入格式
   final List<TextInputFormatter>? inputFormatters;
 
-  // 输入框控制器
-  final TextEditingController? controller;
-
   // 输入框文本变化监听回调
-  final ValueChanged<String>? onChanged;
+  final ValueChanged<String> onChanged;
 
   // 输入框清除回调
   final VoidCallback? onClear;
@@ -49,12 +46,11 @@ class FormWriteItem extends StatefulWidget {
   FormWriteItem({
     required this.title,
     required this.value,
-    required this.placeholder,
+    required this.onChanged,
     this.titleWidth = 60,
     this.keyboardType = TextInputType.text,
+    this.placeholder = "请输入",
     this.inputFormatters,
-    this.controller,
-    this.onChanged,
     this.onClear,
     this.rightWidget,
     this.isShowRight = false,
@@ -72,6 +68,33 @@ class FormWriteItem extends StatefulWidget {
 
 /// State
 class _FormWriteItemState extends State<FormWriteItem> {
+  var _content = "";
+
+  var _editingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _content = widget.value;
+    _editingController.value = TextEditingValue(
+      // 设置内容
+      text: _content,
+      // 保持光标在最后
+      selection: TextSelection.fromPosition(
+        TextPosition(
+          affinity: TextAffinity.downstream,
+          offset: _content.length,
+        ),
+      ),
+    );
+  }
+
+  @override
+  void didUpdateWidget(covariant FormWriteItem oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _content = widget.value;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -146,25 +169,51 @@ class _FormWriteItemState extends State<FormWriteItem> {
             color: AppColors.black_999999,
           ),
           suffixIconConstraints: BoxConstraints(maxHeight: 20),
-          suffixIcon: GestureDetector(
-            child: Offstage(
-              child: Icon(
-                Icons.clear,
-                size: 15,
-              ),
-              offstage: widget.value == "",
-            ),
-            onTap: widget.onClear,
-          ),
+          suffixIcon: _getClearView(),
         ),
         style: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w700,
           color: AppColors.black_333333,
         ),
-        controller: widget.controller,
-        onChanged: widget.onChanged,
+        controller: _editingController,
+        onChanged: (value) {
+          setState(() {
+            _content = value;
+          });
+          widget.onChanged(value);
+
+          // inputFormatters
+          _editingController.selection = TextSelection.fromPosition(
+            TextPosition(
+              offset: value.length,
+              affinity: TextAffinity.upstream,
+            ),
+          );
+        },
       ),
+    );
+  }
+
+  /// 删除
+  Widget _getClearView() {
+    return GestureDetector(
+      child: Offstage(
+        child: Icon(
+          Icons.clear,
+          size: 15,
+        ),
+        offstage: _content == "",
+      ),
+      onTap: () {
+        setState(() {
+          _content = "";
+        });
+        _editingController.clear();
+        if (widget.onClear != null) {
+          widget.onClear!();
+        }
+      },
     );
   }
 

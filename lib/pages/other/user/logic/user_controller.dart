@@ -15,9 +15,6 @@ class UserController extends GetxController {
   // Model
   var _model = UserEntity();
 
-  // 关键字
-  var keyword = "";
-
   // 姓名
   var name = "";
 
@@ -54,14 +51,8 @@ class UserController extends GetxController {
   }
 
   /// 改变名字
-  void changeName(String name) {
-    this.name = name;
-    update(["name"]);
-  }
-
-  /// 改变名字
-  void changeKeyword(String keyword) {
-    this.keyword = keyword;
-    update(["keyword"]);
+  void changeName(String value) {
+    this.name = value;
+    LogHelper.e("name: " + value, tag: "IdentityController");
   }
 }

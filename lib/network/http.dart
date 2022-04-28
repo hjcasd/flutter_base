@@ -8,8 +8,12 @@ import 'config/http_config.dart';
 /// Http管理
 class Http {
   static Http _instance = Http._internal();
-  Dio _dio = Dio();
-  CancelToken _cancelToken = new CancelToken();
+
+  // Dio实例
+  var _dio = Dio();
+
+  // Token
+  var _cancelToken = new CancelToken();
 
   factory Http() => _instance;
 
