@@ -38,6 +38,15 @@ class _OtherPageState extends State<OtherPage> {
             AppRoutes.User,
             backgroundColor: AppColors.amber,
           ),
+          RouteButton(
+            "Web演示",
+            AppRoutes.Web,
+            backgroundColor: AppColors.amber,
+            params: {
+              "title": "百度一下",
+              "url": "https://www.baidu.com",
+            },
+          ),
         ],
       ),
     );

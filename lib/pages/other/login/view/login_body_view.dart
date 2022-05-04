@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/smart_button.dart';
-import 'package:flutter_base/components/divider_text_field.dart';
+import 'package:flutter_base/components/text_field/simple_text_field.dart';
 import 'package:flutter_base/native/native_path.dart';
 import 'package:flutter_base/pages/other/login/logic/login_controller.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:flutter_base/routes/route_manager.dart';
-import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
 /// 登录View
 class LoginBodyView extends GetView<LoginController> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -65,34 +61,39 @@ class LoginBodyView extends GetView<LoginController> {
 
   /// 用户名输入框
   Widget _getNameInput() {
-    return DividerTextField(
-      keyboardType: TextInputType.text,
+    return SimpleTextField(
+      value: controller.name,
+      placeholder: "请输入用户名",
       maxLength: 11,
-      hintText: "请输入用户名",
-      prefixIcon: Icon(
-        Icons.account_box,
-        size: 20,
+      prefixIcon: Padding(
+        padding: EdgeInsets.only(right: 10),
+        child: Icon(
+          Icons.account_box,
+          size: 20,
+        ),
       ),
-      controller: _nameController,
       onChanged: (value) {
-        LogHelper.e("name: $value");
+        controller.changeName(value);
       },
     );
   }
 
   /// 密码输入框
   Widget _getPasswordInput() {
-    return DividerTextField(
+    return SimpleTextField(
+      value: controller.password,
+      placeholder: "请输入密码",
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
-      hintText: "请输入密码",
-      prefixIcon: Icon(
-        Icons.lock_open,
-        size: 20,
+      prefixIcon: Padding(
+        padding: EdgeInsets.only(right: 10),
+        child: Icon(
+          Icons.lock_open,
+          size: 20,
+        ),
       ),
-      controller: _passwordController,
       onChanged: (value) {
-        LogHelper.e("password: $value");
+        controller.changePassword(value);
       },
     );
   }
@@ -108,7 +109,7 @@ class LoginBodyView extends GetView<LoginController> {
           "登录",
         ),
         onPressed: () {
-          controller.login(_nameController, _passwordController);
+          controller.login();
         },
       ),
     );

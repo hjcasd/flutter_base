@@ -25,6 +25,9 @@ class RouteButton extends StatefulWidget {
   // 按钮最小高度
   final double minHeight;
 
+  // 跳转参数
+  final dynamic params;
+
   RouteButton(
     this.text,
     this.url, {
@@ -33,6 +36,7 @@ class RouteButton extends StatefulWidget {
     this.backgroundColor = AppColors.blue,
     this.minWidth = 200,
     this.minHeight = 36,
+    this.params,
     Key? key,
   }) : super(key: key);
 
@@ -58,7 +62,7 @@ class _RouteButtonState extends State<RouteButton> {
         backgroundColor: MaterialStateProperty.all(widget.backgroundColor),
       ),
       onPressed: () {
-        RouteManager.jumpToNamedPage(widget.url);
+        RouteManager.jumpToNamedPage(widget.url, params: widget.params);
       },
     );
   }

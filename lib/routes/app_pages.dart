@@ -31,6 +31,8 @@ import 'package:flutter_base/pages/other/picture/logic/picture_binding.dart';
 import 'package:flutter_base/pages/other/picture/picture_page.dart';
 import 'package:flutter_base/pages/other/user/logic/user_binding.dart';
 import 'package:flutter_base/pages/other/user/user_page.dart';
+import 'package:flutter_base/pages/other/web/logic/web_binding.dart';
+import 'package:flutter_base/pages/other/web/web_page.dart';
 import 'package:flutter_base/pages/setting/dio/dio_page.dart';
 import 'package:flutter_base/pages/setting/get_x/get_x_page.dart';
 import 'package:flutter_base/pages/setting/native/native_page.dart';
@@ -179,6 +181,11 @@ abstract class AppPages {
       name: AppRoutes.User,
       page: () => UserPage(),
       binding: UserBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.Web,
+      page: () => WebPage(),
+      binding: WebBinding(),
     ),
 
     // =========================设置=============================

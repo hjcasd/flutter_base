@@ -39,6 +39,7 @@ abstract class AppRoutes {
   static const Picture = '/picture';
   static const Login = '/login';
   static const User = '/user';
+  static const Web = '/web';
 
   // 设置
   static const Swiper = '/swiper';

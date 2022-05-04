@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_base/data/login_entity.dart';
 import 'package:flutter_base/network/service/api_service.dart';
 import 'package:flutter_base/utils/get_helper.dart';
@@ -7,6 +6,9 @@ import 'package:get/get.dart';
 
 /// 登录页面Controller
 class LoginController extends GetxController {
+  var name = "";
+  var password = "";
+
   @override
   void onInit() {
     super.onInit();
@@ -25,11 +27,16 @@ class LoginController extends GetxController {
     LogHelper.e("onClose()...", tag: "LoginController");
   }
 
-  /// 登录
-  void login(TextEditingController nameController, TextEditingController passwordController) async {
-    String name = nameController.value.text;
-    String password = passwordController.value.text;
+  void changeName(String value) {
+    this.name = value;
+  }
 
+  void changePassword(String value) {
+    this.password = value;
+  }
+
+  /// 登录
+  void login() async {
     if (name.isEmpty) {
       GetHelper.showSnackBar("请输入用户名");
       return;
@@ -42,9 +49,5 @@ class LoginController extends GetxController {
     var data = await ApiService.login(name, password);
     var entity = LoginEntity.fromJson(data);
     LogHelper.e("name: ${entity.data?.username}", tag: "LoginController");
-
-    nameController.clear();
-    passwordController.clear();
-    FocusScope.of(Get.context!).requestFocus(FocusNode());
   }
 }
