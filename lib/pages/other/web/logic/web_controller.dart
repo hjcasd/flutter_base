@@ -8,7 +8,7 @@ class WebController extends GetxController {
   // 标题
   var title = "";
 
-  // 地址
+  // 链接地址
   var url = "";
 
   @override

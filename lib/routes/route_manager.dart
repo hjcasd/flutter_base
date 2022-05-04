@@ -1,4 +1,5 @@
 import 'package:flutter_base/native/native_helper.dart';
+import 'package:flutter_base/routes/app_routes.dart';
 import 'package:flutter_base/routes/route_stack.dart';
 import 'package:get/get.dart';
 
@@ -28,6 +29,11 @@ class RouteManager {
   /// 导航到下一个页面并删除以前所有的页面
   static void offAllNamedPage(String page, {dynamic params}) {
     Get.offAllNamed(page, arguments: params);
+  }
+
+  /// 跳转到Web页面
+  static void jumpToWeb(String title, String url) {
+    Get.toNamed(AppRoutes.Web, arguments: {"title": title, "url": url});
   }
 
   /// 跳转到对应原生路由页面

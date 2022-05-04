@@ -25,6 +25,9 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
   // 左侧图标
   final IconData icon;
 
+  // 点击事件回调
+  final VoidCallback? onPressed;
+
   // 右侧图标
   final List<Widget>? actions;
 
@@ -37,6 +40,7 @@ class SmartAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.isCenterTitle = false,
     this.icon = Icons.arrow_back,
     this.actions,
+    this.onPressed,
     Key? key,
   }) : super(key: key);
 
@@ -67,7 +71,11 @@ class _SmartAppBarState extends State<SmartAppBar> {
           widget.icon,
         ),
         onPressed: () {
-          RouteManager.goBack();
+          if (widget.onPressed != null) {
+            widget.onPressed!();
+          } else {
+            RouteManager.goBack();
+          }
         },
       ),
       actions: widget.actions,

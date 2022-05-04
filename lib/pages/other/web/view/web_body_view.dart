@@ -7,6 +7,9 @@ import 'package:get/get.dart';
 class WebBodyView extends GetView<WebController> {
   @override
   Widget build(BuildContext context) {
-    return SimpleWebView(url: controller.url);
+    return SimpleWebView(
+      title: controller.title,
+      url: controller.url,
+    );
   }
 }
