@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/components/form/form_read_item.dart';
-import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 /// Card页面
 class CardPage extends StatelessWidget {
@@ -46,8 +46,8 @@ class MyCard extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(10),
-            child: HtmlWidget(
-              _htmlData,
+            child: Html(
+              data: _htmlData,
             ),
           ),
         ],
