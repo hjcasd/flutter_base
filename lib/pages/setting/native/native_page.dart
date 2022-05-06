@@ -9,12 +9,10 @@ import 'package:flutter_base/utils/log_helper.dart';
 class NativePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ChannelHelper.handleMessage(_handleMessage);
-
-    // ChannelHelper.receiveStream((object) {
-    //   LogHelper.e("result: $object");
-    // });
-
+    ChannelHelper.handleMessage((message) async{
+      LogHelper.e(message);
+      return "Flutter收到原生传递过来的数据,同时以BasicMessageChannel方式回传消息给原生";
+    });
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Page'),
@@ -43,15 +41,7 @@ class NativePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 // flutter端调用native端的方法并传参
-                // ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "flutter传递过来的消息").then((result) {
-                //   GetHelper.showSnackBar("result: $result");
-                // });
-
-                ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "1111111").then((result) {
-                  LogHelper.e("result: $result");
-                });
-
-                var result = await ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "222222222");
+                var result = await ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "flutter传递过来的消息");
                 LogHelper.e("result: $result");
               },
               child: Text(
@@ -70,10 +60,5 @@ class NativePage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Future<String> _handleMessage(String? message) async {
-    LogHelper.e(message, tag: "NativePage");
-    return "2222222222222222";
   }
 }
