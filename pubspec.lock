@@ -194,7 +194,7 @@ packages:
       name: flutter_inappwebview
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.4.3+4"
+    version: "5.2.0"
   flutter_layout_grid:
     dependency: transitive
     description:
