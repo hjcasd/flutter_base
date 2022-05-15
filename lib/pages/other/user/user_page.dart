@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/search_app_bar.dart';
-import 'package:flutter_base/components/default_body.dart';
+import 'package:flutter_base/components/state/simple_state_view.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/pages/other/user/logic/user_controller.dart';
 import 'package:flutter_base/pages/other/user/view/user_body_view.dart';
@@ -34,11 +34,10 @@ class UserPage extends GetView<UserController> {
       ),
       body: GetBuilder<UserController>(
         builder: (controller) {
-          if (controller.isInitialized) {
-            return UserBodyView();
-          } else {
-            return DefaultBody();
-          }
+          return SimpleStateView(
+            state: controller.state,
+            contentView: UserBodyView(),
+          );
         },
       ),
     );

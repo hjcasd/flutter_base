@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
@@ -93,6 +94,7 @@ class _SimpleWebViewState extends State<SimpleWebView> {
   /// WebView
   Widget _getWebView() {
     return Expanded(
+      flex: 1,
       child: InAppWebView(
         key: webViewKey,
         initialUrlRequest: URLRequest(url: Uri.parse(widget.url)),

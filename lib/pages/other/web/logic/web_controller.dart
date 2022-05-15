@@ -1,9 +1,10 @@
+import 'package:flutter_base/components/state/page_state.dart';
 import 'package:get/get.dart';
 
 /// Web页面Controller
 class WebController extends GetxController {
-  // 是否已初始化
-  var isInitialized = false;
+  // 状态
+  var state = PageState.LOADING;
 
   // 标题
   var title = "";
@@ -24,7 +25,7 @@ class WebController extends GetxController {
     if (arguments != null && arguments is Map) {
       title = arguments["title"];
       url = arguments["url"];
-      isInitialized = true;
+      state = PageState.SUCCESS;
       update();
     }
   }

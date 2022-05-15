@@ -1,16 +1,16 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:flutter_base/components/state/page_state.dart';
 import 'package:flutter_base/constants/app_constants.dart';
 import 'package:flutter_base/data/user_entity.dart';
-import 'package:flutter_base/utils/loading_helper.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
 /// 用户信息页面Controller
 class UserController extends GetxController {
-  // 是否已初始化
-  var isInitialized = false;
+  // 状态
+  var state = PageState.LOADING;
 
   // Model
   var _model = UserEntity();
@@ -39,14 +39,12 @@ class UserController extends GetxController {
 
   /// 加载数据
   void _loadData() async {
-    LoadingHelper.show();
     String json = await rootBundle.loadString("${AppConstants.ASSERT_JSON_PATH}user_info.json");
     Future.delayed(Duration(seconds: 2), () {
       _model = UserEntity.fromJson(jsonDecode(json));
       LogHelper.e(_model.count?.toDouble(), tag: "IdentityController");
-      isInitialized = true;
+      state = PageState.SUCCESS;
       update();
-      LoadingHelper.dismiss();
     });
   }
 

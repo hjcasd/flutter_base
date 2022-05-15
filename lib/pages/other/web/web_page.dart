@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/default_body.dart';
+import 'package:flutter_base/components/state/simple_state_view.dart';
 import 'package:flutter_base/pages/other/web/logic/web_controller.dart';
 import 'package:flutter_base/pages/other/web/view/web_body_view.dart';
 import 'package:get/get.dart';
@@ -11,11 +11,10 @@ class WebPage extends GetView<WebController> {
     Get.put(WebController());
     return GetBuilder<WebController>(
       builder: (controller) {
-        if (controller.isInitialized) {
-          return WebBodyView();
-        } else {
-          return DefaultBody();
-        }
+        return SimpleStateView(
+          state: controller.state,
+          contentView: WebBodyView(),
+        );
       },
     );
   }
