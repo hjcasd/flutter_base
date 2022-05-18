@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_base/constants/app_colors.dart';
@@ -6,13 +8,16 @@ import 'package:flutter_base/network/interceptor/error_interceptor.dart';
 import 'package:flutter_base/network/utils/http_utils.dart';
 import 'package:flutter_base/routes/app_pages.dart';
 import 'package:flutter_base/routes/app_routes.dart';
-import 'package:flutter_base/routes/route_stack.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
 /// 应用入口
 /// void main() => runApp(MyApp());
 void main() async {
+  var defaultRouteName = window.defaultRouteName;
+  LogHelper.e("defaultRouteName: $defaultRouteName");
+
   initHttp();
   runApp(MyApp());
   // 隐藏状态栏，保留底部按钮栏
@@ -64,17 +69,19 @@ class MyApp extends StatelessWidget {
       // 路由跳转监听
       routingCallback: (routing) {
         if (routing == null) {
+          LogHelper.d("routing is null");
           return;
         }
         if (routing.route == null) {
-          RouteStack.pop();
+          LogHelper.d("route is null");
+          // RouteStack.pop();
           return;
         }
-        if (routing.isBack == true) {
-          RouteStack.pop();
-        } else {
-          RouteStack.push(routing.current);
-        }
+        // if (routing.isBack == true) {
+        //   RouteStack.pop();
+        // } else {
+        //   RouteStack.push(routing.current);
+        // }
       },
     );
   }

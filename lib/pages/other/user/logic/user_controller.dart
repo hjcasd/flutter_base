@@ -21,26 +21,20 @@ class UserController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    LogHelper.e("onInit()...", tag: "IdentityController");
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-    LogHelper.e("onReady()...", tag: "IdentityController");
+    LogHelper.e("UserController onInit()...");
     _loadData();
   }
 
   @override
   void onClose() {
     super.onClose();
-    LogHelper.e("onClose()...", tag: "IdentityController");
+    LogHelper.e("UserController onClose()...");
   }
 
   /// 加载数据
   void _loadData() async {
     String json = await rootBundle.loadString("${AppConstants.ASSERT_JSON_PATH}user_info.json");
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 1), () {
       _model = UserEntity.fromJson(jsonDecode(json));
       LogHelper.e(_model.count?.toDouble(), tag: "IdentityController");
       state = PageState.SUCCESS;

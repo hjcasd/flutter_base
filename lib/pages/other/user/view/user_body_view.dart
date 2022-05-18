@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_base/components/button/smart_button.dart';
 import 'package:flutter_base/components/form/form_read_item.dart';
 import 'package:flutter_base/components/form/form_write_item.dart';
-import 'package:flutter_base/native/native_path.dart';
 import 'package:flutter_base/pages/other/user/logic/user_controller.dart';
 import 'package:flutter_base/routes/app_routes.dart';
 import 'package:flutter_base/routes/route_manager.dart';
@@ -40,12 +39,6 @@ class UserBodyView extends GetView<UserController> {
           },
           onClear: () {
             controller.changeName("");
-          },
-        ),
-        SmartButton(
-          "跳转到原生",
-          onPressed: () {
-            RouteManager.jumpToNativePage(NativePath.MAIN);
           },
         ),
         SmartButton(

@@ -12,19 +12,13 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    LogHelper.e("onInit()...", tag: "LoginController");
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-    LogHelper.e("onReady()...", tag: "LoginController");
+    LogHelper.e("LoginController onInit()...");
   }
 
   @override
   void onClose() {
     super.onClose();
-    LogHelper.e("onClose()...", tag: "LoginController");
+    LogHelper.e("LoginController onClose()...");
   }
 
   void changeName(String value) {

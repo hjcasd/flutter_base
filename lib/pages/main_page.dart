@@ -43,27 +43,32 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          _bottomMap.keys.toList()[_currentIndex],
+    return WillPopScope(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            _bottomMap.keys.toList()[_currentIndex],
+          ),
+          backgroundColor: _colorList[_currentIndex],
         ),
-        backgroundColor: _colorList[_currentIndex],
+        body: IndexedStack(
+          index: _currentIndex,
+          children: _pageList,
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          items: _generateBarItems(),
+          type: BottomNavigationBarType.fixed,
+          onTap: (int index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ),
       ),
-      body: IndexedStack(
-        index: _currentIndex,
-        children: _pageList,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        items: _generateBarItems(),
-        type: BottomNavigationBarType.fixed,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
+      onWillPop: () async {
+        return false;
+      },
     );
   }
 

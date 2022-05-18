@@ -30,7 +30,7 @@ dependencies:
   # 网络请求
   dio: ^4.0.1
   # GetX
-  get: ^4.3.8
+  get: 4.6.1
   # 工具
   common_utils: ^2.1.0
   # 日志

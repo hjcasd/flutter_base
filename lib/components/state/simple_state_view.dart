@@ -113,6 +113,12 @@ class _SimpleStateViewState extends State<SimpleStateView> {
       return widget.loadingView!;
     } else {
       return Container(
+        child: Center(
+          child: Text(
+            msg,
+            style: TextStyle(fontSize: 14),
+          ),
+        ),
         color: AppColors.grey_F7F7F7,
       );
     }
@@ -138,7 +144,6 @@ class _SimpleStateViewState extends State<SimpleStateView> {
 
   /// 默认视图
   Widget _getDefaultView() {
-
     return Container(
       color: AppColors.grey_F7F7F7,
       child: Center(
