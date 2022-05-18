@@ -23,7 +23,7 @@ class UserPage extends GetView<UserController> {
             Icons.arrow_back,
           ),
           onPressed: () {
-            RouteManager.goBack();
+            RouteManager.back();
           },
         ),
         hintText: "请输入关键字",

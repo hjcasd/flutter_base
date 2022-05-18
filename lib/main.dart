@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_base/constants/app_colors.dart';
@@ -15,9 +13,6 @@ import 'package:get/get.dart';
 /// 应用入口
 /// void main() => runApp(MyApp());
 void main() async {
-  var defaultRouteName = window.defaultRouteName;
-  LogHelper.e("defaultRouteName: $defaultRouteName");
-
   initHttp();
   runApp(MyApp());
   // 隐藏状态栏，保留底部按钮栏
@@ -74,14 +69,8 @@ class MyApp extends StatelessWidget {
         }
         if (routing.route == null) {
           LogHelper.d("route is null");
-          // RouteStack.pop();
           return;
         }
-        // if (routing.isBack == true) {
-        //   RouteStack.pop();
-        // } else {
-        //   RouteStack.push(routing.current);
-        // }
       },
     );
   }

@@ -65,7 +65,7 @@ class _RouteButtonState extends State<RouteButton> {
         if (widget.onPressed != null) {
           widget.onPressed!();
         } else {
-          RouteManager.jumpToNamedPage(widget.url);
+          RouteManager.toNamed(widget.url);
         }
       },
     );

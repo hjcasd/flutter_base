@@ -23,7 +23,7 @@ class MyScaffold extends StatelessWidget {
             Icons.arrow_back,
           ),
           onPressed: () {
-            RouteManager.goBack();
+            RouteManager.back();
           },
         ),
       ),

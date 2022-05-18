@@ -74,7 +74,7 @@ class _SmartAppBarState extends State<SmartAppBar> {
           if (widget.onPressed != null) {
             widget.onPressed!();
           } else {
-            RouteManager.goBack();
+            RouteManager.back();
           }
         },
       ),

@@ -27,7 +27,7 @@ class MyAppBar extends StatelessWidget {
             Icons.arrow_back,
           ),
           onPressed: () {
-            RouteManager.goBack();
+            RouteManager.back();
           },
         ),
         // 右侧图标

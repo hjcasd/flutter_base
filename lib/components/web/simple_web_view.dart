@@ -62,7 +62,7 @@ class _SimpleWebViewState extends State<SimpleWebView> {
           if (canGoBack) {
             _webViewController?.goBack();
           } else {
-            RouteManager.goBack();
+            RouteManager.back();
           }
         },
       ),

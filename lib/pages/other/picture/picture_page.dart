@@ -21,7 +21,7 @@ class PicturePage extends GetView<PictureController> {
               Icons.settings,
             ),
             onPressed: () {
-              RouteManager.jumpToNamedPage(AppRoutes.Login);
+              RouteManager.toNamed(AppRoutes.User);
             },
           )
         ],

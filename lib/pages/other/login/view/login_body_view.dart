@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/button/smart_button.dart';
 import 'package:flutter_base/components/text_field/simple_text_field.dart';
 import 'package:flutter_base/pages/other/login/logic/login_controller.dart';
-import 'package:flutter_base/routes/app_routes.dart';
-import 'package:flutter_base/routes/route_manager.dart';
 import 'package:get/get.dart';
 
 /// 登录View
@@ -28,12 +25,6 @@ class LoginBodyView extends GetView<LoginController> {
               height: 10,
             ),
             _getLoginButton(),
-            SmartButton(
-              "关闭所有页面跳转到新页面",
-              onPressed: () {
-                RouteManager.offAllNamedPage(AppRoutes.Dialog);
-              },
-            ),
           ],
         ),
       ),

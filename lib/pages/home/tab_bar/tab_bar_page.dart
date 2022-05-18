@@ -77,7 +77,7 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
             Icons.arrow_back,
           ),
           onPressed: () {
-            RouteManager.goBack();
+            RouteManager.back();
           },
         ),
         bottom: TabBar(

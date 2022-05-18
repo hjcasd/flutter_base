@@ -21,7 +21,7 @@ class NativePage extends StatelessWidget {
             Icons.arrow_back,
           ),
           onPressed: () {
-            RouteManager.goBack();
+            RouteManager.back();
           },
         ),
       ),
@@ -32,7 +32,7 @@ class NativePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // flutter端调用native端的方法并传参
-                RouteManager.jumpToNativePage(NativePath.DEMO1);
+                RouteManager.jumpToNative(NativePath.DEMO1);
               },
               child: Text(
                 '原生跳转',

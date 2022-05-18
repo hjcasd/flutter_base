@@ -44,7 +44,7 @@ class UserBodyView extends GetView<UserController> {
         SmartButton(
           "跳转到登录页面",
           onPressed: () {
-            RouteManager.jumpToNamedPage(AppRoutes.Login);
+            RouteManager.toNamed(AppRoutes.Login);
           },
         ),
       ],
