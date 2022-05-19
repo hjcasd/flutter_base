@@ -47,24 +47,28 @@ class _SmartDialogState extends State<SmartDialog> {
   Widget build(BuildContext context) {
     var dialogWidth = MediaQuery.of(context).size.width * 0.85;
     return GestureDetector(
-      onTap: _onOutsideTap,
+      onTap: () {
+        if (widget.cancelOutside) {
+          _dismissDialog();
+        }
+      },
       child: Material(
         type: MaterialType.transparency,
         child: Center(
-          child: Container(
-            width: dialogWidth,
-            decoration: BoxDecoration(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
               color: AppColors.white,
-              borderRadius: BorderRadius.circular(2.5),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                _getCloseView(),
-                _getTitleView(),
-                _getContentView(),
-                _getButtonGroupView(),
-              ],
+              width: dialogWidth,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  _getCloseView(),
+                  _getTitleView(),
+                  _getContentView(),
+                  _getButtonGroupView(),
+                ],
+              ),
             ),
           ),
         ),
@@ -74,30 +78,30 @@ class _SmartDialogState extends State<SmartDialog> {
 
   /// 关闭按钮
   Widget _getCloseView() {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-      child: Stack(
-        children: <Widget>[
-          Align(
-            child: InkWell(
+    return Stack(
+      children: <Widget>[
+        Align(
+          child: InkWell(
+            child: Padding(
+              padding: EdgeInsets.all(10),
               child: Icon(
                 Icons.close,
               ),
-              onTap: () {
-                Navigator.pop(context);
-              },
             ),
-            alignment: Alignment.centerRight,
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
-        ],
-      ),
+          alignment: Alignment.centerRight,
+        ),
+      ],
     );
   }
 
   /// 标题
   Widget _getTitleView() {
     return Container(
-      margin: EdgeInsets.only(top: 15),
+      margin: EdgeInsets.only(top: 5),
       child: Text(
         widget.title,
         style: TextStyle(
@@ -125,17 +129,41 @@ class _SmartDialogState extends State<SmartDialog> {
   /// 按钮组
   Widget _getButtonGroupView() {
     List<Widget> childrenList = [];
-    childrenList.add(_getConfirmTextView());
     if (widget.cancelText != "") {
-      childrenList.add(SizedBox(width: 10));
       childrenList.add(_getCancelTextView());
     }
+    childrenList.add(_getConfirmTextView());
     return Container(
-      width: double.infinity,
       color: AppColors.grey_F7F7F7,
       padding: EdgeInsets.fromLTRB(28, 15, 28, 15),
       child: Row(
         children: childrenList,
+      ),
+    );
+  }
+
+  /// 取消按钮
+  Widget _getCancelTextView() {
+    return Expanded(
+      flex: 1,
+      child: GestureDetector(
+        child: Container(
+          margin: EdgeInsets.only(right: 10),
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: Text(
+            widget.cancelText,
+            style: TextStyle(
+              fontSize: 15,
+              color: AppColors.white,
+            ),
+          ),
+          decoration: BoxDecoration(
+            color: AppColors.blue_1A3B64,
+            borderRadius: BorderRadius.circular(2.5),
+          ),
+        ),
+        onTap: _onCancelTap,
       ),
     );
   }
@@ -165,43 +193,6 @@ class _SmartDialogState extends State<SmartDialog> {
     );
   }
 
-  /// 取消按钮
-  Widget _getCancelTextView() {
-    return Expanded(
-      flex: 1,
-      child: GestureDetector(
-        child: Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: Text(
-            widget.cancelText,
-            style: TextStyle(
-              fontSize: 15,
-              color: AppColors.white,
-            ),
-          ),
-          decoration: BoxDecoration(
-            color: AppColors.blue_1A3B64,
-            borderRadius: BorderRadius.circular(2.5),
-          ),
-        ),
-        onTap: _onCancelTap,
-      ),
-    );
-  }
-
-  /// 关闭弹框点击事件
-  void _dismissDialog() {
-    Navigator.of(context).pop();
-  }
-
-  /// 外部点击事件
-  void _onOutsideTap() {
-    if (widget.cancelOutside) {
-      _dismissDialog();
-    }
-  }
-
   /// 确定按钮点击事件
   void _onConfirmTap() {
     _dismissDialog();
@@ -216,5 +207,10 @@ class _SmartDialogState extends State<SmartDialog> {
     if (widget.onCancelCallback != null) {
       widget.onCancelCallback!();
     }
+  }
+
+  /// 关闭弹框点击事件
+  void _dismissDialog() {
+    Navigator.of(context).pop();
   }
 }

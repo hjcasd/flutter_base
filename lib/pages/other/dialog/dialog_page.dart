@@ -207,7 +207,8 @@ class _MyDialogState extends State<MyDialog> {
       SmartDialog(
         title: "温馨提示",
         content: "对非中国大陆籍会员暂不支持开通钱包，如您需进行积分消费，可开通消费密码。",
-        confirmText: "开通消费免密",
+        cancelText: "稍后",
+        // confirmText: "开通消费免密",
         onConfirmCallback: () {
           GetHelper.showSnackBar("开通消费免密");
         },
