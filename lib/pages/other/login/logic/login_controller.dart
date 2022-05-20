@@ -1,4 +1,4 @@
-import 'package:flutter_base/data/login_entity.dart';
+import 'package:flutter_base/model/login_entity.dart';
 import 'package:flutter_base/network/service/api_service.dart';
 import 'package:flutter_base/utils/get_helper.dart';
 import 'package:flutter_base/utils/log_helper.dart';

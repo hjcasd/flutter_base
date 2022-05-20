@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/data/login_entity.dart';
+import 'package:flutter_base/model/login_entity.dart';
 import 'package:flutter_base/network/service/api_service.dart';
 import 'dart:convert' as convert;
 import 'package:flutter_base/utils/log_helper.dart';
