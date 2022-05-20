@@ -51,7 +51,7 @@ class _SmartWebViewState extends State<SmartWebView> {
           if (canGoBack) {
             _webViewController?.goBack();
           } else {
-            RouteManager.goBack();
+            RouteManager.back();
           }
         },
       ),

@@ -15,8 +15,8 @@ class SmartDialog extends StatefulWidget {
   // 取消按钮文本
   final String cancelText;
 
-  // 是否可点击外部取消
-  final bool cancelOutside;
+  // 是否显示关闭图标
+  final bool isShowClose;
 
   // 点击确定按钮回调
   final VoidCallback? onConfirmCallback;
@@ -29,7 +29,7 @@ class SmartDialog extends StatefulWidget {
     this.content = "",
     this.confirmText = "确定",
     this.cancelText = "",
-    this.cancelOutside = true,
+    this.isShowClose = true,
     this.onConfirmCallback,
     this.onCancelCallback,
     Key? key,
@@ -46,29 +46,22 @@ class _SmartDialogState extends State<SmartDialog> {
   @override
   Widget build(BuildContext context) {
     var dialogWidth = MediaQuery.of(context).size.width * 0.85;
-    return GestureDetector(
-      onTap: () {
-        if (widget.cancelOutside) {
-          _dismissDialog();
-        }
-      },
-      child: Material(
-        type: MaterialType.transparency,
-        child: Center(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              color: AppColors.white,
-              width: dialogWidth,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  _getCloseView(),
-                  _getTitleView(),
-                  _getContentView(),
-                  _getButtonGroupView(),
-                ],
-              ),
+    return Material(
+      type: MaterialType.transparency,
+      child: Center(
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            color: AppColors.white,
+            width: dialogWidth,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                _getCloseView(),
+                _getTitleView(),
+                _getContentView(),
+                _getButtonGroupView(),
+              ],
             ),
           ),
         ),
@@ -78,23 +71,28 @@ class _SmartDialogState extends State<SmartDialog> {
 
   /// 关闭按钮
   Widget _getCloseView() {
-    return Stack(
-      children: <Widget>[
-        Align(
-          child: InkWell(
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Icon(
-                Icons.close,
+    return Opacity(
+      opacity: widget.isShowClose ? 1 : 0,
+      child: Stack(
+        children: <Widget>[
+          Align(
+            child: InkWell(
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Icon(
+                  Icons.close,
+                ),
               ),
+              onTap: () {
+                if (widget.isShowClose) {
+                  Navigator.pop(context);
+                }
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
+            alignment: Alignment.centerRight,
           ),
-          alignment: Alignment.centerRight,
-        ),
-      ],
+        ],
+      ),
     );
   }
 

@@ -6,8 +6,14 @@ class DialogManager {
   DialogManager._internal();
 
   /// 显示Dialog
-  static void show(Widget dialogWidget) {
-    Get.dialog(dialogWidget);
+  static void show(
+    Widget dialogWidget, {
+    bool cancelOutside = true,
+  }) {
+    Get.dialog(
+      dialogWidget,
+      barrierDismissible: cancelOutside,
+    );
   }
 
   /// 显示BottomSheet

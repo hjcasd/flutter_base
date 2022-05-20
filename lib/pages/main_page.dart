@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/pages/home/home_page.dart';
 import 'package:flutter_base/pages/layout/layout_page.dart';
 import 'package:flutter_base/pages/other/other_page.dart';
 import 'package:flutter_base/pages/setting/setting_page.dart';
+import 'package:flutter_base/utils/dialog_manager.dart';
+import 'package:flutter_base/widget/smart_dialog.dart';
 
 /// 主界面
 class MainPage extends StatefulWidget {
@@ -41,6 +44,8 @@ class _MainPageState extends State<MainPage> {
     AppColors.cyan,
   ];
 
+  DateTime? _lastPressedTime; //上次点击时间
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -67,7 +72,13 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       onWillPop: () async {
-        return false;
+        if (_lastPressedTime == null || DateTime.now().difference(_lastPressedTime!) > Duration(seconds: 1)) {
+          //两次点击间隔超过1秒则重新计时
+          _lastPressedTime = DateTime.now();
+          _showExitDialog();
+          return false;
+        }
+        return true;
       },
     );
   }
@@ -84,5 +95,22 @@ class _MainPageState extends State<MainPage> {
       );
     });
     return items;
+  }
+
+  // 显示自定义dialog
+  void _showExitDialog() {
+    DialogManager.show(
+      SmartDialog(
+        title: "温馨提示",
+        content: "您确认退出当前应用吗",
+        cancelText: "等一等",
+        confirmText: "退出应用",
+        isShowClose: false,
+        onConfirmCallback: () {
+          SystemNavigator.pop();
+        },
+      ),
+      cancelOutside: false,
+    );
   }
 }
