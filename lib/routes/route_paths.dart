@@ -1,12 +1,13 @@
 /// 配置路由(每个页面对应路由的路径)
-abstract class AppRoutes {
-  AppRoutes._internal();
+abstract class RoutePaths {
+  RoutePaths._internal();
 
   static const Initial = '/';
   static const NotFound = '/not_found';
 
   // 首页
   static const Text = '/text';
+  static const RichText = '/rich_text';
   static const Button = '/button';
   static const Image = '/image';
   static const ListView = '/list_view';
@@ -19,7 +20,6 @@ abstract class AppRoutes {
   static const AppBar = '/app_bar';
   static const TabBar = '/tab_bar';
   static const Drawer = '/drawer';
-  static const RichText = '/rich_text';
 
   // 布局
   static const Container = '/container';

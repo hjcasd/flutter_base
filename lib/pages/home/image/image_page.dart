@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/components/image/smart_image.dart';
+import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
+import 'package:flutter_base/components/image/simple_image.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
 /// Image页面
@@ -8,7 +8,7 @@ class ImagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SmartAppBar(
+      appBar: SimpleAppBar(
         "Image的使用",
       ),
       body: Center(
@@ -30,7 +30,7 @@ class ImagePage extends StatelessWidget {
 class MyLocalImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SmartImage(
+    return SimpleImage(
       "icon_test.png",
       isLocal: true,
     );

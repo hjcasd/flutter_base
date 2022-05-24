@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
 /// Text页面
@@ -8,7 +8,7 @@ class TextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SmartAppBar(
+      appBar: SimpleAppBar(
         "Text的使用",
       ),
       body: MyText(),
@@ -17,6 +17,8 @@ class TextPage extends StatelessWidget {
 }
 
 /// Text: 文本组件
+/// 在 Widget 树中，文本的样式默认是可以被继承的（子类文本类组件未指定具体样式时可以使用 Widget 树中父级设置的默认样式），
+/// 因此，如果在 Widget 树的某一个节点处设置一个默认的文本样式，那么该节点的子树中所有文本都会默认使用这个样式，而DefaultTextStyle正是用于设置默认文本样式的
 class MyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

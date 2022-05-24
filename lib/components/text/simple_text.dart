@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// SmartText: 基础Text封装的组件
-class SmartText extends StatefulWidget {
+/// SimpleText: 基础Text封装的组件
+class SimpleText extends StatefulWidget {
   // 文本
   final String text;
 
@@ -18,7 +18,7 @@ class SmartText extends StatefulWidget {
   // 点击事件回调
   final VoidCallback? onPressed;
 
-  SmartText(
+  SimpleText(
     this.text, {
     this.fontSize = 14,
     this.fontColor = AppColors.white,
@@ -29,11 +29,11 @@ class SmartText extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _SmartTextState();
+    return _SimpleTextState();
   }
 }
 
-class _SmartTextState extends State<SmartText> {
+class _SimpleTextState extends State<SimpleText> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

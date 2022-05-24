@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -56,7 +56,7 @@ class _SimpleWebViewState extends State<SimpleWebView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SmartAppBar(
+      appBar: SimpleAppBar(
         widget.title,
         onPressed: () async {
           if (canGoBack) {

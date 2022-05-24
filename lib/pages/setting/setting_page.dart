@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
 import 'package:flutter_base/constants/app_colors.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_paths.dart';
 
 /// 设置Tab页面
 class SettingPage extends StatefulWidget {
@@ -20,22 +20,22 @@ class _SettingPageState extends State<SettingPage> {
         children: [
           RouteButton(
             "Swiper",
-            AppRoutes.Swiper,
+            RoutePaths.Swiper,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "Dio",
-            AppRoutes.Dio,
+            RoutePaths.Dio,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "GetX",
-            AppRoutes.GetX,
+            RoutePaths.GetX,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "Native",
-            AppRoutes.Native,
+            RoutePaths.Native,
             backgroundColor: AppColors.cyan,
           ),
         ],

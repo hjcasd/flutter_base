@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/image/smart_image.dart';
+import 'package:flutter_base/components/image/simple_image.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
 /// 图文列表Item
@@ -53,7 +53,7 @@ class _ImageTitleItem extends State<ImageTitleItem> {
     return SizedBox(
       width: 150,
       height: 100,
-      child: SmartImage(
+      child: SimpleImage(
         widget.imageUrl,
         fit: BoxFit.fill,
       ),

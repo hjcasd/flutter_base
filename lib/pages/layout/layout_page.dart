@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
 import 'package:flutter_base/constants/app_colors.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_paths.dart';
 
 /// 布局Tab页面
 class LayoutPage extends StatefulWidget {
@@ -20,47 +20,47 @@ class _LayoutPageState extends State<LayoutPage> {
         children: [
           RouteButton(
             "Container",
-            AppRoutes.Container,
+            RoutePaths.Container,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Padding",
-            AppRoutes.Padding,
+            RoutePaths.Padding,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Row",
-            AppRoutes.Row,
+            RoutePaths.Row,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Column",
-            AppRoutes.Column,
+            RoutePaths.Column,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Expanded",
-            AppRoutes.Expanded,
+            RoutePaths.Expanded,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Stack",
-            AppRoutes.Stack,
+            RoutePaths.Stack,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Card",
-            AppRoutes.Card,
+            RoutePaths.Card,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Wrap",
-            AppRoutes.Wrap,
+            RoutePaths.Wrap,
             backgroundColor: AppColors.green,
           ),
           RouteButton(
             "Scaffold",
-            AppRoutes.Scaffold,
+            RoutePaths.Scaffold,
             backgroundColor: AppColors.green,
           ),
         ],

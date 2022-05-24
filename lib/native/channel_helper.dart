@@ -43,5 +43,4 @@ class ChannelHelper {
   static void sendMessage(String message) {
     _basicMessageChannel.send(message);
   }
-
 }

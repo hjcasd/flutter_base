@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
-import 'package:flutter_base/components/text/smart_text.dart';
+import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
+import 'package:flutter_base/components/text/simple_text.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
 /// Container页面
@@ -8,7 +8,7 @@ class ContainerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SmartAppBar(
+      appBar: SimpleAppBar(
         "Container的使用",
       ),
       body: MyContainer(),
@@ -31,7 +31,7 @@ class MyContainer extends StatelessWidget {
         // 高度
         // height: 300,
         // 子组件
-        child: SmartText(
+        child: SimpleText(
           "文本",
           fontSize: 20,
           fontColor: AppColors.red,

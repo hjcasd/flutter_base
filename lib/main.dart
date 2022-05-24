@@ -4,8 +4,8 @@ import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/network/config/http_config.dart';
 import 'package:flutter_base/network/interceptor/error_interceptor.dart';
 import 'package:flutter_base/network/utils/http_utils.dart';
-import 'package:flutter_base/routes/app_pages.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_pages.dart';
+import 'package:flutter_base/routes/route_paths.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -47,13 +47,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: true,
       title: "Flutter Base",
       // 初始路由
-      initialRoute: AppRoutes.Initial,
+      initialRoute: RoutePaths.Initial,
       // 跳转动画
       // defaultTransition: Transition.fadeIn,
       // 路由表
-      getPages: AppPages.pages,
+      getPages: RoutePages.pages,
       // 未知路由
-      unknownRoute: AppPages.pages[1],
+      unknownRoute: RoutePages.pages[1],
       // 主题
       theme: ThemeData(
         primarySwatch: Colors.blue,

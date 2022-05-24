@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/native/native_helper.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_paths.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
@@ -79,7 +79,7 @@ class RouteManager {
 
   /// 跳转到Web页面
   static void jumpToWeb(String title, String url) {
-    Get.toNamed(AppRoutes.Web, arguments: {"title": title, "url": url});
+    Get.toNamed(RoutePaths.Web, arguments: {"title": title, "url": url});
   }
 
   /// 跳转到对应原生路由页面

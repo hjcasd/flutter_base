@@ -58,7 +58,6 @@ class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(height);
-
 }
 
 class _SearchAppBarState extends State<SearchAppBar> {

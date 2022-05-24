@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_paths.dart';
 
 /// 首页Tab页面
 class HomePage extends StatefulWidget {
@@ -21,43 +21,43 @@ class _HomePageState extends State<HomePage> {
           children: [
             RouteButton(
               "Text",
-              AppRoutes.Text,
+              RoutePaths.Text,
             ),
             RouteButton(
               "RichText",
-              AppRoutes.RichText,
+              RoutePaths.RichText,
             ),
             RouteButton(
               "Button",
-              AppRoutes.Button,
+              RoutePaths.Button,
             ),
             RouteButton(
               "Image",
-              AppRoutes.Image,
+              RoutePaths.Image,
             ),
             RouteButton(
               "Form",
-              AppRoutes.Form,
+              RoutePaths.Form,
             ),
             RouteButton(
               "ListView",
-              AppRoutes.ListView,
+              RoutePaths.ListView,
             ),
             RouteButton(
               "GridView",
-              AppRoutes.GridView,
+              RoutePaths.GridView,
             ),
             RouteButton(
               "AppBar",
-              AppRoutes.AppBar,
+              RoutePaths.AppBar,
             ),
             RouteButton(
               "TabBar",
-              AppRoutes.TabBar,
+              RoutePaths.TabBar,
             ),
             RouteButton(
               "Drawer",
-              AppRoutes.Drawer,
+              RoutePaths.Drawer,
             ),
           ],
         ),

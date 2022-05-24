@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_constants.dart';
 
-/// SmartCheckbox: 自定义Checkbox组件
-class SmartCheckbox extends StatefulWidget {
+/// SimpleCheckbox: 自定义Checkbox组件
+class SimpleCheckbox extends StatefulWidget {
   // 是否选中
   final value;
 
@@ -19,7 +19,7 @@ class SmartCheckbox extends StatefulWidget {
   // 图标大小
   final double size;
 
-  SmartCheckbox({
+  SimpleCheckbox({
     required this.value,
     required this.onChanged,
     this.normalPath = "icon_normal.png",
@@ -30,11 +30,11 @@ class SmartCheckbox extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _SmartCheckboxState();
+    return _SimpleCheckboxState();
   }
 }
 
-class _SmartCheckboxState extends State<SmartCheckbox> {
+class _SimpleCheckboxState extends State<SimpleCheckbox> {
   // 选中状态
   bool _isSelected = false;
 
@@ -45,7 +45,7 @@ class _SmartCheckboxState extends State<SmartCheckbox> {
   }
 
   @override
-  void didUpdateWidget(covariant SmartCheckbox oldWidget) {
+  void didUpdateWidget(covariant SimpleCheckbox oldWidget) {
     super.didUpdateWidget(oldWidget);
     _isSelected = widget.value;
   }

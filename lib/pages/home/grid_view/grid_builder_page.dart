@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
 /// GridView.builder实现网格页面
@@ -7,7 +7,7 @@ class GridBuilderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SmartAppBar(
+      appBar: SimpleAppBar(
         "GridView.builder实现网格列表",
       ),
       body: MyBuilderGridView(),

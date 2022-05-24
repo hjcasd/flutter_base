@@ -2,10 +2,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_constants.dart';
 
-/// SmartImage: 基础Image封装的组件
-class SmartImage extends StatefulWidget {
+/// SimpleImage: 基础Image封装的组件
+class SimpleImage extends StatefulWidget {
   // 图片路径: 本地图片写图片名称,网络图片写图片链接地址
   final String imageUrl;
+
+  // 宽度
+  final double? width;
+
+  // 高度
+  final double? height;
 
   // 图片适应方式
   final BoxFit fit;
@@ -16,13 +22,16 @@ class SmartImage extends StatefulWidget {
   // 网络图片加载错误图
   final String errorPath;
 
+  // 是否加载本地图片
   final bool isLocal;
 
   // 点击事件回调
   final VoidCallback? onPressed;
 
-  SmartImage(
+  SimpleImage(
     this.imageUrl, {
+    this.width,
+    this.height,
     this.fit = BoxFit.cover,
     this.placeholderPath = "img_default.png",
     this.errorPath = "img_default.png",
@@ -33,12 +42,11 @@ class SmartImage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _SmartImageState();
+    return _SimpleImageState();
   }
 }
 
-class _SmartImageState extends State<SmartImage> {
-
+class _SimpleImageState extends State<SimpleImage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -53,6 +61,8 @@ class _SmartImageState extends State<SmartImage> {
       return Image.asset(
         "${AppConstants.ASSERT_IMAGE_PATH + widget.imageUrl}",
         fit: widget.fit,
+        width: widget.width,
+        height: widget.height,
       );
     }
     return CachedNetworkImage(
@@ -64,6 +74,8 @@ class _SmartImageState extends State<SmartImage> {
         "${AppConstants.ASSERT_IMAGE_PATH + widget.errorPath}",
       ),
       fit: widget.fit,
+      width: widget.width,
+      height: widget.height,
     );
   }
 }

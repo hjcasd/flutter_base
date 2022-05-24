@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/pages/other/picture/view/picture_body_view.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_paths.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +13,7 @@ class PicturePage extends GetView<PictureController> {
   Widget build(BuildContext context) {
     Get.put(PictureController());
     return Scaffold(
-      appBar: SmartAppBar(
+      appBar: SimpleAppBar(
         "图文列表",
         actions: [
           IconButton(
@@ -21,7 +21,7 @@ class PicturePage extends GetView<PictureController> {
               Icons.settings,
             ),
             onPressed: () {
-              RouteManager.toNamed(AppRoutes.User);
+              RouteManager.toNamed(RoutePaths.User);
             },
           )
         ],

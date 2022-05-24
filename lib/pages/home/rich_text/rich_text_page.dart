@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/utils/get_helper.dart';
 
@@ -9,7 +9,7 @@ class RichTextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SmartAppBar(
+      appBar: SimpleAppBar(
         "RichText的使用",
         isCenterTitle: true,
       ),
@@ -24,20 +24,15 @@ class MyRichText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
+      // 可以使用Text.rich
       child: RichText(
         text: TextSpan(
-          text: "我是富文本",
-          style: TextStyle(
-            color: AppColors.green,
-            fontSize: 24,
-          ),
           children: <TextSpan>[
             TextSpan(
               text: "哈哈哈",
               style: TextStyle(
-                color: AppColors.blue,
-                fontStyle: FontStyle.italic,
-                fontSize: 20,
+                color: AppColors.green,
+                fontSize: 24,
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
@@ -47,13 +42,25 @@ class MyRichText extends StatelessWidget {
             TextSpan(
               text: "呵呵呵",
               style: TextStyle(
+                color: AppColors.blue,
+                fontStyle: FontStyle.italic,
+                fontSize: 20,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  GetHelper.showSnackBar("呵呵呵");
+                },
+            ),
+            TextSpan(
+              text: "嘿嘿嘿",
+              style: TextStyle(
                 color: AppColors.amber,
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  GetHelper.showSnackBar("呵呵呵");
+                  GetHelper.showSnackBar("嘿嘿嘿");
                 },
             ),
           ],

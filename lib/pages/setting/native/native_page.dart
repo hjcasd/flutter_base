@@ -9,7 +9,7 @@ import 'package:flutter_base/utils/log_helper.dart';
 class NativePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ChannelHelper.handleMessage((message) async{
+    ChannelHelper.handleMessage((message) async {
       LogHelper.e(message);
       return "Flutter收到原生传递过来的数据,同时以BasicMessageChannel方式回传消息给原生";
     });

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
-/// SmartButton: 基础Button封装的组件
-class SmartButton extends StatefulWidget {
+/// SimpleButton: 基础Button封装的组件
+class SimpleButton extends StatefulWidget {
   // 文本
   final String text;
 
@@ -18,7 +18,7 @@ class SmartButton extends StatefulWidget {
   // 点击事件回调
   final VoidCallback? onPressed;
 
-  SmartButton(
+  SimpleButton(
     this.text, {
     this.fontSize = 14,
     this.fontColor = AppColors.white,
@@ -29,11 +29,11 @@ class SmartButton extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _SmartButtonState();
+    return _SimpleButtonState();
   }
 }
 
-class _SmartButtonState extends State<SmartButton> {
+class _SimpleButtonState extends State<SimpleButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

@@ -1,24 +1,21 @@
 {
   "tip": "我们将使用您的会员信息用于开通东航钱包，请您仔细核对信息是否正确。",
-  "title": "身份信息",
+  "title": "用户信息",
   "count": 1000,
   "form": [
     {
-      "id": "name",
       "title": "姓名",
       "value": "郑*",
-      "tip": "",
-      "operate": ""
+      "tip": "111",
+      "operate": "添加"
     },
     {
-      "id": "idCard",
       "title": "身份证",
       "value": "3101********111X",
-      "tip": "",
-      "operate": ""
+      "tip": "222",
+      "operate": "添加"
     },
     {
-      "id": "phone",
       "title": "手机号",
       "value": "185******29",
       "tip": "手机号不正确",

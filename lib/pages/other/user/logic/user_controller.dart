@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_base/components/state/page_state.dart';
 import 'package:flutter_base/constants/app_constants.dart';
@@ -33,8 +35,8 @@ class UserController extends GetxController {
   void _loadData() async {
     String json = await rootBundle.loadString("${AppConstants.ASSERT_JSON_PATH}user_info.json");
     Future.delayed(Duration(seconds: 1), () {
-      _model = UserEntity.fromJson(json);
-      LogHelper.e(_model.count?.toDouble(), tag: "IdentityController");
+      _model = UserEntity.fromJson(jsonDecode(json));
+      LogHelper.e(_model.tip, tag: "IdentityController");
       state = PageState.SUCCESS;
       update();
     });

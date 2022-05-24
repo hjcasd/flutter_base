@@ -6,7 +6,7 @@ import 'package:flutter_base/pages/layout/layout_page.dart';
 import 'package:flutter_base/pages/other/other_page.dart';
 import 'package:flutter_base/pages/setting/setting_page.dart';
 import 'package:flutter_base/utils/dialog_manager.dart';
-import 'package:flutter_base/widget/smart_dialog.dart';
+import 'package:flutter_base/widget/simple_dialog.dart';
 
 /// 主界面
 class MainPage extends StatefulWidget {

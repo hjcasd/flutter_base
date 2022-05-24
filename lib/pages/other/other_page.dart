@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
 import 'package:flutter_base/constants/app_colors.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_paths.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
 /// 其他Tab页面
@@ -21,27 +21,27 @@ class _OtherPageState extends State<OtherPage> {
         children: [
           RouteButton(
             "弹框演示",
-            AppRoutes.Dialog,
+            RoutePaths.Dialog,
             backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "图文列表演示",
-            AppRoutes.Picture,
+            RoutePaths.Picture,
             backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "登录案例演示",
-            AppRoutes.Login,
+            RoutePaths.Login,
             backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "用户信息演示",
-            AppRoutes.User,
+            RoutePaths.User,
             backgroundColor: AppColors.amber,
           ),
           RouteButton(
             "Web演示",
-            AppRoutes.Web,
+            RoutePaths.Web,
             backgroundColor: AppColors.amber,
             onPressed: () {
               RouteManager.jumpToWeb("百度一下", "https://www.baidu.com");

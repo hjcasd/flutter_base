@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/smart_app_bar.dart';
+import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/components/button/route_button.dart';
-import 'package:flutter_base/routes/app_routes.dart';
+import 'package:flutter_base/routes/route_paths.dart';
 
 /// GridView页面
 class GridViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SmartAppBar(
+      appBar: SimpleAppBar(
         "GridView的使用",
       ),
       body: Container(
@@ -17,11 +17,11 @@ class GridViewPage extends StatelessWidget {
           children: [
             RouteButton(
               "Count网格",
-              AppRoutes.GridCount,
+              RoutePaths.GridCount,
             ),
             RouteButton(
               "Builder网格",
-              AppRoutes.GridBuilder,
+              RoutePaths.GridBuilder,
             ),
           ],
         ),
