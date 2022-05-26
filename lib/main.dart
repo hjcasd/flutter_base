@@ -8,25 +8,19 @@ import 'package:flutter_base/routes/route_pages.dart';
 import 'package:flutter_base/routes/route_paths.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 /// 应用入口
 /// void main() => runApp(MyApp());
 void main() async {
-  initHttp();
+  _initHttp();
   runApp(MyApp());
-  // 隐藏状态栏，保留底部按钮栏
-  // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-  // 设置Android状态栏沉浸式
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarColor: AppColors.transparent,
-    ),
-  );
+  _initSystemUI();
 }
 
 /// Http初始化
-void initHttp() {
+void _initHttp() {
   HttpUtils.init(
     baseUrl: HttpConfig.BASE_URL,
     connectTimeout: HttpConfig.CONNECT_TIMEOUT,
@@ -34,6 +28,16 @@ void initHttp() {
     interceptors: [
       ErrorInterceptor(),
     ],
+  );
+}
+
+/// 系统UI初始化
+void _initSystemUI() {
+  // 设置Android状态栏沉浸式
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: AppColors.transparent,
+    ),
   );
 }
 
@@ -61,6 +65,16 @@ class MyApp extends StatelessWidget {
       ),
       // Loading
       builder: EasyLoading.init(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('zh', 'CN'),
+        const Locale('en', 'US'),
+      ],
+      locale: const Locale('zh', 'CN'),
       // 路由跳转监听
       routingCallback: (routing) {
         if (routing == null) {
@@ -71,6 +85,7 @@ class MyApp extends StatelessWidget {
           LogHelper.d("route is null");
           return;
         }
+        LogHelper.d("current route: ${routing.current}");
       },
     );
   }
