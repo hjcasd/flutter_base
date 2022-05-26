@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';

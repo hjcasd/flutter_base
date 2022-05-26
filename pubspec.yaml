@@ -46,11 +46,9 @@ dependencies:
   cached_network_image: ^3.1.0
   # Loading
   flutter_easyloading: ^3.0.3
-  # Html
-  flutter_html: ^2.2.1
   # Web
   flutter_inappwebview: 5.2.0
-#  webview_flutter: ^2.0.4
+  webview_flutter: ^3.0.4
   # 图表
   syncfusion_flutter_charts: ^20.1.56
 
