@@ -17,8 +17,16 @@ class DialogManager {
   }
 
   /// 显示BottomSheet
-  static void showBottomSheet(Widget dialogWidget) {
-    Get.bottomSheet(dialogWidget);
+  static void showBottomSheet(
+    Widget dialogWidget, {
+    bool isScrollControlled = false,
+    bool isDismissible = true,
+  }) {
+    Get.bottomSheet(
+      dialogWidget,
+      isScrollControlled: isScrollControlled,
+      isDismissible: isDismissible,
+    );
   }
 
   /// 关闭Dialog

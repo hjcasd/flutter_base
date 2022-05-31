@@ -101,6 +101,7 @@ class _SimpleWebViewState extends State<SimpleWebView> {
         onWebViewCreated: (InAppWebViewController controller) {
           _webViewController = controller;
         },
+        onLoadStart: (InAppWebViewController controller, Uri? uri) {},
         onLoadStop: (InAppWebViewController controller, Uri? uri) {
           _webViewController?.canGoBack().then((value) {
             setState(() {
