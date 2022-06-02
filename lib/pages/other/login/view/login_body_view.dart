@@ -5,6 +5,12 @@ import 'package:get/get.dart';
 
 /// 登录View
 class LoginBodyView extends GetView<LoginController> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  final FocusNode _nameFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -47,6 +53,8 @@ class LoginBodyView extends GetView<LoginController> {
   Widget _getNameInput() {
     return SimpleTextField(
       value: controller.name,
+      controller: _nameController,
+      focusNode: _nameFocusNode,
       placeholder: "请输入用户名",
       maxLength: 11,
       prefixIcon: Padding(
@@ -66,6 +74,8 @@ class LoginBodyView extends GetView<LoginController> {
   Widget _getPasswordInput() {
     return SimpleTextField(
       value: controller.password,
+      controller: _passwordController,
+      focusNode: _passwordFocusNode,
       placeholder: "请输入密码",
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
@@ -93,7 +103,10 @@ class LoginBodyView extends GetView<LoginController> {
           "登录",
         ),
         onPressed: () {
-          controller.login();
+          controller.login().then((isLogin) {
+            _nameFocusNode.unfocus();
+            _passwordFocusNode.unfocus();
+          });
         },
       ),
     );

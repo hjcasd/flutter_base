@@ -30,18 +30,19 @@ class LoginController extends GetxController {
   }
 
   /// 登录
-  void login() async {
+  Future<bool> login() async {
     if (name.isEmpty) {
       GetHelper.showSnackBar("请输入用户名");
-      return;
+      return false;
     }
     if (password.isEmpty) {
       GetHelper.showSnackBar("请输入密码");
-      return;
+      return false;
     }
 
     var data = await ApiService.login(name, password);
     var entity = LoginEntity.fromJson(data);
     LogHelper.e("name: ${entity.data?.username}", tag: "LoginController");
+    return true;
   }
 }

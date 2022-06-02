@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_base/constants/app_colors.dart';
-import 'package:flutter_base/utils/log_helper.dart';
 
 /// SimpleTextField: 简易TextField组件封装
 class SimpleTextField extends StatefulWidget {
@@ -23,6 +22,12 @@ class SimpleTextField extends StatefulWidget {
   // 键盘输入类型
   final TextInputType keyboardType;
 
+  // 输入框控制器
+  final TextEditingController controller;
+
+  // 焦点实例
+  final FocusNode focusNode;
+
   // 输入格式
   final List<TextInputFormatter>? inputFormatters;
 
@@ -37,7 +42,9 @@ class SimpleTextField extends StatefulWidget {
 
   SimpleTextField({
     required this.value,
+    required this.controller,
     required this.onChanged,
+    required this.focusNode,
     this.keyboardType = TextInputType.text,
     this.placeholder = "请输入",
     this.obscureText = false,
@@ -58,23 +65,20 @@ class SimpleTextField extends StatefulWidget {
 /// State
 class _SimpleTextFieldState extends State<SimpleTextField> {
   // 当前内容
-  var _content = "";
-
-  // 输入框控制器
-  var _editingController = TextEditingController();
+  String _content = "";
 
   // 是否显示删除图标
-  var _showDeleteIcon = false;
+  bool _showDeleteIcon = false;
 
-  // 焦点控制
-  var _focusNode = FocusNode();
+  // 当前键盘是否是激活状态
+  bool isKeyboardActivated = false;
 
   @override
   void initState() {
     super.initState();
 
     _content = widget.value;
-    _editingController.value = TextEditingValue(
+    widget.controller.value = TextEditingValue(
       // 设置内容
       text: _content,
       // 保持光标在最后
@@ -87,10 +91,9 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
     );
 
     // 监听输入框焦点变化
-    _focusNode.addListener(() {
-      LogHelper.e("focus: ${_focusNode.hasFocus}");
+    widget.focusNode.addListener(() {
       setState(() {
-        _showDeleteIcon = _content.isNotEmpty && _focusNode.hasFocus;
+        _showDeleteIcon = _content.isNotEmpty && widget.focusNode.hasFocus;
       });
     });
   }
@@ -99,6 +102,9 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
   void didUpdateWidget(covariant SimpleTextField oldWidget) {
     super.didUpdateWidget(oldWidget);
     _content = widget.value;
+    setState(() {
+      _showDeleteIcon = _content.isNotEmpty && widget.focusNode.hasFocus;
+    });
   }
 
   @override
@@ -120,11 +126,10 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
       child: Container(
         padding: EdgeInsets.all(15),
         child: TextField(
-          // maxLength: widget.maxLength,
           obscureText: widget.obscureText,
           keyboardType: widget.keyboardType,
           inputFormatters: widget.inputFormatters,
-          focusNode: _focusNode,
+          focusNode: widget.focusNode,
           decoration: InputDecoration(
             isDense: true,
             contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 5),
@@ -145,7 +150,7 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
             fontWeight: FontWeight.w700,
             color: AppColors.black_333333,
           ),
-          controller: _editingController,
+          controller: widget.controller,
           onChanged: (value) {
             setState(() {
               _content = value;
@@ -153,7 +158,7 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
             });
             widget.onChanged(value);
             // inputFormatters
-            _editingController.selection = TextSelection.fromPosition(
+            widget.controller.selection = TextSelection.fromPosition(
               TextPosition(
                 offset: value.length,
                 affinity: TextAffinity.upstream,
@@ -180,7 +185,7 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
           _content = "";
           _showDeleteIcon = false;
         });
-        _editingController.clear();
+        widget.controller.clear();
         if (widget.onClear != null) {
           widget.onClear!();
         }
@@ -208,6 +213,6 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
   @override
   void dispose() {
     super.dispose();
-    _focusNode.dispose();
+    widget.focusNode.dispose();
   }
 }
