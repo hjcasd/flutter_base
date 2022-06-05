@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
 import 'package:flutter_base/constants/app_colors.dart';
+import 'package:flutter_base/routes/route_manager.dart';
 import 'package:flutter_base/routes/route_paths.dart';
 
 /// 设置Tab页面
@@ -37,6 +38,14 @@ class _SettingPageState extends State<SettingPage> {
             "Native",
             RoutePaths.Native,
             backgroundColor: AppColors.cyan,
+          ),
+          RouteButton(
+            "Web",
+            RoutePaths.Web,
+            backgroundColor: AppColors.cyan,
+            onPressed: () {
+              RouteManager.jumpToWeb("百度一下", "https://www.baidu.com");
+            },
           ),
         ],
       ),

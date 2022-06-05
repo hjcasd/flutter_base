@@ -39,11 +39,11 @@ abstract class RoutePaths {
   static const Picture = '/picture';
   static const Login = '/login';
   static const User = '/user';
-  static const Web = '/web';
 
   // 设置
   static const Swiper = '/swiper';
   static const Dio = '/dio';
   static const GetX = '/getX';
   static const Native = '/native';
+  static const Web = '/web';
 }

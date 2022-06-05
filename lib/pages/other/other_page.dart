@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/route_button.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/routes/route_paths.dart';
-import 'package:flutter_base/routes/route_manager.dart';
 
 /// 其他Tab页面
 class OtherPage extends StatefulWidget {
@@ -38,14 +37,6 @@ class _OtherPageState extends State<OtherPage> {
             "用户信息演示",
             RoutePaths.User,
             backgroundColor: AppColors.amber,
-          ),
-          RouteButton(
-            "Web演示",
-            RoutePaths.Web,
-            backgroundColor: AppColors.amber,
-            onPressed: () {
-              RouteManager.jumpToWeb("百度一下", "https://www.baidu.com");
-            },
           ),
         ],
       ),

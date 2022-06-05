@@ -183,11 +183,6 @@ abstract class RoutePages {
       page: () => UserPage(),
       binding: UserBinding(),
     ),
-    GetPage(
-      name: RoutePaths.Web,
-      page: () => WebPage(),
-      binding: WebBinding(),
-    ),
 
     // =========================设置=============================
     GetPage(
@@ -205,6 +200,11 @@ abstract class RoutePages {
     GetPage(
       name: RoutePaths.Native,
       page: () => NativePage(),
+    ),
+    GetPage(
+      name: RoutePaths.Web,
+      page: () => WebPage(),
+      binding: WebBinding(),
     ),
   ];
 }
