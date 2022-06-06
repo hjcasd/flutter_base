@@ -1,3 +1,4 @@
+import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
@@ -17,26 +18,14 @@ class MyTabBar extends StatefulWidget {
 }
 
 class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+  TabController? _tabController;
 
-  List _tabList = ["中国民生银行个人人民币银行结算账户管理协议", "个人税收居民身份声明文件", "跨行通协议"];
-
-  int _tabIndex = 0;
+  List _dataList = ["中国民生银行个人人民币银行结算账户管理协议", "个人税收居民身份声明文件", "跨行通协议"];
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: _tabList.length, vsync: this);
-    // tab切换监听
-    _tabController.addListener(() {
-      // 滑动监听调用一次,点击切换调用2次
-      if (_tabController.index == _tabController.animation?.value) {
-        print("当前索引: ${_tabController.index}");
-        setState(() {
-          _tabIndex = _tabController.index;
-        });
-      }
-    });
+    _tabController = TabController(length: _dataList.length, vsync: this);
   }
 
   @override
@@ -58,20 +47,29 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
       body: Column(
         children: [
           Container(
-            color: Colors.red,
+            color: AppColors.grey_E5E5E5,
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-            child: TabBar(
+            child: ButtonsTabBar(
               controller: _tabController,
-              isScrollable: true,
-              labelColor: Colors.white,
-              unselectedLabelColor: Colors.black,
-              indicator: BoxDecoration(),
+              backgroundColor: AppColors.red_CB1E36,
+              unselectedBackgroundColor: AppColors.white,
+              radius: 20,
+              contentPadding: EdgeInsets.symmetric(horizontal: 15),
+              unselectedLabelStyle: TextStyle(
+                color: AppColors.black,
+                fontSize: 12,
+              ),
+              labelStyle: TextStyle(
+                color: AppColors.white,
+                fontSize: 12,
+              ),
               tabs: _getTabsView(),
             ),
           ),
-          Flexible(
+          Expanded(
             child: TabBarView(
               controller: _tabController,
+              physics: NeverScrollableScrollPhysics(),
               children: _getContentView(),
             ),
           ),
@@ -82,38 +80,21 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
 
   List<Widget> _getTabsView() {
     List<Widget> list = [];
-    for (var i = 0; i < _tabList.length; i++) {
-      list.add(
-        Container(
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-          decoration: _tabIndex == i
-              ? BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.blue,
-                )
-              : BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
-                ),
-          child: Text(
-            _tabList[i],
-            style: TextStyle(fontSize: 12),
-          ),
-        ),
-      );
+    for (var i = 0; i < _dataList.length; i++) {
+      list.add(Tab(text: _dataList[i]));
     }
     return list;
   }
 
   List<Widget> _getContentView() {
     List<Widget> list = [];
-    for (var i = 0; i < _tabList.length; i++) {
+    for (var i = 0; i < _dataList.length; i++) {
       list.add(
         Container(
           color: AppColors.gold_BFA253,
           padding: EdgeInsets.all(20),
           child: Text(
-            _tabList[i],
+            _dataList[i],
             style: TextStyle(fontSize: 16),
           ),
         ),
@@ -125,6 +106,6 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
   @override
   void dispose() {
     super.dispose();
-    _tabController.dispose();
+    _tabController?.dispose();
   }
 }

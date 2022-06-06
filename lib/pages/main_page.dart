@@ -21,7 +21,7 @@ class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
 
   // 页面集合
-  final List<Widget> _pageList = [
+  List<Widget> _pageList = [
     HomePage(),
     LayoutPage(),
     OtherPage(),
@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
   ];
 
   // 底部Bar数据
-  final Map _bottomMap = {
+  Map _bottomMap = {
     "首页": Icon(Icons.home),
     "布局": Icon(Icons.category),
     "其他": Icon(Icons.account_box),
@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
   };
 
   // 标题栏颜色集合
-  final List<Color> _colorList = [
+  List<Color> _colorList = [
     AppColors.blue,
     AppColors.green,
     AppColors.amber,

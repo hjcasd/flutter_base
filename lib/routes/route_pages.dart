@@ -31,13 +31,13 @@ import 'package:flutter_base/pages/other/picture/logic/picture_binding.dart';
 import 'package:flutter_base/pages/other/picture/picture_page.dart';
 import 'package:flutter_base/pages/other/user/logic/user_binding.dart';
 import 'package:flutter_base/pages/other/user/user_page.dart';
-import 'package:flutter_base/pages/other/web/logic/web_binding.dart';
-import 'package:flutter_base/pages/other/web/web_page.dart';
 import 'package:flutter_base/pages/setting/dio/dio_page.dart';
 import 'package:flutter_base/pages/setting/get_x/get_x_page.dart';
 import 'package:flutter_base/pages/setting/native/native_page.dart';
 import 'package:flutter_base/pages/setting/swiper/swiper_page.dart';
 import 'package:flutter_base/pages/not_found_page.dart';
+import 'package:flutter_base/pages/setting/web/logic/web_binding.dart';
+import 'package:flutter_base/pages/setting/web/web_page.dart';
 import 'package:flutter_base/routes/route_paths.dart';
 import 'package:get/get.dart';
 
