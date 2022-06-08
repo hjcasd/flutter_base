@@ -1,5 +1,6 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/components/web/inner_web_view.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 
@@ -20,7 +21,20 @@ class MyTabBar extends StatefulWidget {
 class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin {
   TabController? _tabController;
 
-  List _dataList = ["中国民生银行个人人民币银行结算账户管理协议", "个人税收居民身份声明文件", "跨行通协议"];
+  List<Map> _dataList = [
+    {
+      "name": "中国民生银行个人人民币银行结算账户管理协议",
+      "url": "https://ceair-app.oss-cn-shanghai.aliyuncs.com/html/wallet/wallet.accoutn.open.cmbc.bank.balance.account.html",
+    },
+    {
+      "name": "个人税收居民身份声明文件",
+      "url": "https://ceair-app.oss-cn-shanghai.aliyuncs.com/html/wallet/wallet.Individual.Tax.Residency.Self-certification.html",
+    },
+    {
+      "name": "跨行通协议",
+      "url": "https://ceair-app.oss-cn-shanghai.aliyuncs.com/html/wallet/wallet.accout.open.other.bank.agreement.html",
+    },
+  ];
 
   @override
   void initState() {
@@ -51,7 +65,7 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
             child: ButtonsTabBar(
               controller: _tabController,
-              backgroundColor: AppColors.red_CB1E36,
+              backgroundColor: AppColors.blue,
               unselectedBackgroundColor: AppColors.white,
               radius: 20,
               contentPadding: EdgeInsets.symmetric(horizontal: 15),
@@ -81,7 +95,7 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
   List<Widget> _getTabsView() {
     List<Widget> list = [];
     for (var i = 0; i < _dataList.length; i++) {
-      list.add(Tab(text: _dataList[i]));
+      list.add(Tab(text: _dataList[i]["name"] ?? ""));
     }
     return list;
   }
@@ -90,14 +104,7 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
     List<Widget> list = [];
     for (var i = 0; i < _dataList.length; i++) {
       list.add(
-        Container(
-          color: AppColors.gold_BFA253,
-          padding: EdgeInsets.all(20),
-          child: Text(
-            _dataList[i],
-            style: TextStyle(fontSize: 16),
-          ),
-        ),
+        InnerWebView(url: _dataList[i]["url"] ?? ""),
       );
     }
     return list;
