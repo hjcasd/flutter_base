@@ -78,6 +78,7 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
                 fontSize: 12,
               ),
               tabs: _getTabsView(),
+              physics: AlwaysScrollableScrollPhysics(),
             ),
           ),
           Expanded(

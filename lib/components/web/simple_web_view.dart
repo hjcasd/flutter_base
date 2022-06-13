@@ -1,10 +1,12 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:flutter_base/utils/log_helper.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-/// SimpleWebView: InAppWebView封装
+/// SmartWebView: WebView封装
 class SimpleWebView extends StatefulWidget {
   // 标题
   final String title;
@@ -23,34 +25,25 @@ class SimpleWebView extends StatefulWidget {
 }
 
 class _SimpleWebViewState extends State<SimpleWebView> {
-  // Key
-  final GlobalKey webViewKey = GlobalKey();
-
-  // Web配置
-  final InAppWebViewGroupOptions webViewOptions = InAppWebViewGroupOptions(
-    // 用于配置Android和iOS通用的接口功能
-    crossPlatform: InAppWebViewOptions(
-      useShouldOverrideUrlLoading: true,
-      mediaPlaybackRequiresUserGesture: false,
-    ),
-    // 仅用于配置Android特有的接口功能
-    android: AndroidInAppWebViewOptions(
-      useHybridComposition: true,
-    ),
-    // 仅用于配置iOS特有的接口功能
-    ios: IOSInAppWebViewOptions(
-      allowsInlineMediaPlayback: true,
-    ),
-  );
-
-  // WebView控制器
-  InAppWebViewController? _webViewController;
+  // 控制器
+  WebViewController? _webViewController;
 
   // 当前加载进度
   double currentProgress = 0;
 
   // 是否可返回
   bool canGoBack = false;
+
+  // 是否初始化
+  bool _isInit = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (Platform.isAndroid) {
+      WebView.platform = SurfaceAndroidWebView();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,10 +59,15 @@ class _SimpleWebViewState extends State<SimpleWebView> {
         },
       ),
       body: Container(
-        child: Column(
+        child: Stack(
           children: [
-            _getProgressView(),
-            _getWebView(),
+            Column(
+              children: [
+                _getProgressView(),
+                _getWebView(),
+              ],
+            ),
+            _getLoadingView(),
           ],
         ),
       ),
@@ -93,28 +91,72 @@ class _SimpleWebViewState extends State<SimpleWebView> {
   /// WebView
   Widget _getWebView() {
     return Expanded(
-      flex: 1,
-      child: InAppWebView(
-        key: webViewKey,
-        initialUrlRequest: URLRequest(url: Uri.parse(widget.url)),
-        initialOptions: webViewOptions,
-        onWebViewCreated: (InAppWebViewController controller) {
-          _webViewController = controller;
+      child: WebView(
+        // 初始化URL
+        initialUrl: widget.url,
+        // JS执行模式
+        javascriptMode: JavascriptMode.unrestricted,
+        // WebView创建
+        onWebViewCreated: (WebViewController webViewController) {
+          _webViewController = webViewController;
+          setState(() {
+            _isInit = true;
+          });
         },
-        onLoadStart: (InAppWebViewController controller, Uri? uri) {},
-        onLoadStop: (InAppWebViewController controller, Uri? uri) {
+        // 开始加载页面
+        onPageStarted: (String url) {
+          LogHelper.e("WebView onPageStarted: $url");
+        },
+        // 页面加载完成
+        onPageFinished: (String url) {
+          LogHelper.e("WebView onPageFinished: $url");
           _webViewController?.canGoBack().then((value) {
             setState(() {
               canGoBack = value;
             });
           });
         },
-        onProgressChanged: (InAppWebViewController controller, int progress) {
+        // 加载进度
+        onProgress: (int progress) {
           setState(() {
             currentProgress = progress / 100;
           });
         },
+        // 路由委托
+        navigationDelegate: (NavigationRequest request) {
+          if (request.url.startsWith('https://www.youtube.com/')) {
+            LogHelper.e("WebView blocking navigation to $request");
+            return NavigationDecision.prevent;
+          }
+          LogHelper.e("WebView allowing navigation to $request");
+          return NavigationDecision.navigate;
+        },
       ),
     );
+  }
+
+  /// 进度条
+  Widget _getLoadingView() {
+    return Offstage(
+      offstage: _isInit,
+      child: Container(
+        color: AppColors.white,
+        child: Center(
+          child: Text(
+            "加载中...",
+            style: TextStyle(
+              fontSize: 16,
+              color: AppColors.black_333333,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _isInit = false;
   }
 }

@@ -63,6 +63,7 @@ class MyApp extends StatelessWidget {
       ),
       // Loading
       builder: EasyLoading.init(),
+      // 国际化
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
