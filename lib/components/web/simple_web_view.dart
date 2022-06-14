@@ -1,8 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
-import 'package:flutter_base/routes/route_manager.dart';
 import 'package:flutter_base/utils/log_helper.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -14,9 +12,13 @@ class SimpleWebView extends StatefulWidget {
   // 链接地址
   final String url;
 
+  // 返回回调处理
+  final void Function(WebViewController? webViewController) onBackPressed;
+
   SimpleWebView({
     required this.title,
     required this.url,
+    required this.onBackPressed,
     key,
   }) : super(key: key);
 
@@ -25,17 +27,8 @@ class SimpleWebView extends StatefulWidget {
 }
 
 class _SimpleWebViewState extends State<SimpleWebView> {
-  // 控制器
-  WebViewController? _webViewController;
-
   // 当前加载进度
   double currentProgress = 0;
-
-  // 是否可返回
-  bool canGoBack = false;
-
-  // 是否初始化
-  bool _isInit = false;
 
   @override
   void initState() {
@@ -47,30 +40,11 @@ class _SimpleWebViewState extends State<SimpleWebView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: SimpleAppBar(
-        widget.title,
-        onPressed: () async {
-          if (canGoBack) {
-            _webViewController?.goBack();
-          } else {
-            RouteManager.back();
-          }
-        },
-      ),
-      body: Container(
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                _getProgressView(),
-                _getWebView(),
-              ],
-            ),
-            _getLoadingView(),
-          ],
-        ),
-      ),
+    return Column(
+      children: [
+        _getProgressView(),
+        _getWebView(),
+      ],
     );
   }
 
@@ -98,10 +72,7 @@ class _SimpleWebViewState extends State<SimpleWebView> {
         javascriptMode: JavascriptMode.unrestricted,
         // WebView创建
         onWebViewCreated: (WebViewController webViewController) {
-          _webViewController = webViewController;
-          setState(() {
-            _isInit = true;
-          });
+          widget.onBackPressed(webViewController);
         },
         // 开始加载页面
         onPageStarted: (String url) {
@@ -110,11 +81,6 @@ class _SimpleWebViewState extends State<SimpleWebView> {
         // 页面加载完成
         onPageFinished: (String url) {
           LogHelper.e("WebView onPageFinished: $url");
-          _webViewController?.canGoBack().then((value) {
-            setState(() {
-              canGoBack = value;
-            });
-          });
         },
         // 加载进度
         onProgress: (int progress) {
@@ -133,30 +99,5 @@ class _SimpleWebViewState extends State<SimpleWebView> {
         },
       ),
     );
-  }
-
-  /// 进度条
-  Widget _getLoadingView() {
-    return Offstage(
-      offstage: _isInit,
-      child: Container(
-        color: AppColors.white,
-        child: Center(
-          child: Text(
-            "加载中...",
-            style: TextStyle(
-              fontSize: 16,
-              color: AppColors.black_333333,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _isInit = false;
   }
 }
