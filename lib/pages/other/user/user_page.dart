@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_base/components/app_bar/search_app_bar.dart';
 import 'package:flutter_base/components/state/simple_state_view.dart';
 import 'package:flutter_base/constants/app_colors.dart';
@@ -15,30 +16,34 @@ class UserPage extends GetView<UserController> {
   @override
   Widget build(BuildContext context) {
     Get.put(UserController());
-    return Scaffold(
-      appBar: SearchAppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.dark,
+      child: Scaffold(
+        appBar: SearchAppBar(
+          backgroundColor: AppColors.grey_F7F7F7,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: AppColors.black,
+            ),
+            onPressed: () {
+              RouteManager.back();
+            },
           ),
-          onPressed: () {
-            RouteManager.back();
+          hintText: "请输入关键字",
+          controller: _searchController,
+          onComplete: () {
+            LogHelper.e("value: " + _searchController.value.text);
           },
         ),
-        hintText: "请输入关键字",
-        controller: _searchController,
-        onComplete: () {
-          LogHelper.e("value: " + _searchController.value.text);
-        },
-      ),
-      body: GetBuilder<UserController>(
-        builder: (controller) {
-          return SimpleStateView(
-            state: controller.state,
-            contentView: UserBodyView(),
-          );
-        },
+        body: GetBuilder<UserController>(
+          builder: (controller) {
+            return SimpleStateView(
+              state: controller.state,
+              contentView: UserBodyView(),
+            );
+          },
+        ),
       ),
     );
   }

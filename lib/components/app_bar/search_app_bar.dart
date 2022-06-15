@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 
 /// SearchAppBar: 自定义带搜索框的AppBar
@@ -62,12 +61,6 @@ class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
 
 class _SearchAppBarState extends State<SearchAppBar> {
   bool _showDeleteIcon = false;
-
-  @override
-  void initState() {
-    super.initState();
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
-  }
 
   @override
   Widget build(BuildContext context) {
