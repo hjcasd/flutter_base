@@ -11,7 +11,7 @@ class RouteManager {
   ///
   /// RouteManager.toNamed(AppRoutes.Dialog);
   static Future? toNamed(String nextRouteName, {dynamic params}) {
-    return Get.toNamed(nextRouteName, arguments: params);
+    return Get.toNamed(nextRouteName, arguments: params, preventDuplicates: false);
   }
 
   /// 导航到下一个页面, 并删除前一个页面
@@ -19,7 +19,7 @@ class RouteManager {
   ///
   /// RouteManager.offNamed(AppRoutes.Dialog);
   static void offNamed(String nextRouteName, {dynamic params}) {
-    Get.offNamed(nextRouteName, arguments: params);
+    Get.offNamed(nextRouteName, arguments: params, preventDuplicates: false);
   }
 
   /// 导航到下一个页面, 并删除前一个页面
@@ -77,7 +77,7 @@ class RouteManager {
 
   /// 跳转到Web页面
   static void jumpToWeb(String title, String url) {
-    Get.toNamed(RoutePaths.Web, arguments: {"title": title, "url": url});
+    Get.toNamed(RoutePaths.Web, arguments: {"title": title, "url": url}, preventDuplicates: false);
   }
 
   /// 跳转到对应原生路由页面

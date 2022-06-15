@@ -26,7 +26,7 @@ class RouteButton extends StatefulWidget {
   final double minHeight;
 
   // 点击事件回调
-  final VoidCallback? onPressed;
+  final void Function()? onPressed;
 
   RouteButton(
     this.text,

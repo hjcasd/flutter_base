@@ -33,6 +33,9 @@ class _SettingPageState extends State<SettingPage> {
             "GetX",
             RoutePaths.GetX,
             backgroundColor: AppColors.cyan,
+            onPressed: () {
+              RouteManager.toNamed(RoutePaths.GetX, params: {"value": "111111"});
+            },
           ),
           RouteButton(
             "Native",

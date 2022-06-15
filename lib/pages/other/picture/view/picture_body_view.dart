@@ -5,11 +5,12 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 
 /// 图文列表View
-class PictureBodyView extends GetView<PictureController> {
+class PictureBodyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<PictureController>(
       id: "list",
+      init: PictureController(),
       builder: (controller) {
         return EasyRefresh(
           firstRefresh: true,

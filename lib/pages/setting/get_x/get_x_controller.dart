@@ -5,20 +5,16 @@ import 'package:get/get.dart';
 class GetXController extends GetxController {
   var count = 0;
 
-  void increase() {
-    ++count;
-    update();
-  }
-
   @override
   void onInit() {
     super.onInit();
     LogHelper.e("onInit()...", tag: "GetXController");
+    var arguments = Get.arguments;
+    LogHelper.e("value: ${arguments["value"]}");
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-    LogHelper.e("onReady()...", tag: "GetXController");
+  void increase() {
+    ++count;
+    update();
   }
 }
