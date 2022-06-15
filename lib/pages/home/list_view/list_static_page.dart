@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
+import 'package:flutter_base/constants/app_constants.dart';
 
 /// 静态列表页面
 class ListStaticPage extends StatelessWidget {
@@ -56,7 +57,7 @@ class MyStaticListView extends StatelessWidget {
         ),
         ListTile(
           leading: Image.network(
-            "http://pic1.win4000.com/wallpaper/b/58ca58d35d719.jpg",
+            AppConstants.NET_IMAGE_URL1,
           ),
           title: Text(
             "我是标题111111",
@@ -71,7 +72,7 @@ class MyStaticListView extends StatelessWidget {
         ),
         ListTile(
           trailing: Image.network(
-            "http://pic1.win4000.com/wallpaper/5/58d1e4522374c.jpg",
+            AppConstants.NET_IMAGE_URL2,
           ),
           title: Text(
             "我是标题111111",

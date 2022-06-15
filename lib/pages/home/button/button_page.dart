@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 
 /// Button页面
 class ButtonPage extends StatelessWidget {
@@ -30,7 +31,7 @@ class MyButton extends StatelessWidget {
       children: <Widget>[
         ElevatedButton(
           onPressed: () {
-            print("ElevatedButton");
+            LogHelper.e("ElevatedButton");
           },
           child: Text(
             "ElevatedButton",
@@ -38,7 +39,7 @@ class MyButton extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            print("TextButton");
+            LogHelper.e("TextButton");
           },
           child: Text(
             "TextButton",
@@ -46,7 +47,7 @@ class MyButton extends StatelessWidget {
         ),
         OutlinedButton(
           onPressed: () {
-            print("OutlinedButton");
+            LogHelper.e("OutlinedButton");
           },
           child: Text(
             "OutlinedButton",
@@ -54,7 +55,7 @@ class MyButton extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {
-            print("IconButton");
+            LogHelper.e("IconButton");
           },
           icon: Icon(
             Icons.settings,
@@ -66,7 +67,7 @@ class MyButton extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                print("登录");
+                LogHelper.e("登录");
               },
               child: Text(
                 "登录",
@@ -74,7 +75,7 @@ class MyButton extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                print("注册");
+                LogHelper.e("注册");
               },
               child: Text(
                 "注册",
@@ -97,7 +98,7 @@ class MyFloatingButton extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("浮动按钮");
+          LogHelper.e("浮动按钮");
         },
         child: Icon(
           Icons.add,

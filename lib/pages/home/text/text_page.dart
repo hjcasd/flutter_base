@@ -26,7 +26,7 @@ class MyText extends StatelessWidget {
         width: 300,
         height: 300,
         padding: EdgeInsets.all(10),
-        color: AppColors.amber,
+        color: AppColors.blue,
         child: Text(
           "我是一个文本组件， 我是一个文本组件，我是一个文本组件",
           // 对齐方式
@@ -35,7 +35,7 @@ class MyText extends StatelessWidget {
             // 字体大小
             fontSize: 20,
             // 字体颜色
-            color: AppColors.blue,
+            color: AppColors.white,
             // 字体加粗
             fontWeight: FontWeight.w700,
             // 字体样式
@@ -43,7 +43,7 @@ class MyText extends StatelessWidget {
             // 下划线
             decoration: TextDecoration.underline,
             // 下划线颜色
-            decorationColor: AppColors.green,
+            decorationColor: AppColors.red,
             // 下划线样式
             decorationStyle: TextDecorationStyle.dashed,
             // 文本字体间距

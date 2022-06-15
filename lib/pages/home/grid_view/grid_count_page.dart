@@ -37,7 +37,7 @@ class MyCountGridView extends StatelessWidget {
     for (var i = 0; i < 30; i++) {
       list.add(
         Card(
-          color: AppColors.blue,
+          color: AppColors.amber,
           child: Center(
             child: Text(
               "这是第${i + 1}条数据",

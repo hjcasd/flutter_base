@@ -17,7 +17,7 @@ class WebPage extends GetView<WebController> {
           appBar: SimpleAppBar(
             controller.title,
             onPressed: () async {
-             controller.goBack();
+              controller.goBack();
             },
           ),
           body: SimpleStateView(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/text_field/simple_text_field.dart';
+import 'package:flutter_base/constants/app_constants.dart';
 import 'package:flutter_base/pages/other/login/logic/login_controller.dart';
 import 'package:get/get.dart';
 
@@ -19,27 +20,7 @@ class LoginBodyView extends GetView<LoginController> {
         child: Column(
           children: [
             _getRoundImage(
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-              100,
-            ),
-            _getRoundImage(
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-              100,
-            ),
-            _getRoundImage(
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-              100,
-            ),
-            _getRoundImage(
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-              100,
-            ),
-            _getRoundImage(
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
-              100,
-            ),
-            _getRoundImage(
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
+              AppConstants.NET_IMAGE_URL1,
               100,
             ),
             SizedBox(

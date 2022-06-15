@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/routes/route_manager.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 
 /// AppBar的使用
 class AppBarPage extends StatelessWidget {
@@ -37,7 +38,7 @@ class MyAppBar extends StatelessWidget {
               Icons.search,
             ),
             onPressed: () {
-              print("search");
+              LogHelper.e("search");
             },
           ),
           IconButton(
@@ -45,7 +46,7 @@ class MyAppBar extends StatelessWidget {
               Icons.settings,
             ),
             onPressed: () {
-              print("setting");
+              LogHelper.e("setting");
             },
           )
         ],

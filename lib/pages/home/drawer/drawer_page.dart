@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/constants/app_constants.dart';
 
 /// Drawer页面
 class DrawerPage extends StatelessWidget {
@@ -38,7 +39,7 @@ class MyDrawerHeader extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
-                          "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2447126270,3019349612&fm=26&gp=0.jpg",
+                          AppConstants.NET_IMAGE_URL1,
                         ),
                         fit: BoxFit.cover,
                       ),
@@ -123,13 +124,13 @@ class MyDrawerAccount extends StatelessWidget {
                   ),
                   currentAccountPicture: CircleAvatar(
                     backgroundImage: NetworkImage(
-                      "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3950359295,879559074&fm=11&gp=0.jpg",
+                      AppConstants.NET_IMAGE_URL1,
                     ),
                   ),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage(
-                        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603875996600&di=91a1e8f32747c9b9ba69c90874548eae&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F72f082025aafa40f2982756baa64034f78f0193b.jpg",
+                        AppConstants.NET_IMAGE_URL2,
                       ),
                       fit: BoxFit.cover,
                     ),

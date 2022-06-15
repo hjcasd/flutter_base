@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/native/native_helper.dart';
 import 'package:flutter_base/routes/route_paths.dart';
-import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
 /// 路由管理类
@@ -62,7 +61,6 @@ class RouteManager {
   /// 返回到上一个页面
   static void back({dynamic params}) {
     bool canPop = Navigator.canPop(Get.context!);
-    LogHelper.e("canPop: $canPop");
     if (canPop) {
       Get.back(result: params);
     } else {

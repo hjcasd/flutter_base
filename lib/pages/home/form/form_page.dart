@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 
 /// Form页面
 class FormPage extends StatelessWidget {
@@ -76,7 +77,7 @@ class _MyFormState extends State<MyForm> {
               ),
             ),
             onChanged: (value) {
-              print("$value");
+              LogHelper.e("$value");
               setState(() {
                 _phoneController.text = value;
               });
@@ -133,10 +134,10 @@ class _MyFormState extends State<MyForm> {
             height: 40,
             child: ElevatedButton(
               onPressed: () {
-                print("用户名: $_username");
-                print("性别: $_sex");
-                print("爱好: $_hobby");
-                print("描述: $_desc");
+                LogHelper.e("用户名: $_username");
+                LogHelper.e("性别: $_sex");
+                LogHelper.e("爱好: $_hobby");
+                LogHelper.e("描述: $_desc");
               },
               child: Text(
                 "提交",

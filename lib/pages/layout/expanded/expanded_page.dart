@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/components/icon_container.dart';
 import 'package:flutter_base/constants/app_colors.dart';
+import 'package:flutter_base/constants/app_constants.dart';
 
 /// Expanded页面
 class ExpandedPage extends StatelessWidget {
@@ -89,7 +90,7 @@ class MyMultiExpanded extends StatelessWidget {
               child: Container(
                 height: 180,
                 child: Image.network(
-                  "https://t8.baidu.com/it/u=1484500186,1503043093&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1603869096&t=155e177e33789449415d5f099db22412",
+                  AppConstants.NET_IMAGE_URL1,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -105,12 +106,12 @@ class MyMultiExpanded extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Image.network(
-                      "https://t9.baidu.com/it/u=1307125826,3433407105&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1603869096&t=816eddceba44f40d7c61a2289b13c329",
+                      AppConstants.NET_IMAGE_URL2,
                       height: 85,
                       fit: BoxFit.cover,
                     ),
                     Image.network(
-                      "https://t9.baidu.com/it/u=1307125826,3433407105&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1603869096&t=816eddceba44f40d7c61a2289b13c329",
+                      AppConstants.NET_IMAGE_URL3,
                       height: 85,
                       fit: BoxFit.cover,
                     ),

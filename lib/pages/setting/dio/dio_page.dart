@@ -74,7 +74,7 @@ class _MyDioState extends State<MyDio> {
             ),
             onPressed: () {
               var jsonStr = convert.jsonEncode(_userMap);
-              print(jsonStr);
+              LogHelper.e(jsonStr);
             },
           ),
           SizedBox(
@@ -87,7 +87,7 @@ class _MyDioState extends State<MyDio> {
             onPressed: () {
               _test();
               var map = convert.jsonDecode(_userStr);
-              print(map["name"]);
+              LogHelper.e(map["name"]);
             },
           ),
         ],

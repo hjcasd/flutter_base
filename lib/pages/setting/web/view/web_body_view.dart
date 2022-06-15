@@ -10,7 +10,7 @@ class WebBodyView extends GetView<WebController> {
     return SimpleWebView(
       title: controller.title,
       url: controller.url,
-      onBackPressed: (webViewController){
+      onBackPressed: (webViewController) {
         controller.initWeb(webViewController);
       },
     );

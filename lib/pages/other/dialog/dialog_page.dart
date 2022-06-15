@@ -3,6 +3,7 @@ import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/constants/app_colors.dart';
 import 'package:flutter_base/utils/dialog_manager.dart';
 import 'package:flutter_base/utils/get_helper.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 import 'package:flutter_base/widget/simple_dialog.dart';
 import 'package:get/get.dart';
 
@@ -195,8 +196,8 @@ class _MyDialogState extends State<MyDialog> {
   void _showDefaultDialog() {
     Get.defaultDialog(
       radius: 10.0,
-      onConfirm: () => print("Ok"),
-      onCancel: () => print("Cancel"),
+      onConfirm: () => LogHelper.e("Ok"),
+      onCancel: () => LogHelper.e("Cancel"),
       middleText: "Dialog made in 3 lines of code",
     );
   }

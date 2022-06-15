@@ -130,11 +130,13 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
           keyboardType: widget.keyboardType,
           inputFormatters: widget.inputFormatters,
           focusNode: widget.focusNode,
+          maxLength: widget.maxLength,
           decoration: InputDecoration(
             isDense: true,
             contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 5),
             border: InputBorder.none,
             hintText: widget.placeholder,
+            counterText: "",
             hintStyle: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,

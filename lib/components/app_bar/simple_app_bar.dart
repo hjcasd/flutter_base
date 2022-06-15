@@ -36,7 +36,7 @@ class SimpleAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.height = 54,
     this.fontSize = 18,
     this.fontColor = AppColors.white,
-    this.backgroundColor = AppColors.red,
+    this.backgroundColor = AppColors.blue,
     this.isCenterTitle = false,
     this.icon = Icons.arrow_back,
     this.actions,
