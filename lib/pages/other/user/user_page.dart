@@ -17,10 +17,10 @@ class UserPage extends GetView<UserController> {
     Get.put(UserController());
     return Scaffold(
       appBar: SearchAppBar(
-        backgroundColor: AppColors.grey_F7F7F7,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
+            color: AppColors.white,
           ),
           onPressed: () {
             RouteManager.back();

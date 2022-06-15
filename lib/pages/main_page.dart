@@ -44,7 +44,8 @@ class _MainPageState extends State<MainPage> {
     AppColors.cyan,
   ];
 
-  DateTime? _lastPressedTime; //上次点击时间
+  // 上次点击时间
+  DateTime? _lastPressedTime;
 
   @override
   Widget build(BuildContext context) {

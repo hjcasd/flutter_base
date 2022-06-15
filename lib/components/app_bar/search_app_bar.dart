@@ -34,7 +34,7 @@ class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
     required this.leading,
     required this.controller,
     this.height = 54.0,
-    this.backgroundColor = AppColors.red,
+    this.backgroundColor = AppColors.blue,
     this.hintText = "",
     this.prefixIcon = const Icon(
       Icons.search,
