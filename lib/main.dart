@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
       // 初始路由
       initialRoute: RoutePaths.Initial,
       // 跳转动画
-      // defaultTransition: Transition.fadeIn,
+      defaultTransition: Transition.leftToRight,
       // 路由表
       getPages: RoutePages.pages,
       // 未知路由

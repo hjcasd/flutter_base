@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/components/form/form_read_item.dart';
-import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 
 /// Card页面
 class CardPage extends StatelessWidget {
@@ -44,7 +44,10 @@ class MyCard extends StatelessWidget {
             title: '身份证',
             content: '3101*********244X',
           ),
-          Html(data: _htmlData),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: HtmlWidget(_htmlData),
+          ),
         ],
       ),
     );
