@@ -4,14 +4,17 @@ import 'package:flutter_base/pages/setting/web/logic/web_controller.dart';
 import 'package:get/get.dart';
 
 /// Web页面View
-class WebBodyView extends GetView<WebController> {
+class WebBodyView extends StatelessWidget {
+  // Controller
+  final WebController _controller = Get.find<WebController>();
+
   @override
   Widget build(BuildContext context) {
     return SimpleWebView(
-      title: controller.title,
-      url: controller.url,
+      title: _controller.title,
+      url: _controller.url,
       onBackPressed: (webViewController) {
-        controller.initWeb(webViewController);
+        _controller.initWeb(webViewController);
       },
     );
   }

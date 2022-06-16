@@ -10,12 +10,14 @@ import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 
 /// 用户信息页面
-class UserPage extends GetView<UserController> {
-  final TextEditingController _searchController = TextEditingController();
+class UserPage extends StatelessWidget {
+  // Controller
+  final UserController _controller = Get.find<UserController>();
+
+  final TextEditingController _searchTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    Get.put(UserController());
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
@@ -31,15 +33,15 @@ class UserPage extends GetView<UserController> {
             },
           ),
           hintText: "请输入关键字",
-          controller: _searchController,
+          controller: _searchTextController,
           onComplete: () {
-            LogHelper.e("value: " + _searchController.value.text);
+            LogHelper.e("value: " + _searchTextController.value.text);
           },
         ),
         body: GetBuilder<UserController>(
-          builder: (controller) {
+          builder: (_) {
             return SimpleStateView(
-              state: controller.state,
+              state: _controller.state,
               contentView: UserBodyView(),
             );
           },

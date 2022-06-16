@@ -86,7 +86,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
         child: TextField(
           maxLines: 1,
           keyboardType: TextInputType.text,
-          textInputAction: TextInputAction.done,
+          textInputAction: TextInputAction.search,
           controller: widget.controller,
           decoration: InputDecoration(
             hintText: widget.hintText,

@@ -10,7 +10,10 @@ import 'package:flutter_base/utils/extension/string_seprate.dart';
 import 'package:get/get.dart';
 
 /// 用户信息页面View
-class UserBodyView extends GetView<UserController> {
+class UserBodyView extends StatelessWidget {
+  // Controller
+  final UserController _controller = Get.find<UserController>();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +24,7 @@ class UserBodyView extends GetView<UserController> {
         ),
         FormWriteItem(
           title: "姓名",
-          value: controller.name,
+          value: _controller.name,
           placeholder: "请输入姓名",
           inputFormatters: [
             TextInputFormatter.withFunction(
@@ -35,10 +38,10 @@ class UserBodyView extends GetView<UserController> {
             )
           ],
           onChanged: (value) {
-            controller.changeName(value);
+            _controller.changeName(value);
           },
           onClear: () {
-            controller.changeName("");
+            _controller.changeName("");
           },
         ),
         SimpleButton(

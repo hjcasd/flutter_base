@@ -1,5 +1,6 @@
 import 'package:flutter_base/components/state/page_state.dart';
 import 'package:flutter_base/routes/route_manager.dart';
+import 'package:flutter_base/utils/log_helper.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -20,11 +21,7 @@ class WebController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
+    LogHelper.e("WebController onInit()...");
 
     var arguments = Get.arguments;
     if (arguments != null && arguments is Map) {
@@ -33,6 +30,12 @@ class WebController extends GetxController {
       state = PageState.SUCCESS;
       update();
     }
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    LogHelper.e("WebController onClose()...");
   }
 
   /// 初始化Web
@@ -47,10 +50,5 @@ class WebController extends GetxController {
     } else {
       RouteManager.back();
     }
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 }

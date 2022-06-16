@@ -6,28 +6,30 @@ import 'package:get/get.dart';
 
 /// 图文列表View
 class PictureBodyView extends StatelessWidget {
+  // Controller
+  final PictureController _controller = Get.find<PictureController>();
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<PictureController>(
       id: "list",
-      init: PictureController(),
-      builder: (controller) {
+      builder: (_) {
         return EasyRefresh(
           firstRefresh: true,
           onRefresh: () async {
-            controller.refresh();
+            _controller.refresh();
           },
           onLoad: () async {
-            controller.loadMore();
+            _controller.loadMore();
           },
           child: ListView.builder(
             itemBuilder: (context, index) {
-              String title = controller.listItems[index]["title"] ?? "";
-              String imageUrl = controller.listItems[index]["imageUrl"] ?? "";
-              String viewCount = controller.listItems[index]["viewCount"] ?? "";
+              String title = _controller.listItems[index]["title"] ?? "";
+              String imageUrl = _controller.listItems[index]["imageUrl"] ?? "";
+              String viewCount = _controller.listItems[index]["viewCount"] ?? "";
               return ImageTitleItem(title, imageUrl, viewCount);
             },
-            itemCount: controller.listItems.length,
+            itemCount: _controller.listItems.length,
           ),
         );
       },
