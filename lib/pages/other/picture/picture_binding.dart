@@ -1,4 +1,4 @@
-import 'package:flutter_base/pages/other/picture/logic/picture_controller.dart';
+import 'package:flutter_base/pages/other/picture/picture_controller.dart';
 import 'package:get/instance_manager.dart';
 
 /// 图文列表页面Binding

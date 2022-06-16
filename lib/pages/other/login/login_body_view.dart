@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/components/button/simple_button.dart';
 import 'package:flutter_base/components/text_field/simple_text_field.dart';
 import 'package:flutter_base/constants/app_constants.dart';
-import 'package:flutter_base/pages/other/login/logic/login_controller.dart';
+import 'package:flutter_base/pages/other/login/login_controller.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 import 'package:flutter_base/routes/route_paths.dart';
 import 'package:get/get.dart';

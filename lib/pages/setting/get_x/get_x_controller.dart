@@ -6,11 +6,18 @@ class GetXController extends GetxController {
   var count = 0;
 
   @override
-  void onInit() {
-    super.onInit();
-    LogHelper.e("onInit()...", tag: "GetXController");
+  void onReady() {
+    super.onReady();
+    LogHelper.e("GetxController onReady()...");
+
     var arguments = Get.arguments;
     LogHelper.e("value: ${arguments["value"]}");
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    LogHelper.e("GetxController onClose()...");
   }
 
   void increase() {

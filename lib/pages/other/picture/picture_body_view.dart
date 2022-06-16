@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/adapter/image_title_item.dart';
-import 'package:flutter_base/pages/other/picture/logic/picture_controller.dart';
+import 'package:flutter_base/pages/other/picture/picture_controller.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 

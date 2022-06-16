@@ -14,9 +14,9 @@ class PictureController extends GetxController {
   var _currentPage = 1;
 
   @override
-  void onInit() {
-    super.onInit();
-    LogHelper.e("PictureController onInit()...");
+  void onReady() {
+    super.onReady();
+    LogHelper.e("PictureController onReady()...");
   }
 
   @override

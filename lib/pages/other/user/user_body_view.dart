@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_base/components/button/simple_button.dart';
 import 'package:flutter_base/components/form/form_read_item.dart';
 import 'package:flutter_base/components/form/form_write_item.dart';
-import 'package:flutter_base/pages/other/user/logic/user_controller.dart';
+import 'package:flutter_base/pages/other/user/user_controller.dart';
 import 'package:flutter_base/routes/route_paths.dart';
 import 'package:flutter_base/routes/route_manager.dart';
 import 'package:flutter_base/utils/extension/string_seprate.dart';

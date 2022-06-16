@@ -10,9 +10,9 @@ class LoginController extends GetxController {
   var password = "";
 
   @override
-  void onInit() {
-    super.onInit();
-    LogHelper.e("LoginController onInit()...");
+  void onReady() {
+    super.onReady();
+    LogHelper.e("LoginController onReady()...");
   }
 
   @override
@@ -42,7 +42,7 @@ class LoginController extends GetxController {
 
     var data = await ApiService.login(name, password);
     var entity = LoginEntity.fromJson(data);
-    LogHelper.e("name: ${entity.data?.username}", tag: "LoginController");
+    LogHelper.e("name: ${entity.data?.username}");
     return true;
   }
 }

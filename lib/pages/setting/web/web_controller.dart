@@ -19,9 +19,9 @@ class WebController extends GetxController {
   WebViewController? _webViewController;
 
   @override
-  void onInit() {
-    super.onInit();
-    LogHelper.e("WebController onInit()...");
+  void onReady() {
+    super.onReady();
+    LogHelper.e("WebController onReady()...");
 
     var arguments = Get.arguments;
     if (arguments != null && arguments is Map) {

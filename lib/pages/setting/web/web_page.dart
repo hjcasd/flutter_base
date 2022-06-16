@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/components/app_bar/simple_app_bar.dart';
 import 'package:flutter_base/components/state/simple_state_view.dart';
-import 'package:flutter_base/pages/setting/web/logic/web_controller.dart';
-import 'package:flutter_base/pages/setting/web/view/web_body_view.dart';
+import 'package:flutter_base/pages/setting/web/web_controller.dart';
+import 'package:flutter_base/pages/setting/web/web_body_view.dart';
 import 'package:get/get.dart';
 
 /// Web页面

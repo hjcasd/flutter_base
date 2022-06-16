@@ -1,4 +1,4 @@
-import 'package:flutter_base/pages/other/user/logic/user_controller.dart';
+import 'package:flutter_base/pages/other/user/user_controller.dart';
 import 'package:get/instance_manager.dart';
 
 /// 用户信息页面Binding

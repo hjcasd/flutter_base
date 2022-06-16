@@ -19,9 +19,9 @@ class UserController extends GetxController {
   var name = "";
 
   @override
-  void onInit() {
-    super.onInit();
-    LogHelper.e("UserController onInit()...");
+  void onReady() {
+    super.onReady();
+    LogHelper.e("UserController onReady()...");
     _loadData();
   }
 
@@ -36,7 +36,7 @@ class UserController extends GetxController {
     String json = await rootBundle.loadString("${AppConstants.ASSERT_JSON_PATH}user_info.json");
     Future.delayed(Duration(seconds: 1), () {
       _model = UserEntity.fromJson(jsonDecode(json));
-      LogHelper.e(_model.tip, tag: "IdentityController");
+      LogHelper.e(_model.tip);
       state = PageState.SUCCESS;
       update();
     });
@@ -45,6 +45,6 @@ class UserController extends GetxController {
   /// 改变名字
   void changeName(String value) {
     this.name = value;
-    LogHelper.e("name: " + value, tag: "IdentityController");
+    LogHelper.e("name: " + value);
   }
 }
