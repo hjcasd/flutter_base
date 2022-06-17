@@ -4,6 +4,7 @@ import 'package:flutter_base/pages/home/grid_view/grid_view_page.dart';
 import 'package:flutter_base/pages/home/list_view/list_dynamic_page.dart';
 import 'package:flutter_base/pages/home/list_view/list_static_page.dart';
 import 'package:flutter_base/pages/home/list_view/list_view_page.dart';
+import 'package:flutter_base/pages/home/progress/progress_page.dart';
 import 'package:flutter_base/pages/layout/stack/stack_align_page.dart';
 import 'package:flutter_base/pages/layout/stack/stack_position_page.dart';
 import 'package:flutter_base/pages/other/dialog/dialog_page.dart';
@@ -116,6 +117,10 @@ abstract class RoutePages {
     GetPage(
       name: RoutePaths.Drawer,
       page: () => DrawerPage(),
+    ),
+    GetPage(
+      name: RoutePaths.Progress,
+      page: () => ProgressPage(),
     ),
 
     // =========================布局=============================

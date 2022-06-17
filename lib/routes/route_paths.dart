@@ -20,6 +20,7 @@ abstract class RoutePaths {
   static const AppBar = '/app_bar';
   static const TabBar = '/tab_bar';
   static const Drawer = '/drawer';
+  static const Progress = '/progress';
 
   // 布局
   static const Container = '/container';

@@ -16,11 +16,14 @@ class SimpleTextField extends StatefulWidget {
   // 输入框最大输入长度
   final int? maxLength;
 
-  // 是否为密码形式
+  // 是否隐藏正在编辑的文本(文本内容会用“•”替换)
   final bool obscureText;
 
   // 键盘输入类型
   final TextInputType keyboardType;
+
+  // 键盘动作按钮图标(即回车键位图标)
+  final TextInputAction? textInputAction;
 
   // 输入框控制器
   final TextEditingController controller;
@@ -46,6 +49,7 @@ class SimpleTextField extends StatefulWidget {
     required this.onChanged,
     required this.focusNode,
     this.keyboardType = TextInputType.text,
+    this.textInputAction,
     this.placeholder = "请输入",
     this.obscureText = false,
     this.maxLength,
@@ -128,6 +132,7 @@ class _SimpleTextFieldState extends State<SimpleTextField> {
         child: TextField(
           obscureText: widget.obscureText,
           keyboardType: widget.keyboardType,
+          textInputAction: widget.textInputAction,
           inputFormatters: widget.inputFormatters,
           focusNode: widget.focusNode,
           maxLength: widget.maxLength,

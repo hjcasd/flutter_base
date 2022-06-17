@@ -59,6 +59,10 @@ class _HomePageState extends State<HomePage> {
               "Drawer",
               RoutePaths.Drawer,
             ),
+            RouteButton(
+              "ProgressIndicator",
+              RoutePaths.Progress,
+            ),
           ],
         ),
       ),
