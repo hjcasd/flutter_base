@@ -46,9 +46,9 @@ class SmartButton extends StatefulWidget {
     this.text, {
     this.fontSize = 14,
     this.fontColor = AppColors.white,
-    this.disabledFontColor = AppColors.black_999999,
+    this.disabledFontColor = AppColors.black999999,
     this.backgroundColor = AppColors.blue,
-    this.disabledBackgroundColor = AppColors.grey_BCBCBC,
+    this.disabledBackgroundColor = AppColors.greyBCBCBC,
     this.width,
     this.height,
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 30),

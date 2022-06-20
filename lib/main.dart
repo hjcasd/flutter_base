@@ -22,9 +22,9 @@ void main() async {
 /// Http初始化
 void _initHttp() {
   HttpUtils.init(
-    baseUrl: HttpConfig.BASE_URL,
-    connectTimeout: HttpConfig.CONNECT_TIMEOUT,
-    receiveTimeout: HttpConfig.RECEIVE_TIMEOUT,
+    baseUrl: HttpConfig.baseUrl,
+    connectTimeout: HttpConfig.connectTimeout,
+    receiveTimeout: HttpConfig.receiveTimeout,
     interceptors: [
       ErrorInterceptor(),
     ],
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: true,
       title: "Flutter Base",
       // 初始路由
-      initialRoute: RoutePaths.Initial,
+      initialRoute: RoutePaths.initial,
       // 跳转动画
       // defaultTransition: Transition.leftToRight,
       // 路由表

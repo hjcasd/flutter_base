@@ -46,7 +46,7 @@ class _MyProgressState extends State<MyProgress> with SingleTickerProviderStateM
         children: [
           LinearProgressIndicator(
             // 背景色
-            backgroundColor: AppColors.grey_E5E5E5,
+            backgroundColor: AppColors.greyE5E5E5,
             // 进度条颜色
             valueColor: AlwaysStoppedAnimation(AppColors.blue),
             // value表示当前的进度，取值范围为[0,1]；如果value为null时则指示器会执行一个循环动画（模糊进度）；当value不为null时，指示器为一个具体进度的进度条
@@ -58,8 +58,8 @@ class _MyProgressState extends State<MyProgress> with SingleTickerProviderStateM
             height: 20,
           ),
           CircularProgressIndicator(
-            backgroundColor: AppColors.grey_E5E5E5,
-            valueColor: ColorTween(begin: AppColors.grey_BCBCBC, end: AppColors.blue).animate(_animationController),
+            backgroundColor: AppColors.greyE5E5E5,
+            valueColor: ColorTween(begin: AppColors.greyBCBCBC, end: AppColors.blue).animate(_animationController),
             value: _animationController.value,
           )
         ],

@@ -33,7 +33,7 @@ class UserController extends GetxController {
 
   /// 加载数据
   void _loadData() async {
-    String json = await rootBundle.loadString("${AppConstants.ASSERT_JSON_PATH}user_info.json");
+    String json = await rootBundle.loadString("${AppConstants.assertJsonPath}user_info.json");
     Future.delayed(Duration(seconds: 1), () {
       _model = UserEntity.fromJson(jsonDecode(json));
       LogHelper.e(_model.tip);

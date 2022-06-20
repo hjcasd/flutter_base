@@ -49,167 +49,167 @@ abstract class RoutePages {
 
   static final pages = [
     GetPage(
-      name: RoutePaths.Initial,
+      name: RoutePaths.initial,
       page: () => MainPage(),
     ),
     GetPage(
-      name: RoutePaths.NotFound,
+      name: RoutePaths.notFound,
       page: () => NotFoundPage(),
     ),
 
     // =========================首页=============================
     GetPage(
-      name: RoutePaths.Text,
+      name: RoutePaths.text,
       page: () => TextPage(),
     ),
     GetPage(
-      name: RoutePaths.RichText,
+      name: RoutePaths.richText,
       page: () => RichTextPage(),
     ),
 
     GetPage(
-      name: RoutePaths.Button,
+      name: RoutePaths.button,
       page: () => ButtonPage(),
     ),
     GetPage(
-      name: RoutePaths.Image,
+      name: RoutePaths.image,
       page: () => ImagePage(),
     ),
 
     GetPage(
-      name: RoutePaths.ListView,
+      name: RoutePaths.listView,
       page: () => ListViewPage(),
     ),
     GetPage(
-      name: RoutePaths.ListStatic,
+      name: RoutePaths.listStatic,
       page: () => ListStaticPage(),
     ),
     GetPage(
-      name: RoutePaths.ListDynamic,
+      name: RoutePaths.listDynamic,
       page: () => ListDynamicPage(),
     ),
 
     GetPage(
-      name: RoutePaths.GridView,
+      name: RoutePaths.gridView,
       page: () => GridViewPage(),
     ),
     GetPage(
-      name: RoutePaths.GridCount,
+      name: RoutePaths.gridCount,
       page: () => GridCountPage(),
     ),
     GetPage(
-      name: RoutePaths.GridBuilder,
+      name: RoutePaths.gridBuilder,
       page: () => GridBuilderPage(),
     ),
 
     GetPage(
-      name: RoutePaths.Form,
+      name: RoutePaths.form,
       page: () => FormPage(),
     ),
     GetPage(
-      name: RoutePaths.AppBar,
+      name: RoutePaths.appBar,
       page: () => AppBarPage(),
     ),
     GetPage(
-      name: RoutePaths.TabBar,
+      name: RoutePaths.tabBar,
       page: () => TabBarPage(),
     ),
     GetPage(
-      name: RoutePaths.Drawer,
+      name: RoutePaths.drawer,
       page: () => DrawerPage(),
     ),
     GetPage(
-      name: RoutePaths.Progress,
+      name: RoutePaths.progress,
       page: () => ProgressPage(),
     ),
 
     // =========================布局=============================
     GetPage(
-      name: RoutePaths.Container,
+      name: RoutePaths.container,
       page: () => ContainerPage(),
     ),
     GetPage(
-      name: RoutePaths.Padding,
+      name: RoutePaths.padding,
       page: () => PaddingPage(),
     ),
     GetPage(
-      name: RoutePaths.Row,
+      name: RoutePaths.row,
       page: () => RowPage(),
     ),
     GetPage(
-      name: RoutePaths.Column,
+      name: RoutePaths.column,
       page: () => ColumnPage(),
     ),
     GetPage(
-      name: RoutePaths.Expanded,
+      name: RoutePaths.expanded,
       page: () => ExpandedPage(),
     ),
     GetPage(
-      name: RoutePaths.Stack,
+      name: RoutePaths.stack,
       page: () => StackPage(),
     ),
     GetPage(
-      name: RoutePaths.StackPositioned,
+      name: RoutePaths.stackPositioned,
       page: () => StackPositionedPage(),
     ),
     GetPage(
-      name: RoutePaths.StackAlign,
+      name: RoutePaths.stackAlign,
       page: () => StackAlignPage(),
     ),
     GetPage(
-      name: RoutePaths.Card,
+      name: RoutePaths.card,
       page: () => CardPage(),
     ),
     GetPage(
-      name: RoutePaths.Wrap,
+      name: RoutePaths.wrap,
       page: () => WrapPage(),
     ),
     GetPage(
-      name: RoutePaths.Scaffold,
+      name: RoutePaths.scaffold,
       page: () => ScaffoldPage(),
     ),
 
     // =========================其他=============================
     GetPage(
-      name: RoutePaths.Dialog,
+      name: RoutePaths.dialog,
       page: () => DialogPage(),
     ),
     GetPage(
-      name: RoutePaths.Picture,
+      name: RoutePaths.picture,
       page: () => PicturePage(),
       binding: PictureBinding(),
     ),
     GetPage(
-      name: RoutePaths.Login,
+      name: RoutePaths.login,
       page: () => LoginPage(),
       binding: LoginBinding(),
     ),
     GetPage(
-      name: RoutePaths.User,
+      name: RoutePaths.user,
       page: () => UserPage(),
       binding: UserBinding(),
     ),
 
     // =========================设置=============================
     GetPage(
-      name: RoutePaths.Swiper,
+      name: RoutePaths.swiper,
       page: () => SwiperPage(),
     ),
     GetPage(
-      name: RoutePaths.Dio,
+      name: RoutePaths.dio,
       page: () => DioPage(),
     ),
     GetPage(
-      name: RoutePaths.GetX,
+      name: RoutePaths.getX,
       page: () => GetXPage(),
       binding: GetXBinding(),
     ),
     GetPage(
-      name: RoutePaths.Native,
+      name: RoutePaths.native,
       page: () => NativePage(),
     ),
     GetPage(
-      name: RoutePaths.Web,
+      name: RoutePaths.web,
       page: () => WebPage(),
       binding: WebBinding(),
     ),

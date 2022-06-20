@@ -77,7 +77,7 @@ class RouteManager {
 
   /// 跳转到Web页面
   static void jumpToWeb(String title, String url) {
-    Get.toNamed(RoutePaths.Web, arguments: {"title": title, "url": url}, preventDuplicates: false);
+    Get.toNamed(RoutePaths.web, arguments: {"title": title, "url": url}, preventDuplicates: false);
   }
 
   /// 跳转到对应原生路由页面

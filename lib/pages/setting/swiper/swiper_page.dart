@@ -49,7 +49,7 @@ class _MySwiperState extends State<MySwiper> {
           itemBuilder: (BuildContext context, int index) {
             return FadeInImage.assetNetwork(
               image: _imgList[index]["url"],
-              placeholder: "${AppConstants.ASSERT_IMAGE_PATH}img_default.png",
+              placeholder: "${AppConstants.assertImagePath}img_default.png",
               fit: BoxFit.fill,
             );
           },

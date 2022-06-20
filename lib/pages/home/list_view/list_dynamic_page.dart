@@ -50,8 +50,8 @@ class ImageItem extends StatelessWidget {
     return Column(
       children: <Widget>[
         FadeInImage.assetNetwork(
-          placeholder: "${AppConstants.ASSERT_IMAGE_PATH}icon_test.png",
-          image: AppConstants.NET_IMAGE_URL1,
+          placeholder: "${AppConstants.assertImagePath}icon_test.png",
+          image: AppConstants.netImageUrl1,
           fit: BoxFit.cover,
         ),
         Container(

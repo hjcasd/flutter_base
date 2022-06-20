@@ -87,7 +87,7 @@ class _InnerWebViewState extends State<InnerWebView> {
             "加载中...",
             style: TextStyle(
               fontSize: 16,
-              color: AppColors.black_333333,
+              color: AppColors.black333333,
             ),
           ),
         ),

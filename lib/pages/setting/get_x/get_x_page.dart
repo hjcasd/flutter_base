@@ -35,7 +35,7 @@ class GetXPage extends StatelessWidget {
                 SimpleButton(
                   "重复路由测试",
                   onPressed: () {
-                    RouteManager.toNamed(RoutePaths.GetX, params: {"value": "222222"});
+                    RouteManager.toNamed(RoutePaths.getX, params: {"value": "222222"});
                   },
                 ),
               ],

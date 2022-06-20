@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 /// 图文列表页面Controller
 class PictureController extends GetxController {
   /// 每页大小
-  static const PAGE_SIZE = 20;
+  static const int pageSize = 20;
 
   /// 数据源
   var listItems = <Map<String, String>>[];
@@ -38,7 +38,7 @@ class PictureController extends GetxController {
   }
 
   void _requestNewItems() async {
-    var newItems = await MockData.getList(_currentPage, PAGE_SIZE);
+    var newItems = await MockData.getList(_currentPage, pageSize);
     if (_currentPage > 1) {
       listItems += newItems;
     } else {

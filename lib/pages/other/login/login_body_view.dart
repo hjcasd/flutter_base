@@ -26,7 +26,7 @@ class LoginBodyView extends StatelessWidget {
         child: Column(
           children: [
             _getRoundImage(
-              AppConstants.NET_IMAGE_URL1,
+              AppConstants.netImageUrl1,
               100,
             ),
             SizedBox(
@@ -44,7 +44,7 @@ class LoginBodyView extends StatelessWidget {
             SimpleButton(
               "跳转到用户页面",
               onPressed: () {
-                RouteManager.offAllNamed(RoutePaths.User);
+                RouteManager.offAllNamed(RoutePaths.user);
               },
             ),
           ],

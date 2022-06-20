@@ -166,7 +166,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
           hintStyle: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
-            color: AppColors.black_999999,
+            color: AppColors.black999999,
           ),
           suffixIconConstraints: BoxConstraints(maxHeight: 20),
           suffixIcon: _getClearView(),
@@ -174,7 +174,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
         style: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w700,
-          color: AppColors.black_333333,
+          color: AppColors.black333333,
         ),
         controller: _editingController,
         onChanged: (value) {
@@ -225,7 +225,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
         widget.bottomTip,
         style: TextStyle(
           fontSize: 10,
-          color: AppColors.gold_A89769,
+          color: AppColors.goldA89769,
         ),
       ),
     );
@@ -249,7 +249,7 @@ class _FormWriteItemState extends State<FormWriteItem> {
         right: 0,
         child: Divider(
           height: 0.5,
-          color: AppColors.grey_E5E5E5,
+          color: AppColors.greyE5E5E5,
         ),
       ),
     );

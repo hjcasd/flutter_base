@@ -132,7 +132,7 @@ class _SmartDialogState extends State<SmartDialog> {
     }
     childrenList.add(_getConfirmTextView());
     return Container(
-      color: AppColors.grey_F7F7F7,
+      color: AppColors.greyF7F7F7,
       padding: EdgeInsets.fromLTRB(28, 15, 28, 15),
       child: Row(
         children: childrenList,
@@ -157,7 +157,7 @@ class _SmartDialogState extends State<SmartDialog> {
             ),
           ),
           decoration: BoxDecoration(
-            color: AppColors.blue_1A3B64,
+            color: AppColors.blue1A3B64,
             borderRadius: BorderRadius.circular(2.5),
           ),
         ),
@@ -182,7 +182,7 @@ class _SmartDialogState extends State<SmartDialog> {
             ),
           ),
           decoration: BoxDecoration(
-            color: AppColors.blue_1A3B64,
+            color: AppColors.blue1A3B64,
             borderRadius: BorderRadius.circular(2.5),
           ),
         ),

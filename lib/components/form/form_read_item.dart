@@ -95,7 +95,7 @@ class _FormReadItemState extends State<FormReadItem> {
               widget.content,
               style: TextStyle(
                 fontWeight: widget.fontWeight,
-                color: AppColors.black_333333,
+                color: AppColors.black333333,
               ),
             ),
             Visibility(
@@ -104,7 +104,7 @@ class _FormReadItemState extends State<FormReadItem> {
                 widget.bottomTip,
                 style: TextStyle(
                   fontSize: 10,
-                  color: AppColors.gold_A89769,
+                  color: AppColors.goldA89769,
                 ),
               ),
             ),
@@ -124,7 +124,7 @@ class _FormReadItemState extends State<FormReadItem> {
         right: 0,
         child: Divider(
           height: 0.5,
-          color: AppColors.grey_E5E5E5,
+          color: AppColors.greyE5E5E5,
         ),
       ),
     );

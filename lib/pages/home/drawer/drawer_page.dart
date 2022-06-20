@@ -39,7 +39,7 @@ class MyDrawerHeader extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
-                          AppConstants.NET_IMAGE_URL1,
+                          AppConstants.netImageUrl1,
                         ),
                         fit: BoxFit.cover,
                       ),
@@ -124,13 +124,13 @@ class MyDrawerAccount extends StatelessWidget {
                   ),
                   currentAccountPicture: CircleAvatar(
                     backgroundImage: NetworkImage(
-                      AppConstants.NET_IMAGE_URL1,
+                      AppConstants.netImageUrl1,
                     ),
                   ),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage(
-                        AppConstants.NET_IMAGE_URL2,
+                        AppConstants.netImageUrl2,
                       ),
                       fit: BoxFit.cover,
                     ),

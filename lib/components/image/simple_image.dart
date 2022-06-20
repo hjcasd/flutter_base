@@ -59,7 +59,7 @@ class _SimpleImageState extends State<SimpleImage> {
   Widget _getImageView() {
     if (widget.isLocal) {
       return Image.asset(
-        "${AppConstants.ASSERT_IMAGE_PATH + widget.imageUrl}",
+        "${AppConstants.assertImagePath + widget.imageUrl}",
         fit: widget.fit,
         width: widget.width,
         height: widget.height,
@@ -68,10 +68,10 @@ class _SimpleImageState extends State<SimpleImage> {
     return CachedNetworkImage(
       imageUrl: widget.imageUrl,
       placeholder: (context, url) => Image.asset(
-        "${AppConstants.ASSERT_IMAGE_PATH + widget.placeholderPath}",
+        "${AppConstants.assertImagePath + widget.placeholderPath}",
       ),
       errorWidget: (context, url, error) => Image.asset(
-        "${AppConstants.ASSERT_IMAGE_PATH + widget.errorPath}",
+        "${AppConstants.assertImagePath + widget.errorPath}",
       ),
       fit: widget.fit,
       width: widget.width,

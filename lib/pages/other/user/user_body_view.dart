@@ -47,7 +47,7 @@ class UserBodyView extends StatelessWidget {
         SimpleButton(
           "跳转到登录页面",
           onPressed: () {
-            RouteManager.toNamed(RoutePaths.Login);
+            RouteManager.toNamed(RoutePaths.login);
           },
         ),
       ],

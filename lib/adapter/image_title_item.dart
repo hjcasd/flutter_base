@@ -82,7 +82,7 @@ class _ImageTitleItem extends State<ImageTitleItem> {
           Icon(
             Icons.remove_red_eye_outlined,
             size: 14,
-            color: AppColors.grey_BCBCBC,
+            color: AppColors.greyBCBCBC,
           ),
           SizedBox(
             width: 5,
@@ -90,7 +90,7 @@ class _ImageTitleItem extends State<ImageTitleItem> {
           Text(
             widget.viewCount,
             style: TextStyle(
-              color: AppColors.grey_BCBCBC,
+              color: AppColors.greyBCBCBC,
               fontSize: 14,
             ),
           ),

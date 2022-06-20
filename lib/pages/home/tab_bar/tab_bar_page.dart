@@ -61,7 +61,7 @@ class _MyTabBarState extends State<MyTabBar> with SingleTickerProviderStateMixin
       body: Column(
         children: [
           Container(
-            color: AppColors.grey_E5E5E5,
+            color: AppColors.greyE5E5E5,
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
             child: ButtonsTabBar(
               controller: _tabController,

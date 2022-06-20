@@ -20,16 +20,16 @@ class Http {
   /// 通用全局单例，第一次使用时初始化
   Http._internal() {
     _dio.options = BaseOptions(
-      connectTimeout: HttpConfig.CONNECT_TIMEOUT,
-      receiveTimeout: HttpConfig.RECEIVE_TIMEOUT,
+      connectTimeout: HttpConfig.connectTimeout,
+      receiveTimeout: HttpConfig.receiveTimeout,
     );
     _dio.interceptors.add(DioLogInterceptor());
 
     // 在调试模式下需要抓包调试，所以我们使用代理，并禁用HTTPS证书校验
-    if (HttpConfig.PROXY_ENABLE) {
+    if (HttpConfig.proxyEnable) {
       (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
         client.findProxy = (uri) {
-          return "PROXY ${HttpConfig.PROXY_IP}:${HttpConfig.PROXY_PORT}";
+          return "PROXY ${HttpConfig.proxyIp}:${HttpConfig.proxyPort}";
         };
         //代理工具会提供一个抓包的自签名证书，会通不过证书校验，所以我们禁用证书校验
         client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;

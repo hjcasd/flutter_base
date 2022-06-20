@@ -22,7 +22,7 @@ class UserPage extends StatelessWidget {
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
         appBar: SearchAppBar(
-          backgroundColor: AppColors.grey_F7F7F7,
+          backgroundColor: AppColors.greyF7F7F7,
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,

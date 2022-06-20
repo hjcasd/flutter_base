@@ -21,30 +21,30 @@ class _SettingPageState extends State<SettingPage> {
         children: [
           RouteButton(
             "Swiper",
-            RoutePaths.Swiper,
+            RoutePaths.swiper,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "Dio",
-            RoutePaths.Dio,
+            RoutePaths.dio,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "GetX",
-            RoutePaths.GetX,
+            RoutePaths.getX,
             backgroundColor: AppColors.cyan,
             onPressed: () {
-              RouteManager.toNamed(RoutePaths.GetX, params: {"value": "111111"});
+              RouteManager.toNamed(RoutePaths.getX, params: {"value": "111111"});
             },
           ),
           RouteButton(
             "Native",
-            RoutePaths.Native,
+            RoutePaths.native,
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
             "Web",
-            RoutePaths.Web,
+            RoutePaths.web,
             backgroundColor: AppColors.cyan,
             onPressed: () {
               RouteManager.jumpToWeb("百度一下", "https://www.baidu.com");

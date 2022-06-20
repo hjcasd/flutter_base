@@ -18,11 +18,11 @@ class StackPage extends StatelessWidget {
           children: [
             RouteButton(
               "Stack + Positioned",
-              RoutePaths.StackPositioned,
+              RoutePaths.stackPositioned,
             ),
             RouteButton(
               "Stack + Align",
-              RoutePaths.StackAlign,
+              RoutePaths.stackAlign,
             ),
             MyStack(),
           ],

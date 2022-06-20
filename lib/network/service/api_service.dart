@@ -5,7 +5,7 @@ import 'package:flutter_base/network/utils/http_utils.dart';
 abstract class ApiService {
   /// 登录
   static Future login(String username, String password) async {
-    var response = await HttpUtils.post(UrlPath.LOGIN_PATH, params: {
+    var response = await HttpUtils.post(UrlPath.loginPath, params: {
       "username": username,
       "password": password,
     });

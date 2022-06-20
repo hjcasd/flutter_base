@@ -43,7 +43,7 @@ class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.suffixIcon = const Icon(
       Icons.clear,
       size: 20,
-      color: Colors.black,
+      color: AppColors.black,
     ),
     this.onComplete,
     this.onClear,
@@ -91,7 +91,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
           decoration: InputDecoration(
             hintText: widget.hintText,
             hintStyle: TextStyle(
-              color: AppColors.grey_BCBCBC,
+              color: AppColors.greyBCBCBC,
               fontSize: 14,
             ),
             prefixIcon: widget.prefixIcon,

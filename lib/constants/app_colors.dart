@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// App颜色
 abstract class AppColors {
   // 白色
-  static const Color transparent = Colors.transparent;
+  static const Color transparent = Colors.black26;
 
   // 白色
   static const Color white = Color(0xFFFFFFFF);
@@ -11,25 +11,25 @@ abstract class AppColors {
   // 黑色
   static const Color black = Color(0xFF000000);
 
-  static const Color black_333333 = Color(0xFF333333);
+  static const Color black333333 = Color(0xFF333333);
 
-  static const Color black_666666 = Color(0xFF666666);
+  static const Color black666666 = Color(0xFF666666);
 
-  static const Color black_999999 = Color(0xFF999999);
+  static const Color black999999 = Color(0xFF999999);
 
   // 灰色
-  static const Color grey_F7F7F7 = Color(0xFFF7F7F7);
+  static const Color greyF7F7F7 = Color(0xFFF7F7F7);
 
-  static const Color grey_E5E5E5 = Color(0xFFE5E5E5);
+  static const Color greyE5E5E5 = Color(0xFFE5E5E5);
 
-  static const Color grey_BCBCBC = Color(0xFFBCBCBC);
+  static const Color greyBCBCBC = Color(0xFFBCBCBC);
 
   // 蓝色
   static const Color blue = Color(0xFF2196F3);
 
   static const Color blueAccent = Color(0xFF448AFF);
 
-  static const Color blue_1A3B64 = Color(0xFF1A3B64);
+  static const Color blue1A3B64 = Color(0xFF1A3B64);
 
   // 青色
   static const Color cyan = Color(0xFF00BCD4);
@@ -49,11 +49,11 @@ abstract class AppColors {
   static const Color amberAccent = Color(0xFFFFD740);
 
   // 金色
-  static const Color gold_EDE3C7 = Color(0xFFEDE3C7);
+  static const Color goldEDE3C7 = Color(0xFFEDE3C7);
 
-  static const Color gold_A89769 = Color(0xFFA89769);
+  static const Color goldA89769 = Color(0xFFA89769);
 
-  static const Color gold_BFA253 = Color(0xFFBFA253);
+  static const Color goldBFA253 = Color(0xFFBFA253);
 
   // 绿色
   static const Color green = Color(0xFF4CAF50);

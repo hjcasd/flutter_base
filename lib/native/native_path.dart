@@ -2,9 +2,9 @@
 abstract class NativePath {
   NativePath._();
 
-  static const String MAIN = "/activity/main";
+  static const String main = "/activity/main";
 
-  static const String DEMO1 = "/activity/demo1";
+  static const String demo1 = "/activity/demo1";
 
-  static const String DEMO2 = "/activity/demo2";
+  static const String demo2 = "/activity/demo2";
 }

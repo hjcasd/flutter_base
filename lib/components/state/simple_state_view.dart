@@ -119,7 +119,7 @@ class _SimpleStateViewState extends State<SimpleStateView> {
             style: TextStyle(fontSize: 14),
           ),
         ),
-        color: AppColors.grey_F7F7F7,
+        color: AppColors.greyF7F7F7,
       );
     }
   }
@@ -145,13 +145,13 @@ class _SimpleStateViewState extends State<SimpleStateView> {
   /// 默认视图
   Widget _getDefaultView() {
     return Container(
-      color: AppColors.grey_F7F7F7,
+      color: AppColors.greyF7F7F7,
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              "${AppConstants.ASSERT_IMAGE_PATH}img_default.png",
+              "${AppConstants.assertImagePath}img_default.png",
               fit: BoxFit.contain,
             ),
             SizedBox(

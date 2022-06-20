@@ -53,7 +53,7 @@ class MyNetImage extends StatelessWidget {
         ),
       ),
       child: Image.network(
-        AppConstants.NET_IMAGE_URL1,
+        AppConstants.netImageUrl1,
         // 图片在父容器中的对齐方式
         alignment: Alignment.topLeft,
         // color和colorBlendMode一起使用,对图片进行颜色处理
@@ -85,7 +85,7 @@ class MyCircleBoxImage extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(50)),
         image: DecorationImage(
           image: NetworkImage(
-            AppConstants.NET_IMAGE_URL1,
+            AppConstants.netImageUrl1,
           ),
           fit: BoxFit.cover,
         ),
@@ -101,7 +101,7 @@ class MyCircleClipImage extends StatelessWidget {
     return Container(
       child: ClipOval(
         child: Image.network(
-          AppConstants.NET_IMAGE_URL2,
+          AppConstants.netImageUrl2,
           width: 100,
           height: 100,
           fit: BoxFit.fill,

@@ -21,47 +21,47 @@ class _HomePageState extends State<HomePage> {
           children: [
             RouteButton(
               "Text",
-              RoutePaths.Text,
+              RoutePaths.text,
             ),
             RouteButton(
               "RichText",
-              RoutePaths.RichText,
+              RoutePaths.richText,
             ),
             RouteButton(
               "Button",
-              RoutePaths.Button,
+              RoutePaths.button,
             ),
             RouteButton(
               "Image",
-              RoutePaths.Image,
+              RoutePaths.image,
             ),
             RouteButton(
               "Form",
-              RoutePaths.Form,
+              RoutePaths.form,
             ),
             RouteButton(
               "ListView",
-              RoutePaths.ListView,
+              RoutePaths.listView,
             ),
             RouteButton(
               "GridView",
-              RoutePaths.GridView,
+              RoutePaths.gridView,
             ),
             RouteButton(
               "AppBar",
-              RoutePaths.AppBar,
+              RoutePaths.appBar,
             ),
             RouteButton(
               "TabBar",
-              RoutePaths.TabBar,
+              RoutePaths.tabBar,
             ),
             RouteButton(
               "Drawer",
-              RoutePaths.Drawer,
+              RoutePaths.drawer,
             ),
             RouteButton(
               "ProgressIndicator",
-              RoutePaths.Progress,
+              RoutePaths.progress,
             ),
           ],
         ),

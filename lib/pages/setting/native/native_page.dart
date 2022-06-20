@@ -32,7 +32,7 @@ class NativePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // flutter端调用native端的方法并传参
-                RouteManager.jumpToNative(NativePath.DEMO1);
+                RouteManager.jumpToNative(NativePath.demo1);
               },
               child: Text(
                 '原生跳转',
@@ -41,7 +41,7 @@ class NativePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 // flutter端调用native端的方法并传参
-                var result = await ChannelHelper.invokeMethodWithFuture(NativeMethod.TOAST, "flutter传递过来的消息");
+                var result = await ChannelHelper.invokeMethodWithFuture(NativeMethod.toast, "flutter传递过来的消息");
                 LogHelper.e("result: $result");
               },
               child: Text(

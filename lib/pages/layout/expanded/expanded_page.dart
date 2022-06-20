@@ -90,7 +90,7 @@ class MyMultiExpanded extends StatelessWidget {
               child: Container(
                 height: 180,
                 child: Image.network(
-                  AppConstants.NET_IMAGE_URL1,
+                  AppConstants.netImageUrl1,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -106,12 +106,12 @@ class MyMultiExpanded extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Image.network(
-                      AppConstants.NET_IMAGE_URL2,
+                      AppConstants.netImageUrl2,
                       height: 85,
                       fit: BoxFit.cover,
                     ),
                     Image.network(
-                      AppConstants.NET_IMAGE_URL3,
+                      AppConstants.netImageUrl3,
                       height: 85,
                       fit: BoxFit.cover,
                     ),

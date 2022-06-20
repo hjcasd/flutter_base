@@ -71,7 +71,7 @@ class _SimpleCheckboxState extends State<SimpleCheckbox> {
       width: widget.size,
       height: widget.size,
       child: Image.asset(
-        "${AppConstants.ASSERT_IMAGE_PATH + path}",
+        "${AppConstants.assertImagePath + path}",
         fit: BoxFit.fill,
       ),
     );

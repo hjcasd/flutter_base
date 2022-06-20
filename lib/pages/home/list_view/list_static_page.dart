@@ -57,7 +57,7 @@ class MyStaticListView extends StatelessWidget {
         ),
         ListTile(
           leading: Image.network(
-            AppConstants.NET_IMAGE_URL1,
+            AppConstants.netImageUrl1,
           ),
           title: Text(
             "我是标题111111",
@@ -72,7 +72,7 @@ class MyStaticListView extends StatelessWidget {
         ),
         ListTile(
           trailing: Image.network(
-            AppConstants.NET_IMAGE_URL2,
+            AppConstants.netImageUrl2,
           ),
           title: Text(
             "我是标题111111",
