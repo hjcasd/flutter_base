@@ -36,8 +36,8 @@ class SmartButton extends StatefulWidget {
   // 边框圆角
   final BorderRadiusGeometry? borderRadius;
 
-  // 按钮是否不可用
-  final bool isDisabled;
+  // 按钮是否可用
+  final bool isEnable;
 
   // 点击事件回调
   final VoidCallback? onPressed;
@@ -54,7 +54,7 @@ class SmartButton extends StatefulWidget {
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
     this.margin,
     this.borderRadius = const BorderRadius.all(Radius.circular(5)),
-    this.isDisabled = false,
+    this.isEnable = true,
     this.onPressed,
     Key? key,
   }) : super(key: key);
@@ -79,16 +79,16 @@ class _SmartButtonState extends State<SmartButton> {
           widget.text,
           style: TextStyle(
             fontSize: widget.fontSize,
-            color: widget.isDisabled ? widget.disabledFontColor : widget.fontColor,
+            color: widget.isEnable ? widget.fontColor : widget.disabledFontColor,
           ),
         ),
         decoration: BoxDecoration(
-          color: widget.isDisabled ? widget.disabledBackgroundColor : widget.backgroundColor,
+          color: widget.isEnable ? widget.backgroundColor : widget.disabledBackgroundColor,
           borderRadius: widget.borderRadius,
         ),
       ),
       onTap: () {
-        if (!widget.isDisabled && widget.onPressed != null) {
+        if (widget.isEnable && widget.onPressed != null) {
           widget.onPressed!();
         }
       },

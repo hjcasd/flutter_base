@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:common_utils/common_utils.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_base/components/state/page_state.dart';
 import 'package:flutter_base/constants/app_constants.dart';
@@ -15,8 +16,17 @@ class UserController extends GetxController {
   // Model
   var _model = UserEntity();
 
+  // 提示
+  var tip = "";
+
   // 姓名
   var name = "";
+
+  // 手机号
+  var phone = "";
+
+  // 按钮是否可用
+  var buttonEnable = false;
 
   @override
   void onReady() {
@@ -36,7 +46,7 @@ class UserController extends GetxController {
     String json = await rootBundle.loadString("${AppConstants.assertJsonPath}user_info.json");
     Future.delayed(Duration(seconds: 1), () {
       _model = UserEntity.fromJson(jsonDecode(json));
-      LogHelper.e(_model.tip);
+      tip = _model.tip ?? "";
       state = PageState.SUCCESS;
       update();
     });
@@ -45,6 +55,20 @@ class UserController extends GetxController {
   /// 改变名字
   void changeName(String value) {
     this.name = value;
-    LogHelper.e("name: " + value);
+    buttonEnable = !TextUtil.isEmpty(name) && !TextUtil.isEmpty(phone);
+    update();
+  }
+
+  /// 改变手机号
+  void changePhone(String value) {
+    this.phone = value;
+    buttonEnable = !TextUtil.isEmpty(name) && !TextUtil.isEmpty(phone);
+    update();
+  }
+
+  /// 测试
+  void test() {
+    tip = "哈哈哈哈哈哈哈";
+    update();
   }
 }
