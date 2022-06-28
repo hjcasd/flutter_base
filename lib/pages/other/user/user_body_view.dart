@@ -58,13 +58,17 @@ class UserBodyView extends StatelessWidget {
             _controller.changePhone("");
           },
         ),
-        SizedBox(height: 10,),
+        SizedBox(
+          height: 10,
+        ),
         SimpleText(
           _controller.tip,
           fontSize: 18,
           fontColor: AppColors.blue,
         ),
-        SizedBox(height: 10,),
+        SizedBox(
+          height: 10,
+        ),
         SmartButton(
           "测试",
           isEnable: _controller.buttonEnable,

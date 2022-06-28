@@ -47,4 +47,5 @@ abstract class RoutePaths {
   static const getX = '/getX';
   static const native = '/native';
   static const web = '/web';
+  static const picker = '/picker';
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_base/utils/extension/map_list_to_string.dart';
 import 'package:logger/logger.dart';
 
@@ -12,21 +13,29 @@ class LogHelper {
 
   /// error
   static e(dynamic message, {String tag = "tag"}) {
-    _logger.e(message, tag);
+    if (!kReleaseMode) {
+      _logger.e(message, tag);
+    }
   }
 
   /// verbose
   static v(dynamic message, {String tag = "tag"}) {
-    _logger.v(message, tag);
+    if (!kReleaseMode) {
+      _logger.v(message, tag);
+    }
   }
 
   /// debug
   static d(dynamic message, {String tag = "tag"}) {
-    _logger.d(message, tag);
+    if (!kReleaseMode) {
+      _logger.d(message, tag);
+    }
   }
 
   /// json
   static json(Map<dynamic, dynamic> map, {String tag = "tag"}) {
-    _logger.e(map.mapToJsonString(), tag);
+    if (!kReleaseMode) {
+      _logger.e(map.mapToJsonString(), tag);
+    }
   }
 }

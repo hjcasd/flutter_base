@@ -43,6 +43,11 @@ class _SettingPageState extends State<SettingPage> {
             backgroundColor: AppColors.cyan,
           ),
           RouteButton(
+            "Picker",
+            RoutePaths.picker,
+            backgroundColor: AppColors.cyan,
+          ),
+          RouteButton(
             "Web",
             RoutePaths.web,
             backgroundColor: AppColors.cyan,

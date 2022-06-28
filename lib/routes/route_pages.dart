@@ -36,6 +36,7 @@ import 'package:flutter_base/pages/setting/dio/dio_page.dart';
 import 'package:flutter_base/pages/setting/get_x/get_x_binding.dart';
 import 'package:flutter_base/pages/setting/get_x/get_x_page.dart';
 import 'package:flutter_base/pages/setting/native/native_page.dart';
+import 'package:flutter_base/pages/setting/picker/picker_page.dart';
 import 'package:flutter_base/pages/setting/swiper/swiper_page.dart';
 import 'package:flutter_base/pages/not_found_page.dart';
 import 'package:flutter_base/pages/setting/web/web_binding.dart';
@@ -207,6 +208,10 @@ abstract class RoutePages {
     GetPage(
       name: RoutePaths.native,
       page: () => NativePage(),
+    ),
+    GetPage(
+      name: RoutePaths.picker,
+      page: () => PickerPage(),
     ),
     GetPage(
       name: RoutePaths.web,
